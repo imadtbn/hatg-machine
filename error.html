@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تفاصيل العطل - دليل أعطال الأجهزة الكهرومنزلية</title>
+  <meta name="description"
+    content="تفاصيل كاملة عن العطل: الأسباب، الأعراض، خطوات الإصلاح المنزلي والمهني، ونصائح الصيانة الوقائية.">
+  <link rel="canonical" href="https://appliance-errors.example.com/error.html">
+  <meta property="og:title" content="تفاصيل العطل - دليل أعطال الأجهزة الكهرومنزلية">
+  <meta name="twitter:card" content="summary">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Tajawal:wght@300;400;500;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="manifest" href="manifest.webmanifest">
+</head>
+
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <div
+          style="width:40px;height:40px;background:linear-gradient(135deg,#0066CC,#6C5CE7);border-radius:8px;display:flex;align-items:center;justify-content:center;color:white;font-weight:900;font-size:1.1rem;">
+          ⚙</div>
+        <div class="logo-text"><span>دليل الأعطال</span><span>Error Codes Guide</span></div>
+      </a>
+      <div class="search-bar">
+        <span class="search-icon">🔍</span>
+        <input type="search" placeholder="ابحث عن عطل، رمز خطأ، قطعة..." aria-label="بحث">
+        <div class="search-results"></div>
+      </div>
+      <nav class="nav">
+        <a href="index.html" class="nav-link">الرئيسية</a>
+        <a href="errors.html" class="nav-link active">الأعطال</a>
+        <a href="brands.html" class="nav-link">الماركات</a>
+        <a href="articles.html" class="nav-link">المقالات</a>
+        <a href="faq.html" class="nav-link">الأسئلة الشائعة</a>
+        <a href="about.html" class="nav-link">عن الموقع</a>
+        <a href="contact.html" class="nav-link">اتصل بنا</a>
+      </nav>
+      <button class="theme-toggle" aria-label="تبديل الوضع الليلي">🌙</button>
+      <button class="menu-toggle" aria-label="فتح القائمة">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="container error-detail" id="errorDetailContent">
+      <!-- Content loaded by JS -->
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>دليل أعطال الأجهزة الكهرومنزلية</h4>
+          <p>أكبر مرجع عربي متخصص في أعطال غسالة الأواني وغسالة الملابس.</p>
+        </div>
+        <div class="footer-col">
+          <h4>روابط الموقع</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="errors.html">الأعطال</a></li>
+            <li><a href="brands.html">الماركات</a></li>
+            <li><a href="articles.html">المقالات</a></li>
+            <li><a href="contact.html">اتصل بنا</a></li>
+            <li><a href="privacy.html">سياسة الخصوصية</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>المراجع الفنية</h4>
+          <ul class="footer-links">
+            <li><a href="https://www.lg.com" target="_blank" rel="noopener">LG</a></li>
+            <li><a href="https://www.samsung.com" target="_blank" rel="noopener">Samsung</a></li>
+            <li><a href="https://www.bosch.com" target="_blank" rel="noopener">Bosch</a></li>
+            <li><a href="https://www.panasonic.com" target="_blank" rel="noopener">Panasonic</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>التواصل</h4>
+          <ul class="footer-links">
+            <li><a href="tel:+213xxxxxxxxx">📞 الهاتف</a></li>
+            <li><a href="mailto:info@appliance-errors.com">📧 البريد</a></li>
+            <li><a href="https://wa.me/213xxxxxxxxx" target="_blank" rel="noopener">💬 واتساب</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 دليل أعطال الأجهزة الكهرومنزلية. جميع الحقوق محفوظة.</p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" aria-label="العودة للأعلى">↑</button>
+  <script src="assets/js/main.js" defer></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', async function () {
+      const params = new URLSearchParams(window.location.search);
+      const errorId = params.get('id');
+
+      if (!errorId) { window.location.href = 'errors.html'; return; }
+
+      try {
+        const [brandsRes, errorsRes] = await Promise.all([fetch('data/brands.json'), fetch('data/errors.json')]);
+        const brands = await brandsRes.json();
+        const errors = await errorsRes.json();
+
+        const error = errors.find(e => e.id === errorId);
+        if (!error) { window.location.href = 'errors.html'; return; }
+
+        const brand = brands.find(b => b.id === error.brand);
+        const sevMap = { high: { text: 'خطير', cls: 'badge-danger', icon: '🔴' }, medium: { text: 'متوسط', cls: 'badge-warning', icon: '🟡' }, low: { text: 'بسيط', cls: 'badge-success', icon: '🟢' } };
+        const sev = sevMap[error.severity] || sevMap.medium;
+
+        // Update title
+        document.title = error.errorCode + ' - ' + error.titleAr + ' - دليل أعطال الأجهزة الكهرومنزلية';
+        document.querySelector('meta[name="description"]').setAttribute('content', error.descriptionAr?.substring(0, 150) || error.titleAr);
+
+        // Generate JSON-LD
+        const jsonLd = {
+          "@context": "https://schema.org",
+          "@type": "TechArticle",
+          "headline": error.errorCode + ' - ' + error.titleAr,
+          "description": error.descriptionAr || '',
+          "author": { "@type": "Organization", "name": "دليل أعطال الأجهزة الكهرومنزلية" },
+          "datePublished": new Date().toISOString().split('T')[0]
+        };
+        const script = document.createElement('script');
+        script.type = 'application/ld+json';
+        script.textContent = JSON.stringify(jsonLd);
+        document.head.appendChild(script);
+
+        // Render content
+        const container = document.getElementById('errorDetailContent');
+        container.innerHTML = `
+          <nav class="breadcrumb">
+            <a href="index.html">الرئيسية</a> <span class="separator">›</span>
+            <a href="errors.html">الأعطال</a> <span class="separator">›</span>
+            <a href="brand.html?id=${error.brand}">${brand?.nameAr || error.brandAr}</a> <span class="separator">›</span>
+            <span>${error.errorCode} - ${error.titleAr}</span>
+          </nav>
+          
+          <div class="error-detail-hero">
+            <div class="error-code-large">${error.errorCode}</div>
+            <h1>${error.titleAr}</h1>
+            <p style="font-size:1.1rem;opacity:0.9;">${error.deviceTypeAr} - ${brand?.nameAr || error.brandAr}</p>
+          </div>
+          
+          <div class="info-grid" style="margin-bottom:30px;">
+            <div class="info-item">
+              <div class="label">الخطورة</div>
+              <div class="value"><span class="badge ${sev.cls}">${sev.icon} ${sev.text}</span></div>
+            </div>
+            <div class="info-item">
+              <div class="label">نوع الجهاز</div>
+              <div class="value">${error.deviceTypeAr}</div>
+            </div>
+            <div class="info-item">
+              <div class="label">الماركة</div>
+              <div class="value">${brand?.nameAr || error.brandAr}</div>
+            </div>
+            <div class="info-item">
+              <div class="label">الإصلاح</div>
+              <div class="value"><span class="badge ${error.homeRepair ? 'badge-success' : 'badge-warning'}">${error.homeRepair ? '✅ منزلي' : '🔧 يحتاج فني'}</span></div>
+            </div>
+          </div>
+          
+          ${error.descriptionAr ? `
+          <div class="detail-section">
+            <h3>📋 وصف العطل</h3>
+            <p>${error.descriptionAr}</p>
+          </div>` : ''}
+          
+          <div class="detail-section">
+            <h3>🔍 الأعراض</h3>
+            <ul class="steplist">
+              ${error.symptoms?.map(s => `<li>${s}</li>`).join('') || '<li>لا توجد أعراض محددة</li>'}
+            </ul>
+          </div>
+          
+          <div class="detail-section">
+            <h3>⚠️ الأسباب المحتملة</h3>
+            <ul class="steplist">
+              ${error.causes?.map(c => `<li>${c}</li>`).join('') || '<li>لم يتم تحديد أسباب</li>'}
+            </ul>
+          </div>
+          
+          <div class="detail-section">
+            <h3>🔧 الأجزاء المتأثرة</h3>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;">
+              ${error.affectedParts?.map(p => `<span class="badge badge-info">${p}</span>`).join('') || '<span>لم يتم تحديد</span>'}
+            </div>
+          </div>
+          
+          ${error.diagnosisSteps && error.diagnosisSteps.length > 0 ? `
+          <div class="detail-section">
+            <h3>🩺 خطوات التشخيص</h3>
+            <ul class="steplist">
+            ${error.diagnosisSteps.map(s => `<li>${s}</li>`).join('')}
+            </ul>
+          </div>` : ''}
+          
+          ${error.toolsRequired && error.toolsRequired.length > 0 ? `
+          <div class="detail-section">
+            <h3>🧰 الأدوات المطلوبة</h3>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;">
+              ${error.toolsRequired.map(t => `<span class="badge badge-info">${t}</span>`).join('')}
+            </div>
+          </div>` : ''}
+          
+          ${error.commonMistakes && error.commonMistakes.length > 0 ? `
+          <div class="detail-section">
+            <h3>❌ الأخطاء الشائعة</h3>
+            <ul class="steplist">
+              ${error.commonMistakes.map(m => `<li>${m}</li>`).join('')}
+            </ul>
+          </div>` : ''}
+          
+          ${error.models && error.models.length > 0 ? `
+          <div class="detail-section">
+            <h3>📱 الموديلات المتأثرة</h3>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;">
+              ${error.models.map(m => `<span class="badge badge-warning">${m}</span>`).join('')}
+            </div>
+          </div>` : ''}
+          
+          <div class="detail-section">
+            <h3>🛠️ خطوات الإصلاح</h3>
+            <ul class="steplist">
+${error.repairSteps.map(s => `<li>${s}</li>`).join('')}
+            </ul>
+          </div>
+          
+          <div class="detail-section">
+            <h3>🛡️ الصيانة الوقائية</h3>
+            <ul class="steplist">
+              ${error.preventionTips?.map(m => `<li>${m}</li>`).join('') || '<li>لم يتم تحديد نصائح وقائية</li>'}
+            </ul>
+          </div>
+          
+          ${error.homeRepair ? `
+          <div class="alert alert-info">
+            <span>💡</span>
+            <div>
+              <strong>يمكن الإصلاح منزليًا:</strong> هذا العطل يمكن التعامل معه من قبل المستخدم العادي. تأكد من فصل الجهاز عن الكهرباء قبل البدء بأي خطوة إصلاح.
+            </div>
+          </div>` : `
+          <div class="alert alert-danger">
+            <span>⚠️</span>
+            <div>
+              <strong>يحتاج فني متخصص:</strong> هذا العطل يتطلب أدوات متخصصة وخبرة فنية. يُنصح بالاتصال بفني معتمد من الشركة المصنعة.
+            </div>
+          </div>`}
+          
+          <div class="references">
+            <h4>📚 المراجع الفنية</h4>
+            <ul>
+              ${error.references && error.references.length > 0 ? error.references.map(r => `<li>${r}</li>`).join('') : '<li>كتيب الخدمة الرسمي - ' + (brand?.name || '') + '</li>'}
+            </ul>
+          </div>
+          
+          <div style="display:flex;gap:12px;margin-top:24px;flex-wrap:wrap;">
+            <a href="errors.html?brand=${error.brand}" class="btn btn-secondary">← أعطال ${brand?.nameAr || error.brandAr} الأخرى</a>
+            <a href="contact.html" class="btn btn-primary">طلب مساعدة فنية</a>
+          </div>
+        `;
+
+      } catch (e) { console.error(e); }
+    });
+  </script>
+</body>
+
+</html>

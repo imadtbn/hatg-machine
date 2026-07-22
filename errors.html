@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>جميع الأعطال - دليل أعطال الأجهزة الكهرومنزلية</title>
+  <meta name="description" content="قائمة شاملة بجميع أعطال ورموز الأخطاء لغسالة الأواني وغسالة الملابس لجميع الماركات المدعومة.">
+  <link rel="canonical" href="https://appliance-errors.example.com/errors.html">
+  <meta property="og:title" content="جميع الأعطال - دليل أعطال الأجهزة الكهرومنزلية">
+  <meta name="twitter:card" content="summary">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="manifest" href="manifest.webmanifest">
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <div style="width:40px;height:40px;background:linear-gradient(135deg,#0066CC,#6C5CE7);border-radius:8px;display:flex;align-items:center;justify-content:center;color:white;font-weight:900;font-size:1.1rem;">⚙</div>
+        <div class="logo-text"><span>دليل الأعطال</span><span>Error Codes Guide</span></div>
+      </a>
+      <div class="search-bar">
+        <span class="search-icon">🔍</span>
+        <input type="search" placeholder="ابحث عن عطل، رمز خطأ، قطعة..." aria-label="بحث">
+        <div class="search-results"></div>
+      </div>
+      <nav class="nav">
+        <a href="index.html" class="nav-link">الرئيسية</a>
+        <a href="errors.html" class="nav-link active">الأعطال</a>
+        <a href="brands.html" class="nav-link">الماركات</a>
+        <a href="articles.html" class="nav-link">المقالات</a>
+        <a href="faq.html" class="nav-link">الأسئلة الشائعة</a>
+        <a href="about.html" class="nav-link">عن الموقع</a>
+        <a href="contact.html" class="nav-link">اتصل بنا</a>
+      </nav>
+      <button class="theme-toggle" aria-label="تبديل الوضع الليلي">🌙</button>
+      <button class="menu-toggle" aria-label="فتح القائمة">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <nav class="breadcrumb"><a href="index.html">الرئيسية</a> <span class="separator">›</span> <span>جميع الأعطال</span></nav>
+      
+      <div class="page-title">
+        <h1>جميع الأعطال</h1>
+        <p>تصفح جميع أكواد الأخطاء والأعطال المسجلة</p>
+      </div>
+
+      <div class="filters-bar">
+        <select class="filter-select" id="deviceTypeFilter" aria-label="فلتر نوع الجهاز">
+          <option value="all">جميع الأجهزة</option>
+          <option value="washing-machine">غسالة ملابس</option>
+          <option value="dishwasher">غسالة أواني</option>
+        </select>
+        <select class="filter-select" id="brandFilter" aria-label="فلتر الماركة">
+          <option value="all">جميع الماركات</option>
+        </select>
+        <select class="filter-select" id="categoryFilter" aria-label="فلتر نوع العطل">
+          <option value="all">جميع الأنواع</option>
+          <option value="error-code">أكواد الأخطاء</option>
+          <option value="electrical">أعطال كهربائية</option>
+          <option value="mechanical">أعطال ميكانيكية</option>
+          <option value="pump">أعطال الصرف</option>
+          <option value="sensor">أعطال الحساسات</option>
+          <option value="heating">أعطال التسخين</option>
+        </select>
+        <select class="filter-select" id="severityFilter" aria-label="فلتر درجة الخطورة">
+          <option value="all">جميع الدرجات</option>
+          <option value="high">خطير</option>
+          <option value="medium">متوسط</option>
+          <option value="low">بسيط</option>
+        </select>
+        <select class="filter-select" id="repairFilter" aria-label="فلتر إمكانية الإصلاح">
+          <option value="all">الكل</option>
+          <option value="true">إصلاح منزلي</option>
+          <option value="false">يحتاج فني</option>
+        </select>
+      </div>
+
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:8px;">
+        <span id="resultsCount" style="color:var(--text-secondary);font-size:0.9rem;"></span>
+        <select class="filter-select" id="sortBy" aria-label="ترتيب النتائج">
+          <option value="code">ترتيب حسب رمز الخطأ</option>
+          <option value="brand">ترتيب حسب الماركة</option>
+          <option value="severity">ترتيب حسب الخطورة</option>
+        </select>
+      </div>
+
+      <div class="cards-grid" id="allErrorsContainer"></div>
+      
+      <div class="pagination" id="pagination"></div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col"><h4>دليل أعطال الأجهزة الكهرومنزلية</h4><p>أكبر مرجع عربي متخصص في أعطال غسالة الأواني وغسالة الملابس.</p></div>
+        <div class="footer-col"><h4>روابط الموقع</h4><ul class="footer-links"><li><a href="index.html">الرئيسية</a></li><li><a href="errors.html">الأعطال</a></li><li><a href="brands.html">الماركات</a></li><li><a href="articles.html">المقالات</a></li><li><a href="contact.html">اتصل بنا</a></li><li><a href="privacy.html">سياسة الخصوصية</a></li></ul></div>
+        <div class="footer-col"><h4>المراجع الفنية</h4><ul class="footer-links"><li><a href="https://www.lg.com" target="_blank" rel="noopener">LG</a></li><li><a href="https://www.samsung.com" target="_blank" rel="noopener">Samsung</a></li><li><a href="https://www.bosch.com" target="_blank" rel="noopener">Bosch</a></li><li><a href="https://www.panasonic.com" target="_blank" rel="noopener">Panasonic</a></li></ul></div>
+        <div class="footer-col"><h4>التواصل</h4><ul class="footer-links"><li><a href="tel:+213xxxxxxxxx">📞 الهاتف</a></li><li><a href="mailto:info@appliance-errors.com">📧 البريد</a></li><li><a href="https://wa.me/213xxxxxxxxx" target="_blank" rel="noopener">💬 واتساب</a></li></ul></div>
+      </div>
+      <div class="footer-bottom"><p>© 2025 دليل أعطال الأجهزة الكهرومنزلية. جميع الحقوق محفوظة.</p></div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" aria-label="العودة للأعلى">↑</button>
+  <script src="assets/js/main.js" defer></script>
+  <script>
+    let allErrors = [];
+    let allBrands = [];
+    let currentPage = 1;
+    const perPage = 12;
+
+    document.addEventListener('DOMContentLoaded', async function() {
+      try {
+        const [brandsRes, errorsRes] = await Promise.all([fetch('data/brands.json'), fetch('data/errors.json')]);
+        allBrands = await brandsRes.json();
+        allErrors = await errorsRes.json();
+        
+        // Populate brand filter
+        const brandFilter = document.getElementById('brandFilter');
+        allBrands.forEach(b => {
+          const opt = document.createElement('option');
+          opt.value = b.id;
+          opt.textContent = b.nameAr;
+          brandFilter.appendChild(opt);
+        });
+        
+        // Apply URL filters
+        const params = new URLSearchParams(window.location.search);
+        if (params.get('type')) document.getElementById('deviceTypeFilter').value = params.get('type');
+        if (params.get('brand')) document.getElementById('brandFilter').value = params.get('brand');
+        if (params.get('category')) document.getElementById('categoryFilter').value = params.get('category');
+        
+        renderErrors();
+        
+        // Filter events
+        document.querySelectorAll('.filter-select').forEach(function(sel) {
+          sel.addEventListener('change', function() { currentPage = 1; renderErrors(); });
+        });
+        
+        document.getElementById('sortBy').addEventListener('change', function() { renderErrors(); });
+        
+      } catch(e) { console.error(e); }
+    });
+
+    function getFilteredErrors() {
+      let filtered = [...allErrors];
+      const device = document.getElementById('deviceTypeFilter').value;
+      const brand = document.getElementById('brandFilter').value;
+      const category = document.getElementById('categoryFilter').value;
+      const severity = document.getElementById('severityFilter').value;
+      const repair = document.getElementById('repairFilter').value;
+      
+      if (device !== 'all') filtered = filtered.filter(e => e.deviceType === device);
+      if (brand !== 'all') filtered = filtered.filter(e => e.brand === brand);
+      if (category !== 'all') filtered = filtered.filter(e => e.category === category);
+      if (severity !== 'all') filtered = filtered.filter(e => e.severity === severity);
+      if (repair !== 'all') filtered = filtered.filter(e => String(e.homeRepair) === repair);
+      
+      // Sort
+      const sort = document.getElementById('sortBy').value;
+      if (sort === 'code') filtered.sort((a,b) => a.errorCode.localeCompare(b.errorCode));
+      else if (sort === 'brand') filtered.sort((a,b) => a.brandAr.localeCompare(b.brandAr));
+      else if (sort === 'severity') {
+        const order = {high:1,medium:2,low:3};
+        filtered.sort((a,b) => order[a.severity] - order[b.severity]);
+      }
+      
+      return filtered;
+    }
+
+    function renderErrors() {
+      const filtered = getFilteredErrors();
+      const totalPages = Math.ceil(filtered.length / perPage);
+      const start = (currentPage - 1) * perPage;
+      const pageErrors = filtered.slice(start, start + perPage);
+      
+      const container = document.getElementById('allErrorsContainer');
+      const sevMap = { high: {text:'خطير',cls:'badge-danger'}, medium: {text:'متوسط',cls:'badge-warning'}, low: {text:'بسيط',cls:'badge-success'} };
+      
+      container.innerHTML = '';
+      pageErrors.forEach(function(error) {
+        const sev = sevMap[error.severity] || sevMap.medium;
+        container.innerHTML += `
+          <div class="error-card" data-brand="${error.brand}" data-device="${error.deviceType}" data-severity="${error.severity}">
+            <div class="error-code-display ${error.severity}">${error.errorCode}</div>
+            <h3 class="card-title">${error.titleAr}</h3>
+            <p class="card-text">${error.symptoms?.[0] || ''}</p>
+            <div class="card-meta">
+              <span class="badge ${sev.cls}">${sev.text}</span>
+              <span class="badge badge-primary">${error.deviceTypeAr}</span>
+              <span class="badge badge-info">${error.brandAr}</span>
+              <span class="badge ${error.homeRepair ? 'badge-success' : 'badge-warning'}">${error.homeRepair ? '✅ منزلي' : '🔧 فني'}</span>
+            </div>
+            <div style="margin-top:12px;">
+              <a href="error.html?id=${error.id}" class="btn btn-primary" style="font-size:0.8rem;padding:6px 16px;">تفاصيل العطل</a>
+            </div>
+          </div>
+        `;
+      });
+      
+      document.getElementById('resultsCount').textContent = filtered.length + ' نتيجة';
+      
+      // Pagination
+      const pagination = document.getElementById('pagination');
+      pagination.innerHTML = '';
+      if (totalPages > 1) {
+        if (currentPage > 1) {
+          pagination.innerHTML += `<button class="page-btn" onclick="goToPage(${currentPage-1})">→</button>`;
+        }
+        for (let i = 1; i <= totalPages; i++) {
+          pagination.innerHTML += `<button class="page-btn ${i===currentPage?'active':''}" onclick="goToPage(${i})">${i}</button>`;
+        }
+        if (currentPage < totalPages) {
+          pagination.innerHTML += `<button class="page-btn" onclick="goToPage(${currentPage+1})">←</button>`;
+        }
+      }
+    }
+
+    function goToPage(page) {
+      currentPage = page;
+      renderErrors();
+      window.scrollTo({top: 0, behavior: 'smooth'});
+    }
+  </script>
+</body>
+</html>
