@@ -1,129 +1,185 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>أعطال ماركة - دليل أعطال الأجهزة الكهرومنزلية</title>
-  <meta name="description" content="أعطال ورموز الأخطاء لجميع موديلات الماركة. دليل شامل معتمد على كتيبات الخدمة الرسمية.">
-  <link rel="canonical" href="https://appliance-errors.example.com/brand.html">
-  <meta property="og:title" content="أعطال ماركة - دليل أعطال الأجهزة الكهرومنزلية">
-  <meta name="twitter:card" content="summary">
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="manifest" href="manifest.webmanifest">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أعطال ماركة - دليل أعطال الأجهزة الكهرومنزلية</title>
+    <meta name="description" content="أعطال ورموز الأخطاء لجميع موديلات الماركة. دليل شامل معتمد على كتيبات الخدمة الرسمية.">
+    <link rel="canonical" href="https://imadtbn.github.io/hatg-machine/brand.html">
+    <meta property="og:title" content="أعطال ماركة - دليل أعطال الأجهزة الكهرومنزلية">
+    <meta name="twitter:card" content="summary">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5656416032906373" crossorigin="anonymous"></script>
+    <meta name="google-adsense-account" content="ca-pub-5656416032906373">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="manifest" href="manifest.webmanifest">
 </head>
+
 <body>
-  <header class="header">
-    <div class="container header-inner">
-      <a href="index.html" class="logo">
-        <div style="width:40px;height:40px;background:linear-gradient(135deg,#0066CC,#6C5CE7);border-radius:8px;display:flex;align-items:center;justify-content:center;color:white;font-weight:900;font-size:1.1rem;">⚙</div>
-        <div class="logo-text"><span>دليل الأعطال</span><span>Error Codes Guide</span></div>
-      </a>
-      <div class="search-bar">
-        <span class="search-icon">🔍</span>
-        <input type="search" placeholder="ابحث عن عطل، رمز خطأ، قطعة..." aria-label="بحث">
-        <div class="search-results"></div>
-      </div>
-      <nav class="nav">
-        <a href="index.html" class="nav-link">الرئيسية</a>
-        <a href="errors.html" class="nav-link">الأعطال</a>
-        <a href="brands.html" class="nav-link active">الماركات</a>
-        <a href="articles.html" class="nav-link">المقالات</a>
-        <a href="faq.html" class="nav-link">الأسئلة الشائعة</a>
-        <a href="about.html" class="nav-link">عن الموقع</a>
-        <a href="contact.html" class="nav-link">اتصل بنا</a>
-      </nav>
-      <button class="theme-toggle" aria-label="تبديل الوضع الليلي">🌙</button>
-      <button class="menu-toggle" aria-label="فتح القائمة">☰</button>
-    </div>
-  </header>
+    <header class="header">
+        <div class="container header-inner">
+            <a href="index.html" class="logo">
+                <div style="width:40px;height:40px;background:linear-gradient(135deg,#0066CC,#6C5CE7);border-radius:8px;display:flex;align-items:center;justify-content:center;color:white;font-weight:900;font-size:1.1rem;">⚙</div>
+                <div class="logo-text"><span>دليل الأعطال</span><span>Error Codes Guide</span></div>
+            </a>
+            <div class="search-bar">
+                <span class="search-icon">🔍</span>
+                <input type="search" placeholder="ابحث عن عطل، رمز خطأ، قطعة..." aria-label="بحث">
+                <div class="search-results"></div>
+            </div>
+            <nav class="nav">
+                <a href="index.html" class="nav-link">الرئيسية</a>
+                <a href="errors.html" class="nav-link">الأعطال</a>
+                <a href="brands.html" class="nav-link active">الماركات</a>
+                <a href="articles.html" class="nav-link">المقالات</a>
+                <a href="faq.html" class="nav-link">الأسئلة الشائعة</a>
+                <a href="about.html" class="nav-link">عن الموقع</a>
+                <a href="contact.html" class="nav-link">اتصل بنا</a>
+            </nav>
+            <button class="theme-toggle" aria-label="تبديل الوضع الليلي">🌙</button>
+            <button class="menu-toggle" aria-label="فتح القائمة">☰</button>
+        </div>
+    </header>
 
-  <main>
-    <div class="container">
-      <nav class="breadcrumb"><a href="index.html">الرئيسية</a> <span class="separator">›</span> <a href="brands.html">الماركات</a> <span class="separator">›</span> <span id="brandNameBreadcrumb">الماركة</span></nav>
-      
-      <div id="brandHero" class="error-detail-hero">
-        <div class="brand-logo" id="brandLogo" style="width:80px;height:80px;margin:0 auto 16px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:2rem;font-weight:900;color:white;">?</div>
-        <h1 id="brandTitle">الماركة</h1>
-        <p id="brandDesc">وصف الماركة</p>
-      </div>
+    <main>
+        <div class="container">
+            <nav class="breadcrumb"><a href="index.html">الرئيسية</a> <span class="separator">›</span> <a href="brands.html">الماركات</a> <span class="separator">›</span> <span id="brandNameBreadcrumb">الماركة</span></nav>
 
-      <div class="filters-bar">
-        <select class="filter-select" id="deviceTypeFilter" aria-label="فلتر نوع الجهاز">
+            <div id="brandHero" class="error-detail-hero">
+                <div class="brand-logo" id="brandLogo" style="width:80px;height:80px;margin:0 auto 16px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:2rem;font-weight:900;color:white;">?</div>
+                <h1 id="brandTitle">الماركة</h1>
+                <p id="brandDesc">وصف الماركة</p>
+            </div>
+
+            <div class="filters-bar">
+                <select class="filter-select" id="deviceTypeFilter" aria-label="فلتر نوع الجهاز">
           <option value="all">جميع الأجهزة</option>
           <option value="washing-machine">غسالة ملابس</option>
           <option value="dishwasher">غسالة أواني</option>
         </select>
-        <select class="filter-select" id="severityFilter" aria-label="فلتر درجة الخطورة">
+                <select class="filter-select" id="severityFilter" aria-label="فلتر درجة الخطورة">
           <option value="all">جميع الدرجات</option>
           <option value="high">خطير</option>
           <option value="medium">متوسط</option>
           <option value="low">بسيط</option>
         </select>
-        <select class="filter-select" id="repairFilter" aria-label="فلتر إمكانية الإصلاح">
+                <select class="filter-select" id="repairFilter" aria-label="فلتر إمكانية الإصلاح">
           <option value="all">الكل</option>
           <option value="true">إصلاح منزلي</option>
           <option value="false">يحتاج فني</option>
         </select>
-      </div>
+            </div>
 
-      <div class="cards-grid" id="brandErrorsContainer"></div>
+            <div class="cards-grid" id="brandErrorsContainer"></div>
 
-      <div id="noErrors" style="display:none;text-align:center;padding:40px;color:var(--text-secondary);">
-        <p>لا توجد أعطال مسجلة لهذه الماركة حاليًا.</p>
-      </div>
-    </div>
-  </main>
+            <div id="noErrors" style="display:none;text-align:center;padding:40px;color:var(--text-secondary);">
+                <p>لا توجد أعطال مسجلة لهذه الماركة حاليًا.</p>
+            </div>
+        </div>
+    </main>
 
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-col"><h4>دليل أعطال الأجهزة الكهرومنزلية</h4><p>أكبر مرجع عربي متخصص في أعطال غسالة الأواني وغسالة الملابس.</p></div>
-        <div class="footer-col"><h4>روابط الموقع</h4><ul class="footer-links"><li><a href="index.html">الرئيسية</a></li><li><a href="errors.html">الأعطال</a></li><li><a href="brands.html">الماركات</a></li><li><a href="articles.html">المقالات</a></li><li><a href="contact.html">اتصل بنا</a></li><li><a href="privacy.html">سياسة الخصوصية</a></li></ul></div>
-        <div class="footer-col"><h4>المراجع الفنية</h4><ul class="footer-links"><li><a href="https://www.lg.com" target="_blank" rel="noopener">LG</a></li><li><a href="https://www.samsung.com" target="_blank" rel="noopener">Samsung</a></li><li><a href="https://www.bosch.com" target="_blank" rel="noopener">Bosch</a></li><li><a href="https://www.panasonic.com" target="_blank" rel="noopener">Panasonic</a></li></ul></div>
-        <div class="footer-col"><h4>التواصل</h4><ul class="footer-links"><li><a href="tel:+213xxxxxxxxx">📞 الهاتف</a></li><li><a href="mailto:info@appliance-errors.com">📧 البريد</a></li><li><a href="https://wa.me/213xxxxxxxxx" target="_blank" rel="noopener">💬 واتساب</a></li></ul></div>
-      </div>
-      <div class="footer-bottom"><p>© 2025 دليل أعطال الأجهزة الكهرومنزلية. جميع الحقوق محفوظة.</p></div>
-    </div>
-  </footer>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>دليل أعطال الأجهزة الكهرومنزلية</h4>
+                    <p>أكبر مرجع عربي متخصص في أعطال غسالة الأواني وغسالة الملابس.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>روابط الموقع</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="errors.html">الأعطال</a></li>
+                        <li><a href="brands.html">الماركات</a></li>
+                        <li><a href="articles.html">المقالات</a></li>
+                        <li><a href="contact.html">اتصل بنا</a></li>
+                        <li><a href="privacy.html">سياسة الخصوصية</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>المراجع الفنية</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://www.lg.com" target="_blank" rel="noopener">LG</a></li>
+                        <li><a href="https://www.samsung.com" target="_blank" rel="noopener">Samsung</a></li>
+                        <li><a href="https://www.bosch.com" target="_blank" rel="noopener">Bosch</a></li>
+                        <li><a href="https://www.panasonic.com" target="_blank" rel="noopener">Panasonic</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>التواصل</h4>
+                    <ul class="footer-links">
+                        <li><a href="tel:+213xxxxxxxxx">📞 الهاتف</a></li>
+                        <li><a href="mailto:info@appliance-errors.com">📧 البريد</a></li>
+                        <li><a href="https://wa.me/213xxxxxxxxx" target="_blank" rel="noopener">💬 واتساب</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 دليل أعطال الأجهزة الكهرومنزلية. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
 
-  <button class="back-to-top" aria-label="العودة للأعلى">↑</button>
-  <script src="assets/js/main.js" defer></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', async function() {
-      const params = new URLSearchParams(window.location.search);
-      const brandId = params.get('id');
-      
-      if (!brandId) {
-        window.location.href = 'brands.html';
-        return;
-      }
-      
-      try {
-        const [brandsRes, errorsRes] = await Promise.all([fetch('data/brands.json'), fetch('data/errors.json')]);
-        const brands = await brandsRes.json();
-        const errors = await errorsRes.json();
-        
-        const brand = brands.find(b => b.id === brandId);
-        if (!brand) { window.location.href = 'brands.html'; return; }
-        
-        const brandErrors = errors.filter(e => e.brand === brandId);
-        
-        // Update page
-        document.getElementById('brandNameBreadcrumb').textContent = brand.nameAr;
-        document.getElementById('brandTitle').textContent = 'أعطال ' + brand.nameAr;
-        document.getElementById('brandDesc').textContent = brand.descriptionAr + ' | ' + brandErrors.length + ' عطل مسجل';
-        document.getElementById('brandLogo').textContent = brand.name.charAt(0);
-        document.getElementById('brandLogo').style.background = brand.logoColor;
-        document.title = 'أعطال ' + brand.nameAr + ' - دليل أعطال الأجهزة الكهرومنزلية';
-        
-        // Render errors
-        const container = document.getElementById('brandErrorsContainer');
-        const sevMap = { high: {text:'خطير',cls:'badge-danger'}, medium: {text:'متوسط',cls:'badge-warning'}, low: {text:'بسيط',cls:'badge-success'} };
-        
-        brandErrors.forEach(function(error) {
-          const sev = sevMap[error.severity] || sevMap.medium;
-          container.innerHTML += `
+    <button class="back-to-top" aria-label="العودة للأعلى">↑</button>
+    <script src="assets/js/main.js" defer></script>
+    <script src="assets/js/adsData.js" defer></script>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', async function() {
+            const params = new URLSearchParams(window.location.search);
+            const brandId = params.get('id');
+
+            if (!brandId) {
+                window.location.href = 'brands.html';
+                return;
+            }
+
+            try {
+                const [brandsRes, errorsRes] = await Promise.all([fetch('data/brands.json'), fetch('data/errors.json')]);
+                const brands = await brandsRes.json();
+                const errors = await errorsRes.json();
+
+                const brand = brands.find(b => b.id === brandId);
+                if (!brand) {
+                    window.location.href = 'brands.html';
+                    return;
+                }
+
+                const brandErrors = errors.filter(e => e.brand === brandId);
+
+                // Update page
+                document.getElementById('brandNameBreadcrumb').textContent = brand.nameAr;
+                document.getElementById('brandTitle').textContent = 'أعطال ' + brand.nameAr;
+                document.getElementById('brandDesc').textContent = brand.descriptionAr + ' | ' + brandErrors.length + ' عطل مسجل';
+                document.getElementById('brandLogo').textContent = brand.name.charAt(0);
+                document.getElementById('brandLogo').style.background = brand.logoColor;
+                document.title = 'أعطال ' + brand.nameAr + ' - دليل أعطال الأجهزة الكهرومنزلية';
+
+                // Render errors
+                const container = document.getElementById('brandErrorsContainer');
+                const sevMap = {
+                    high: {
+                        text: 'خطير',
+                        cls: 'badge-danger'
+                    },
+                    medium: {
+                        text: 'متوسط',
+                        cls: 'badge-warning'
+                    },
+                    low: {
+                        text: 'بسيط',
+                        cls: 'badge-success'
+                    }
+                };
+
+                brandErrors.forEach(function(error) {
+                    const sev = sevMap[error.severity] || sevMap.medium;
+                    container.innerHTML += `
             <div class="error-card" data-device="${error.deviceType}" data-severity="${error.severity}" data-repair="${error.homeRepair}">
               <div class="error-code-display ${error.severity}">${error.errorCode}</div>
               <h3 class="card-title">${error.titleAr}</h3>
@@ -138,32 +194,35 @@
               </div>
             </div>
           `;
+                });
+
+                if (brandErrors.length === 0) {
+                    document.getElementById('noErrors').style.display = 'block';
+                }
+
+                // Filters
+                function applyFilters() {
+                    const device = document.getElementById('deviceTypeFilter').value;
+                    const severity = document.getElementById('severityFilter').value;
+                    const repair = document.getElementById('repairFilter').value;
+
+                    document.querySelectorAll('.error-card').forEach(function(card) {
+                        const dMatch = device === 'all' || card.dataset.device === device;
+                        const sMatch = severity === 'all' || card.dataset.severity === severity;
+                        const rMatch = repair === 'all' || card.dataset.repair === repair;
+                        card.style.display = (dMatch && sMatch && rMatch) ? 'block' : 'none';
+                    });
+                }
+
+                document.getElementById('deviceTypeFilter').addEventListener('change', applyFilters);
+                document.getElementById('severityFilter').addEventListener('change', applyFilters);
+                document.getElementById('repairFilter').addEventListener('change', applyFilters);
+
+            } catch (e) {
+                console.error(e);
+            }
         });
-        
-        if (brandErrors.length === 0) {
-          document.getElementById('noErrors').style.display = 'block';
-        }
-        
-        // Filters
-        function applyFilters() {
-          const device = document.getElementById('deviceTypeFilter').value;
-          const severity = document.getElementById('severityFilter').value;
-          const repair = document.getElementById('repairFilter').value;
-          
-          document.querySelectorAll('.error-card').forEach(function(card) {
-            const dMatch = device === 'all' || card.dataset.device === device;
-            const sMatch = severity === 'all' || card.dataset.severity === severity;
-            const rMatch = repair === 'all' || card.dataset.repair === repair;
-            card.style.display = (dMatch && sMatch && rMatch) ? 'block' : 'none';
-          });
-        }
-        
-        document.getElementById('deviceTypeFilter').addEventListener('change', applyFilters);
-        document.getElementById('severityFilter').addEventListener('change', applyFilters);
-        document.getElementById('repairFilter').addEventListener('change', applyFilters);
-        
-      } catch(e) { console.error(e); }
-    });
-  </script>
+    </script>
 </body>
+
 </html>
