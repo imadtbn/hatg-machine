@@ -1,6 +1,12 @@
 User-agent: *
 Allow: /
-Disallow: /admin/
-Disallow: /api/
 
-Sitemap: https://appliance-errors.example.com/sitemap.xml
+# Sitemaps
+Sitemap: https://imadtbn.github.io/hatg-machine/sitemap.xml
+
+# Disallow search results and technical files
+Disallow: /search.html
+Disallow: /google-search-console.html
+Disallow: /google4e08a8803a39e9f9.html
+Disallow: /assets/js/
+Disallow: /data/
