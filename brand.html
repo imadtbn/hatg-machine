@@ -248,6 +248,41 @@
                 document.getElementById('brandLogo').style.background = brand.logoColor;
                 document.title = 'أعطال ' + brand.nameAr + ' - دليل أعطال الأجهزة الكهرومنزلية';
 
+                // --- SEO Improvements ---
+                const metaDesc = `تصفح جميع أعطال ورموز أخطاء ماركة ${brand.nameAr}. دليل شامل يضم ${brandErrors.length} عطل مسجل مع الأسباب، الأعراض، وخطوات الإصلاح المعتمدة لغسالات الملابس والأواني.`;
+                document.querySelector('meta[name="description"]').setAttribute('content', metaDesc);
+                document.querySelector('meta[property="og:description"]').setAttribute('content', metaDesc);
+                
+                const metaKeywords = `أعطال ${brand.nameAr}, صيانة ${brand.nameAr}, رموز أخطاء ${brand.nameAr}, إصلاح غسالة ${brand.nameAr}, ${brand.nameAr} error codes, ${brand.name} troubleshooting`;
+                document.querySelector('meta[name="keywords"]').setAttribute('content', metaKeywords);
+
+                // Update Structured Data
+                const brandSD = {
+                    "@context": "https://schema.org",
+                    "@type": "CollectionPage",
+                    "name": `أعطال ماركة ${brand.nameAr} - دليل أعطال الأجهزة الكهرومنزلية`,
+                    "description": metaDesc,
+                    "url": window.location.href,
+                    "mainEntity": {
+                        "@type": "ItemList",
+                        "itemListElement": brandErrors.slice(0, 10).map((e, i) => ({
+                            "@type": "ListItem",
+                            "position": i + 1,
+                            "url": `https://imadtbn.github.io/hatg-machine/error.html?id=${e.id}`,
+                            "name": `${e.errorCode} - ${e.titleAr}`
+                        }))
+                    },
+                    "breadcrumb": {
+                        "@type": "BreadcrumbList",
+                        "itemListElement": [
+                            {"@type": "ListItem", "position": 1, "name": "الرئيسية", "item": "https://imadtbn.github.io/hatg-machine/"},
+                            {"@type": "ListItem", "position": 2, "name": "الماركات", "item": "https://imadtbn.github.io/hatg-machine/brands.html"},
+                            {"@type": "ListItem", "position": 3, "name": brand.nameAr, "item": window.location.href}
+                        ]
+                    }
+                };
+                document.getElementById('brandStructuredData').textContent = JSON.stringify(brandSD);
+
                 // Render errors
                 const container = document.getElementById('brandErrorsContainer');
                 const sevMap = {

@@ -186,23 +186,52 @@
         const sevMap = { high: { text: 'خطير', cls: 'badge-danger', icon: '🔴' }, medium: { text: 'متوسط', cls: 'badge-warning', icon: '🟡' }, low: { text: 'بسيط', cls: 'badge-success', icon: '🟢' } };
         const sev = sevMap[error.severity] || sevMap.medium;
 
-        // Update title
-        document.title = error.errorCode + ' - ' + error.titleAr + ' - دليل أعطال الأجهزة الكهرومنزلية';
-        document.querySelector('meta[name="description"]').setAttribute('content', error.descriptionAr?.substring(0, 150) || error.titleAr);
+        // Update title and meta tags
+        const pageTitle = `${error.errorCode} - ${error.titleAr} | صيانة ${brand?.nameAr || error.brandAr}`;
+        document.title = pageTitle + ' - دليل أعطال الأجهزة الكهرومنزلية';
+        
+        const metaDesc = `تعرف على أسباب وحلول عطل ${error.errorCode} (${error.titleAr}) في ${error.deviceTypeAr} ${brand?.nameAr || error.brandAr}. دليل شامل للإصلاح المنزلي والمهني مع قائمة بالأجزاء المتأثرة.`;
+        document.querySelector('meta[name="description"]').setAttribute('content', metaDesc);
+        document.querySelector('meta[property="og:description"]').setAttribute('content', metaDesc);
+        document.querySelector('meta[property="og:title"]').setAttribute('content', pageTitle);
+        
+        const metaKeywords = `${error.errorCode}, عطل ${error.errorCode}, ${error.titleAr}, صيانة ${brand?.nameAr || error.brandAr}, إصلاح ${error.deviceTypeAr}, رموز أخطاء ${brand?.nameAr || error.brandAr}`;
+        document.querySelector('meta[name="keywords"]').setAttribute('content', metaKeywords);
 
-        // Generate JSON-LD
+        // Generate JSON-LD (Structured Data)
         const jsonLd = {
           "@context": "https://schema.org",
           "@type": "TechArticle",
-          "headline": error.errorCode + ' - ' + error.titleAr,
-          "description": error.descriptionAr || '',
+          "headline": pageTitle,
+          "description": metaDesc,
+          "image": "https://imadtbn.github.io/hatg-machine/assets/images/og-image.jpg",
           "author": { "@type": "Organization", "name": "دليل أعطال الأجهزة الكهرومنزلية" },
-          "datePublished": new Date().toISOString().split('T')[0]
+          "publisher": { "@type": "Organization", "name": "دليل أعطال الأجهزة الكهرومنزلية", "logo": { "@type": "ImageObject", "url": "https://imadtbn.github.io/hatg-machine/assets/images/logo.png" } },
+          "datePublished": "2025-01-01",
+          "dateModified": new Date().toISOString().split('T')[0],
+          "mainEntityOfPage": { "@type": "WebPage", "@id": window.location.href },
+          "articleSection": "صيانة الأجهزة الكهرومنزلية",
+          "keywords": metaKeywords
         };
-        const script = document.createElement('script');
-        script.type = 'application/ld+json';
-        script.textContent = JSON.stringify(jsonLd);
-        document.head.appendChild(script);
+        
+        // Add Breadcrumb Structured Data
+        const breadcrumbLd = {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "الرئيسية", "item": "https://imadtbn.github.io/hatg-machine/" },
+            { "@type": "ListItem", "position": 2, "name": "الأعطال", "item": "https://imadtbn.github.io/hatg-machine/errors.html" },
+            { "@type": "ListItem", "position": 3, "name": brand?.nameAr || error.brandAr, "item": `https://imadtbn.github.io/hatg-machine/brand.html?id=${error.brand}` },
+            { "@type": "ListItem", "position": 4, "name": error.errorCode, "item": window.location.href }
+          ]
+        };
+
+        document.getElementById('errorStructuredData').textContent = JSON.stringify(jsonLd);
+        
+        const breadcrumbScript = document.createElement('script');
+        breadcrumbScript.type = 'application/ld+json';
+        breadcrumbScript.textContent = JSON.stringify(breadcrumbLd);
+        document.head.appendChild(breadcrumbScript);
 
         // Render content
         const container = document.getElementById('errorDetailContent');
