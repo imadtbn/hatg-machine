@@ -245,7 +245,11 @@
           
           <div class="error-detail-hero">
             <div style="display:flex; flex-direction:column; align-items:center; gap:20px;">
-                ${brand ? `<div style="background:white; padding:10px; border-radius:10px; display:inline-block;"><img src="${brand.logo}" alt="${brand.nameAr}" style="height:50px; width:auto; object-fit:contain;"></div>` : ''}
+                ${brand ? `<div style="background:white; padding:10px; border-radius:10px; display:inline-block; font-weight:bold; color:${brand.logoColor}; min-width:50px; text-align:center;">
+                    <img src="${brand.logo}" alt="${brand.nameAr}" 
+                         style="height:50px; width:auto; object-fit:contain;"
+                         onerror="this.style.display='none'; this.parentElement.innerText='${brand.name.charAt(0)}';">
+                </div>` : ''}
                 <div class="error-code-large">${error.errorCode}</div>
             </div>
             <h1>${error.titleAr}</h1>

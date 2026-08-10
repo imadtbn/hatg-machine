@@ -244,8 +244,12 @@
                 document.getElementById('brandNameBreadcrumb').textContent = brand.nameAr;
                 document.getElementById('brandTitle').textContent = 'أعطال ' + brand.nameAr;
                 document.getElementById('brandDesc').textContent = brand.descriptionAr + ' | ' + brandErrors.length + ' عطل مسجل';
-                document.getElementById('brandLogo').textContent = brand.name.charAt(0);
-                document.getElementById('brandLogo').style.background = brand.logoColor;
+                const brandLogoEl = document.getElementById('brandLogo');
+                brandLogoEl.innerHTML = `<img src="${brand.logo}" alt="${brand.nameAr}" 
+                                             style="width:100%;height:100%;object-fit:contain;padding:10px;"
+                                             onerror="this.style.display='none'; this.parentElement.innerText='${brand.name.charAt(0)}';">`;
+                brandLogoEl.style.background = brand.logoColor + '15';
+                brandLogoEl.style.color = brand.logoColor;
                 document.title = 'أعطال ' + brand.nameAr + ' - دليل أعطال الأجهزة الكهرومنزلية';
 
                 // --- SEO Improvements ---

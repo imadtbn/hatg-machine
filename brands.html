@@ -219,12 +219,15 @@
                 const container = document.getElementById('allBrandsContainer');
 
                 // عرض الماركات
+                container.innerHTML = '';
                 brands.forEach(function (brand) {
                     const errorCount = errors.filter(e => e.brand === brand.id).length;
                     container.innerHTML += `
                         <div class="brand-card reveal" data-country="${brand.country}" data-device="${brand.type}">
-                            <div class="brand-logo">
-                                <img src="${brand.logo}" alt="${brand.nameAr}" style="width:100%;height:100%;object-fit:contain;padding:5px;">
+                            <div class="brand-logo" style="background:${brand.logoColor}15;color:${brand.logoColor};">
+                                <img src="${brand.logo}" alt="${brand.nameAr}" 
+                                     style="width:100%;height:100%;object-fit:contain;padding:5px;"
+                                     onerror="this.parentElement.innerHTML='${brand.name.charAt(0)}';">
                             </div>
                             <h3 class="brand-name">${brand.nameAr}</h3>
                             <p class="brand-country">${brand.countryAr} - ${errorCount} عطل</p>

@@ -418,7 +418,11 @@
           <div class="error-card" data-brand="${error.brand}" data-device="${error.deviceType}" data-severity="${error.severity}">
             <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:15px;">
                 <div class="error-code-display ${error.severity}">${error.errorCode}</div>
-                ${brand ? `<img src="${brand.logo}" alt="${brand.nameAr}" style="height:30px; width:auto; object-fit:contain;">` : ''}
+                ${brand ? `<div style="height:30px; width:auto; display:flex; align-items:center; justify-content:center; font-weight:bold; color:${brand.logoColor};">
+                    <img src="${brand.logo}" alt="${brand.nameAr}" 
+                         style="height:30px; width:auto; object-fit:contain;"
+                         onerror="this.style.display='none'; this.parentElement.innerText='${brand.name.charAt(0)}';">
+                </div>` : ''}
             </div>
             <h3 class="card-title">${error.titleAr}</h3>
             <p class="card-text">${error.symptoms?.[0] || ''}</p>
