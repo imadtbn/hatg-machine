@@ -13,7 +13,7 @@
 
     <link rel="canonical" href="https://imadtbn.github.io/hatg-machine/brand.html">
 
-        <link rel="icon" type="image/png" sizes="32x32" href="assets/images/icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/images/icon.png" fetchpriority="high">
 
     <!-- الأيقونة الأساسية للمتصفحات الحديثة (بصيغة PNG وبحجم 32x32) -->
@@ -51,7 +51,7 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XK4CHWYGWZ"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag() {dataLayer.push(arguments);}
+        function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
 
         gtag('config', 'G-XK4CHWYGWZ');
@@ -228,9 +228,33 @@
             }
 
             try {
-                const [brandsRes, errorsRes] = await Promise.all([fetch('data/brands.json'), fetch('data/errors.json')]);
+                const [brandsRes, errorsRes] = await Promise.all([
+                    fetch('./data/brands.json', { cache: 'no-store' }),
+                    fetch('./data/errors.json', { cache: 'no-store' })
+                ]);
+
+                if (!brandsRes.ok) {
+                    throw new Error(
+                        `تعذر تحميل brands.json: ${brandsRes.status}`
+                    );
+                }
+
+                if (!errorsRes.ok) {
+                    throw new Error(
+                        `تعذر تحميل errors.json: ${errorsRes.status}`
+                    );
+                }
+
                 const brands = await brandsRes.json();
                 const errors = await errorsRes.json();
+
+                if (!Array.isArray(brands)) {
+                    throw new Error('brands.json ليس مصفوفة');
+                }
+
+                if (!Array.isArray(errors)) {
+                    throw new Error('errors.json ليس مصفوفة');
+                }
 
                 const brand = brands.find(b => b.id === brandId);
                 if (!brand) {
@@ -256,7 +280,7 @@
                 const metaDesc = `تصفح جميع أعطال ورموز أخطاء ماركة ${brand.nameAr}. دليل شامل يضم ${brandErrors.length} عطل مسجل مع الأسباب، الأعراض، وخطوات الإصلاح المعتمدة لغسالات الملابس والأواني.`;
                 document.querySelector('meta[name="description"]').setAttribute('content', metaDesc);
                 document.querySelector('meta[property="og:description"]').setAttribute('content', metaDesc);
-                
+
                 const metaKeywords = `أعطال ${brand.nameAr}, صيانة ${brand.nameAr}, رموز أخطاء ${brand.nameAr}, إصلاح غسالة ${brand.nameAr}, ${brand.nameAr} error codes, ${brand.name} troubleshooting`;
                 document.querySelector('meta[name="keywords"]').setAttribute('content', metaKeywords);
 
@@ -279,9 +303,9 @@
                     "breadcrumb": {
                         "@type": "BreadcrumbList",
                         "itemListElement": [
-                            {"@type": "ListItem", "position": 1, "name": "الرئيسية", "item": "https://imadtbn.github.io/hatg-machine/"},
-                            {"@type": "ListItem", "position": 2, "name": "الماركات", "item": "https://imadtbn.github.io/hatg-machine/brands.html"},
-                            {"@type": "ListItem", "position": 3, "name": brand.nameAr, "item": window.location.href}
+                            { "@type": "ListItem", "position": 1, "name": "الرئيسية", "item": "https://imadtbn.github.io/hatg-machine/" },
+                            { "@type": "ListItem", "position": 2, "name": "الماركات", "item": "https://imadtbn.github.io/hatg-machine/brands.html" },
+                            { "@type": "ListItem", "position": 3, "name": brand.nameAr, "item": window.location.href }
                         ]
                     }
                 };
@@ -397,9 +421,9 @@
                     "breadcrumb": {
                         "@type": "BreadcrumbList",
                         "itemListElement": [
-                            {"@type": "ListItem", "position": 1, "name": "الرئيسية", "item": "https://imadtbn.github.io/hatg-machine/"},
-                            {"@type": "ListItem", "position": 2, "name": "الماركات", "item": "https://imadtbn.github.io/hatg-machine/brands.html"},
-                            {"@type": "ListItem", "position": 3, "name": brand.nameAr, "item": `https://imadtbn.github.io/hatg-machine/brand.html?id=${brand.id}`}
+                            { "@type": "ListItem", "position": 1, "name": "الرئيسية", "item": "https://imadtbn.github.io/hatg-machine/" },
+                            { "@type": "ListItem", "position": 2, "name": "الماركات", "item": "https://imadtbn.github.io/hatg-machine/brands.html" },
+                            { "@type": "ListItem", "position": 3, "name": brand.nameAr, "item": `https://imadtbn.github.io/hatg-machine/brand.html?id=${brand.id}` }
                         ]
                     },
                     "publisher": {
