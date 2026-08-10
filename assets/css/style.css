@@ -1437,3 +1437,16 @@ main {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--text-secondary);
 }
+
+/* Custom Styles for Device Grid */
+@media (min-width: 768px) {
+  .device-cards-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+}
+
+.brand-logo img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}

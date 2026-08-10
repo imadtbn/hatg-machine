@@ -344,10 +344,10 @@
     function update() {
       current += step;
       if (current >= target) {
-        el.textContent = target.toLocaleString('ar-SA');
+        el.textContent = target.toLocaleString('en-US');
         return;
       }
-      el.textContent = Math.floor(current).toLocaleString('ar-SA');
+      el.textContent = Math.floor(current).toLocaleString('en-US');
       requestAnimationFrame(update);
     }
     

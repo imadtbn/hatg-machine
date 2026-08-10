@@ -413,9 +413,13 @@
             container.innerHTML = '';
             pageErrors.forEach(function (error) {
                 const sev = sevMap[error.severity] || sevMap.medium;
+                const brand = allBrands.find(b => b.id === error.brand);
                 container.innerHTML += `
           <div class="error-card" data-brand="${error.brand}" data-device="${error.deviceType}" data-severity="${error.severity}">
-            <div class="error-code-display ${error.severity}">${error.errorCode}</div>
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:15px;">
+                <div class="error-code-display ${error.severity}">${error.errorCode}</div>
+                ${brand ? `<img src="${brand.logo}" alt="${brand.nameAr}" style="height:30px; width:auto; object-fit:contain;">` : ''}
+            </div>
             <h3 class="card-title">${error.titleAr}</h3>
             <p class="card-text">${error.symptoms?.[0] || ''}</p>
             <div class="card-meta">
