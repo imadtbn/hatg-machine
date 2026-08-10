@@ -206,113 +206,360 @@
     <button class="back-to-top" aria-label="العودة للأعلى">↑</button>
     <script src="assets/js/main.js" defer></script>
 
+<script>
+document.addEventListener('DOMContentLoaded', initBrandsPage);
 
-    <script>
-        document.addEventListener('DOMContentLoaded', async function () {
-            try {
-                const [brandsRes, errorsRes] = await Promise.all([
-                    fetch('data/brands.json'),
-                    fetch('data/errors.json')
-                ]);
-                const brands = await brandsRes.json();
-                const errors = await errorsRes.json();
-                const container = document.getElementById('allBrandsContainer');
+async function initBrandsPage() {
+    const container = document.getElementById('allBrandsContainer');
 
-                // عرض الماركات
-                container.innerHTML = '';
-                brands.forEach(function (brand) {
-                    const errorCount = errors.filter(e => e.brand === brand.id).length;
-                    container.innerHTML += `
-                        <div class="brand-card reveal" data-country="${brand.country}" data-device="${brand.type}">
-                            <div class="brand-logo" style="background:${brand.logoColor}15;color:${brand.logoColor};">
-                                <img src="${brand.logo}" alt="${brand.nameAr}" 
-                                     style="width:100%;height:100%;object-fit:contain;padding:5px;"
-                                     onerror="this.parentElement.innerHTML='${brand.name.charAt(0)}';">
-                            </div>
-                            <h3 class="brand-name">${brand.nameAr}</h3>
-                            <p class="brand-country">${brand.countryAr} - ${errorCount} عطل</p>
-                            <a href="brand.html?id=${brand.id}" class="btn btn-secondary" style="margin-top:12px;">عرض الأعطال</a>
-                        </div>
-                    `;
-                });
-
-                // ===== إنشاء Structured Data =====
-                function generateBrandsStructuredData(brands, errors) {
-                    const itemList = brands.map((brand, index) => {
-                        const errorCount = errors.filter(e => e.brand === brand.id).length;
-                        return {
-                            "@type": "ListItem",
-                            "position": index + 1,
-                            "item": {
-                                "@type": "Brand",
-                                "name": brand.nameAr,
-                                "description": `${brand.descriptionAr} (${errorCount} عطل)`,
-                                "url": `https://imadtbn.github.io/hatg-machine/brand.html?id=${brand.id}`,
-                                "address": {
-                                    "@type": "PostalAddress",
-                                    "addressCountry": brand.country
-                                }
-                            }
-                        };
-                    });
-
-                    const structuredData = {
-                        "@context": "https://schema.org",
-                        "@type": "CollectionPage",
-                        "name": "جميع الماركات - دليل أعطال الأجهزة الكهرومنزلية",
-                        "description": "قائمة تضم أكثر من 29 ماركة عالمية ومحلية مع أعطالها ورموز الأخطاء.",
-                        "url": "https://imadtbn.github.io/hatg-machine/brands.html",
-                        "mainEntity": {
-                            "@type": "ItemList",
-                            "itemListElement": itemList
-                        },
-                        "breadcrumb": {
-                            "@type": "BreadcrumbList",
-                            "itemListElement": [
-                                {"@type": "ListItem", "position": 1, "name": "الرئيسية", "item": "https://imadtbn.github.io/hatg-machine/"},
-                                {"@type": "ListItem", "position": 2, "name": "الماركات", "item": "https://imadtbn.github.io/hatg-machine/brands.html"}
-                            ]
-                        },
-                        "publisher": {
-                            "@type": "Organization",
-                            "name": "دليل أعطال الأجهزة الكهرومنزلية",
-                            "url": "https://imadtbn.github.io/hatg-machine/"
-                        },
-                        "inLanguage": "ar",
-                        "isAccessibleForFree": true
-                    };
-
-                    return structuredData;
+    try {
+        // منع عرض بيانات مخزنة قديمة من Service Worker
+        const [brandsRes, errorsRes] = await Promise.all([
+            fetch('./data/brands.json', {
+                cache: 'no-store',
+                headers: {
+                    'Accept': 'application/json'
                 }
-
-                // حقن Structured Data في الصفحة
-                const scriptTag = document.getElementById('brandsStructuredData');
-                if (scriptTag) {
-                    const structured = generateBrandsStructuredData(brands, errors);
-                    scriptTag.textContent = JSON.stringify(structured, null, 2);
+            }),
+            fetch('./data/errors.json', {
+                cache: 'no-store',
+                headers: {
+                    'Accept': 'application/json'
                 }
+            })
+        ]);
 
-                // ===== الفلاتر =====
-                function filterBrands(device, country) {
-                    document.querySelectorAll('.brand-card').forEach(function (card) {
-                        const deviceMatch = device === 'all' || card.dataset.device.includes(device);
-                        const countryMatch = country === 'all' || card.dataset.country === country;
-                        card.style.display = (deviceMatch && countryMatch) ? 'block' : 'none';
-                    });
+        // التحقق من نجاح تحميل الملفات
+        if (!brandsRes.ok) {
+            throw new Error(
+                `تعذر تحميل brands.json - HTTP ${brandsRes.status}`
+            );
+        }
+
+        if (!errorsRes.ok) {
+            throw new Error(
+                `تعذر تحميل errors.json - HTTP ${errorsRes.status}`
+            );
+        }
+
+        const brands = await brandsRes.json();
+        const errors = await errorsRes.json();
+
+        // التحقق من بنية البيانات
+        if (!Array.isArray(brands)) {
+            throw new Error('بيانات brands.json ليست مصفوفة صحيحة');
+        }
+
+        if (!Array.isArray(errors)) {
+            throw new Error('بيانات errors.json ليست مصفوفة صحيحة');
+        }
+
+        renderBrands(brands, errors);
+
+        setupFilters();
+
+        generateBrandsStructuredData(brands, errors);
+
+    } catch (error) {
+        console.error('Brands loading error:', error);
+
+        container.innerHTML = `
+            <div style="
+                grid-column:1/-1;
+                text-align:center;
+                padding:50px 20px;
+                border:1px solid #fecaca;
+                border-radius:16px;
+                background:#fff7f7;
+            ">
+                <div style="font-size:3rem;margin-bottom:15px;">⚠️</div>
+
+                <h3 style="margin-bottom:10px;">
+                    تعذر تحميل الماركات
+                </h3>
+
+                <p style="color:#666;margin-bottom:20px;">
+                    حدثت مشكلة أثناء الاتصال بقاعدة بيانات الماركات.
+                </p>
+
+                <button
+                    type="button"
+                    class="btn btn-primary"
+                    onclick="window.location.reload()"
+                >
+                    إعادة المحاولة
+                </button>
+            </div>
+        `;
+    }
+}
+
+
+/* =========================================
+   عرض الماركات
+========================================= */
+
+function renderBrands(brands, errors) {
+
+    const container = document.getElementById('allBrandsContainer');
+
+    if (!brands.length) {
+        container.innerHTML = `
+            <div style="
+                grid-column:1/-1;
+                text-align:center;
+                padding:50px 20px;
+            ">
+                <div style="font-size:3rem;">📭</div>
+                <h3>لا توجد ماركات مسجلة حاليًا</h3>
+            </div>
+        `;
+
+        return;
+    }
+
+    container.innerHTML = '';
+
+    brands.forEach(function (brand) {
+
+        const errorCount = errors.filter(function (error) {
+            return String(error.brand).toLowerCase() ===
+                   String(brand.id).toLowerCase();
+        }).length;
+
+        const brandName = brand.nameAr || brand.name || 'ماركة';
+
+        const logo = brand.logo || '';
+
+        const logoColor = brand.logoColor || '#0066CC';
+
+        // دعم type كسلسلة أو Array
+        const deviceType = Array.isArray(brand.type)
+            ? brand.type.join(' ')
+            : (brand.type || '');
+
+        const country = brand.country || '';
+
+        const countryAr = brand.countryAr ||
+                          brand.country ||
+                          'غير محدد';
+
+        const initial = (
+            brand.name ||
+            brand.nameAr ||
+            '?'
+        ).charAt(0);
+
+        const card = document.createElement('div');
+
+        card.className = 'brand-card reveal';
+
+        card.dataset.country = country;
+
+        card.dataset.device = deviceType;
+
+        card.innerHTML = `
+            <div
+                class="brand-logo"
+                style="
+                    background:${logoColor}15;
+                    color:${logoColor};
+                "
+            >
+                ${
+                    logo
+                        ? `
+                            <img
+                                src="${escapeHtml(logo)}"
+                                alt="${escapeHtml(brandName)}"
+                                loading="lazy"
+                                onerror="this.remove(); this.parentElement.textContent='${escapeHtml(initial)}';"
+                            >
+                        `
+                        : escapeHtml(initial)
                 }
+            </div>
 
-                document.getElementById('deviceFilter').addEventListener('change', function () {
-                    filterBrands(this.value, document.getElementById('countryFilter').value);
-                });
-                document.getElementById('countryFilter').addEventListener('change', function () {
-                    filterBrands(document.getElementById('deviceFilter').value, this.value);
-                });
+            <h3 class="brand-name">
+                ${escapeHtml(brandName)}
+            </h3>
 
-            } catch (e) {
-                console.error(e);
+            <p class="brand-country">
+                ${escapeHtml(countryAr)}
+                <span>•</span>
+                ${errorCount} عطل
+            </p>
+
+            <a
+                href="brand.html?id=${encodeURIComponent(brand.id)}"
+                class="btn btn-secondary"
+                style="margin-top:12px;"
+            >
+                عرض الأعطال
+            </a>
+        `;
+
+        container.appendChild(card);
+    });
+}
+
+
+/* =========================================
+   الفلاتر
+========================================= */
+
+function setupFilters() {
+
+    const deviceFilter =
+        document.getElementById('deviceFilter');
+
+    const countryFilter =
+        document.getElementById('countryFilter');
+
+    function filterBrands() {
+
+        const device =
+            deviceFilter.value;
+
+        const country =
+            countryFilter.value;
+
+        document
+            .querySelectorAll('.brand-card')
+            .forEach(function (card) {
+
+                const devices =
+                    String(card.dataset.device || '');
+
+                const cardCountry =
+                    String(card.dataset.country || '');
+
+                const deviceMatch =
+                    device === 'all' ||
+                    devices.includes(device);
+
+                const countryMatch =
+                    country === 'all' ||
+                    cardCountry === country;
+
+                card.style.display =
+                    deviceMatch && countryMatch
+                        ? ''
+                        : 'none';
+            });
+    }
+
+    deviceFilter.addEventListener(
+        'change',
+        filterBrands
+    );
+
+    countryFilter.addEventListener(
+        'change',
+        filterBrands
+    );
+}
+
+
+/* =========================================
+   Structured Data
+========================================= */
+
+function generateBrandsStructuredData(brands, errors) {
+
+    const itemList = brands.map(function (brand, index) {
+
+        const errorCount =
+            errors.filter(function (error) {
+                return String(error.brand).toLowerCase() ===
+                       String(brand.id).toLowerCase();
+            }).length;
+
+        return {
+            "@type": "ListItem",
+            "position": index + 1,
+            "item": {
+                "@type": "Brand",
+                "name": brand.nameAr || brand.name,
+                "description":
+                    `${brand.descriptionAr || ''} (${errorCount} عطل)`,
+                "url":
+                    `https://imadtbn.github.io/hatg-machine/brand.html?id=${encodeURIComponent(brand.id)}`,
+                "logo":
+                    brand.logo
+                        ? `https://imadtbn.github.io/hatg-machine/${brand.logo.replace(/^\.?\//, '')}`
+                        : undefined
             }
-        });
-    </script>
+        };
+    });
+
+    const structuredData = {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name":
+            "جميع الماركات - دليل أعطال الأجهزة الكهرومنزلية",
+        "description":
+            "قائمة الماركات المدعومة في الموقع مع الأعطال ورموز الأخطاء.",
+        "url":
+            "https://imadtbn.github.io/hatg-machine/brands.html",
+
+        "mainEntity": {
+            "@type": "ItemList",
+            "itemListElement": itemList
+        },
+
+        "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "الرئيسية",
+                    "item":
+                        "https://imadtbn.github.io/hatg-machine/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "الماركات",
+                    "item":
+                        "https://imadtbn.github.io/hatg-machine/brands.html"
+                }
+            ]
+        },
+
+        "inLanguage": "ar",
+        "isAccessibleForFree": true
+    };
+
+    // حذف الخصائص undefined
+    const cleanData =
+        JSON.parse(JSON.stringify(structuredData));
+
+    const scriptTag =
+        document.getElementById('brandsStructuredData');
+
+    if (scriptTag) {
+        scriptTag.textContent =
+            JSON.stringify(cleanData, null, 2);
+    }
+}
+
+
+/* =========================================
+   حماية النصوص داخل HTML
+========================================= */
+
+function escapeHtml(value) {
+
+    return String(value ?? '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+}
+</script>
 
 </body>
 
