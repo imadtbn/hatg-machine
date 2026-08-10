@@ -251,30 +251,72 @@
 
         </div>
 
-        <!-- Device Types -->
-        <section class="container" style="padding:60px 20px;">
-            <div class="page-title">
-                <h2>اختر نوع الجهاز</h2>
-                <p>حدد نوع الجهاز للعثور على الأعطال المناسبة</p>
+<!-- Device Types -->
+<section class="container device-types-section">
+    <div class="page-title">
+        <span class="section-badge">
+            <i class="fas fa-layer-group"></i>
+            تصفح حسب الجهاز
+        </span>
+        <h2>اختر نوع الجهاز</h2>
+        <p>حدد نوع الجهاز للوصول بسرعة إلى الأعطال وأكواد الخطأ الخاصة به</p>
+    </div>
+
+    <div class="cards-grid device-cards-grid">
+
+        <!-- Washing Machine -->
+        <a href="errors.html?type=washing-machine"
+           class="device-card device-washing">
+            <div class="device-icon">
+                <i class="fas fa-tshirt"></i>
             </div>
-            <div class="cards-grid device-cards-grid" style="max-width:900px;margin:0 auto;">
-                <a href="errors.html?type=washing-machine" class="card" style="text-align:center;padding:40px 20px;">
-                    <div style="font-size:3rem;margin-bottom:16px;">🫧</div>
-                    <h3>غسالة ملابس</h3>
-                    <p style="color:var(--text-secondary);font-size:0.9rem;">أعطال ورموز الأخطاء</p>
-                </a>
-                <a href="errors.html?type=dishwasher" class="card" style="text-align:center;padding:40px 20px;">
-                    <div style="font-size:3rem;margin-bottom:16px;">🍽️</div>
-                    <h3>غسالة أواني</h3>
-                    <p style="color:var(--text-secondary);font-size:0.9rem;">أعطال ورموز الأخطاء</p>
-                </a>
-                <a href="https://imadtbn.github.io/hvac-errors/" class="card" style="text-align:center;padding:40px 20px;">
-                    <div style="font-size:3rem;margin-bottom:16px;">🍽️</div>
-                    <h3>أجهزة التكييف المنزلية</h3>
-                    <p style="color:var(--text-secondary);font-size:0.9rem;">أعطال ورموز الأخطاء</p>
-                </a>
+
+            <div class="device-content">
+                <h3>غسالة الملابس</h3>
+                <p>أعطال الغسالات ورموز الأخطاء والحلول المحتملة</p>
             </div>
-        </section>
+
+            <div class="device-arrow">
+                <i class="fas fa-arrow-left"></i>
+            </div>
+        </a>
+
+        <!-- Dishwasher -->
+        <a href="errors.html?type=dishwasher"
+           class="device-card device-dishwasher">
+            <div class="device-icon">
+                <i class="fas fa-utensils"></i>
+            </div>
+
+            <div class="device-content">
+                <h3>غسالة الأواني</h3>
+                <p>أعطال غسالات الصحون وأكواد الأخطاء الشائعة</p>
+            </div>
+
+            <div class="device-arrow">
+                <i class="fas fa-arrow-left"></i>
+            </div>
+        </a>
+
+        <!-- Air Conditioner -->
+        <a href="https://imadtbn.github.io/hvac-errors/"
+           class="device-card device-ac">
+            <div class="device-icon">
+                <i class="fas fa-snowflake"></i>
+            </div>
+
+            <div class="device-content">
+                <h3>أجهزة التكييف المنزلية</h3>
+                <p>دليل أعطال المكيفات وأكواد الأخطاء والتشخيص</p>
+            </div>
+
+            <div class="device-arrow">
+                <i class="fas fa-arrow-left"></i>
+            </div>
+        </a>
+
+    </div>
+</section>
 
         <!-- Popular Brands -->
         <section style="background:var(--bg-secondary);padding:60px 0;">
