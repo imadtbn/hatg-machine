@@ -1,76 +1,65 @@
-const CACHE_NAME = 'appliance-errors-v2';
+const CACHE_NAME = 'appliance-errors-v3';
+const SCOPE_PATH = self.registration.scope;
 const STATIC_ASSETS = [
-  '/',
-  '/index.html',
-  '/errors.html',
-  '/brand.html',
-  '/brands.html',
-  '/error.html',
-  '/articles.html',
-  '/faq.html',
-  '/about.html',
-  '/contact.html',
-  '/privacy.html',
-  '/disclaimer.html',
-  '/assets/css/style.css',
-  '/assets/js/main.js',
-  '/data/brands.json',
-  '/data/errors.json'
+  './',
+  './index.html',
+  './errors.html',
+  './brand.html',
+  './brands.html',
+  './error.html',
+  './assets/css/style.css',
+  './assets/js/main.js'
 ];
 
-// Install
-self.addEventListener('install', function(event) {
+self.addEventListener('install', event => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then(function(cache) {
-      return cache.addAll(STATIC_ASSETS);
-    }).catch(function(err) {
-      console.warn('Cache install failed:', err);
-    })
+    caches.open(CACHE_NAME).then(cache => cache.addAll(STATIC_ASSETS))
   );
   self.skipWaiting();
 });
 
-// Activate
-self.addEventListener('activate', function(event) {
+self.addEventListener('activate', event => {
   event.waitUntil(
-    caches.keys().then(function(keys) {
-      return Promise.all(
-        keys.filter(function(key) { return key !== CACHE_NAME; })
-            .map(function(key) { return caches.delete(key); })
-      );
-    })
+    caches.keys().then(keys => Promise.all(
+      keys.filter(key => key !== CACHE_NAME).map(key => caches.delete(key))
+    ))
   );
   self.clients.claim();
 });
 
-// Fetch
-self.addEventListener('fetch', function(event) {
-  // Skip non-GET requests
+self.addEventListener('fetch', event => {
   if (event.request.method !== 'GET') return;
-  
-  // Skip cross-origin requests
   if (!event.request.url.startsWith(self.location.origin)) return;
-  
+
+  const url = new URL(event.request.url);
+  const isDynamicData = /\/data\/(brands|errors)\.json$/i.test(url.pathname);
+
+  // JSON is always requested from the network first so new brands/errors
+  // are visible immediately after publishing. Cache is only a fallback.
+  if (isDynamicData) {
+    event.respondWith(
+      fetch(event.request)
+        .then(response => {
+          if (response && response.ok) {
+            const clone = response.clone();
+            caches.open(CACHE_NAME).then(cache => cache.put(event.request, clone));
+          }
+          return response;
+        })
+        .catch(() => caches.match(event.request))
+    );
+    return;
+  }
+
   event.respondWith(
-    caches.match(event.request).then(function(response) {
-      // Return cached response if available
-      if (response) return response;
-      
-      // Fetch from network
-      return fetch(event.request).then(function(networkResponse) {
-        // Cache successful responses
-        if (networkResponse.status === 200) {
-          const responseClone = networkResponse.clone();
-          caches.open(CACHE_NAME).then(function(cache) {
-            cache.put(event.request, responseClone);
-          });
+    caches.match(event.request).then(cached => {
+      if (cached) return cached;
+      return fetch(event.request).then(response => {
+        if (response && response.ok) {
+          const clone = response.clone();
+          caches.open(CACHE_NAME).then(cache => cache.put(event.request, clone));
         }
-        return networkResponse;
-      }).catch(function() {
-        // Return offline page for navigation requests
-        if (event.request.mode === 'navigate') {
-          return caches.match('/index.html');
-        }
+        return response;
       });
     })
   );
