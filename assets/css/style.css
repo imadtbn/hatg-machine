@@ -1437,3 +1437,228 @@ main {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--text-secondary);
 }
+
+/* Custom Styles for Device Grid */
+@media (min-width: 768px) {
+  .device-cards-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+}
+
+.brand-logo img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+
+
+/* ========================================
+   Device Types Section
+======================================== */
+
+.device-types-section {
+    padding: 70px 20px;
+}
+
+.device-types-section .page-title {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.section-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    margin-bottom: 12px;
+    border-radius: 30px;
+    background: var(--bg-secondary);
+    color: var(--primary);
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.device-cards-grid {
+    max-width: 1050px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.device-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 255px;
+    padding: 32px 22px 25px;
+    text-align: center;
+    text-decoration: none;
+    color: var(--text-primary);
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 22px;
+    overflow: hidden;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.device-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 5px;
+    background: var(--primary);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.device-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+    border-color: var(--primary);
+}
+
+.device-card:hover::before {
+    transform: scaleX(1);
+}
+
+/* Icon */
+
+.device-icon {
+    width: 82px;
+    height: 82px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    border-radius: 22px;
+    font-size: 2.3rem;
+    background: var(--bg-secondary);
+    color: var(--primary);
+    transition:
+        transform 0.3s ease,
+        color 0.3s ease;
+}
+
+.device-card:hover .device-icon {
+    transform: scale(1.08) rotate(-4deg);
+}
+
+/* Content */
+
+.device-content h3 {
+    margin: 0 0 10px;
+    font-size: 1.2rem;
+    font-weight: 800;
+}
+
+.device-content p {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 0.88rem;
+    line-height: 1.8;
+}
+
+/* Arrow */
+
+.device-arrow {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: auto;
+    padding-top: 18px;
+    color: var(--primary);
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.device-card:hover .device-arrow {
+    transform: translateX(-6px);
+}
+
+/* Different icon styles */
+
+.device-washing .device-icon {
+    color: #2563eb;
+}
+
+.device-dishwasher .device-icon {
+    color: #0891b2;
+}
+
+.device-ac .device-icon {
+    color: #0284c7;
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+    .device-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .device-card:last-child {
+        grid-column: 1 / -1;
+        max-width: 400px;
+        width: 100%;
+        justify-self: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .device-types-section {
+        padding: 50px 15px;
+    }
+
+    .device-cards-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .device-card,
+    .device-card:last-child {
+        grid-column: auto;
+        max-width: none;
+        min-height: auto;
+        width: 100%;
+        flex-direction: row;
+        text-align: right;
+        padding: 20px;
+    }
+
+    .device-icon {
+        width: 58px;
+        height: 58px;
+        min-width: 58px;
+        margin: 0 0 0 15px;
+        border-radius: 16px;
+        font-size: 1.7rem;
+    }
+
+    .device-content {
+        flex: 1;
+    }
+
+    .device-content h3 {
+        font-size: 1rem;
+    }
+
+    .device-content p {
+        font-size: 0.78rem;
+        line-height: 1.6;
+    }
+
+    .device-arrow {
+        margin: 0 10px 0 0;
+        padding: 0;
+    }
+}

@@ -1,129 +1,336 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>أعطال ماركة - دليل أعطال الأجهزة الكهرومنزلية</title>
-  <meta name="description" content="أعطال ورموز الأخطاء لجميع موديلات الماركة. دليل شامل معتمد على كتيبات الخدمة الرسمية.">
-  <link rel="canonical" href="https://appliance-errors.example.com/brand.html">
-  <meta property="og:title" content="أعطال ماركة - دليل أعطال الأجهزة الكهرومنزلية">
-  <meta name="twitter:card" content="summary">
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="manifest" href="manifest.webmanifest">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أعطال ماركة - دليل أعطال الأجهزة الكهرومنزلية</title>
+
+    <!-- ميتا تاج عامة (سيتم تحديثها بواسطة JS) -->
+    <meta name="description"
+        content="أعطال ورموز الأخطاء لجميع موديلات الماركة. دليل شامل معتمد على كتيبات الخدمة الرسمية.">
+    <meta name="keywords" content="أعطال, رموز الأخطاء, صيانة, غسالة ملابس, غسالة أواني, إصلاح">
+
+    <link rel="canonical" href="https://imadtbn.github.io/hatg-machine/brand.html">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/icon.png" fetchpriority="high">
+
+    <!-- الأيقونة الأساسية للمتصفحات الحديثة (بصيغة PNG وبحجم 32x32) -->
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+
+    <!-- أيقونة إضافية بحجم أصغر لشريط التبويب القديم (بحجم 16x16) -->
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
+
+    <!-- أيقونة خاصة بهواتف آيفون وأجهزة آيباد (Apple Touch Icon) -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+
+    <!-- لدعم متصفحات Internet Explorer القديمة (اختياري) -->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/favicon.ico">
+
+    <meta property="og:title" content="أعطال الماركة - دليل أعطال الأجهزة الكهرومنزلية">
+    <meta property="og:description" content="أعطال ورموز الأخطاء لجميع موديلات الماركة.">
+    <meta name="twitter:title" content="أعطال الماركة - دليل أعطال الأجهزة الكهرومنزلية">
+    <meta name="twitter:description" content="أعطال ورموز الأخطاء لجميع موديلات الماركة.">
+
+    <meta property="og:title" content="أعطال ماركة - دليل أعطال الأجهزة الكهرومنزلية">
+    <meta name="twitter:card" content="summary">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Tajawal:wght@300;400;500;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5656416032906373"
+        crossorigin="anonymous"></script>
+    <meta name="google-adsense-account" content="ca-pub-5656416032906373">
+
+    <!-- Google search-console -->
+    <meta name="google-site-verification" content="f5Xi4oFx0v5dN6iPZd9qCw-7vnc3vIbAeYF9jr4vwVM" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XK4CHWYGWZ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-XK4CHWYGWZ');
+    </script>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="manifest" href="manifest.webmanifest">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="دليل أعطال الأجهزة الكهرومنزلية">
+    <meta property="og:description"
+        content="أكبر مرجع عربي لأعطال غسالة الأواني وغسالة الملابس. أكواد الأخطاء، أسباب العطل، خطوات الإصلاح.">
+    <meta property="og:url" content="https://imadtbn.github.io/hatg-machine/">
+    <meta property="og:site_name" content="دليل أعطال الأجهزة الكهرومنزلية">
+    <meta property="og:locale" content="ar_DZ">
+    <meta property="og:image" content="https://imadtbn.github.io/hatg-machine/assets/images/og-image.jpg">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="دليل أعطال الأجهزة الكهرومنزلية">
+    <meta name="twitter:description" content="أكبر مرجع عربي لأعطال غسالة الأواني وغسالة الملابس.">
+    <meta name="twitter:image" content="https://imadtbn.github.io/hatg-machine/assets/images/twitter-card.jpg">
+
+    <!-- أيقونات الموقع -->
+    <link rel="icon" href="assets/icons/favicon.ico" sizes="any">
+    <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+    <link rel="manifest" href="manifest.webmanifest">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="msapplication-TileColor" content="#0066CC">
+    <meta name="msapplication-TileImage" content="assets/images/mstile-150x150.png">
+    <meta name="theme-color" content="#0066CC">
+
+    <!-- عنصر placeholder لـ Structured Data -->
+    <script id="brandStructuredData" type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "CollectionPage",
+            "name": "أعطال الماركة",
+            "description": "قائمة أعطال الماركة",
+            "url": "https://imadtbn.github.io/hatg-machine/brand.html",
+            "mainEntity": { "@type": "ItemList", "itemListElement": [] },
+            "breadcrumb": { "@type": "BreadcrumbList", "itemListElement": [] }
+        }
+    </script>
+
 </head>
+
 <body>
-  <header class="header">
-    <div class="container header-inner">
-      <a href="index.html" class="logo">
-        <div style="width:40px;height:40px;background:linear-gradient(135deg,#0066CC,#6C5CE7);border-radius:8px;display:flex;align-items:center;justify-content:center;color:white;font-weight:900;font-size:1.1rem;">⚙</div>
-        <div class="logo-text"><span>دليل الأعطال</span><span>Error Codes Guide</span></div>
-      </a>
-      <div class="search-bar">
-        <span class="search-icon">🔍</span>
-        <input type="search" placeholder="ابحث عن عطل، رمز خطأ، قطعة..." aria-label="بحث">
-        <div class="search-results"></div>
-      </div>
-      <nav class="nav">
-        <a href="index.html" class="nav-link">الرئيسية</a>
-        <a href="errors.html" class="nav-link">الأعطال</a>
-        <a href="brands.html" class="nav-link active">الماركات</a>
-        <a href="articles.html" class="nav-link">المقالات</a>
-        <a href="faq.html" class="nav-link">الأسئلة الشائعة</a>
-        <a href="about.html" class="nav-link">عن الموقع</a>
-        <a href="contact.html" class="nav-link">اتصل بنا</a>
-      </nav>
-      <button class="theme-toggle" aria-label="تبديل الوضع الليلي">🌙</button>
-      <button class="menu-toggle" aria-label="فتح القائمة">☰</button>
-    </div>
-  </header>
+    <header class="header">
+        <div class="container header-inner">
+            <a href="index.html" class="logo">
+                <div
+                    style="width:40px;height:40px;background:linear-gradient(135deg,#0066CC,#6C5CE7);border-radius:8px;display:flex;align-items:center;justify-content:center;color:white;font-weight:900;font-size:1.1rem;">
+                    ⚙</div>
+                <div class="logo-text"><span>دليل الأعطال</span><span>Error Codes Guide</span></div>
+            </a>
+            <div class="search-bar">
+                <span class="search-icon">🔍</span>
+                <input type="search" placeholder="ابحث عن عطل، رمز خطأ، قطعة..." aria-label="بحث">
+                <div class="search-results"></div>
+            </div>
+            <nav class="nav">
+                <a href="index.html" class="nav-link">الرئيسية</a>
+                <a href="errors.html" class="nav-link">الأعطال</a>
+                <a href="brands.html" class="nav-link active">الماركات</a>
+                <a href="articles.html" class="nav-link">المقالات</a>
+                <a href="faq.html" class="nav-link">الأسئلة الشائعة</a>
+                <a href="about.html" class="nav-link">عن الموقع</a>
+                <a href="contact.html" class="nav-link">اتصل بنا</a>
+            </nav>
+            <button class="theme-toggle" aria-label="تبديل الوضع الليلي">🌙</button>
+            <button class="menu-toggle" aria-label="فتح القائمة">☰</button>
+        </div>
+    </header>
 
-  <main>
-    <div class="container">
-      <nav class="breadcrumb"><a href="index.html">الرئيسية</a> <span class="separator">›</span> <a href="brands.html">الماركات</a> <span class="separator">›</span> <span id="brandNameBreadcrumb">الماركة</span></nav>
-      
-      <div id="brandHero" class="error-detail-hero">
-        <div class="brand-logo" id="brandLogo" style="width:80px;height:80px;margin:0 auto 16px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:2rem;font-weight:900;color:white;">?</div>
-        <h1 id="brandTitle">الماركة</h1>
-        <p id="brandDesc">وصف الماركة</p>
-      </div>
+    <main>
+        <div class="container">
+            <nav class="breadcrumb"><a href="index.html">الرئيسية</a> <span class="separator">›</span> <a
+                    href="brands.html">الماركات</a> <span class="separator">›</span> <span
+                    id="brandNameBreadcrumb">الماركة</span></nav>
 
-      <div class="filters-bar">
-        <select class="filter-select" id="deviceTypeFilter" aria-label="فلتر نوع الجهاز">
-          <option value="all">جميع الأجهزة</option>
-          <option value="washing-machine">غسالة ملابس</option>
-          <option value="dishwasher">غسالة أواني</option>
-        </select>
-        <select class="filter-select" id="severityFilter" aria-label="فلتر درجة الخطورة">
-          <option value="all">جميع الدرجات</option>
-          <option value="high">خطير</option>
-          <option value="medium">متوسط</option>
-          <option value="low">بسيط</option>
-        </select>
-        <select class="filter-select" id="repairFilter" aria-label="فلتر إمكانية الإصلاح">
-          <option value="all">الكل</option>
-          <option value="true">إصلاح منزلي</option>
-          <option value="false">يحتاج فني</option>
-        </select>
-      </div>
+            <div id="brandHero" class="error-detail-hero">
+                <div class="brand-logo" id="brandLogo"
+                    style="width:80px;height:80px;margin:0 auto 16px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:2rem;font-weight:900;color:white;">
+                    ?</div>
+                <h1 id="brandTitle">الماركة</h1>
+                <p id="brandDesc">وصف الماركة</p>
+            </div>
 
-      <div class="cards-grid" id="brandErrorsContainer"></div>
+            <div class="filters-bar">
+                <select class="filter-select" id="deviceTypeFilter" aria-label="فلتر نوع الجهاز">
+                    <option value="all">جميع الأجهزة</option>
+                    <option value="washing-machine">غسالة ملابس</option>
+                    <option value="dishwasher">غسالة أواني</option>
+                </select>
+                <select class="filter-select" id="severityFilter" aria-label="فلتر درجة الخطورة">
+                    <option value="all">جميع الدرجات</option>
+                    <option value="high">خطير</option>
+                    <option value="medium">متوسط</option>
+                    <option value="low">بسيط</option>
+                </select>
+                <select class="filter-select" id="repairFilter" aria-label="فلتر إمكانية الإصلاح">
+                    <option value="all">الكل</option>
+                    <option value="true">إصلاح منزلي</option>
+                    <option value="false">يحتاج فني</option>
+                </select>
+            </div>
 
-      <div id="noErrors" style="display:none;text-align:center;padding:40px;color:var(--text-secondary);">
-        <p>لا توجد أعطال مسجلة لهذه الماركة حاليًا.</p>
-      </div>
-    </div>
-  </main>
+            <div class="cards-grid" id="brandErrorsContainer"></div>
 
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-col"><h4>دليل أعطال الأجهزة الكهرومنزلية</h4><p>أكبر مرجع عربي متخصص في أعطال غسالة الأواني وغسالة الملابس.</p></div>
-        <div class="footer-col"><h4>روابط الموقع</h4><ul class="footer-links"><li><a href="index.html">الرئيسية</a></li><li><a href="errors.html">الأعطال</a></li><li><a href="brands.html">الماركات</a></li><li><a href="articles.html">المقالات</a></li><li><a href="contact.html">اتصل بنا</a></li><li><a href="privacy.html">سياسة الخصوصية</a></li></ul></div>
-        <div class="footer-col"><h4>المراجع الفنية</h4><ul class="footer-links"><li><a href="https://www.lg.com" target="_blank" rel="noopener">LG</a></li><li><a href="https://www.samsung.com" target="_blank" rel="noopener">Samsung</a></li><li><a href="https://www.bosch.com" target="_blank" rel="noopener">Bosch</a></li><li><a href="https://www.panasonic.com" target="_blank" rel="noopener">Panasonic</a></li></ul></div>
-        <div class="footer-col"><h4>التواصل</h4><ul class="footer-links"><li><a href="tel:+213xxxxxxxxx">📞 الهاتف</a></li><li><a href="mailto:info@appliance-errors.com">📧 البريد</a></li><li><a href="https://wa.me/213xxxxxxxxx" target="_blank" rel="noopener">💬 واتساب</a></li></ul></div>
-      </div>
-      <div class="footer-bottom"><p>© 2025 دليل أعطال الأجهزة الكهرومنزلية. جميع الحقوق محفوظة.</p></div>
-    </div>
-  </footer>
+            <div id="noErrors" style="display:none;text-align:center;padding:40px;color:var(--text-secondary);">
+                <p>لا توجد أعطال مسجلة لهذه الماركة حاليًا.</p>
+            </div>
+        </div>
+    </main>
 
-  <button class="back-to-top" aria-label="العودة للأعلى">↑</button>
-  <script src="assets/js/main.js" defer></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', async function() {
-      const params = new URLSearchParams(window.location.search);
-      const brandId = params.get('id');
-      
-      if (!brandId) {
-        window.location.href = 'brands.html';
-        return;
-      }
-      
-      try {
-        const [brandsRes, errorsRes] = await Promise.all([fetch('data/brands.json'), fetch('data/errors.json')]);
-        const brands = await brandsRes.json();
-        const errors = await errorsRes.json();
-        
-        const brand = brands.find(b => b.id === brandId);
-        if (!brand) { window.location.href = 'brands.html'; return; }
-        
-        const brandErrors = errors.filter(e => e.brand === brandId);
-        
-        // Update page
-        document.getElementById('brandNameBreadcrumb').textContent = brand.nameAr;
-        document.getElementById('brandTitle').textContent = 'أعطال ' + brand.nameAr;
-        document.getElementById('brandDesc').textContent = brand.descriptionAr + ' | ' + brandErrors.length + ' عطل مسجل';
-        document.getElementById('brandLogo').textContent = brand.name.charAt(0);
-        document.getElementById('brandLogo').style.background = brand.logoColor;
-        document.title = 'أعطال ' + brand.nameAr + ' - دليل أعطال الأجهزة الكهرومنزلية';
-        
-        // Render errors
-        const container = document.getElementById('brandErrorsContainer');
-        const sevMap = { high: {text:'خطير',cls:'badge-danger'}, medium: {text:'متوسط',cls:'badge-warning'}, low: {text:'بسيط',cls:'badge-success'} };
-        
-        brandErrors.forEach(function(error) {
-          const sev = sevMap[error.severity] || sevMap.medium;
-          container.innerHTML += `
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>دليل أعطال الأجهزة الكهرومنزلية</h4>
+                    <p>أكبر مرجع عربي متخصص في أعطال غسالة الأواني وغسالة الملابس.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>روابط الموقع</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="errors.html">الأعطال</a></li>
+                        <li><a href="brands.html">الماركات</a></li>
+                        <li><a href="articles.html">المقالات</a></li>
+                        <li><a href="contact.html">اتصل بنا</a></li>
+                        <li><a href="privacy.html">سياسة الخصوصية</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>المراجع الفنية</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://www.lg.com" target="_blank" rel="noopener">LG</a></li>
+                        <li><a href="https://www.samsung.com" target="_blank" rel="noopener">Samsung</a></li>
+                        <li><a href="https://www.bosch.com" target="_blank" rel="noopener">Bosch</a></li>
+                        <li><a href="https://www.panasonic.com" target="_blank" rel="noopener">Panasonic</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>التواصل</h4>
+                    <ul class="footer-links">
+                        <li><a href="tel:+213xxxxxxxxx">📞 الهاتف</a></li>
+                        <li><a href="mailto:info@appliance-errors.com">📧 البريد</a></li>
+                        <li><a href="https://wa.me/213xxxxxxxxx" target="_blank" rel="noopener">💬 واتساب</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 دليل أعطال الأجهزة الكهرومنزلية. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" aria-label="العودة للأعلى">↑</button>
+    <script src="assets/js/main.js" defer></script>
+    <script src="assets/js/adsData.js" defer></script>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', async function () {
+            const params = new URLSearchParams(window.location.search);
+            const brandId = params.get('id');
+
+            if (!brandId) {
+                window.location.href = 'brands.html';
+                return;
+            }
+
+            try {
+                const [brandsRes, errorsRes] = await Promise.all([
+                    fetch('./data/brands.json', { cache: 'no-store' }),
+                    fetch('./data/errors.json', { cache: 'no-store' })
+                ]);
+
+                if (!brandsRes.ok) {
+                    throw new Error(
+                        `تعذر تحميل brands.json: ${brandsRes.status}`
+                    );
+                }
+
+                if (!errorsRes.ok) {
+                    throw new Error(
+                        `تعذر تحميل errors.json: ${errorsRes.status}`
+                    );
+                }
+
+                const brands = await brandsRes.json();
+                const errors = await errorsRes.json();
+
+                if (!Array.isArray(brands)) {
+                    throw new Error('brands.json ليس مصفوفة');
+                }
+
+                if (!Array.isArray(errors)) {
+                    throw new Error('errors.json ليس مصفوفة');
+                }
+
+                const brand = brands.find(b => b.id === brandId);
+                if (!brand) {
+                    window.location.href = 'brands.html';
+                    return;
+                }
+
+                const brandErrors = errors.filter(e => e.brand === brandId);
+
+                // Update page
+                document.getElementById('brandNameBreadcrumb').textContent = brand.nameAr;
+                document.getElementById('brandTitle').textContent = 'أعطال ' + brand.nameAr;
+                document.getElementById('brandDesc').textContent = brand.descriptionAr + ' | ' + brandErrors.length + ' عطل مسجل';
+                const brandLogoEl = document.getElementById('brandLogo');
+                brandLogoEl.innerHTML = `<img src="${brand.logo}" alt="${brand.nameAr}" 
+                                             style="width:100%;height:100%;object-fit:contain;padding:10px;"
+                                             onerror="this.style.display='none'; this.parentElement.innerText='${brand.name.charAt(0)}';">`;
+                brandLogoEl.style.background = brand.logoColor + '15';
+                brandLogoEl.style.color = brand.logoColor;
+                document.title = 'أعطال ' + brand.nameAr + ' - دليل أعطال الأجهزة الكهرومنزلية';
+
+                // --- SEO Improvements ---
+                const metaDesc = `تصفح جميع أعطال ورموز أخطاء ماركة ${brand.nameAr}. دليل شامل يضم ${brandErrors.length} عطل مسجل مع الأسباب، الأعراض، وخطوات الإصلاح المعتمدة لغسالات الملابس والأواني.`;
+                document.querySelector('meta[name="description"]').setAttribute('content', metaDesc);
+                document.querySelector('meta[property="og:description"]').setAttribute('content', metaDesc);
+
+                const metaKeywords = `أعطال ${brand.nameAr}, صيانة ${brand.nameAr}, رموز أخطاء ${brand.nameAr}, إصلاح غسالة ${brand.nameAr}, ${brand.nameAr} error codes, ${brand.name} troubleshooting`;
+                document.querySelector('meta[name="keywords"]').setAttribute('content', metaKeywords);
+
+                // Update Structured Data
+                const brandSD = {
+                    "@context": "https://schema.org",
+                    "@type": "CollectionPage",
+                    "name": `أعطال ماركة ${brand.nameAr} - دليل أعطال الأجهزة الكهرومنزلية`,
+                    "description": metaDesc,
+                    "url": window.location.href,
+                    "mainEntity": {
+                        "@type": "ItemList",
+                        "itemListElement": brandErrors.slice(0, 10).map((e, i) => ({
+                            "@type": "ListItem",
+                            "position": i + 1,
+                            "url": `https://imadtbn.github.io/hatg-machine/error.html?id=${e.id}`,
+                            "name": `${e.errorCode} - ${e.titleAr}`
+                        }))
+                    },
+                    "breadcrumb": {
+                        "@type": "BreadcrumbList",
+                        "itemListElement": [
+                            { "@type": "ListItem", "position": 1, "name": "الرئيسية", "item": "https://imadtbn.github.io/hatg-machine/" },
+                            { "@type": "ListItem", "position": 2, "name": "الماركات", "item": "https://imadtbn.github.io/hatg-machine/brands.html" },
+                            { "@type": "ListItem", "position": 3, "name": brand.nameAr, "item": window.location.href }
+                        ]
+                    }
+                };
+                document.getElementById('brandStructuredData').textContent = JSON.stringify(brandSD);
+
+                // Render errors
+                const container = document.getElementById('brandErrorsContainer');
+                const sevMap = {
+                    high: {
+                        text: 'خطير',
+                        cls: 'badge-danger'
+                    },
+                    medium: {
+                        text: 'متوسط',
+                        cls: 'badge-warning'
+                    },
+                    low: {
+                        text: 'بسيط',
+                        cls: 'badge-success'
+                    }
+                };
+
+                brandErrors.forEach(function (error) {
+                    const sev = sevMap[error.severity] || sevMap.medium;
+                    container.innerHTML += `
             <div class="error-card" data-device="${error.deviceType}" data-severity="${error.severity}" data-repair="${error.homeRepair}">
               <div class="error-code-display ${error.severity}">${error.errorCode}</div>
               <h3 class="card-title">${error.titleAr}</h3>
@@ -138,32 +345,115 @@
               </div>
             </div>
           `;
+                });
+
+                if (brandErrors.length === 0) {
+                    document.getElementById('noErrors').style.display = 'block';
+                }
+
+                // Filters
+                function applyFilters() {
+                    const device = document.getElementById('deviceTypeFilter').value;
+                    const severity = document.getElementById('severityFilter').value;
+                    const repair = document.getElementById('repairFilter').value;
+
+                    document.querySelectorAll('.error-card').forEach(function (card) {
+                        const dMatch = device === 'all' || card.dataset.device === device;
+                        const sMatch = severity === 'all' || card.dataset.severity === severity;
+                        const rMatch = repair === 'all' || card.dataset.repair === repair;
+                        card.style.display = (dMatch && sMatch && rMatch) ? 'block' : 'none';
+                    });
+                }
+
+                document.getElementById('deviceTypeFilter').addEventListener('change', applyFilters);
+                document.getElementById('severityFilter').addEventListener('change', applyFilters);
+                document.getElementById('repairFilter').addEventListener('change', applyFilters);
+
+            } catch (e) {
+                console.error(e);
+            }
+
+
+
+            // تحديث الميتا تاج والـ Structured Data
+            function updateMetaAndStructuredData(brand, brandErrors) {
+                // 1. تحديث العنوان
+                document.title = `أعطال ${brand.nameAr} - دليل أعطال الأجهزة الكهرومنزلية`;
+
+                // 2. تحديث الوصف
+                const desc = `دليل شامل لأعطال ${brand.nameAr} في غسالات الملابس والأواني. أكثر من ${brandErrors.length} رمز خطأ مع الأسباب والحلول المعتمدة على كتيبات الصيانة الرسمية.`;
+                document.querySelector('meta[name="description"]').setAttribute('content', desc);
+
+                // 3. تحديث الكلمات المفتاحية
+                const keywords = `أعطال ${brand.nameAr}, رموز أخطاء ${brand.nameAr}, صيانة ${brand.nameAr}, إصلاح ${brand.nameAr}, ${brand.nameAr} washing machine, ${brand.nameAr} dishwasher, error codes ${brand.nameAr}`;
+                document.querySelector('meta[name="keywords"]').setAttribute('content', keywords);
+
+                // 4. تحديث Open Graph
+                document.querySelector('meta[property="og:title"]').setAttribute('content', `أعطال ${brand.nameAr} - دليل الأعطال`);
+                document.querySelector('meta[property="og:description"]').setAttribute('content', desc);
+                document.querySelector('meta[name="twitter:title"]').setAttribute('content', `أعطال ${brand.nameAr} - دليل الأعطال`);
+                document.querySelector('meta[name="twitter:description"]').setAttribute('content', desc);
+
+                // 5. إنشاء Structured Data
+                const structuredData = {
+                    "@context": "https://schema.org",
+                    "@type": "CollectionPage",
+                    "name": `أعطال ${brand.nameAr}`,
+                    "description": desc,
+                    "url": `https://imadtbn.github.io/hatg-machine/brand.html?id=${brand.id}`,
+                    "mainEntity": {
+                        "@type": "ItemList",
+                        "itemListElement": brandErrors.map((error, index) => ({
+                            "@type": "ListItem",
+                            "position": index + 1,
+                            "item": {
+                                "@type": "TechnicalArticle",
+                                "headline": error.titleAr,
+                                "description": error.symptoms ? error.symptoms[0] : '',
+                                "url": `https://imadtbn.github.io/hatg-machine/error.html?id=${error.id}`,
+                                "about": {
+                                    "@type": "Thing",
+                                    "name": error.deviceTypeAr
+                                }
+                            }
+                        }))
+                    },
+                    "breadcrumb": {
+                        "@type": "BreadcrumbList",
+                        "itemListElement": [
+                            { "@type": "ListItem", "position": 1, "name": "الرئيسية", "item": "https://imadtbn.github.io/hatg-machine/" },
+                            { "@type": "ListItem", "position": 2, "name": "الماركات", "item": "https://imadtbn.github.io/hatg-machine/brands.html" },
+                            { "@type": "ListItem", "position": 3, "name": brand.nameAr, "item": `https://imadtbn.github.io/hatg-machine/brand.html?id=${brand.id}` }
+                        ]
+                    },
+                    "publisher": {
+                        "@type": "Organization",
+                        "name": "دليل أعطال الأجهزة الكهرومنزلية",
+                        "url": "https://imadtbn.github.io/hatg-machine/"
+                    },
+                    "about": {
+                        "@type": "Thing",
+                        "name": "صيانة الأجهزة الكهرومنزلية"
+                    },
+                    "inLanguage": "ar",
+                    "isAccessibleForFree": true
+                };
+
+                // حقن الـ Structured Data في العنصر placeholder
+                const scriptTag = document.getElementById('brandStructuredData');
+                if (scriptTag) {
+                    scriptTag.textContent = JSON.stringify(structuredData, null, 2);
+                } else {
+                    // في حال عدم وجود العنصر، أنشئه
+                    const newScript = document.createElement('script');
+                    newScript.id = 'brandStructuredData';
+                    newScript.type = 'application/ld+json';
+                    newScript.textContent = JSON.stringify(structuredData);
+                    document.head.appendChild(newScript);
+                }
+            }
         });
-        
-        if (brandErrors.length === 0) {
-          document.getElementById('noErrors').style.display = 'block';
-        }
-        
-        // Filters
-        function applyFilters() {
-          const device = document.getElementById('deviceTypeFilter').value;
-          const severity = document.getElementById('severityFilter').value;
-          const repair = document.getElementById('repairFilter').value;
-          
-          document.querySelectorAll('.error-card').forEach(function(card) {
-            const dMatch = device === 'all' || card.dataset.device === device;
-            const sMatch = severity === 'all' || card.dataset.severity === severity;
-            const rMatch = repair === 'all' || card.dataset.repair === repair;
-            card.style.display = (dMatch && sMatch && rMatch) ? 'block' : 'none';
-          });
-        }
-        
-        document.getElementById('deviceTypeFilter').addEventListener('change', applyFilters);
-        document.getElementById('severityFilter').addEventListener('change', applyFilters);
-        document.getElementById('repairFilter').addEventListener('change', applyFilters);
-        
-      } catch(e) { console.error(e); }
-    });
-  </script>
+    </script>
 </body>
+
 </html>
