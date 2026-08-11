@@ -944,8 +944,9 @@ function renderErrorDetail() {
 
   if (heroCode) {
     heroCode.textContent = error.code;
-    heroCode.className = `error-code-large ${error.severity}`;
+    heroCode.className = `error-code-large ${errorCode}`;
   }
+
   if (heroTitle) heroTitle.textContent = error.description;
   if (heroSubtitle) {
     heroSubtitle.innerHTML = `
