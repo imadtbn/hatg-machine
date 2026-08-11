@@ -1,148 +1,56 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
-
+<html lang="ar" dir="rtl" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>نتائج البحث - دليل أعطال الأجهزة الكهرومنزلية</title>
-  <meta name="description" content="نتائج البحث عن أعطال ورموز الأخطاء.">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Tajawal:wght@300;400;500;700;800&display=swap"
-    rel="stylesheet">
+  <meta name="description" content="نتائج البحث في دليل أعطال الأجهزة الكهرومنزلية">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="manifest" href="manifest.webmanifest">
-
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/icon.png" fetchpriority="high">
-
-  <!-- الأيقونة الأساسية للمتصفحات الحديثة (بصيغة PNG وبحجم 32x32) -->
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
-
-  <!-- أيقونة إضافية بحجم أصغر لشريط التبويب القديم (بحجم 16x16) -->
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
-
-  <!-- أيقونة خاصة بهواتف آيفون وأجهزة آيباد (Apple Touch Icon) -->
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
-
-  <!-- لدعم متصفحات Internet Explorer القديمة (اختياري) -->
-  <link rel="shortcut icon" type="image/x-icon" href="assets/favicon.ico">
-
-  <!-- Google AdSense -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5656416032906373"
-    crossorigin="anonymous"></script>
-  <meta name="google-adsense-account" content="ca-pub-5656416032906373">
-
-  <!-- Google search-console -->
-  <meta name="google-site-verification" content="f5Xi4oFx0v5dN6iPZd9qCw-7vnc3vIbAeYF9jr4vwVM" />
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XK4CHWYGWZ"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'G-XK4CHWYGWZ');
-  </script>
-
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
 </head>
-
-<body>
+<body data-page="search">
   <header class="header">
     <div class="container header-inner">
       <a href="index.html" class="logo">
-        <div
-          style="width:40px;height:40px;background:linear-gradient(135deg,#0066CC,#6C5CE7);border-radius:8px;display:flex;align-items:center;justify-content:center;color:white;font-weight:900;font-size:1.1rem;">
-          ⚙</div>
-        <div class="logo-text"><span>دليل الأعطال</span><span>Error Codes Guide</span></div>
+        <div class="logo-icon"><i class="fas fa-tools"></i></div>
+        <div class="logo-text"><span>دليل الأعطال</span><span>الأجهزة الكهرومنزلية</span></div>
       </a>
-      <nav class="nav"><a href="index.html" class="nav-link">الرئيسية</a><a href="errors.html"
-          class="nav-link">الأعطال</a><a href="brands.html" class="nav-link">الماركات</a><a href="articles.html"
-          class="nav-link">المقالات</a><a href="faq.html" class="nav-link">الأسئلة الشائعة</a><a href="about.html"
-          class="nav-link">عن الموقع</a><a href="contact.html" class="nav-link">اتصل بنا</a></nav>
-      <button class="theme-toggle" aria-label="تبديل الوضع الليلي">🌙</button>
-      <button class="menu-toggle" aria-label="فتح القائمة">☰</button>
+      <nav class="nav">
+        <a href="index.html" class="nav-link">الرئيسية</a>
+        <a href="errors.html" class="nav-link">الأخطاء</a>
+        <a href="brands.html" class="nav-link">الماركات</a>
+      </nav>
+      <div style="display:flex; gap:8px; align-items:center;">
+        <button class="theme-toggle" onclick="toggleTheme()"><i class="fas fa-moon"></i></button>
+        <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+      </div>
     </div>
   </header>
 
   <main>
-    <div class="container">
-      <nav class="breadcrumb"><a href="index.html">الرئيسية</a> <span class="separator">›</span> <span>نتائج
-          البحث</span></nav>
-      <div class="page-title">
+    <div class="hero" style="padding: 80px 0 60px;">
+      <div class="container">
         <h1>نتائج البحث</h1>
-      </div>
-
-      <div style="max-width:600px;margin:0 auto 30px;">
-        <div style="position:relative;">
-          <span class="search-icon"
-            style="position:absolute;right:14px;top:50%;transform:translateY(-50%);font-size:1.1rem;color:var(--text-secondary);">🔍</span>
-          <input type="search" id="searchInput" placeholder="ابحث عن عطل، رمز خطأ، قطعة..."
-            style="width:100%;padding:14px 50px 14px 20px;border:2px solid var(--border-color);border-radius:25px;font-size:1rem;font-family:var(--font-arabic);background:var(--bg-card);color:var(--text-primary);outline:none;"
-            aria-label="بحث">
-        </div>
-      </div>
-
-      <div id="searchResults"></div>
-      <div id="noResults" style="display:none;text-align:center;padding:40px;color:var(--text-secondary);">
-        <p>لم يتم العثور على نتائج مطابقة. حاول البحث بكلمات أخرى.</p>
+        <p>نتائج البحث عن: <strong id="search-query">...</strong></p>
       </div>
     </div>
+
+    <section class="content-section">
+      <div class="container">
+        <div class="cards-grid" id="search-results"></div>
+      </div>
+    </section>
   </main>
 
   <footer class="footer">
     <div class="container">
-      <div class="footer-bottom">
-        <p>© 2025 دليل أعطال الأجهزة الكهرومنزلية. جميع الحقوق محفوظة.</p>
-      </div>
+      <div class="footer-bottom"><p>جميع الحقوق محفوظة &copy; 2024</p></div>
     </div>
   </footer>
-  <button class="back-to-top" aria-label="العودة للأعلى">↑</button>
-  <script src="assets/js/main.js" defer></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', async function () {
-      const [brandsRes, errorsRes] = await Promise.all([fetch('data/brands.json'), fetch('data/errors.json')]);
-      const brands = await brandsRes.json();
-      const errors = await errorsRes.json();
-
-      const params = new URLSearchParams(window.location.search);
-      const query = params.get('q') || '';
-      const searchInput = document.getElementById('searchInput');
-      searchInput.value = query;
-
-      if (query) performSearch(query.toLowerCase(), errors, brands);
-
-      searchInput.addEventListener('input', function () {
-        const q = this.value.trim().toLowerCase();
-        if (q.length < 2) { document.getElementById('searchResults').innerHTML = ''; document.getElementById('noResults').style.display = 'none'; return; }
-        performSearch(q, errors, brands);
-      });
-    });
-
-    function performSearch(query, errors, brands) {
-      const results = [];
-
-      errors.forEach(function (error) {
-        const fields = [error.errorCode, error.titleAr, error.brandAr, error.deviceTypeAr, error.categoryAr].filter(Boolean);
-        const causes = error.causes || [];
-        const allFields = [...fields, ...causes].map(f => f.toLowerCase());
-
-        if (allFields.some(f => f.includes(query))) {
-          results.push(`<div class="error-card" style="margin-bottom:16px;"><div class="error-code-display ${error.severity}">${error.errorCode}</div><h3 class="card-title"><a href="error.html?id=${error.id}">${error.titleAr}</a></h3><p class="card-text">${error.symptoms?.[0] || ''}</p><div class="card-meta"><span class="badge badge-primary">${error.deviceTypeAr}</span><span class="badge badge-info">${error.brandAr}</span></div></div>`);
-        }
-      });
-
-      brands.forEach(function (brand) {
-        if (brand.nameAr.includes(query) || brand.name.toLowerCase().includes(query)) {
-          results.push(`<div class="brand-card" style="text-align:center;padding:20px;"><h3 class="brand-name"><a href="brand.html?id=${brand.id}">${brand.nameAr}</a></h3><p class="brand-country">${brand.countryAr}</p></div>`);
-        }
-      });
-
-      const container = document.getElementById('searchResults');
-      container.innerHTML = results.join('');
-      document.getElementById('noResults').style.display = results.length === 0 ? 'block' : 'none';
-    }
-  </script>
+  <button class="back-to-top"><i class="fas fa-arrow-up"></i></button>
+  <script src="assets/js/main.js"></script>
 </body>
-
 </html>
