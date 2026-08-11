@@ -290,10 +290,10 @@ function searchAll(query) {
   
   // Search errors
   App.data.errors.forEach(error => {
-    if (error.code.toLowerCase().includes(q) || 
-        error.description.toLowerCase().includes(q) ||
-        error.device.toLowerCase().includes(q) ||
-        error.brand.toLowerCase().includes(q)) {
+       if ((error.code || '').toLowerCase().includes(q) || 
+        (error.description || '').toLowerCase().includes(q) ||
+        (error.device || '').toLowerCase().includes(q) ||
+        (error.brand || '').toLowerCase().includes(q)) {
       results.push({
         type: 'error',
         title: `كود الخطأ ${error.code}`,
@@ -437,7 +437,7 @@ function renderErrors(errors) {
     <div class="error-card ${error.severity} reveal">
       <div class="error-code-display ${error.severity}">${error.code}</div>
       <h3 class="card-title">${error.description}</h3>
-      <p class="card-text">${error.cause.substring(0, 100)}...</p>
+      <p class="card-text">${(error.cause || 'سبب الخطأ غير متوفر').substring(0, 100)}...</p>
       <div class="card-meta">
         <span class="badge badge-primary"><i class="fas fa-microchip"></i> ${error.device}</span>
         <span class="badge badge-secondary"><i class="fas fa-tag"></i> ${error.brand}</span>
@@ -891,7 +891,7 @@ function renderBrandDetail() {
         <div class="error-card ${error.severity} reveal">
           <div class="error-code-display ${error.severity}">${error.code}</div>
           <h3 class="card-title">${error.description}</h3>
-          <p class="card-text">${error.cause.substring(0, 100)}...</p>
+          <p class="card-text">${(error.cause || 'سبب الخطأ غير متوفر').substring(0, 100)}...</p>
           <div class="card-meta">
             <span class="badge badge-primary"><i class="fas fa-microchip"></i> ${error.device}</span>
             ${getSeverityBadge(error.severity)}
@@ -961,14 +961,14 @@ function renderErrorDetail() {
       <!-- Cause -->
       <div class="detail-section">
         <h3><i class="fas fa-search"></i> سبب الخطأ</h3>
-        <p>${error.cause}</p>
+        <p>${error.cause || 'سبب الخطأ غير متوفر'}</p>
       </div>
       
       <!-- Solution -->
       <div class="detail-section">
         <h3><i class="fas fa-wrench"></i> الحل المقترح</h3>
         <ol class="steplist">
-          ${error.solution.map(step => `<li>${step}</li>`).join('')}
+          ${(error.solution && Array.isArray(error.solution) ? error.solution : ['لا توجد خطوات حل مسجلة']).map(step => `<li>${step}</li>`).join('')}
         </ol>
       </div>
       
