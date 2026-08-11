@@ -608,33 +608,27 @@ function getBrandLogo(brandName) {
     'LG': 'assets/images/brands/lg.png',
     'Samsung': 'assets/images/brands/samsung.png',
     'Bosch': 'assets/images/brands/bosch.jpg',
-    'Siemens': 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Siemens-logo.svg/200px-Siemens-logo.svg.png',
-    'Whirlpool': 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Whirlpool_Corporation_Logo.png/200px-Whirlpool_Corporation_Logo.png',
-    'Electrolux': 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Electrolux_logo.svg/200px-Electrolux_logo.svg.png',
-    'Miele': 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Miele_Logo.svg/200px-Miele_Logo.svg.png',
-    'AEG': 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/AEG_logo.svg/200px-AEG_logo.svg.png',
-    'Beko': 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Beko_logo.svg/200px-Beko_logo.svg.png',
-    'Indesit': 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Indesit_logo.svg/200px-Indesit_logo.svg.png',
-    'Hotpoint': 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Hotpoint_logo.svg/200px-Hotpoint_logo.svg.png',
-    'Zanussi': 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Zanussi_logo.svg/200px-Zanussi_logo.svg.png',
-    'Candy': 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Candy_logo.svg/200px-Candy_logo.svg.png',
-    'Haier': 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Haier_logo.svg/200px-Haier_logo.svg.png',
-    'Panasonic': 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Panasonic_logo.svg/200px-Panasonic_logo.svg.png',
-    'Daikin': 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Daikin_logo.svg/200px-Daikin_logo.svg.png',
-    'Carrier': 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Carrier_Corporation_logo.svg/200px-Carrier_Corporation_logo.svg.png',
-    'Gree': 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Gree_Electric_logo.svg/200px-Gree_Electric_logo.svg.png',
-    'Midea': 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Midea_logo.svg/200px-Midea_logo.svg.png',
-    'Toshiba': 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Toshiba_logo.svg/200px-Toshiba_logo.svg.png',
-    'Sharp': 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Sharp_logo.svg/200px-Sharp_logo.svg.png',
-    'Hitachi': 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Hitachi_logo.svg/200px-Hitachi_logo.svg.png',
-    'Fujitsu': 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Fujitsu_logo.svg/200px-Fujitsu_logo.svg.png',
-    'Mitsubishi Electric': 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Mitsubishi_Electric_logo.svg/200px-Mitsubishi_Electric_logo.svg.png',
-    'General Electric': 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/General_Electric_logo.svg/200px-General_Electric_logo.svg.png',
-    'Maytag': 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Maytag_logo.svg/200px-Maytag_logo.svg.png',
-    'Kenmore': 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Kenmore_logo.svg/200px-Kenmore_logo.svg.png',
-    'Amana': 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Amana_logo.svg/200px-Amana_logo.svg.png',
-    'Frigidaire': 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Frigidaire_logo.svg/200px-Frigidaire_logo.svg.png',
-    'KitchenAid': 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/KitchenAid_logo.svg/200px-KitchenAid_logo.svg.png'
+    'Whirlpool': 'assets/images/brands/whirlpool.png',
+    'Electrolux': 'assets/images/brands/electrolux.png',
+    'Beko': 'assets/images/brands/beko.png',
+    'Candy': 'assets/images/brands/candy.png',
+    'Haier': 'assets/images/brands/haier.png',
+    'Panasonic': 'assets/images/brands/panasonic.png',
+    'Daikin': 'assets/images/brands/daikin.png',
+    'Carrier': 'assets/images/brands/carrier.png',
+    'Gree': 'assets/images/brands/gree.png',
+    'Midea': 'assets/images/brands/midea.png',
+    'Condor': 'assets/images/brands/condor.png',
+    'Hitachi': 'assets/images/brands/hitachipng',
+    'Geant': 'assets/images/brands/geant.png',
+    'Iris': 'assets/images/brands/iris.png',
+    'Mitsubishi Electric': 'assets/images/brands/mitsubishi-electric.png',
+    'Eniem': 'assets/images/brands/eniem.png',
+    'Maytag': 'assets/images/brands/MaytagMaytag.png',
+    'Sanyo': 'assets/images/brands/sanyo.png',
+    'Brandt': 'assets/images/brands/brandt.png',
+    'Hisense': 'assets/images/brands/hisense.png',
+    'Nikai': 'assets/images/brands/nikai.png'
   };
   
   return logoMap[brandName] || null;
@@ -735,13 +729,13 @@ function initAnalytics() {
   // Google Analytics 4
   const gaScript = document.createElement('script');
   gaScript.async = true;
-  gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX';
+  gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-XK4CHWYGWZ';
   document.head.appendChild(gaScript);
   
   window.dataLayer = window.dataLayer || [];
   function gtag() { dataLayer.push(arguments); }
   gtag('js', new Date());
-  gtag('config', 'G-XXXXXXXXXX');
+  gtag('config', 'G-XK4CHWYGWZ');
 }
 
 // ============================================
