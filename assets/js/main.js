@@ -29,13 +29,13 @@ async function loadData() {
       fetch('data/errors.json'),
       fetch('data/brands.json')
     ]);
-    
+
     App.data.errors = await errorsRes.json();
     App.data.brands = await brandsRes.json();
-    
+
     // Add articles data
     App.data.articles = generateArticles();
-    
+
     return true;
   } catch (error) {
     console.error('Error loading data:', error);
@@ -127,7 +127,7 @@ function updateThemeIcon(theme) {
 function initHeader() {
   const header = document.querySelector('.header');
   if (!header) return;
-  
+
   window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
       header.classList.add('scrolled');
@@ -143,15 +143,15 @@ function initHeader() {
 function initMobileMenu() {
   const menuToggle = document.querySelector('.menu-toggle');
   const nav = document.querySelector('.nav');
-  
+
   if (!menuToggle || !nav) return;
-  
+
   menuToggle.addEventListener('click', () => {
     nav.classList.toggle('active');
     const icon = menuToggle.querySelector('i');
     icon.className = nav.classList.contains('active') ? 'fas fa-times' : 'fas fa-bars';
   });
-  
+
   // Close menu when clicking outside
   document.addEventListener('click', (e) => {
     if (!menuToggle.contains(e.target) && !nav.contains(e.target)) {
@@ -167,7 +167,7 @@ function initMobileMenu() {
 function initBackToTop() {
   const backToTop = document.querySelector('.back-to-top');
   if (!backToTop) return;
-  
+
   window.addEventListener('scroll', () => {
     if (window.scrollY > 500) {
       backToTop.classList.add('visible');
@@ -175,7 +175,7 @@ function initBackToTop() {
       backToTop.classList.remove('visible');
     }
   });
-  
+
   backToTop.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
@@ -186,7 +186,7 @@ function initBackToTop() {
 // ============================================
 function initScrollReveal() {
   const revealElements = document.querySelectorAll('.reveal');
-  
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -197,7 +197,7 @@ function initScrollReveal() {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
   });
-  
+
   revealElements.forEach(el => observer.observe(el));
 }
 
@@ -206,7 +206,7 @@ function initScrollReveal() {
 // ============================================
 function animateCounters() {
   const counters = document.querySelectorAll('.counter');
-  
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -215,27 +215,27 @@ function animateCounters() {
         const duration = 2000;
         const start = 0;
         const startTime = performance.now();
-        
+
         function updateCounter(currentTime) {
           const elapsed = currentTime - startTime;
           const progress = Math.min(elapsed / duration, 1);
           const easeOut = 1 - Math.pow(1 - progress, 3);
           const current = Math.floor(easeOut * target);
           counter.textContent = current.toLocaleString('en-US');
-          
+
           if (progress < 1) {
             requestAnimationFrame(updateCounter);
           } else {
             counter.textContent = target.toLocaleString('en-US');
           }
         }
-        
+
         requestAnimationFrame(updateCounter);
         observer.unobserve(counter);
       }
     });
   }, { threshold: 0.5 });
-  
+
   counters.forEach(counter => observer.observe(counter));
 }
 
@@ -244,34 +244,34 @@ function animateCounters() {
 // ============================================
 function initSearch() {
   const searchInputs = document.querySelectorAll('.search-input');
-  
+
   searchInputs.forEach(input => {
     const resultsContainer = input.closest('.search-bar, .hero-search')?.querySelector('.search-results');
-    
+
     input.addEventListener('input', debounce(() => {
       const query = input.value.trim();
       if (query.length < 2) {
         resultsContainer?.classList.remove('active');
         return;
       }
-      
+
       const results = searchAll(query);
       renderSearchResults(results, resultsContainer);
     }, 300));
-    
+
     input.addEventListener('focus', () => {
       if (input.value.trim().length >= 2) {
         resultsContainer?.classList.add('active');
       }
     });
-    
+
     // Close on click outside
     document.addEventListener('click', (e) => {
       if (!input.contains(e.target) && !resultsContainer?.contains(e.target)) {
         resultsContainer?.classList.remove('active');
       }
     });
-    
+
     // Enter key
     input.addEventListener('keypress', (e) => {
       if (e.key === 'Enter') {
@@ -287,23 +287,23 @@ function initSearch() {
 function searchAll(query) {
   const q = query.toLowerCase();
   const results = [];
-  
+
   // Search errors
   App.data.errors.forEach(error => {
-       if ((error.code || '').toLowerCase().includes(q) || 
-        (error.description || '').toLowerCase().includes(q) ||
-        (error.device || '').toLowerCase().includes(q) ||
-        (error.brand || '').toLowerCase().includes(q)) {
+    if ((error.errorCode || '').toLowerCase().includes(q) ||
+      (error.titleAr || error.title || '').toLowerCase().includes(q) ||
+      (error.deviceTypeAr || error.deviceType || '').toLowerCase().includes(q) ||
+      (error.brandAr || error.brand || '').toLowerCase().includes(q)) {
       results.push({
         type: 'error',
-        title: `كود الخطأ ${error.code}`,
-        subtitle: `${error.device} - ${error.brand}`,
-        url: `error.html?device=${encodeURIComponent(error.device)}&brand=${encodeURIComponent(error.brand)}&code=${encodeURIComponent(error.code)}`,
+        title: `كود الخطأ ${error.errorCode || ''}`,
+        subtitle: `${error.deviceTypeAr || ''} - ${error.brandAr || ''}`,
+        url: `error.html?device=${encodeURIComponent(error.deviceTypeAr || '')}&brand=${encodeURIComponent(error.brandAr || '')}&code=${encodeURIComponent(error.errorCode || '')}`,
         icon: 'fa-exclamation-triangle'
       });
     }
   });
-  
+
   // Search brands
   App.data.brands.forEach(brand => {
     if (brand.name.toLowerCase().includes(q)) {
@@ -316,13 +316,13 @@ function searchAll(query) {
       });
     }
   });
-  
+
   return results.slice(0, 8);
 }
 
 function renderSearchResults(results, container) {
   if (!container) return;
-  
+
   if (results.length === 0) {
     container.innerHTML = `
       <div class="search-result-item" style="justify-content:center; color: var(--text-tertiary);">
@@ -332,7 +332,7 @@ function renderSearchResults(results, container) {
     container.classList.add('active');
     return;
   }
-  
+
   container.innerHTML = results.map(result => `
     <a href="${result.url}" class="search-result-item">
       <div class="search-result-icon">
@@ -344,7 +344,7 @@ function renderSearchResults(results, container) {
       </div>
     </a>
   `).join('');
-  
+
   container.classList.add('active');
 }
 
@@ -356,9 +356,9 @@ function initFilters() {
   const brandFilter = document.getElementById('brand-filter');
   const severityFilter = document.getElementById('severity-filter');
   const sortFilter = document.getElementById('sort-filter');
-  
+
   const filters = [deviceFilter, brandFilter, severityFilter, sortFilter];
-  
+
   filters.forEach(filter => {
     if (!filter) return;
     filter.addEventListener('change', () => {
@@ -377,31 +377,29 @@ function initFilters() {
 function applyFilters() {
   let filtered = [...App.data.errors];
   const filters = App.config.currentFilters;
-  
+
   if (filters.device) {
-    filtered = filtered.filter(e => e.device === filters.device);
+    filtered = filtered.filter(e => (e.deviceTypeAr || '') === filters.device);
   }
   if (filters.brand) {
-    filtered = filtered.filter(e => e.brand === filters.brand);
+    filtered = filtered.filter(e => (e.brandAr || '') === filters.brand);
   }
-  if (filters.severity) {
-    filtered = filtered.filter(e => e.severity === filters.severity);
-  }
-  
-  // Sort
+
+
   switch (filters.sort) {
     case 'newest':
-      filtered.sort((a, b) => new Date(b.date) - new Date(a.date));
+      filtered.sort((a, b) => (b.id || '').localeCompare(a.id || ''));
       break;
     case 'oldest':
-      filtered.sort((a, b) => new Date(a.date) - new Date(b.date));
+      filtered.sort((a, b) => (a.id || '').localeCompare(b.id || ''));
       break;
+
     case 'severity':
       const severityOrder = { high: 0, medium: 1, low: 2 };
       filtered.sort((a, b) => severityOrder[a.severity] - severityOrder[b.severity]);
       break;
   }
-  
+
   renderErrors(filtered);
 }
 
@@ -412,11 +410,11 @@ function renderErrors(errors) {
   const container = document.getElementById('errors-grid');
   const countEl = document.getElementById('errors-count');
   if (!container) return;
-  
+
   if (countEl) {
     countEl.textContent = `${errors.length} نتيجة`;
   }
-  
+
   if (errors.length === 0) {
     container.innerHTML = `
       <div class="empty-state" style="grid-column: 1/-1;">
@@ -427,31 +425,31 @@ function renderErrors(errors) {
     `;
     return;
   }
-  
+
   // Pagination
   const start = (App.config.currentPage - 1) * App.config.itemsPerPage;
   const end = start + App.config.itemsPerPage;
   const paginated = errors.slice(start, end);
-  
+
   container.innerHTML = paginated.map(error => `
     <div class="error-card ${error.severity} reveal">
-      <div class="error-code-display ${error.severity}">${error.code}</div>
-      <h3 class="card-title">${error.description}</h3>
-      <p class="card-text">${(error.cause || 'سبب الخطأ غير متوفر').substring(0, 100)}...</p>
+      <div class="error-code-display ${error.severity}">${error.errorCode || ''}</div>
+      <h3 class="card-title">${error.titleAr || error.title || ''}</h3>
+      <p class="card-text">${(error.causes && error.causes.length ? error.causes[0] : 'سبب غير محدد').substring(0, 100)}...</p>
       <div class="card-meta">
-        <span class="badge badge-primary"><i class="fas fa-microchip"></i> ${error.device}</span>
-        <span class="badge badge-secondary"><i class="fas fa-tag"></i> ${error.brand}</span>
+        <span class="badge badge-primary"><i class="fas fa-microchip"></i> ${error.deviceTypeAr || ''}</span>
+        <span class="badge badge-secondary"><i class="fas fa-tag"></i> ${error.brandAr || ''}</span>
         ${getSeverityBadge(error.severity)}
       </div>
       <div class="mt-3">
-        <a href="error.html?device=${encodeURIComponent(error.device)}&brand=${encodeURIComponent(error.brand)}&code=${encodeURIComponent(error.code)}" 
+        <a href="error.html?device=${encodeURIComponent(error.deviceTypeAr || '')}&brand=${encodeURIComponent(error.brandAr || '')}&code=${encodeURIComponent(error.errorCode || '')}" 
            class="btn btn-sm btn-primary w-full">
           <i class="fas fa-info-circle"></i> تفاصيل الخطأ
         </a>
       </div>
     </div>
   `).join('');
-  
+
   renderPagination(errors.length);
   initScrollReveal();
 }
@@ -469,20 +467,20 @@ function getSeverityBadge(severity) {
 function renderPagination(totalItems) {
   const container = document.getElementById('pagination');
   if (!container) return;
-  
+
   const totalPages = Math.ceil(totalItems / App.config.itemsPerPage);
   if (totalPages <= 1) {
     container.innerHTML = '';
     return;
   }
-  
+
   let html = '';
-  
+
   // Previous
   html += `<button ${App.config.currentPage === 1 ? 'disabled' : ''} onclick="changePage(${App.config.currentPage - 1})">
     <i class="fas fa-chevron-right"></i>
   </button>`;
-  
+
   // Page numbers
   for (let i = 1; i <= totalPages; i++) {
     if (i === 1 || i === totalPages || (i >= App.config.currentPage - 1 && i <= App.config.currentPage + 1)) {
@@ -491,12 +489,12 @@ function renderPagination(totalItems) {
       html += `<span>...</span>`;
     }
   }
-  
+
   // Next
   html += `<button ${App.config.currentPage === totalPages ? 'disabled' : ''} onclick="changePage(${App.config.currentPage + 1})">
     <i class="fas fa-chevron-left"></i>
   </button>`;
-  
+
   container.innerHTML = html;
 }
 
@@ -509,13 +507,14 @@ function changePage(page) {
 function renderBrands() {
   const container = document.getElementById('brands-grid');
   if (!container) return;
-  
+
   // Count errors per brand
   const brandCounts = {};
   App.data.errors.forEach(e => {
-    brandCounts[e.brand] = (brandCounts[e.brand] || 0) + 1;
+    const b = e.brandAr || e.brand || '';
+    brandCounts[b] = (brandCounts[b] || 0) + 1;
   });
-  
+
   container.innerHTML = App.data.brands.map(brand => {
     const count = brandCounts[brand.name] || 0;
     const logoUrl = getBrandLogo(brand.name);
@@ -530,22 +529,22 @@ function renderBrands() {
       </a>
     `;
   }).join('');
-  
+
   initScrollReveal();
 }
 
 function renderDevices() {
   const container = document.getElementById('devices-grid');
   if (!container) return;
-  
+
   const devices = [
     { id: 'washing-machine', name: 'غسالات الملابس', icon: 'fa-tshirt', desc: 'أكواد أخطاء وإصلاحات غسالات الملابس', color: 'device-washing' },
     { id: 'dishwasher', name: 'غسالات الأطباق', icon: 'fa-utensils', desc: 'أكواد أخطاء وإصلاحات غسالات الأطباق', color: 'device-dishwasher' },
     { id: 'ac', name: 'المكيفات', icon: 'fa-snowflake', desc: 'أكواد أخطاء وإصلاحات المكيفات', color: 'device-ac' }
   ];
-  
+
   container.innerHTML = devices.map(device => {
-    const count = App.data.errors.filter(e => e.device === device.name).length;
+    const count = App.data.errors.filter(e => (e.deviceTypeAr || '') === device.name).length;
     return `
       <a href="errors.html?device=${encodeURIComponent(device.name)}" class="device-card ${device.color} reveal">
         <div class="device-icon"><i class="fas ${device.icon}"></i></div>
@@ -557,14 +556,14 @@ function renderDevices() {
       </a>
     `;
   }).join('');
-  
+
   initScrollReveal();
 }
 
 function renderArticles() {
   const container = document.getElementById('articles-grid');
   if (!container) return;
-  
+
   container.innerHTML = App.data.articles.map(article => `
     <a href="article.html?id=${article.id}" class="article-card reveal">
       <div class="article-image"><i class="fas ${article.icon}"></i></div>
@@ -578,16 +577,16 @@ function renderArticles() {
       </div>
     </a>
   `).join('');
-  
+
   initScrollReveal();
 }
 
 function renderStats() {
   const totalErrors = App.data.errors.length;
   const totalBrands = App.data.brands.length;
-  const totalDevices = new Set(App.data.errors.map(e => e.device)).size;
+  const totalDevices = new Set(App.data.errors.map(e => e.deviceTypeAr || '')).size;
   const totalArticles = App.data.articles.length;
-  
+
   const counters = document.querySelectorAll('.counter');
   counters.forEach(counter => {
     const target = counter.getAttribute('data-target');
@@ -596,7 +595,7 @@ function renderStats() {
     if (target === 'devices') counter.setAttribute('data-target', totalDevices);
     if (target === 'articles') counter.setAttribute('data-target', totalArticles);
   });
-  
+
   animateCounters();
 }
 
@@ -630,7 +629,7 @@ function getBrandLogo(brandName) {
     'Hisense': 'assets/images/brands/hisense.png',
     'Nikai': 'assets/images/brands/nikai.png'
   };
-  
+
   return logoMap[brandName] || null;
 }
 
@@ -639,15 +638,15 @@ function getBrandLogo(brandName) {
 // ============================================
 function initFAQ() {
   const faqItems = document.querySelectorAll('.faq-item');
-  
+
   faqItems.forEach(item => {
     const question = item.querySelector('.faq-question');
     question.addEventListener('click', () => {
       const isActive = item.classList.contains('active');
-      
+
       // Close all
       faqItems.forEach(i => i.classList.remove('active'));
-      
+
       // Open clicked if wasn't active
       if (!isActive) {
         item.classList.add('active');
@@ -661,24 +660,24 @@ function initFAQ() {
 // ============================================
 function showToast(message, type = 'info') {
   const container = document.querySelector('.toast-container') || createToastContainer();
-  
+
   const toast = document.createElement('div');
   toast.className = `toast toast-${type}`;
-  
+
   const icons = {
     success: 'fa-check-circle',
     error: 'fa-times-circle',
     warning: 'fa-exclamation-triangle',
     info: 'fa-info-circle'
   };
-  
+
   toast.innerHTML = `
     <i class="fas ${icons[type] || icons.info}"></i>
     <span>${message}</span>
   `;
-  
+
   container.appendChild(toast);
-  
+
   setTimeout(() => {
     toast.style.opacity = '0';
     toast.style.transform = 'translateX(-20px)';
@@ -731,7 +730,7 @@ function initAnalytics() {
   gaScript.async = true;
   gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-XK4CHWYGWZ';
   document.head.appendChild(gaScript);
-  
+
   window.dataLayer = window.dataLayer || [];
   function gtag() { dataLayer.push(arguments); }
   gtag('js', new Date());
@@ -760,14 +759,14 @@ document.addEventListener('DOMContentLoaded', async () => {
   initScrollReveal();
   initSearch();
   initFAQ();
-  
+
   // Load data
   const loaded = await loadData();
   if (!loaded) return;
-  
+
   // Page-specific initialization
   const page = document.body.getAttribute('data-page');
-  
+
   switch (page) {
     case 'home':
       renderStats();
@@ -775,7 +774,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       renderBrands();
       renderArticles();
       break;
-      
+
     case 'errors':
       initFilters();
       // Apply URL params
@@ -797,28 +796,28 @@ document.addEventListener('DOMContentLoaded', async () => {
       };
       applyFilters();
       break;
-      
+
     case 'brands':
       renderBrands();
       break;
-      
+
     case 'brand-detail':
       renderBrandDetail();
       break;
-      
+
     case 'error-detail':
       renderErrorDetail();
       break;
-      
+
     case 'articles':
       renderArticles();
       break;
-      
+
     case 'search':
       renderSearchPage();
       break;
   }
-  
+
   // Register service worker
   registerServiceWorker();
 });
@@ -829,18 +828,18 @@ document.addEventListener('DOMContentLoaded', async () => {
 function renderBrandDetail() {
   const brandName = getUrlParam('name');
   if (!brandName) return;
-  
+
   const brand = App.data.brands.find(b => b.name === brandName);
   if (!brand) return;
-  
+
   // Update page title
   document.title = `${brand.name} - دليل أعطال الأجهزة الكهرومنزلية`;
-  
+
   // Update hero
   const heroTitle = document.getElementById('brand-hero-title');
   const heroDesc = document.getElementById('brand-hero-desc');
   const heroLogo = document.getElementById('brand-hero-logo');
-  
+
   if (heroTitle) heroTitle.textContent = brand.name;
   if (heroDesc) heroDesc.textContent = `أكواد أخطاء وإصلاحات أجهزة ${brand.name}`;
   if (heroLogo) {
@@ -849,16 +848,16 @@ function renderBrandDetail() {
     heroLogo.alt = brand.name;
     if (!logoUrl) heroLogo.style.display = 'none';
   }
-  
+
   // Filter errors
-  const brandErrors = App.data.errors.filter(e => e.brand === brandName);
-  
+  const brandErrors = App.data.errors.filter(e => (e.brandAr || e.brand || '') === brandName);
+
   // Render stats
   const statsContainer = document.getElementById('brand-stats');
   if (statsContainer) {
     const devices = [...new Set(brandErrors.map(e => e.device))];
     const highSeverity = brandErrors.filter(e => e.severity === 'high').length;
-    
+
     statsContainer.innerHTML = `
       <div class="stat-card">
         <div class="stat-number">${brandErrors.length}</div>
@@ -874,7 +873,7 @@ function renderBrandDetail() {
       </div>
     `;
   }
-  
+
   // Render errors
   const errorsContainer = document.getElementById('brand-errors-grid');
   if (errorsContainer) {
@@ -889,15 +888,15 @@ function renderBrandDetail() {
     } else {
       errorsContainer.innerHTML = brandErrors.map(error => `
         <div class="error-card ${error.severity} reveal">
-          <div class="error-code-display ${error.severity}">${error.code}</div>
-          <h3 class="card-title">${error.description}</h3>
-          <p class="card-text">${(error.cause || 'سبب الخطأ غير متوفر').substring(0, 100)}...</p>
+          <div class="error-code-display ${error.severity}">${error.errorCode || ''}</div>
+          <h3 class="card-title">${error.titleAr || error.title || ''}</h3>
+          <p class="card-text">${(error.causes && error.causes.length ? error.causes[0] : 'سبب غير محدد').substring(0, 100)}...</p>
           <div class="card-meta">
-            <span class="badge badge-primary"><i class="fas fa-microchip"></i> ${error.device}</span>
+            <span class="badge badge-primary"><i class="fas fa-microchip"></i> ${error.deviceTypeAr || ''}</span>
             ${getSeverityBadge(error.severity)}
           </div>
           <div class="mt-3">
-            <a href="error.html?device=${encodeURIComponent(error.device)}&brand=${encodeURIComponent(error.brand)}&code=${encodeURIComponent(error.code)}" 
+            <a href="error.html?device=${encodeURIComponent(error.deviceTypeAr || '')}&brand=${encodeURIComponent(error.brandAr || '')}&code=${encodeURIComponent(error.errorCode || '')}" 
                class="btn btn-sm btn-primary w-full">
               <i class="fas fa-info-circle"></i> تفاصيل الخطأ
             </a>
@@ -906,7 +905,7 @@ function renderBrandDetail() {
       `).join('');
     }
   }
-  
+
   initScrollReveal();
 }
 
@@ -914,13 +913,15 @@ function renderErrorDetail() {
   const device = getUrlParam('device');
   const brand = getUrlParam('brand');
   const code = getUrlParam('code');
-  
+
   if (!device || !brand || !code) return;
-  
-  const error = App.data.errors.find(e => 
-    e.device === device && e.brand === brand && e.code === code
+
+  const error = App.data.errors.find(e =>
+    (e.deviceTypeAr || '') === device &&
+    (e.brandAr || '') === brand &&
+    (e.errorCode || '') === code
   );
-  
+
   if (!error) {
     document.getElementById('error-detail-content').innerHTML = `
       <div class="empty-state">
@@ -932,15 +933,15 @@ function renderErrorDetail() {
     `;
     return;
   }
-  
+
   // Update page title
-  document.title = `كود الخطأ ${error.code} - ${error.device} ${error.brand}`;
-  
+  document.title = `كود الخطأ ${error.errorCode || ''} - ${error.deviceTypeAr || ''} ${error.brandAr || ''}`;
+
   // Update hero
   const heroCode = document.getElementById('error-hero-code');
   const heroTitle = document.getElementById('error-hero-title');
   const heroSubtitle = document.getElementById('error-hero-subtitle');
-  
+
   if (heroCode) {
     heroCode.textContent = error.code;
     heroCode.className = `error-code-large ${error.severity}`;
@@ -948,12 +949,12 @@ function renderErrorDetail() {
   if (heroTitle) heroTitle.textContent = error.description;
   if (heroSubtitle) {
     heroSubtitle.innerHTML = `
-      <span class="badge badge-primary">${error.device}</span>
-      <span class="badge badge-secondary">${error.brand}</span>
-      ${getSeverityBadge(error.severity)}
-    `;
+    <span class="badge badge-primary">${error.deviceTypeAr || ''}</span>
+    <span class="badge badge-secondary">${error.brandAr || ''}</span>
+    ${getSeverityBadge(error.severity)}
+  `;
   }
-  
+
   // Render details
   const content = document.getElementById('error-detail-content');
   if (content) {
@@ -961,15 +962,14 @@ function renderErrorDetail() {
       <!-- Cause -->
       <div class="detail-section">
         <h3><i class="fas fa-search"></i> سبب الخطأ</h3>
-        <p>${error.cause || 'سبب الخطأ غير متوفر'}</p>
-      </div>
+  <p>${error.causes && error.causes.length ? error.causes.join('، ') : 'سبب غير محدد'}</p>
+        </div>
       
       <!-- Solution -->
       <div class="detail-section">
         <h3><i class="fas fa-wrench"></i> الحل المقترح</h3>
         <ol class="steplist">
-          ${(error.solution && Array.isArray(error.solution) ? error.solution : ['لا توجد خطوات حل مسجلة']).map(step => `<li>${step}</li>`).join('')}
-        </ol>
+${(error.repairSteps && Array.isArray(error.repairSteps) ? error.repairSteps : ['لا توجد خطوات حل مسجلة']).map(step => `<li>${step}</li>`).join('')}        </ol>
       </div>
       
       <!-- Info Grid -->
@@ -978,15 +978,15 @@ function renderErrorDetail() {
         <div class="info-grid">
           <div class="info-item">
             <div class="label">الجهاز</div>
-            <div class="value">${error.device}</div>
+  <div class="value">${error.deviceTypeAr || ''}</div>
           </div>
           <div class="info-item">
             <div class="label">الماركة</div>
-            <div class="value">${error.brand}</div>
+  <div class="value">${error.brandAr || ''}</div>
           </div>
           <div class="info-item">
             <div class="label">الخطورة</div>
-            <div class="value">${error.severity === 'high' ? 'عالية' : error.severity === 'medium' ? 'متوسطة' : 'منخفضة'}</div>
+  <div class="value">${error.severityAr || error.severity || ''}</div>
           </div>
           <div class="info-item">
             <div class="label">تاريخ الإضافة</div>
@@ -1002,24 +1002,24 @@ function renderErrorDetail() {
 }
 
 function renderRelatedErrors(currentError) {
-  const related = App.data.errors.filter(e => 
-    e.brand === currentError.brand && 
-    e.device === currentError.device && 
-    e.code !== currentError.code
+  const related = App.data.errors.filter(e =>
+    (e.brandAr || '') === (currentError.brandAr || '') &&
+    (e.deviceTypeAr || '') === (currentError.deviceTypeAr || '') &&
+    (e.errorCode || '') !== (currentError.errorCode || '')
   ).slice(0, 3);
-  
+
   if (related.length === 0) return '';
-  
+
   return `
     <div class="detail-section">
       <h3><i class="fas fa-link"></i> أخطاء ذات صلة</h3>
       <div class="cards-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
         ${related.map(error => `
           <div class="error-card ${error.severity}">
-            <div class="error-code-display ${error.severity}">${error.code}</div>
-            <h4 class="card-title">${error.description}</h4>
-            <a href="error.html?device=${encodeURIComponent(error.device)}&brand=${encodeURIComponent(error.brand)}&code=${encodeURIComponent(error.code)}" 
-               class="btn btn-sm btn-primary w-full">
+            <div class="error-code-display ${error.severity}">${error.errorCode || ''}</div>
+  <h4 class="card-title">${error.titleAr || error.title || ''}</h4>
+  <a href="error.html?device=${encodeURIComponent(error.deviceTypeAr || '')}&brand=${encodeURIComponent(error.brandAr || '')}&code=${encodeURIComponent(error.errorCode || '')}">
+class="btn btn-sm btn-primary w-full">
               <i class="fas fa-info-circle"></i> التفاصيل
             </a>
           </div>
@@ -1032,12 +1032,12 @@ function renderRelatedErrors(currentError) {
 function renderSearchPage() {
   const query = getUrlParam('q');
   if (!query) return;
-  
+
   document.getElementById('search-query').textContent = query;
-  
+
   const results = searchAll(query);
   const container = document.getElementById('search-results');
-  
+
   if (results.length === 0) {
     container.innerHTML = `
       <div class="empty-state">
@@ -1048,7 +1048,7 @@ function renderSearchPage() {
     `;
     return;
   }
-  
+
   container.innerHTML = results.map(result => `
     <div class="card reveal">
       <div class="card-body">
@@ -1065,6 +1065,6 @@ function renderSearchPage() {
       </div>
     </div>
   `).join('');
-  
+
   initScrollReveal();
 }
