@@ -221,12 +221,12 @@ function animateCounters() {
           const progress = Math.min(elapsed / duration, 1);
           const easeOut = 1 - Math.pow(1 - progress, 3);
           const current = Math.floor(easeOut * target);
-          counter.textContent = current.toLocaleString('ar-SA');
+          counter.textContent = current.toLocaleString('en-US');
           
           if (progress < 1) {
             requestAnimationFrame(updateCounter);
           } else {
-            counter.textContent = target.toLocaleString('ar-SA');
+            counter.textContent = target.toLocaleString('en-US');
           }
         }
         
@@ -603,36 +603,7 @@ function renderStats() {
 // ============================================
 // Brand Logo Helper
 // ============================================
-function getBrandLogo(brandName) {
-  const logoMap = {
-    'LG': 'assets/images/brands/lg.png',
-    'Samsung': 'assets/images/brands/samsung.png',
-    'Bosch': 'assets/images/brands/bosch.jpg',
-    'Whirlpool': 'assets/images/brands/whirlpool.png',
-    'Electrolux': 'assets/images/brands/electrolux.png',
-    'Beko': 'assets/images/brands/beko.png',
-    'Candy': 'assets/images/brands/candy.png',
-    'Haier': 'assets/images/brands/haier.png',
-    'Panasonic': 'assets/images/brands/panasonic.png',
-    'Daikin': 'assets/images/brands/daikin.png',
-    'Carrier': 'assets/images/brands/carrier.png',
-    'Gree': 'assets/images/brands/gree.png',
-    'Midea': 'assets/images/brands/midea.png',
-    'Condor': 'assets/images/brands/condor.png',
-    'Hitachi': 'assets/images/brands/hitachipng',
-    'Geant': 'assets/images/brands/geant.png',
-    'Iris': 'assets/images/brands/iris.png',
-    'Mitsubishi Electric': 'assets/images/brands/mitsubishi-electric.png',
-    'Eniem': 'assets/images/brands/eniem.png',
-    'Maytag': 'assets/images/brands/MaytagMaytag.png',
-    'Sanyo': 'assets/images/brands/sanyo.png',
-    'Brandt': 'assets/images/brands/brandt.png',
-    'Hisense': 'assets/images/brands/hisense.png',
-    'Nikai': 'assets/images/brands/nikai.png'
-  };
-  
-  return logoMap[brandName] || null;
-}
+
 
 // ============================================
 // FAQ Accordion
@@ -710,7 +681,7 @@ function debounce(func, wait) {
 
 function formatDate(dateStr) {
   const date = new Date(dateStr);
-  return date.toLocaleDateString('ar-SA', { year: 'numeric', month: 'long', day: 'numeric' });
+  return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
 }
 
 function getUrlParam(param) {
