@@ -605,9 +605,9 @@ function renderStats() {
 // ============================================
 function getBrandLogo(brandName) {
   const logoMap = {
-    'LG': 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/LG_symbol.svg/120px-LG_symbol.svg.png',
-    'Samsung': 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Samsung_Logo.svg/200px-Samsung_Logo.svg.png',
-    'Bosch': 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Bosch-logo.svg/200px-Bosch-logo.svg.png',
+    'LG': 'assets/images/brands/lg.png',
+    'Samsung': 'assets/images/brands/samsung.png',
+    'Bosch': 'assets/images/brands/bosch.jpg',
     'Siemens': 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Siemens-logo.svg/200px-Siemens-logo.svg.png',
     'Whirlpool': 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Whirlpool_Corporation_Logo.png/200px-Whirlpool_Corporation_Logo.png',
     'Electrolux': 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Electrolux_logo.svg/200px-Electrolux_logo.svg.png',
