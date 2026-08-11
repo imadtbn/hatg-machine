@@ -1,534 +1,1076 @@
-/* ============================================
-   دليل أعطال الأجهزة الكهرومنزلية - JavaScript
-   ============================================ */
+/**
+ * دليل أعطال الأجهزة الكهرومنزلية - Main JavaScript
+ * Modern, interactive, and SEO-optimized
+ */
 
-(function() {
-  'use strict';
+// ============================================
+// Global State
+// ============================================
+const App = {
+  data: {
+    errors: [],
+    brands: [],
+    articles: []
+  },
+  config: {
+    itemsPerPage: 12,
+    currentPage: 1,
+    currentFilters: {},
+    theme: localStorage.getItem('theme') || 'light'
+  }
+};
 
-  // === Data Store ===
-  let brandsData = [];
-  let errorsData = [];
+// ============================================
+// Data Loading
+// ============================================
+async function loadData() {
+  try {
+    const [errorsRes, brandsRes] = await Promise.all([
+      fetch('data/errors.json'),
+      fetch('data/brands.json')
+    ]);
+    
+    App.data.errors = await errorsRes.json();
+    App.data.brands = await brandsRes.json();
+    
+    // Add articles data
+    App.data.articles = generateArticles();
+    
+    return true;
+  } catch (error) {
+    console.error('Error loading data:', error);
+    showToast('حدث خطأ في تحميل البيانات', 'error');
+    return false;
+  }
+}
 
-  // === Initialize ===
-  document.addEventListener('DOMContentLoaded', function() {
-    loadData();
-    initTheme();
-    initHeader();
-    initSearch();
-    initScrollEffects();
-    initBackToTop();
-    initFAQ();
-    initTabs();
-    initImageZoom();
-    initLazyLoading();
-    initCounters();
+function generateArticles() {
+  return [
+    {
+      id: 'maintenance-tips',
+      title: 'نصائح صيانة دورية للأجهزة الكهرومنزلية',
+      excerpt: 'تعرف على أهم النصائح للحفاظ على أجهزتك الكهرومنزلية وتجنب الأعطال المفاجئة.',
+      icon: 'fa-tools',
+      date: '2024-01-15',
+      category: 'صيانة'
+    },
+    {
+      id: 'energy-saving',
+      title: 'كيفية توفير الطاقة في الأجهزة الكهرومنزلية',
+      excerpt: 'طرق فعالة لتقليل استهلاك الكهرباء والحفاظ على كفاءة الأجهزة.',
+      icon: 'fa-bolt',
+      date: '2024-02-10',
+      category: 'توفير الطاقة'
+    },
+    {
+      id: 'washing-machine-care',
+      title: 'العناية بغسالة الملابس - دليل شامل',
+      excerpt: 'كل ما تحتاج معرفته للحفاظ على غسالتك وتمديد عمرها الافتراضي.',
+      icon: 'fa-tshirt',
+      date: '2024-03-05',
+      category: 'غسالات'
+    },
+    {
+      id: 'ac-maintenance',
+      title: 'صيانة المكيفات قبل فصل الصيف',
+      excerpt: 'خطوات ضرورية للتحضير لموسم الصيف وضمان عمل المكيف بكفاءة.',
+      icon: 'fa-snowflake',
+      date: '2024-04-01',
+      category: 'مكيفات'
+    },
+    {
+      id: 'dishwasher-errors',
+      title: 'أشهر أخطاء غسالة الأطباق وكيفية إصلاحها',
+      excerpt: 'دليل شامل لأكثر الأخطاء شيوعاً في غسالات الأطباق وحلولها.',
+      icon: 'fa-utensils',
+      date: '2024-05-12',
+      category: 'غسالات أطباق'
+    },
+    {
+      id: 'choose-washing-machine',
+      title: 'كيف تختار غسالة الملابس المناسبة',
+      excerpt: 'دليل شراء شامل لاختيار الغسالة الأنسب لاحتياجاتك وميزانيتك.',
+      icon: 'fa-shopping-cart',
+      date: '2024-06-20',
+      category: 'دليل الشراء'
+    }
+  ];
+}
+
+// ============================================
+// Theme Management
+// ============================================
+function initTheme() {
+  const savedTheme = localStorage.getItem('theme') || 'light';
+  document.documentElement.setAttribute('data-theme', savedTheme);
+  updateThemeIcon(savedTheme);
+}
+
+function toggleTheme() {
+  const currentTheme = document.documentElement.getAttribute('data-theme');
+  const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', newTheme);
+  localStorage.setItem('theme', newTheme);
+  updateThemeIcon(newTheme);
+}
+
+function updateThemeIcon(theme) {
+  const icon = document.querySelector('.theme-toggle i');
+  if (icon) {
+    icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+  }
+}
+
+// ============================================
+// Header Scroll Effect
+// ============================================
+function initHeader() {
+  const header = document.querySelector('.header');
+  if (!header) return;
+  
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
   });
+}
 
-  // === Load Data ===
-  async function loadData() {
-    try {
-      const [brandsRes, errorsRes] = await Promise.all([
-        fetch('data/brands.json'),
-        fetch('data/errors.json')
-      ]);
-      brandsData = await brandsRes.json();
-      errorsData = await errorsRes.json();
-    } catch (e) {
-      console.error('Error loading data:', e);
+// ============================================
+// Mobile Menu
+// ============================================
+function initMobileMenu() {
+  const menuToggle = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('.nav');
+  
+  if (!menuToggle || !nav) return;
+  
+  menuToggle.addEventListener('click', () => {
+    nav.classList.toggle('active');
+    const icon = menuToggle.querySelector('i');
+    icon.className = nav.classList.contains('active') ? 'fas fa-times' : 'fas fa-bars';
+  });
+  
+  // Close menu when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!menuToggle.contains(e.target) && !nav.contains(e.target)) {
+      nav.classList.remove('active');
+      menuToggle.querySelector('i').className = 'fas fa-bars';
     }
-  }
+  });
+}
 
-  // === Theme Toggle ===
-  function initTheme() {
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    document.documentElement.setAttribute('data-theme', savedTheme);
-    
-    const toggleBtn = document.querySelector('.theme-toggle');
-    if (toggleBtn) {
-      toggleBtn.addEventListener('click', function() {
-        const current = document.documentElement.getAttribute('data-theme');
-        const newTheme = current === 'dark' ? 'light' : 'dark';
-        document.documentElement.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-        toggleBtn.textContent = newTheme === 'dark' ? '☀️' : '🌙';
-      });
-      
-      toggleBtn.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
-    }
-  }
-
-  // === Header Scroll Effect ===
-  function initHeader() {
-    const header = document.querySelector('.header');
-    if (!header) return;
-    
-    let lastScroll = 0;
-    
-    window.addEventListener('scroll', function() {
-      const currentScroll = window.pageYOffset;
-      
-      if (currentScroll > 50) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
-      
-      lastScroll = currentScroll;
-    });
-
-    // Mobile menu
-    const menuToggle = document.querySelector('.menu-toggle');
-    const nav = document.querySelector('.nav');
-    if (menuToggle && nav) {
-      menuToggle.addEventListener('click', function() {
-        nav.classList.toggle('active');
-      });
-    }
-  }
-
-  // === Smart Search ===
-  function initSearch() {
-    const searchInputs = document.querySelectorAll('.search-bar input, .hero-search input');
-    
-    searchInputs.forEach(input => {
-      let debounceTimer;
-      
-      input.addEventListener('input', function() {
-        clearTimeout(debounceTimer);
-        const query = this.value.trim().toLowerCase();
-        
-        if (query.length < 2) {
-          closeSearchResults();
-          return;
-        }
-        
-        debounceTimer = setTimeout(function() {
-          performSearch(query);
-        }, 300);
-      });
-
-      input.addEventListener('focus', function() {
-        if (this.value.trim().length >= 2) {
-          performSearch(this.value.trim().toLowerCase());
-        }
-      });
-    });
-
-    document.addEventListener('click', function(e) {
-      if (!e.target.closest('.search-bar') && !e.target.closest('.hero-search')) {
-        closeSearchResults();
-      }
-    });
-  }
-
-  function performSearch(query) {
-    const results = [];
-    
-    // Search in errors
-    errorsData.forEach(function(error) {
-      const matchFields = [
-        error.errorCode?.toLowerCase(),
-        error.titleAr?.toLowerCase(),
-        error.brandAr?.toLowerCase(),
-        error.deviceTypeAr?.toLowerCase(),
-        error.categoryAr?.toLowerCase(),
-        ...error.causes?.map(c => c.toLowerCase()),
-        ...error.affectedParts?.map(p => p.toLowerCase())
-      ];
-      
-      const isMatch = matchFields.some(field => field && field.includes(query));
-      
-      if (isMatch) {
-        results.push({
-          type: 'error',
-          data: error,
-          title: `${error.errorCode} - ${error.titleAr}`,
-          subtitle: `${error.brandAr} - ${error.deviceTypeAr}`,
-          url: `error.html?id=${error.id}`
-        });
-      }
-    });
-
-    // Search in brands
-    brandsData.forEach(function(brand) {
-      if (brand.name.toLowerCase().includes(query) || 
-          brand.nameAr.includes(query) ||
-          (brand.countryAr && brand.countryAr.includes(query))) {
-        results.push({
-          type: 'brand',
-          data: brand,
-          title: brand.nameAr,
-          subtitle: brand.name,
-          url: `brand.html?id=${brand.id}`
-        });
-      }
-    });
-
-    displaySearchResults(results.slice(0, 8));
-  }
-
-  function displaySearchResults(results) {
-    // Find the search results container near the active input
-    const activeInput = document.activeElement;
-    const container = activeInput?.closest('.search-bar, .hero-search')?.querySelector('.search-results');
-    
-    if (!container) return;
-    
-    if (results.length === 0) {
-      container.innerHTML = '<div class="search-result-item">لا توجد نتائج مطابقة</div>';
+// ============================================
+// Back to Top
+// ============================================
+function initBackToTop() {
+  const backToTop = document.querySelector('.back-to-top');
+  if (!backToTop) return;
+  
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 500) {
+      backToTop.classList.add('visible');
     } else {
-      container.innerHTML = results.map(function(item) {
-        return `
-          <div class="search-result-item" onclick="window.location.href='${item.url}'">
-            <strong>${item.title}</strong>
-            <div style="font-size:0.8rem;color:var(--text-secondary);margin-top:4px;">${item.subtitle}</div>
-          </div>
-        `;
-      }).join('');
+      backToTop.classList.remove('visible');
     }
-    
-    container.classList.add('active');
-  }
+  });
+  
+  backToTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
 
-  function closeSearchResults() {
-    document.querySelectorAll('.search-results').forEach(function(el) {
-      el.classList.remove('active');
-    });
-  }
-
-  // === Scroll Reveal Effects ===
-  function initScrollEffects() {
-    const revealElements = document.querySelectorAll('.reveal');
-    
-    const observer = new IntersectionObserver(function(entries) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    });
-
-    revealElements.forEach(function(el) {
-      observer.observe(el);
-    });
-  }
-
-  // === Back to Top ===
-  function initBackToTop() {
-    const btn = document.querySelector('.back-to-top');
-    if (!btn) return;
-    
-    window.addEventListener('scroll', function() {
-      if (window.pageYOffset > 300) {
-        btn.classList.add('visible');
-      } else {
-        btn.classList.remove('visible');
+// ============================================
+// Scroll Reveal Animation
+// ============================================
+function initScrollReveal() {
+  const revealElements = document.querySelectorAll('.reveal');
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
       }
     });
-    
-    btn.addEventListener('click', function() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  }
+  }, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  });
+  
+  revealElements.forEach(el => observer.observe(el));
+}
 
-  // === FAQ Accordion ===
-  function initFAQ() {
-    document.querySelectorAll('.faq-question').forEach(function(q) {
-      q.addEventListener('click', function() {
-        const item = this.parentElement;
-        const isActive = item.classList.contains('active');
+// ============================================
+// Counter Animation
+// ============================================
+function animateCounters() {
+  const counters = document.querySelectorAll('.counter');
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const counter = entry.target;
+        const target = parseInt(counter.getAttribute('data-target'));
+        const duration = 2000;
+        const start = 0;
+        const startTime = performance.now();
         
-        // Close all
-        document.querySelectorAll('.faq-item').forEach(function(faq) {
-          faq.classList.remove('active');
-        });
-        
-        // Open clicked if it wasn't active
-        if (!isActive) {
-          item.classList.add('active');
-        }
-      });
-    });
-  }
-
-  // === Tabs ===
-  function initTabs() {
-    document.querySelectorAll('.tab-btn').forEach(function(btn) {
-      btn.addEventListener('click', function() {
-        const tabGroup = this.closest('.tabs');
-        tabGroup.querySelectorAll('.tab-btn').forEach(function(b) {
-          b.classList.remove('active');
-        });
-        this.classList.add('active');
-      });
-    });
-  }
-
-  // === Image Zoom ===
-  function initImageZoom() {
-    const overlay = document.createElement('div');
-    overlay.className = 'zoom-overlay';
-    overlay.innerHTML = '<img src="" alt="تكبير">';
-    document.body.appendChild(overlay);
-    
-    overlay.addEventListener('click', function() {
-      this.classList.remove('active');
-    });
-    
-    document.querySelectorAll('.image-zoom').forEach(function(img) {
-      img.addEventListener('click', function() {
-        overlay.querySelector('img').src = this.src;
-        overlay.classList.add('active');
-      });
-    });
-  }
-
-  // === Lazy Loading ===
-  function initLazyLoading() {
-    if ('IntersectionObserver' in window) {
-      const lazyImages = document.querySelectorAll('img[data-src]');
-      
-      const imageObserver = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
-          if (entry.isIntersecting) {
-            const img = entry.target;
-            img.src = img.dataset.src;
-            img.removeAttribute('data-src');
-            imageObserver.unobserve(img);
+        function updateCounter(currentTime) {
+          const elapsed = currentTime - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          const easeOut = 1 - Math.pow(1 - progress, 3);
+          const current = Math.floor(easeOut * target);
+          counter.textContent = current.toLocaleString('ar-SA');
+          
+          if (progress < 1) {
+            requestAnimationFrame(updateCounter);
+          } else {
+            counter.textContent = target.toLocaleString('ar-SA');
           }
-        });
-      }, {
-        rootMargin: '50px 0px'
-      });
-
-      lazyImages.forEach(function(img) {
-        imageObserver.observe(img);
-      });
-    } else {
-      // Fallback for older browsers
-      document.querySelectorAll('img[data-src]').forEach(function(img) {
-        img.src = img.dataset.src;
-      });
-    }
-  }
-
-  // === Counter Animation ===
-  function initCounters() {
-    const counters = document.querySelectorAll('.stat-number[data-count]');
-    
-    const observer = new IntersectionObserver(function(entries) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-          const el = entry.target;
-          const target = parseInt(el.dataset.count);
-          animateCounter(el, target);
-          observer.unobserve(el);
         }
-      });
-    }, { threshold: 0.5 });
-
-    counters.forEach(function(counter) {
-      observer.observe(counter);
-    });
-  }
-
-  function animateCounter(el, target) {
-    let current = 0;
-    const duration = 2000;
-    const step = target / (duration / 16);
-    
-    function update() {
-      current += step;
-      if (current >= target) {
-        el.textContent = target;
-        return;
+        
+        requestAnimationFrame(updateCounter);
+        observer.unobserve(counter);
       }
-      el.textContent = Math.floor(current);
-      requestAnimationFrame(update);
-    }
-    
-    update();
-  }
+    });
+  }, { threshold: 0.5 });
+  
+  counters.forEach(counter => observer.observe(counter));
+}
 
-  // === Filter & Sort Errors ===
-  window.filterErrors = function(filter, value) {
-    const cards = document.querySelectorAll('.error-card');
+// ============================================
+// Search Functionality
+// ============================================
+function initSearch() {
+  const searchInputs = document.querySelectorAll('.search-input');
+  
+  searchInputs.forEach(input => {
+    const resultsContainer = input.closest('.search-bar, .hero-search')?.querySelector('.search-results');
     
-    cards.forEach(function(card) {
-      if (!filter || !value) {
-        card.style.display = 'block';
+    input.addEventListener('input', debounce(() => {
+      const query = input.value.trim();
+      if (query.length < 2) {
+        resultsContainer?.classList.remove('active');
         return;
       }
       
-      const cardValue = card.dataset[filter];
-      if (cardValue === value || value === 'all') {
-        card.style.display = 'block';
-      } else {
-        card.style.display = 'none';
+      const results = searchAll(query);
+      renderSearchResults(results, resultsContainer);
+    }, 300));
+    
+    input.addEventListener('focus', () => {
+      if (input.value.trim().length >= 2) {
+        resultsContainer?.classList.add('active');
       }
     });
-  };
-
-  // === Get Error by ID ===
-  window.getErrorById = function(id) {
-    return errorsData.find(function(e) { return e.id === id; });
-  };
-
-  // === Get Brand by ID ===
-  window.getBrandById = function(id) {
-    return brandsData.find(function(b) { return b.id === id; });
-  };
-
-  // === Get Errors by Brand ===
-  window.getErrorsByBrand = function(brandId) {
-    return errorsData.filter(function(e) { return e.brand === brandId; });
-  };
-
-  // === Get Errors by Category ===
-  window.getErrorsByCategory = function(category) {
-    return errorsData.filter(function(e) { return e.category === category; });
-  };
-
-  // === Get Errors by Device Type ===
-  window.getErrorsByDevice = function(deviceType) {
-    return errorsData.filter(function(e) { return e.deviceType === deviceType; });
-  };
-
-  // === Get Errors by Severity ===
-  window.getErrorsBySeverity = function(severity) {
-    return errorsData.filter(function(e) { return e.severity === severity; });
-  };
-
-  // === Generate Breadcrumb ===
-  window.generateBreadcrumb = function(items) {
-    return '<nav class="breadcrumb" aria-label="المسار">' +
-      items.map(function(item, index) {
-        if (index < items.length - 1) {
-          return `<a href="${item.url}">${item.text}</a> <span class="separator">›</span>`;
-        }
-        return `<span>${item.text}</span>`;
-      }).join('') +
-      '</nav>';
-  };
-
-  // === Format Severity ===
-  window.formatSeverity = function(severity) {
-    const map = {
-      'high': { text: 'خطير', class: 'badge-danger', icon: '🔴' },
-      'medium': { text: 'متوسط', class: 'badge-warning', icon: '🟡' },
-      'low': { text: 'بسيط', class: 'badge-success', icon: '🟢' }
-    };
-    return map[severity] || map['medium'];
-  };
-
-  // === Format Device Type ===
-  window.formatDeviceType = function(type) {
-    const map = {
-      'washing-machine': 'غسالة ملابس',
-      'dishwasher': 'غسالة أواني'
-    };
-    return map[type] || type;
-  };
-
-  // === Generate JSON-LD ===
-  window.generateJSONLD = function(type, data) {
-    const schemas = {
-      'organization': {
-        '@context': 'https://schema.org',
-        '@type': 'Organization',
-        'name': 'دليل أعطال الأجهزة الكهرومنزلية',
-        'url': window.location.origin,
-        'logo': window.location.origin + '/assets/images/logo.png',
-        'description': 'أكبر مرجع عربي لأعطال غسالة الأواني وغسالة الملابس'
-      },
-      'website': {
-        '@context': 'https://schema.org',
-        '@type': 'WebSite',
-        'name': 'دليل أعطال الأجهزة الكهرومنزلية',
-        'url': window.location.origin,
-        'potentialAction': {
-          '@type': 'SearchAction',
-          'target': window.location.origin + '/search.html?q={search_term_string}',
-          'query-input': 'required name=search_term_string'
-        }
-      },
-      'article': {
-        '@context': 'https://schema.org',
-        '@type': 'TechArticle',
-        'headline': data.title || '',
-        'description': data.description || '',
-        'datePublished': data.date || new Date().toISOString(),
-        'author': {
-          '@type': 'Organization',
-          'name': 'دليل أعطال الأجهزة الكهرومنزلية'
-        }
-      },
-      'faq': {
-        '@context': 'https://schema.org',
-        '@type': 'FAQPage',
-        'mainEntity': (data.faq || []).map(function(q) {
-          return {
-            '@type': 'Question',
-            'name': q.q,
-            'acceptedAnswer': {
-              '@type': 'Answer',
-              'text': q.a
-            }
-          };
-        })
-      },
-      'breadcrumb': {
-        '@context': 'https://schema.org',
-        '@type': 'BreadcrumbList',
-        'itemListElement': (data.items || []).map(function(item, index) {
-          return {
-            '@type': 'ListItem',
-            'position': index + 1,
-            'name': item.text,
-            'item': window.location.origin + item.url
-          };
-        })
-      }
-    };
     
-    return schemas[type] || null;
-  };
+    // Close on click outside
+    document.addEventListener('click', (e) => {
+      if (!input.contains(e.target) && !resultsContainer?.contains(e.target)) {
+        resultsContainer?.classList.remove('active');
+      }
+    });
+    
+    // Enter key
+    input.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        const query = input.value.trim();
+        if (query) {
+          window.location.href = `search.html?q=${encodeURIComponent(query)}`;
+        }
+      }
+    });
+  });
+}
 
-  // === Render Error Card ===
-  window.renderErrorCard = function(error) {
-    const sev = formatSeverity(error.severity);
-    return `
-      <div class="error-card" data-brand="${error.brand}" data-device="${error.deviceType}" data-severity="${error.severity}">
-        <div class="error-code-display ${error.severity}">${error.errorCode}</div>
-        <h3 class="card-title">${error.titleAr}</h3>
-        <p class="card-text">${error.symptoms?.[0] || ''}</p>
-        <div class="card-meta">
-          <span class="badge ${sev.class}">${sev.icon} ${sev.text}</span>
-          <span class="badge badge-primary">${error.deviceTypeAr}</span>
-          <span class="badge badge-info">${error.brandAr}</span>
-        </div>
-        <div style="margin-top:12px;">
-          <a href="error.html?id=${error.id}" class="btn btn-primary" style="font-size:0.8rem;padding:6px 16px;">تفاصيل العطل</a>
-        </div>
+function searchAll(query) {
+  const q = query.toLowerCase();
+  const results = [];
+  
+  // Search errors
+  App.data.errors.forEach(error => {
+    if (error.code.toLowerCase().includes(q) || 
+        error.description.toLowerCase().includes(q) ||
+        error.device.toLowerCase().includes(q) ||
+        error.brand.toLowerCase().includes(q)) {
+      results.push({
+        type: 'error',
+        title: `كود الخطأ ${error.code}`,
+        subtitle: `${error.device} - ${error.brand}`,
+        url: `error.html?device=${encodeURIComponent(error.device)}&brand=${encodeURIComponent(error.brand)}&code=${encodeURIComponent(error.code)}`,
+        icon: 'fa-exclamation-triangle'
+      });
+    }
+  });
+  
+  // Search brands
+  App.data.brands.forEach(brand => {
+    if (brand.name.toLowerCase().includes(q)) {
+      results.push({
+        type: 'brand',
+        title: brand.name,
+        subtitle: brand.country,
+        url: `brand.html?name=${encodeURIComponent(brand.name)}`,
+        icon: 'fa-industry'
+      });
+    }
+  });
+  
+  return results.slice(0, 8);
+}
+
+function renderSearchResults(results, container) {
+  if (!container) return;
+  
+  if (results.length === 0) {
+    container.innerHTML = `
+      <div class="search-result-item" style="justify-content:center; color: var(--text-tertiary);">
+        لا توجد نتائج
       </div>
     `;
-  };
+    container.classList.add('active');
+    return;
+  }
+  
+  container.innerHTML = results.map(result => `
+    <a href="${result.url}" class="search-result-item">
+      <div class="search-result-icon">
+        <i class="fas ${result.icon}"></i>
+      </div>
+      <div class="search-result-content">
+        <div class="search-result-title">${result.title}</div>
+        <div class="search-result-subtitle">${result.subtitle}</div>
+      </div>
+    </a>
+  `).join('');
+  
+  container.classList.add('active');
+}
 
-  // === Render Brand Card ===
-  window.renderBrandCard = function(brand) {
-    const errorCount = errorsData.filter(function(e) { return e.brand === brand.id; }).length;
-    return `
-      <div class="brand-card">
-        <div class="brand-logo">${brand.name.charAt(0)}</div>
-        <h3 class="brand-name">${brand.nameAr}</h3>
-        <p class="brand-country">${brand.countryAr} - ${errorCount} عطل</p>
-        <a href="brand.html?id=${brand.id}" class="btn btn-secondary" style="margin-top:12px;">عرض الأعطال</a>
+// ============================================
+// Filter & Sort
+// ============================================
+function initFilters() {
+  const deviceFilter = document.getElementById('device-filter');
+  const brandFilter = document.getElementById('brand-filter');
+  const severityFilter = document.getElementById('severity-filter');
+  const sortFilter = document.getElementById('sort-filter');
+  
+  const filters = [deviceFilter, brandFilter, severityFilter, sortFilter];
+  
+  filters.forEach(filter => {
+    if (!filter) return;
+    filter.addEventListener('change', () => {
+      App.config.currentFilters = {
+        device: deviceFilter?.value || '',
+        brand: brandFilter?.value || '',
+        severity: severityFilter?.value || '',
+        sort: sortFilter?.value || 'newest'
+      };
+      App.config.currentPage = 1;
+      applyFilters();
+    });
+  });
+}
+
+function applyFilters() {
+  let filtered = [...App.data.errors];
+  const filters = App.config.currentFilters;
+  
+  if (filters.device) {
+    filtered = filtered.filter(e => e.device === filters.device);
+  }
+  if (filters.brand) {
+    filtered = filtered.filter(e => e.brand === filters.brand);
+  }
+  if (filters.severity) {
+    filtered = filtered.filter(e => e.severity === filters.severity);
+  }
+  
+  // Sort
+  switch (filters.sort) {
+    case 'newest':
+      filtered.sort((a, b) => new Date(b.date) - new Date(a.date));
+      break;
+    case 'oldest':
+      filtered.sort((a, b) => new Date(a.date) - new Date(b.date));
+      break;
+    case 'severity':
+      const severityOrder = { high: 0, medium: 1, low: 2 };
+      filtered.sort((a, b) => severityOrder[a.severity] - severityOrder[b.severity]);
+      break;
+  }
+  
+  renderErrors(filtered);
+}
+
+// ============================================
+// Render Functions
+// ============================================
+function renderErrors(errors) {
+  const container = document.getElementById('errors-grid');
+  const countEl = document.getElementById('errors-count');
+  if (!container) return;
+  
+  if (countEl) {
+    countEl.textContent = `${errors.length} نتيجة`;
+  }
+  
+  if (errors.length === 0) {
+    container.innerHTML = `
+      <div class="empty-state" style="grid-column: 1/-1;">
+        <div class="empty-state-icon"><i class="fas fa-search"></i></div>
+        <h3>لا توجد نتائج</h3>
+        <p>جرب تغيير معايير البحث أو الفلترة</p>
       </div>
     `;
-  };
+    return;
+  }
+  
+  // Pagination
+  const start = (App.config.currentPage - 1) * App.config.itemsPerPage;
+  const end = start + App.config.itemsPerPage;
+  const paginated = errors.slice(start, end);
+  
+  container.innerHTML = paginated.map(error => `
+    <div class="error-card ${error.severity} reveal">
+      <div class="error-code-display ${error.severity}">${error.code}</div>
+      <h3 class="card-title">${error.description}</h3>
+      <p class="card-text">${error.cause.substring(0, 100)}...</p>
+      <div class="card-meta">
+        <span class="badge badge-primary"><i class="fas fa-microchip"></i> ${error.device}</span>
+        <span class="badge badge-secondary"><i class="fas fa-tag"></i> ${error.brand}</span>
+        ${getSeverityBadge(error.severity)}
+      </div>
+      <div class="mt-3">
+        <a href="error.html?device=${encodeURIComponent(error.device)}&brand=${encodeURIComponent(error.brand)}&code=${encodeURIComponent(error.code)}" 
+           class="btn btn-sm btn-primary w-full">
+          <i class="fas fa-info-circle"></i> تفاصيل الخطأ
+        </a>
+      </div>
+    </div>
+  `).join('');
+  
+  renderPagination(errors.length);
+  initScrollReveal();
+}
 
-})();
+function getSeverityBadge(severity) {
+  const map = {
+    high: { class: 'badge-danger', icon: 'fa-exclamation-circle', text: 'خطير' },
+    medium: { class: 'badge-warning', icon: 'fa-exclamation-triangle', text: 'متوسط' },
+    low: { class: 'badge-success', icon: 'fa-check-circle', text: 'بسيط' }
+  };
+  const s = map[severity] || map.low;
+  return `<span class="badge ${s.class}"><i class="fas ${s.icon}"></i> ${s.text}</span>`;
+}
+
+function renderPagination(totalItems) {
+  const container = document.getElementById('pagination');
+  if (!container) return;
+  
+  const totalPages = Math.ceil(totalItems / App.config.itemsPerPage);
+  if (totalPages <= 1) {
+    container.innerHTML = '';
+    return;
+  }
+  
+  let html = '';
+  
+  // Previous
+  html += `<button ${App.config.currentPage === 1 ? 'disabled' : ''} onclick="changePage(${App.config.currentPage - 1})">
+    <i class="fas fa-chevron-right"></i>
+  </button>`;
+  
+  // Page numbers
+  for (let i = 1; i <= totalPages; i++) {
+    if (i === 1 || i === totalPages || (i >= App.config.currentPage - 1 && i <= App.config.currentPage + 1)) {
+      html += `<button class="${i === App.config.currentPage ? 'active' : ''}" onclick="changePage(${i})">${i}</button>`;
+    } else if (i === App.config.currentPage - 2 || i === App.config.currentPage + 2) {
+      html += `<span>...</span>`;
+    }
+  }
+  
+  // Next
+  html += `<button ${App.config.currentPage === totalPages ? 'disabled' : ''} onclick="changePage(${App.config.currentPage + 1})">
+    <i class="fas fa-chevron-left"></i>
+  </button>`;
+  
+  container.innerHTML = html;
+}
+
+function changePage(page) {
+  App.config.currentPage = page;
+  applyFilters();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function renderBrands() {
+  const container = document.getElementById('brands-grid');
+  if (!container) return;
+  
+  // Count errors per brand
+  const brandCounts = {};
+  App.data.errors.forEach(e => {
+    brandCounts[e.brand] = (brandCounts[e.brand] || 0) + 1;
+  });
+  
+  container.innerHTML = App.data.brands.map(brand => {
+    const count = brandCounts[brand.name] || 0;
+    const logoUrl = getBrandLogo(brand.name);
+    return `
+      <a href="brand.html?name=${encodeURIComponent(brand.name)}" class="brand-card reveal">
+        <div class="brand-logo">
+          ${logoUrl ? `<img src="${logoUrl}" alt="${brand.name}" loading="lazy">` : brand.name.charAt(0)}
+        </div>
+        <div class="brand-name">${brand.name}</div>
+        <div class="brand-country"><i class="fas fa-globe"></i> ${brand.country}</div>
+        <span class="brand-error-count"><i class="fas fa-bug"></i> ${count} خطأ</span>
+      </a>
+    `;
+  }).join('');
+  
+  initScrollReveal();
+}
+
+function renderDevices() {
+  const container = document.getElementById('devices-grid');
+  if (!container) return;
+  
+  const devices = [
+    { id: 'washing-machine', name: 'غسالات الملابس', icon: 'fa-tshirt', desc: 'أكواد أخطاء وإصلاحات غسالات الملابس', color: 'device-washing' },
+    { id: 'dishwasher', name: 'غسالات الأطباق', icon: 'fa-utensils', desc: 'أكواد أخطاء وإصلاحات غسالات الأطباق', color: 'device-dishwasher' },
+    { id: 'ac', name: 'المكيفات', icon: 'fa-snowflake', desc: 'أكواد أخطاء وإصلاحات المكيفات', color: 'device-ac' }
+  ];
+  
+  container.innerHTML = devices.map(device => {
+    const count = App.data.errors.filter(e => e.device === device.name).length;
+    return `
+      <a href="errors.html?device=${encodeURIComponent(device.name)}" class="device-card ${device.color} reveal">
+        <div class="device-icon"><i class="fas ${device.icon}"></i></div>
+        <div class="device-content">
+          <h3>${device.name}</h3>
+          <p>${device.desc} (${count} خطأ)</p>
+        </div>
+        <div class="device-arrow"><i class="fas fa-arrow-left"></i></div>
+      </a>
+    `;
+  }).join('');
+  
+  initScrollReveal();
+}
+
+function renderArticles() {
+  const container = document.getElementById('articles-grid');
+  if (!container) return;
+  
+  container.innerHTML = App.data.articles.map(article => `
+    <a href="article.html?id=${article.id}" class="article-card reveal">
+      <div class="article-image"><i class="fas ${article.icon}"></i></div>
+      <div class="article-content">
+        <div class="article-meta">
+          <span><i class="fas fa-calendar"></i> ${formatDate(article.date)}</span>
+          <span><i class="fas fa-folder"></i> ${article.category}</span>
+        </div>
+        <h3 class="article-title">${article.title}</h3>
+        <p class="article-excerpt">${article.excerpt}</p>
+      </div>
+    </a>
+  `).join('');
+  
+  initScrollReveal();
+}
+
+function renderStats() {
+  const totalErrors = App.data.errors.length;
+  const totalBrands = App.data.brands.length;
+  const totalDevices = new Set(App.data.errors.map(e => e.device)).size;
+  const totalArticles = App.data.articles.length;
+  
+  const counters = document.querySelectorAll('.counter');
+  counters.forEach(counter => {
+    const target = counter.getAttribute('data-target');
+    if (target === 'errors') counter.setAttribute('data-target', totalErrors);
+    if (target === 'brands') counter.setAttribute('data-target', totalBrands);
+    if (target === 'devices') counter.setAttribute('data-target', totalDevices);
+    if (target === 'articles') counter.setAttribute('data-target', totalArticles);
+  });
+  
+  animateCounters();
+}
+
+// ============================================
+// Brand Logo Helper
+// ============================================
+function getBrandLogo(brandName) {
+  const logoMap = {
+    'LG': 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/LG_symbol.svg/120px-LG_symbol.svg.png',
+    'Samsung': 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Samsung_Logo.svg/200px-Samsung_Logo.svg.png',
+    'Bosch': 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Bosch-logo.svg/200px-Bosch-logo.svg.png',
+    'Siemens': 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Siemens-logo.svg/200px-Siemens-logo.svg.png',
+    'Whirlpool': 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Whirlpool_Corporation_Logo.png/200px-Whirlpool_Corporation_Logo.png',
+    'Electrolux': 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Electrolux_logo.svg/200px-Electrolux_logo.svg.png',
+    'Miele': 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Miele_Logo.svg/200px-Miele_Logo.svg.png',
+    'AEG': 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/AEG_logo.svg/200px-AEG_logo.svg.png',
+    'Beko': 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Beko_logo.svg/200px-Beko_logo.svg.png',
+    'Indesit': 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Indesit_logo.svg/200px-Indesit_logo.svg.png',
+    'Hotpoint': 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Hotpoint_logo.svg/200px-Hotpoint_logo.svg.png',
+    'Zanussi': 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Zanussi_logo.svg/200px-Zanussi_logo.svg.png',
+    'Candy': 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Candy_logo.svg/200px-Candy_logo.svg.png',
+    'Haier': 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Haier_logo.svg/200px-Haier_logo.svg.png',
+    'Panasonic': 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Panasonic_logo.svg/200px-Panasonic_logo.svg.png',
+    'Daikin': 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Daikin_logo.svg/200px-Daikin_logo.svg.png',
+    'Carrier': 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Carrier_Corporation_logo.svg/200px-Carrier_Corporation_logo.svg.png',
+    'Gree': 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Gree_Electric_logo.svg/200px-Gree_Electric_logo.svg.png',
+    'Midea': 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Midea_logo.svg/200px-Midea_logo.svg.png',
+    'Toshiba': 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Toshiba_logo.svg/200px-Toshiba_logo.svg.png',
+    'Sharp': 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Sharp_logo.svg/200px-Sharp_logo.svg.png',
+    'Hitachi': 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Hitachi_logo.svg/200px-Hitachi_logo.svg.png',
+    'Fujitsu': 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Fujitsu_logo.svg/200px-Fujitsu_logo.svg.png',
+    'Mitsubishi Electric': 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Mitsubishi_Electric_logo.svg/200px-Mitsubishi_Electric_logo.svg.png',
+    'General Electric': 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/General_Electric_logo.svg/200px-General_Electric_logo.svg.png',
+    'Maytag': 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Maytag_logo.svg/200px-Maytag_logo.svg.png',
+    'Kenmore': 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Kenmore_logo.svg/200px-Kenmore_logo.svg.png',
+    'Amana': 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Amana_logo.svg/200px-Amana_logo.svg.png',
+    'Frigidaire': 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Frigidaire_logo.svg/200px-Frigidaire_logo.svg.png',
+    'KitchenAid': 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/KitchenAid_logo.svg/200px-KitchenAid_logo.svg.png'
+  };
+  
+  return logoMap[brandName] || null;
+}
+
+// ============================================
+// FAQ Accordion
+// ============================================
+function initFAQ() {
+  const faqItems = document.querySelectorAll('.faq-item');
+  
+  faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+    question.addEventListener('click', () => {
+      const isActive = item.classList.contains('active');
+      
+      // Close all
+      faqItems.forEach(i => i.classList.remove('active'));
+      
+      // Open clicked if wasn't active
+      if (!isActive) {
+        item.classList.add('active');
+      }
+    });
+  });
+}
+
+// ============================================
+// Toast Notifications
+// ============================================
+function showToast(message, type = 'info') {
+  const container = document.querySelector('.toast-container') || createToastContainer();
+  
+  const toast = document.createElement('div');
+  toast.className = `toast toast-${type}`;
+  
+  const icons = {
+    success: 'fa-check-circle',
+    error: 'fa-times-circle',
+    warning: 'fa-exclamation-triangle',
+    info: 'fa-info-circle'
+  };
+  
+  toast.innerHTML = `
+    <i class="fas ${icons[type] || icons.info}"></i>
+    <span>${message}</span>
+  `;
+  
+  container.appendChild(toast);
+  
+  setTimeout(() => {
+    toast.style.opacity = '0';
+    toast.style.transform = 'translateX(-20px)';
+    setTimeout(() => toast.remove(), 300);
+  }, 3000);
+}
+
+function createToastContainer() {
+  const container = document.createElement('div');
+  container.className = 'toast-container';
+  document.body.appendChild(container);
+  return container;
+}
+
+// ============================================
+// Utility Functions
+// ============================================
+function debounce(func, wait) {
+  let timeout;
+  return function executedFunction(...args) {
+    const later = () => {
+      clearTimeout(timeout);
+      func(...args);
+    };
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+  };
+}
+
+function formatDate(dateStr) {
+  const date = new Date(dateStr);
+  return date.toLocaleDateString('ar-SA', { year: 'numeric', month: 'long', day: 'numeric' });
+}
+
+function getUrlParam(param) {
+  const urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get(param);
+}
+
+function slugify(text) {
+  return text.toLowerCase().replace(/\s+/g, '-').replace(/[^\w\-]+/g, '');
+}
+
+// ============================================
+// Google Analytics
+// ============================================
+function initAnalytics() {
+  // Google Analytics 4
+  const gaScript = document.createElement('script');
+  gaScript.async = true;
+  gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX';
+  document.head.appendChild(gaScript);
+  
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+}
+
+// ============================================
+// Service Worker Registration (PWA)
+// ============================================
+function registerServiceWorker() {
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js')
+      .then(reg => console.log('SW registered:', reg))
+      .catch(err => console.log('SW registration failed:', err));
+  }
+}
+
+// ============================================
+// Initialize App
+// ============================================
+document.addEventListener('DOMContentLoaded', async () => {
+  initTheme();
+  initHeader();
+  initMobileMenu();
+  initBackToTop();
+  initScrollReveal();
+  initSearch();
+  initFAQ();
+  
+  // Load data
+  const loaded = await loadData();
+  if (!loaded) return;
+  
+  // Page-specific initialization
+  const page = document.body.getAttribute('data-page');
+  
+  switch (page) {
+    case 'home':
+      renderStats();
+      renderDevices();
+      renderBrands();
+      renderArticles();
+      break;
+      
+    case 'errors':
+      initFilters();
+      // Apply URL params
+      const deviceParam = getUrlParam('device');
+      const brandParam = getUrlParam('brand');
+      if (deviceParam) {
+        const deviceFilter = document.getElementById('device-filter');
+        if (deviceFilter) deviceFilter.value = deviceParam;
+      }
+      if (brandParam) {
+        const brandFilter = document.getElementById('brand-filter');
+        if (brandFilter) brandFilter.value = brandParam;
+      }
+      App.config.currentFilters = {
+        device: deviceParam || '',
+        brand: brandParam || '',
+        severity: '',
+        sort: 'newest'
+      };
+      applyFilters();
+      break;
+      
+    case 'brands':
+      renderBrands();
+      break;
+      
+    case 'brand-detail':
+      renderBrandDetail();
+      break;
+      
+    case 'error-detail':
+      renderErrorDetail();
+      break;
+      
+    case 'articles':
+      renderArticles();
+      break;
+      
+    case 'search':
+      renderSearchPage();
+      break;
+  }
+  
+  // Register service worker
+  registerServiceWorker();
+});
+
+// ============================================
+// Page-Specific Render Functions
+// ============================================
+function renderBrandDetail() {
+  const brandName = getUrlParam('name');
+  if (!brandName) return;
+  
+  const brand = App.data.brands.find(b => b.name === brandName);
+  if (!brand) return;
+  
+  // Update page title
+  document.title = `${brand.name} - دليل أعطال الأجهزة الكهرومنزلية`;
+  
+  // Update hero
+  const heroTitle = document.getElementById('brand-hero-title');
+  const heroDesc = document.getElementById('brand-hero-desc');
+  const heroLogo = document.getElementById('brand-hero-logo');
+  
+  if (heroTitle) heroTitle.textContent = brand.name;
+  if (heroDesc) heroDesc.textContent = `أكواد أخطاء وإصلاحات أجهزة ${brand.name}`;
+  if (heroLogo) {
+    const logoUrl = getBrandLogo(brand.name);
+    heroLogo.src = logoUrl || '';
+    heroLogo.alt = brand.name;
+    if (!logoUrl) heroLogo.style.display = 'none';
+  }
+  
+  // Filter errors
+  const brandErrors = App.data.errors.filter(e => e.brand === brandName);
+  
+  // Render stats
+  const statsContainer = document.getElementById('brand-stats');
+  if (statsContainer) {
+    const devices = [...new Set(brandErrors.map(e => e.device))];
+    const highSeverity = brandErrors.filter(e => e.severity === 'high').length;
+    
+    statsContainer.innerHTML = `
+      <div class="stat-card">
+        <div class="stat-number">${brandErrors.length}</div>
+        <div class="stat-label">إجمالي الأخطاء</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">${devices.length}</div>
+        <div class="stat-label">الأجهزة المدعومة</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">${highSeverity}</div>
+        <div class="stat-label">أخطاء خطيرة</div>
+      </div>
+    `;
+  }
+  
+  // Render errors
+  const errorsContainer = document.getElementById('brand-errors-grid');
+  if (errorsContainer) {
+    if (brandErrors.length === 0) {
+      errorsContainer.innerHTML = `
+        <div class="empty-state" style="grid-column: 1/-1;">
+          <div class="empty-state-icon"><i class="fas fa-inbox"></i></div>
+          <h3>لا توجد أخطاء مسجلة</h3>
+          <p>لم يتم العثور على أخطاء مسجلة لهذه الماركة</p>
+        </div>
+      `;
+    } else {
+      errorsContainer.innerHTML = brandErrors.map(error => `
+        <div class="error-card ${error.severity} reveal">
+          <div class="error-code-display ${error.severity}">${error.code}</div>
+          <h3 class="card-title">${error.description}</h3>
+          <p class="card-text">${error.cause.substring(0, 100)}...</p>
+          <div class="card-meta">
+            <span class="badge badge-primary"><i class="fas fa-microchip"></i> ${error.device}</span>
+            ${getSeverityBadge(error.severity)}
+          </div>
+          <div class="mt-3">
+            <a href="error.html?device=${encodeURIComponent(error.device)}&brand=${encodeURIComponent(error.brand)}&code=${encodeURIComponent(error.code)}" 
+               class="btn btn-sm btn-primary w-full">
+              <i class="fas fa-info-circle"></i> تفاصيل الخطأ
+            </a>
+          </div>
+        </div>
+      `).join('');
+    }
+  }
+  
+  initScrollReveal();
+}
+
+function renderErrorDetail() {
+  const device = getUrlParam('device');
+  const brand = getUrlParam('brand');
+  const code = getUrlParam('code');
+  
+  if (!device || !brand || !code) return;
+  
+  const error = App.data.errors.find(e => 
+    e.device === device && e.brand === brand && e.code === code
+  );
+  
+  if (!error) {
+    document.getElementById('error-detail-content').innerHTML = `
+      <div class="empty-state">
+        <div class="empty-state-icon"><i class="fas fa-exclamation-triangle"></i></div>
+        <h3>الخطأ غير موجود</h3>
+        <p>لم يتم العثور على تفاصيل هذا الخطأ</p>
+        <a href="errors.html" class="btn btn-primary mt-3">العودة لقائمة الأخطاء</a>
+      </div>
+    `;
+    return;
+  }
+  
+  // Update page title
+  document.title = `كود الخطأ ${error.code} - ${error.device} ${error.brand}`;
+  
+  // Update hero
+  const heroCode = document.getElementById('error-hero-code');
+  const heroTitle = document.getElementById('error-hero-title');
+  const heroSubtitle = document.getElementById('error-hero-subtitle');
+  
+  if (heroCode) {
+    heroCode.textContent = error.code;
+    heroCode.className = `error-code-large ${error.severity}`;
+  }
+  if (heroTitle) heroTitle.textContent = error.description;
+  if (heroSubtitle) {
+    heroSubtitle.innerHTML = `
+      <span class="badge badge-primary">${error.device}</span>
+      <span class="badge badge-secondary">${error.brand}</span>
+      ${getSeverityBadge(error.severity)}
+    `;
+  }
+  
+  // Render details
+  const content = document.getElementById('error-detail-content');
+  if (content) {
+    content.innerHTML = `
+      <!-- Cause -->
+      <div class="detail-section">
+        <h3><i class="fas fa-search"></i> سبب الخطأ</h3>
+        <p>${error.cause}</p>
+      </div>
+      
+      <!-- Solution -->
+      <div class="detail-section">
+        <h3><i class="fas fa-wrench"></i> الحل المقترح</h3>
+        <ol class="steplist">
+          ${error.solution.map(step => `<li>${step}</li>`).join('')}
+        </ol>
+      </div>
+      
+      <!-- Info Grid -->
+      <div class="detail-section">
+        <h3><i class="fas fa-info-circle"></i> معلومات إضافية</h3>
+        <div class="info-grid">
+          <div class="info-item">
+            <div class="label">الجهاز</div>
+            <div class="value">${error.device}</div>
+          </div>
+          <div class="info-item">
+            <div class="label">الماركة</div>
+            <div class="value">${error.brand}</div>
+          </div>
+          <div class="info-item">
+            <div class="label">الخطورة</div>
+            <div class="value">${error.severity === 'high' ? 'عالية' : error.severity === 'medium' ? 'متوسطة' : 'منخفضة'}</div>
+          </div>
+          <div class="info-item">
+            <div class="label">تاريخ الإضافة</div>
+            <div class="value">${formatDate(error.date)}</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Related Errors -->
+      ${renderRelatedErrors(error)}
+    `;
+  }
+}
+
+function renderRelatedErrors(currentError) {
+  const related = App.data.errors.filter(e => 
+    e.brand === currentError.brand && 
+    e.device === currentError.device && 
+    e.code !== currentError.code
+  ).slice(0, 3);
+  
+  if (related.length === 0) return '';
+  
+  return `
+    <div class="detail-section">
+      <h3><i class="fas fa-link"></i> أخطاء ذات صلة</h3>
+      <div class="cards-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+        ${related.map(error => `
+          <div class="error-card ${error.severity}">
+            <div class="error-code-display ${error.severity}">${error.code}</div>
+            <h4 class="card-title">${error.description}</h4>
+            <a href="error.html?device=${encodeURIComponent(error.device)}&brand=${encodeURIComponent(error.brand)}&code=${encodeURIComponent(error.code)}" 
+               class="btn btn-sm btn-primary w-full">
+              <i class="fas fa-info-circle"></i> التفاصيل
+            </a>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  `;
+}
+
+function renderSearchPage() {
+  const query = getUrlParam('q');
+  if (!query) return;
+  
+  document.getElementById('search-query').textContent = query;
+  
+  const results = searchAll(query);
+  const container = document.getElementById('search-results');
+  
+  if (results.length === 0) {
+    container.innerHTML = `
+      <div class="empty-state">
+        <div class="empty-state-icon"><i class="fas fa-search"></i></div>
+        <h3>لا توجد نتائج لـ "${query}"</h3>
+        <p>جرب البحث بكلمات مختلفة أو تحقق من الإملاء</p>
+      </div>
+    `;
+    return;
+  }
+  
+  container.innerHTML = results.map(result => `
+    <div class="card reveal">
+      <div class="card-body">
+        <div class="card-meta mb-2">
+          <span class="badge badge-primary">
+            <i class="fas ${result.icon}"></i> ${result.type === 'error' ? 'خطأ' : 'ماركة'}
+          </span>
+        </div>
+        <h3 class="card-title">${result.title}</h3>
+        <p class="card-text">${result.subtitle}</p>
+        <a href="${result.url}" class="btn btn-primary">
+          <i class="fas fa-arrow-left"></i> عرض التفاصيل
+        </a>
+      </div>
+    </div>
+  `).join('');
+  
+  initScrollReveal();
+}
