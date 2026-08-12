@@ -540,8 +540,7 @@ function renderDevices() {
 
   const devices = [
     { id: 'washing-machine', name: 'غسالات الملابس', icon: 'fa-tshirt', desc: 'أكواد أخطاء وإصلاحات غسالات الملابس', color: 'device-washing' },
-    { id: 'dishwasher', name: 'غسالات الأطباق', icon: 'fa-utensils', desc: 'أكواد أخطاء وإصلاحات غسالات الأطباق', color: 'device-dishwasher' },
-    { id: 'ac', name: 'المكيفات', icon: 'fa-snowflake', desc: 'أكواد أخطاء وإصلاحات المكيفات', color: 'device-ac' }
+    { id: 'dishwasher', name: 'غسالات الأطباق', icon: 'fa-utensils', desc: 'أكواد أخطاء وإصلاحات غسالات الأطباق', color: 'device-dishwasher' }
   ];
 
   container.innerHTML = devices.map(device => {
