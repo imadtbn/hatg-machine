@@ -897,104 +897,6 @@ main {
   padding: 8px;
 }
 
-.brand-name {
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 4px;
-}
-
-.brand-country {
-  font-size: 0.8rem;
-  color: var(--text-tertiary);
-  margin-bottom: 12px;
-}
-
-.brand-error-count {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  padding: 4px 12px;
-  background: var(--primary-light);
-  color: var(--primary);
-  border-radius: var(--radius-full);
-  font-size: 0.75rem;
-  font-weight: 600;
-}
-
-/* === Error Cards === */
-.error-card {
-  background: var(--bg-card);
-  border-radius: var(--radius-xl);
-  border: 1px solid var(--border-light);
-  padding: 24px;
-  transition: all var(--transition-normal);
-  position: relative;
-  overflow: hidden;
-}
-
-.error-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 4px;
-  height: 100%;
-  opacity: 0;
-  transition: opacity var(--transition-normal);
-}
-
-.error-card:hover {
-  box-shadow: var(--shadow-lg);
-  border-color: var(--border-color);
-  transform: translateY(-4px);
-}
-
-.error-card:hover::before {
-  opacity: 1;
-}
-
-.error-card.high::before { background: var(--danger); }
-.error-card.medium::before { background: var(--warning); }
-.error-card.low::before { background: var(--success); }
-
-.error-code-display {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 56px;
-  height: 56px;
-  background: linear-gradient(135deg, var(--primary), var(--accent));
-  color: white;
-  border-radius: var(--radius-lg);
-  font-size: 1.1rem;
-  font-weight: 800;
-  margin-bottom: 16px;
-  box-shadow: 0 4px 12px rgba(0, 102, 204, 0.25);
-}
-
-.error-code-display.high { background: linear-gradient(135deg, #EF4444, #DC2626); box-shadow: 0 4px 12px rgba(239, 68, 68, 0.25); }
-.error-code-display.medium { background: linear-gradient(135deg, #F59E0B, #D97706); box-shadow: 0 4px 12px rgba(245, 158, 11, 0.25); }
-.error-code-display.low { background: linear-gradient(135deg, #10B981, #059669); box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25); }
-
-/* === Badges === */
-.badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  padding: 4px 12px;
-  border-radius: var(--radius-full);
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.3px;
-}
-
-.badge-primary { background: var(--primary-light); color: var(--primary); }
-.badge-danger { background: #FEF2F2; color: #DC2626; }
-.badge-warning { background: #FFFBEB; color: #B45309; }
-.badge-success { background: #ECFDF5; color: #059669; }
-.badge-info { background: #EFF6FF; color: #2563EB; }
-.badge-secondary { background: var(--bg-tertiary); color: var(--text-secondary); }
 
 [data-theme="dark"] .badge-danger { background: rgba(239,68,68,0.15); }
 [data-theme="dark"] .badge-warning { background: rgba(245,158,11,0.15); }
@@ -2142,4 +2044,240 @@ textarea:focus-visible {
 
 .skip-link:focus {
   top: 0;
+}
+
+
+
+
+
+
+/* ============================================
+   ERROR DETAIL HERO - PROFESSIONAL REDESIGN
+   ============================================ */
+
+.error-detail-hero {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 50%, #8B5CF6 100%);
+  color: white;
+  padding: 100px 0 80px;
+  position: relative;
+  overflow: hidden;
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+}
+
+.error-detail-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255,255,255,0.08) 0%, transparent 40%),
+    radial-gradient(circle at 50% 80%, rgba(255,255,255,0.06) 0%, transparent 45%);
+  animation: heroPulse 8s ease-in-out infinite;
+}
+
+.error-detail-hero::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: linear-gradient(to top, var(--bg-primary), transparent);
+  z-index: 2;
+}
+
+.error-detail-hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Hero Grid Layout */
+.error-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 48px;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .error-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    text-align: center;
+  }
+  .error-detail-hero {
+    padding: 80px 0 60px;
+    min-height: auto;
+  }
+}
+
+/* Brand Column */
+.error-hero-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.error-hero-logo {
+  width: 120px;
+  height: 120px;
+  border-radius: var(--radius-xl);
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.25), 0 0 0 4px rgba(255,255,255,0.15);
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--transition-bounce);
+}
+
+.error-hero-logo:hover {
+  transform: scale(1.05);
+}
+
+.error-hero-logo img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.error-hero-logo-fallback {
+  display: none;
+  font-size: 3rem;
+  color: var(--primary);
+}
+
+.error-hero-logo img[src=""] + .error-hero-logo-fallback,
+.error-hero-logo img:not([src]) + .error-hero-logo-fallback {
+  display: flex;
+}
+
+.error-hero-logo img[src=""] {
+  display: none;
+}
+
+.error-hero-brand-name {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 900;
+  color: white;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  letter-spacing: -0.5px;
+}
+
+.error-hero-device {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.85);
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(10px);
+  padding: 8px 24px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+/* Code Column */
+.error-hero-code-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+@media (max-width: 768px) {
+  .error-hero-code-section {
+    align-items: center;
+  }
+}
+
+.error-hero-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.7);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.error-hero-code-value {
+  font-size: clamp(4rem, 10vw, 7rem);
+  font-weight: 900;
+  color: white;
+  line-height: 1;
+  text-shadow: 0 4px 30px rgba(0,0,0,0.3);
+  letter-spacing: 4px;
+  font-family: 'IBM Plex Sans', var(--font-arabic), monospace;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255,255,255,0.2);
+  border-radius: var(--radius-xl);
+  padding: 16px 40px;
+  min-width: 200px;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.1);
+  animation: codeGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes codeGlow {
+  from { box-shadow: 0 8px 32px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.1), 0 0 20px rgba(255,255,255,0.05); }
+  to { box-shadow: 0 8px 32px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.1), 0 0 40px rgba(255,255,255,0.15); }
+}
+
+.error-hero-title {
+  font-size: clamp(1.3rem, 3vw, 1.8rem);
+  font-weight: 700;
+  color: white;
+  line-height: 1.4;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.15);
+  margin: 0;
+}
+
+.error-hero-badges {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.error-hero-badges .badge {
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: white;
+  font-size: 0.8rem;
+  padding: 6px 16px;
+}
+
+.error-hero-badges .badge-danger {
+  background: rgba(239,68,68,0.3);
+  border-color: rgba(239,68,68,0.4);
+}
+
+.error-hero-badges .badge-warning {
+  background: rgba(245,158,11,0.3);
+  border-color: rgba(245,158,11,0.4);
+}
+
+.error-hero-badges .badge-success {
+  background: rgba(16,185,129,0.3);
+  border-color: rgba(16,185,129,0.4);
+}
+
+/* Severity-specific hero backgrounds */
+.error-detail-hero.severity-high {
+  background: linear-gradient(135deg, #DC2626 0%, #991B1B 50%, #7F1D1D 100%);
+}
+
+.error-detail-hero.severity-medium {
+  background: linear-gradient(135deg, #D97706 0%, #B45309 50%, #92400E 100%);
+}
+
+.error-detail-hero.severity-low {
+  background: linear-gradient(135deg, #059669 0%, #047857 50%, #065F46 100%);
 }
