@@ -525,7 +525,7 @@ function renderBrands() {
         </div>
         <div class="brand-name">${brand.name}</div>
         <div class="brand-country"><i class="fas fa-globe"></i> ${brand.country}</div>
-        <span class="brand-error-count"><i class="fas fa-bug"></i> ${count} خطأ</span>
+        <span class="brand-error-count"><i class="fas fa-bug"></i> ${errors.errorCode} خطأ</span>
       </a>
     `;
   }).join('');
