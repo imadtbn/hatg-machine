@@ -1,62 +1,170 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl" data-theme="light">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>دليل أعطال الأجهزة الكهرومنزلية - أكواد الأخطاء والحلول</title>
-  <meta name="description" content="دليل شامل لأكواد أخطاء وإصلاحات الأجهزة الكهرومنزلية: غسالات الملابس، غسالات الأطباق، المكيفات - جميع الماركات">
-  <meta name="keywords" content="أعطال الأجهزة الكهرومنزلية, أكواد أخطاء, إصلاح الغسالات, صيانة المكيفات, غسالات أطباق">
+  <title>دليل أعطال الأجهزة الكهرومنزلية - غسالة أواني وغسالة ملابس | Error Codes Guide</title>
+
+  <!-- Meta Tags محسنة -->
+  <meta name="description"
+    content="أكبر مرجع عربي لأعطال غسالات الملابس وغسالة الأواني. تصفح أكثر من 160 كود خطأ لـ 30 ماركة عالمية مع أسباب الأعطال وخطوات الإصلاح التفصيلية المعتمدة.">
+  <meta name="keywords"
+    content="دليل أعطال الأجهزة الكهرومنزلية, صيانة الغسالات, رموز أخطاء الغسالات, إصلاح غسالة الملابس, أعطال غسالة الأواني, LG, Samsung, Bosch, رموز الأخطاء, حلول صيانة الأجهزة, صيانة غسالة الصحون, Troubleshooting">
   <meta name="author" content="دليل أعطال الأجهزة الكهرومنزلية">
   <meta name="robots" content="index, follow">
-  
-  <!-- Open Graph -->
-  <meta property="og:title" content="دليل أعطال الأجهزة الكهرومنزلية">
-  <meta property="og:description" content="دليل شامل لأكواد أخطاء وإصلاحات الأجهزة الكهرومنزلية">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://imadtbn.github.io/hatg-machine/">
-  
-  <!-- Canonical -->
   <link rel="canonical" href="https://imadtbn.github.io/hatg-machine/">
-  
+
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/icon.png" fetchpriority="high">
+
+  <!-- الأيقونة الأساسية للمتصفحات الحديثة (بصيغة PNG وبحجم 32x32) -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+
+  <!-- أيقونة إضافية بحجم أصغر لشريط التبويب القديم (بحجم 16x16) -->
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
+
+  <!-- أيقونة خاصة بهواتف آيفون وأجهزة آيباد (Apple Touch Icon) -->
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+
+  <!-- لدعم متصفحات Internet Explorer القديمة (اختياري) -->
+  <link rel="shortcut icon" type="image/x-icon" href="assets/favicon.ico">
+
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="دليل أعطال الأجهزة الكهرومنزلية">
+  <meta property="og:description"
+    content="أكبر مرجع عربي لأعطال غسالة الأواني وغسالة الملابس. أكواد الأخطاء، أسباب العطل، خطوات الإصلاح.">
+  <meta property="og:url" content="https://imadtbn.github.io/hatg-machine/">
+  <meta property="og:site_name" content="دليل أعطال الأجهزة الكهرومنزلية">
+  <meta property="og:locale" content="ar_DZ">
+  <meta property="og:image" content="https://imadtbn.github.io/hatg-machine/assets/images/og-image.jpg">
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="دليل أعطال الأجهزة الكهرومنزلية">
+  <meta name="twitter:description" content="أكبر مرجع عربي لأعطال غسالة الأواني وغسالة الملابس.">
+  <meta name="twitter:image" content="https://imadtbn.github.io/hatg-machine/assets/images/twitter-card.jpg">
+
+  <!-- أيقونات الموقع -->
+  <link rel="icon" href="assets/icons/favicon.ico" sizes="any">
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="msapplication-TileColor" content="#0066CC">
+  <meta name="msapplication-TileImage" content="assets/images/mstile-150x150.png">
+  <meta name="theme-color" content="#0066CC">
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5656416032906373"
+    crossorigin="anonymous"></script>
+  <meta name="google-adsense-account" content="ca-pub-5656416032906373">
+
+  <!-- Google search-console -->
+  <meta name="google-site-verification" content="f5Xi4oFx0v5dN6iPZd9qCw-7vnc3vIbAeYF9jr4vwVM" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XK4CHWYGWZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-XK4CHWYGWZ');
+  </script>
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  
+
   <!-- Styles -->
   <link rel="stylesheet" href="assets/css/style.css">
-  
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
-  </script>
-  
-  <!-- Google AdSense -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
-  
-  <!-- Structured Data -->
+  <link rel="manifest" href="manifest.webmanifest">
+
+  <!-- Structured Data شامل -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "دليل أعطال الأجهزة الكهرومنزلية",
-    "url": "https://imadtbn.github.io/hatg-machine/",
-    "description": "دليل شامل لأكواد أخطاء وإصلاحات الأجهزة الكهرومنزلية",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://imadtbn.github.io/hatg-machine/search.html?q={search_term_string}",
-      "query-input": "required name=search_term_string"
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "name": "دليل أعطال الأجهزة الكهرومنزلية",
+          "url": "https://imadtbn.github.io/hatg-machine/",
+          "logo": "https://imadtbn.github.io/hatg-machine/assets/images/logo.png",
+          "description": "أكبر مرجع عربي لأعطال غسالة الأواني وغسالة الملابس.",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+213-xxxxxxxxx",
+            "contactType": "customer service",
+            "availableLanguage": ["Arabic"]
+          }
+        },
+        {
+          "@type": "WebSite",
+          "name": "دليل أعطال الأجهزة الكهرومنزلية",
+          "url": "https://imadtbn.github.io/hatg-machine/",
+          "description": "مرجع شامل لأعطال غسالة الملابس وغسالة الأواني مع أكواد الأخطاء والحلول.",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://imadtbn.github.io/hatg-machine/search.html?q={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "الرئيسية",
+              "item": "https://imadtbn.github.io/hatg-machine/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "الأعطال",
+              "item": "https://imadtbn.github.io/hatg-machine/errors.html"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "الماركات",
+              "item": "https://imadtbn.github.io/hatg-machine/brands.html"
+            }
+          ]
+        },
+        {
+          "@type": "ItemList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "غسالة ملابس",
+              "url": "https://imadtbn.github.io/hatg-machine/errors.html?type=washing-machine"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "غسالة أواني",
+              "url": "https://imadtbn.github.io/hatg-machine/errors.html?type=dishwasher"
+            }
+          ]
+        }
+      ]
     }
-  }
-  </script>
+    </script>
+
 </head>
+
 <body data-page="home">
   <a href="#main-content" class="skip-link">تخطي إلى المحتوى الرئيسي</a>
-  
+
   <!-- Header -->
   <header class="header">
     <div class="container header-inner">
@@ -67,7 +175,7 @@
           <span>الأجهزة الكهرومنزلية</span>
         </div>
       </a>
-      
+
       <nav class="nav">
         <a href="index.html" class="nav-link active">الرئيسية</a>
         <a href="errors.html" class="nav-link">الأخطاء</a>
@@ -75,13 +183,13 @@
         <a href="articles.html" class="nav-link">المقالات</a>
         <a href="about.html" class="nav-link">عن الموقع</a>
       </nav>
-      
+
       <div class="search-bar">
         <input type="text" class="search-input" placeholder="ابحث عن كود خطأ أو ماركة..." aria-label="بحث">
         <span class="search-icon"><i class="fas fa-search"></i></span>
         <div class="search-results"></div>
       </div>
-      
+
       <div style="display:flex; gap:8px; align-items:center;">
         <button class="theme-toggle" aria-label="تبديل الوضع" onclick="toggleTheme()">
           <i class="fas fa-moon"></i>
@@ -103,9 +211,10 @@
         </div>
         <h1>دليل أعطال الأجهزة الكهرومنزلية</h1>
         <p>ابحث عن أكواد الأخطاء، أسبابها، والحلول المقترحة لجميع ماركات الأجهزة المنزلية</p>
-        
+
         <div class="hero-search">
-          <input type="text" class="search-input" placeholder="ابحث بكود الخطأ، الماركة، أو نوع الجهاز..." aria-label="بحث">
+          <input type="text" class="search-input" placeholder="ابحث بكود الخطأ، الماركة، أو نوع الجهاز..."
+            aria-label="بحث">
           <span class="search-icon"><i class="fas fa-search"></i></span>
           <div class="search-results"></div>
         </div>
@@ -139,8 +248,9 @@
     <!-- Ad Container -->
     <div class="container">
       <div class="ad-container">
-        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="horizontal" data-full-width-responsive="true"></ins>
-        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        <!-- إعلانات صورية 01 -->
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5656416032906373"
+          data-ad-slot="3143411927" data-ad-format="auto" data-full-width-responsive="true"></ins>
       </div>
     </div>
 
@@ -180,8 +290,8 @@
     <!-- Ad Container -->
     <div class="container">
       <div class="ad-container">
-        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="rectangle" data-full-width-responsive="true"></ins>
-        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        <ins class="adsbygoogle" style="display:block" data-ad-format="fluid" data-ad-layout-key="-fr+56+4k-d4+74"
+          data-ad-client="ca-pub-5656416032906373" data-ad-slot="7867079394"></ins>
       </div>
     </div>
 
@@ -199,6 +309,12 @@
       </div>
     </section>
 
+    <!-- إعلان داخل الخلاصة 02-->
+    <div class="ad-container">
+      <ins class="adsbygoogle" style="display:block" data-ad-format="fluid" data-ad-layout-key="-h9-h+8-jr+r8"
+        data-ad-client="ca-pub-5656416032906373" data-ad-slot="8546947691"></ins>
+    </div>
+
     <!-- FAQ Section -->
     <section class="content-section content-section-alt">
       <div class="container">
@@ -213,7 +329,8 @@
               <i class="fas fa-chevron-down faq-icon"></i>
             </div>
             <div class="faq-answer">
-              <p>دليل شامل يحتوي على أكواد أخطاء الأجهزة الكهرومنزلية (غسالات الملابس، غسالات الأطباق، المكيفات) مع شرح الأسباب والحلول المقترحة لكل ماركة.</p>
+              <p>دليل شامل يحتوي على أكواد أخطاء الأجهزة الكهرومنزلية (غسالات الملابس، غسالات الأطباق، المكيفات) مع شرح
+                الأسباب والحلول المقترحة لكل ماركة.</p>
             </div>
           </div>
           <div class="faq-item reveal">
@@ -222,7 +339,8 @@
               <i class="fas fa-chevron-down faq-icon"></i>
             </div>
             <div class="faq-answer">
-              <p>يمكنك استخدام شريط البحث في أعلى الصفحة وإدخال كود الخطأ أو اسم الماركة أو نوع الجهاز للحصول على النتائج.</p>
+              <p>يمكنك استخدام شريط البحث في أعلى الصفحة وإدخال كود الخطأ أو اسم الماركة أو نوع الجهاز للحصول على
+                النتائج.</p>
             </div>
           </div>
           <div class="faq-item reveal">
@@ -248,6 +366,12 @@
     </section>
   </main>
 
+  <!-- الإعلانات المتعددة 01-->
+  <div class="ad-container">
+    <ins class="adsbygoogle" style="display:block" data-ad-format="autorelaxed" data-ad-client="ca-pub-5656416032906373"
+      data-ad-slot="6528123169"></ins>
+  </div>
+
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
@@ -263,6 +387,7 @@
             <li><a href="errors.html"><i class="fas fa-bug"></i> الأخطاء</a></li>
             <li><a href="brands.html"><i class="fas fa-industry"></i> الماركات</a></li>
             <li><a href="articles.html"><i class="fas fa-book"></i> المقالات</a></li>
+            <li><a href="faq.html"><i class="fas fa-book"></i> أسئلة شائعة</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -284,7 +409,8 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>جميع الحقوق محفوظة &copy; 2024 دليل أعطال الأجهزة الكهرومنزلية | <a href="https://imadtbn.github.io/hatg-machine/">hatg-machine</a></p>
+        <p>جميع الحقوق محفوظة &copy; 2026 دليل أعطال الأجهزة الكهرومنزلية | <a
+            href="https://imadtbn.github.io/hatg-machine/">hatg-machine</a></p>
       </div>
     </div>
   </footer>
@@ -294,5 +420,8 @@
   </button>
 
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/adsData.js"></script>
+
 </body>
+
 </html>
