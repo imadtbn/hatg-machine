@@ -509,13 +509,13 @@ function renderBrands() {
   if (!container) return;
 
   // Count errors per brand
-  
+
   const brandCounts = {};
   App.data.errors.forEach(e => {
     const key = (e.brand || '').toLowerCase();
     brandCounts[key] = (brandCounts[key] || 0) + 1;
   });
-  
+
   container.innerHTML = App.data.brands.map(brand => {
     const count = brandCounts[(brand.name || '').toLowerCase()] || 0;
     const logoUrl = getBrandLogo(brand.name);
@@ -829,10 +829,10 @@ document.addEventListener('DOMContentLoaded', async () => {
 function renderBrandDetail() {
   const brandName = getUrlParam('name');
   if (!brandName) return;
-  
+
   const brand = App.data.brands.find(b => b.name === brandName);
   if (!brand) return;
-  
+
   const brandKey = brandName.toLowerCase();
 
   // Update page title
@@ -853,12 +853,12 @@ function renderBrandDetail() {
   }
 
   // Filter errors
-const brandErrors = App.data.errors.filter(e => (e.brand || '').toLowerCase() === brandKey);
+  const brandErrors = App.data.errors.filter(e => (e.brand || '').toLowerCase() === brandKey);
 
   // Render stats
   const statsContainer = document.getElementById('brand-stats');
   if (statsContainer) {
-        const devices = [...new Set(brandErrors.map(e => e.deviceTypeAr || e.deviceType || ''))].filter(Boolean);
+    const devices = [...new Set(brandErrors.map(e => e.deviceTypeAr || e.deviceType || ''))].filter(Boolean);
     const highSeverity = brandErrors.filter(e => (e.severity || '').toLowerCase() === 'high').length;
 
     statsContainer.innerHTML = `
@@ -948,12 +948,15 @@ function renderErrorDetail() {
     heroCode.textContent = error.code;
     heroCode.className = `error-code-large ${error.severity}`;
   }
-  
+
   if (heroTitle) heroTitle.textContent = error.description;
   if (heroSubtitle) {
     heroSubtitle.innerHTML = `
     <span class="badge badge-primary">${error.deviceTypeAr || ''}</span>
     <span class="badge badge-secondary">${error.brandAr || ''}</span>
+    <span class="badge badge-secondary">${error.titleAr || ''}</span>
+    <span class="badge badge-secondary">${error.errorCode || ''}</span>
+
     ${getSeverityBadge(error.severity)}
   `;
   }
@@ -1005,24 +1008,24 @@ ${(error.repairSteps && Array.isArray(error.repairSteps) ? error.repairSteps : [
 }
 
 function renderRelatedErrors(currentError) {
-  const related = App.data.errors.filter(e => 
-    (e.brand || '').toLowerCase() === (currentError.brand || '').toLowerCase() && 
-    (e.deviceTypeAr || e.deviceType || '') === (currentError.deviceTypeAr || currentError.deviceType || '') && 
+  const related = App.data.errors.filter(e =>
+    (e.brandAr || '') === (currentError.brandAr || '') &&
+    (e.deviceTypeAr || '') === (currentError.deviceTypeAr || '') &&
     (e.errorCode || '') !== (currentError.errorCode || '')
   ).slice(0, 3);
-  
+
   if (related.length === 0) return '';
-  
+
   return `
-    <div class="detail-section reveal">
+    <div class="detail-section">
       <h3><i class="fas fa-link"></i> أخطاء ذات صلة</h3>
       <div class="cards-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
         ${related.map(error => `
-          <div class="error-card ${error.severity || ''}">
-            <div class="error-code-display ${error.severity || ''}">${error.errorCode || ''}</div>
-            <h4 class="card-title">${error.titleAr || error.title || ''}</h4>
-            <a href="error.html?device=${encodeURIComponent(error.deviceTypeAr || '')}&brand=${encodeURIComponent(error.brandAr || '')}&code=${encodeURIComponent(error.errorCode || '')}" 
-               class="btn btn-sm btn-primary w-full">
+          <div class="error-card ${error.severity}">
+            <div class="error-code-display ${error.severity}">${error.errorCode || ''}</div>
+  <h4 class="card-title">${error.titleAr || error.title || ''}</h4>
+  <a href="error.html?device=${encodeURIComponent(error.deviceTypeAr || '')}&brand=${encodeURIComponent(error.brandAr || '')}&code=${encodeURIComponent(error.errorCode || '')}">
+class="btn btn-sm btn-primary w-full">
               <i class="fas fa-info-circle"></i> التفاصيل
             </a>
           </div>
