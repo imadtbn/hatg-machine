@@ -952,8 +952,6 @@ function renderErrorDetail() {
     heroSubtitle.innerHTML = `
     <span class="badge badge-primary">${error.deviceTypeAr || ''}</span>
     <span class="badge badge-secondary">${error.brandAr || ''}</span>
-        <span class="badge badge-secondary">${error.errorCode || ''}</span>
-
     ${getSeverityBadge(error.severity)}
   `;
   }
