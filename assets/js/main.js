@@ -944,14 +944,16 @@ function renderErrorDetail() {
 
   if (heroCode) {
     heroCode.textContent = error.code;
-    heroCode.className = `error-code-large ${errorCode}`;
+    heroCode.className = `error-code-large ${error.severity}`;
   }
-
+  
   if (heroTitle) heroTitle.textContent = error.description;
   if (heroSubtitle) {
     heroSubtitle.innerHTML = `
     <span class="badge badge-primary">${error.deviceTypeAr || ''}</span>
     <span class="badge badge-secondary">${error.brandAr || ''}</span>
+        <span class="badge badge-secondary">${error.errorCode || ''}</span>
+
     ${getSeverityBadge(error.severity)}
   `;
   }
