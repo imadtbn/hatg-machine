@@ -1,72 +1,35 @@
-/* adsData.js
- * وظائف إعلانات AdSense + تهيئة قسم الماركات في الصفحة الرئيسية.
- */
+// adsData.js
 
-(function () {
-    'use strict';
-
-    document.addEventListener('DOMContentLoaded', function () {
-        initHomepageBrandsContainer();
-        initAds();
-    }, { once: true });
-
-    function initHomepageBrandsContainer() {
-        /*
-         * index.html كان يحتوي على cards-grid بدون id في قسم
-         * "الماركات المدعومة"، بينما سكربت الصفحة الرئيسية ينتظر
-         * #brandsContainer. نربط العنصر الصحيح قبل تشغيل initHomePage.
-         */
-        var headings = document.querySelectorAll('h2');
-        var brandsGrid = null;
-
-        headings.forEach(function (heading) {
-            if (brandsGrid || heading.textContent.trim() !== 'الماركات المدعومة') {
-                return;
+document.addEventListener("DOMContentLoaded", function () {
+    // حساب عدد إعلانات AdSense المتوفرة في الصفحة
+    var adBlocks = document.querySelectorAll('ins.adsbygoogle');
+    adBlocks.forEach(function (adBlock) {
+        // التحقق من أن الإعلان لم يتم دفعه أو تحميله مسبقاً
+        if (!adBlock.hasAttribute('data-adsbygoogle-status')) {
+            try {
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            } catch (e) {
+                console.error("AdSense push error: ", e);
             }
-
-            var section = heading.closest('section');
-            if (!section) return;
-
-            brandsGrid = section.querySelector('.cards-grid');
-        });
-
-        if (brandsGrid) {
-            brandsGrid.id = 'brandsContainer';
-            brandsGrid.setAttribute('aria-live', 'polite');
-            brandsGrid.setAttribute('aria-label', 'الماركات المدعومة');
         }
-    }
+    });
+});
 
-    function initAds() {
+// الانتظار حتى يتم تحميل الصفحة بالكامل
+window.addEventListener('load', function () {
+    // تأخير بسيط لضمان استقرار وسم الـ DOM وتجنب تضارب الـ Service Worker
+    setTimeout(function () {
         var adBlocks = document.querySelectorAll('ins.adsbygoogle');
-
         adBlocks.forEach(function (adBlock) {
-            if (!adBlock.hasAttribute('data-adsbygoogle-status')) {
+            // التحقق بدقة: إذا لم يكن الإعلان قد تم معالجته من قبل جوجل ولم يتم عمل push له
+            if (!adBlock.hasAttribute('data-adsbygoogle-status') && adBlock.children.length === 0) {
                 try {
                     (window.adsbygoogle = window.adsbygoogle || []).push({});
-                } catch (error) {
-                    console.error('AdSense push error:', error);
+                    console.log('تم تحميل وحدة إعلانية بنجاح.');
+                } catch (e) {
+                    console.error('خطأ أثناء تحميل الإعلان:', e);
                 }
             }
         });
-    }
-
-    window.addEventListener('load', function () {
-        setTimeout(function () {
-            var adBlocks = document.querySelectorAll('ins.adsbygoogle');
-
-            adBlocks.forEach(function (adBlock) {
-                if (
-                    !adBlock.hasAttribute('data-adsbygoogle-status') &&
-                    adBlock.children.length === 0
-                ) {
-                    try {
-                        (window.adsbygoogle = window.adsbygoogle || []).push({});
-                    } catch (error) {
-                        console.error('خطأ أثناء تحميل الإعلان:', error);
-                    }
-                }
-            });
-        }, 2600);
-    });
-})();
+    }, 2600); // تأخير نصف ثانية
+});
