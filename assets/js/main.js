@@ -509,14 +509,15 @@ function renderBrands() {
   if (!container) return;
 
   // Count errors per brand
+  
   const brandCounts = {};
   App.data.errors.forEach(e => {
-    const b = e.brandAr || e.brand || '';
-    brandCounts[b] = (brandCounts[b] || 0) + 1;
+    const key = (e.brand || '').toLowerCase();
+    brandCounts[key] = (brandCounts[key] || 0) + 1;
   });
-
+  
   container.innerHTML = App.data.brands.map(brand => {
-    const count = brandCounts[brand.name] || 0;
+    const count = brandCounts[(brand.name || '').toLowerCase()] || 0;
     const logoUrl = getBrandLogo(brand.name);
     return `
       <a href="brand.html?name=${encodeURIComponent(brand.name)}" class="brand-card reveal">
@@ -525,7 +526,7 @@ function renderBrands() {
         </div>
         <div class="brand-name">${brand.name}</div>
         <div class="brand-country"><i class="fas fa-globe"></i> ${brand.country}</div>
-        <span class="brand-error-count"><i class="fas fa-bug"></i> ${errors.errorCode} خطأ</span>
+    <span class="brand-error-count"><i class="fas fa-bug"></i> ${count} خطأ</span>
       </a>
     `;
   }).join('');
@@ -828,9 +829,11 @@ document.addEventListener('DOMContentLoaded', async () => {
 function renderBrandDetail() {
   const brandName = getUrlParam('name');
   if (!brandName) return;
-
+  
   const brand = App.data.brands.find(b => b.name === brandName);
   if (!brand) return;
+  
+  const brandKey = brandName.toLowerCase();
 
   // Update page title
   document.title = `${brand.name} - دليل أعطال الأجهزة الكهرومنزلية`;
@@ -850,13 +853,13 @@ function renderBrandDetail() {
   }
 
   // Filter errors
-  const brandErrors = App.data.errors.filter(e => (e.brandAr || e.brand || '') === brandName);
+const brandErrors = App.data.errors.filter(e => (e.brand || '').toLowerCase() === brandKey);
 
   // Render stats
   const statsContainer = document.getElementById('brand-stats');
   if (statsContainer) {
-    const devices = [...new Set(brandErrors.map(e => e.device))];
-    const highSeverity = brandErrors.filter(e => e.severity === 'high').length;
+        const devices = [...new Set(brandErrors.map(e => e.deviceTypeAr || e.deviceType || ''))].filter(Boolean);
+    const highSeverity = brandErrors.filter(e => (e.severity || '').toLowerCase() === 'high').length;
 
     statsContainer.innerHTML = `
       <div class="stat-card">
@@ -887,8 +890,8 @@ function renderBrandDetail() {
       `;
     } else {
       errorsContainer.innerHTML = brandErrors.map(error => `
-        <div class="error-card ${error.severity} reveal">
-          <div class="error-code-display ${error.severity}">${error.errorCode || ''}</div>
+        <div class="error-card ${error.severity || ''} reveal">
+          <div class="error-code-display ${error.severity || ''}">${error.errorCode || ''}</div>
           <h3 class="card-title">${error.titleAr || error.title || ''}</h3>
           <p class="card-text">${(error.causes && error.causes.length ? error.causes[0] : 'سبب غير محدد').substring(0, 100)}...</p>
           <div class="card-meta">
@@ -896,8 +899,7 @@ function renderBrandDetail() {
             ${getSeverityBadge(error.severity)}
           </div>
           <div class="mt-3">
-            <a href="error.html?device=${encodeURIComponent(error.deviceTypeAr || '')}&brand=${encodeURIComponent(error.brandAr || '')}&code=${encodeURIComponent(error.errorCode || '')}" 
-               class="btn btn-sm btn-primary w-full">
+            <a href="error.html?device=${encodeURIComponent(error.deviceTypeAr || '')}&brand=${encodeURIComponent(error.brandAr || '')}&code=${encodeURIComponent(error.errorCode || '')}"                class="btn btn-sm btn-primary w-full">
               <i class="fas fa-info-circle"></i> تفاصيل الخطأ
             </a>
           </div>
