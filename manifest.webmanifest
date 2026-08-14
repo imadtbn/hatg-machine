@@ -1,26 +1,50 @@
 {
+  "id": "/hatg-machine/",
   "name": "دليل أعطال الأجهزة الكهرومنزلية",
   "short_name": "دليل الأعطال",
-  "description": "أكبر مرجع عربي لأعطال غسالة الأواني وغسالة الملابس",
-  "start_url": "/",
+  "description": "مرجع عربي لأكواد أعطال وصيانة غسالات الملابس وغسالات الأطباق والمكيفات والأجهزة الكهرومنزلية.",
+  "start_url": "/hatg-machine/?source=pwa",
+  "scope": "/hatg-machine/",
   "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone", "minimal-ui"],
   "background_color": "#FFFFFF",
   "theme_color": "#0066CC",
   "orientation": "portrait-primary",
   "dir": "rtl",
   "lang": "ar",
+  "categories": ["reference", "utilities", "education"],
+  "prefer_related_applications": false,
+  "launch_handler": {
+    "client_mode": "navigate-existing"
+  },
   "icons": [
     {
       "src": "assets/images/icon-192.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     },
     {
       "src": "assets/images/icon-512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ],
-  "categories": ["reference", "utilities"],
-  "scope": "/"
+  "shortcuts": [
+    {
+      "name": "أكواد الأعطال",
+      "short_name": "الأخطاء",
+      "description": "ابحث عن كود خطأ حسب الماركة والجهاز.",
+      "url": "/hatg-machine/errors.html",
+      "icons": [{ "src": "assets/images/icon-192.png", "sizes": "192x192", "type": "image/png" }]
+    },
+    {
+      "name": "مقالات الصيانة",
+      "short_name": "المقالات",
+      "description": "اقرأ نصائح صيانة الأجهزة الكهرومنزلية.",
+      "url": "/hatg-machine/articles.html",
+      "icons": [{ "src": "assets/images/icon-192.png", "sizes": "192x192", "type": "image/png" }]
+    }
+  ]
 }

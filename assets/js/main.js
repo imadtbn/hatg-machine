@@ -6,6 +6,26 @@
 // ============================================
 // Global State
 // ============================================
+let deferredInstallPrompt = null;
+let pwaInstallButton = null;
+let pwaInstallNotice = null;
+
+window.addEventListener('beforeinstallprompt', event => {
+  event.preventDefault();
+  deferredInstallPrompt = event;
+  if (pwaInstallButton) updatePwaInstallUi();
+  if (pwaInstallNotice?.classList.contains('show')) showPwaInstallNotice(true);
+  else if (document.readyState !== 'loading' && shouldShowInstallNotice()) showPwaInstallNotice();
+});
+
+window.addEventListener('appinstalled', () => {
+  deferredInstallPrompt = null;
+  localStorage.setItem('pwa-installed', '1');
+  hidePwaInstallNotice();
+  if (pwaInstallButton) updatePwaInstallUi();
+  showToast('تم تثبيت الموقع بنجاح على جهازك', 'success');
+});
+
 const App = {
   data: {
     errors: [],
@@ -55,6 +75,91 @@ function getArticleById(id) {
 function getArticleUrl(article) {
   const articleBase = window.location.pathname.includes('/articles/') ? '' : 'articles/';
   return `${articleBase}${encodeURIComponent(article.slug || article.id)}.html`;
+}
+
+// ============================================
+// PWA Installation
+// ============================================
+function isPwaInstalled() {
+  return window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true || localStorage.getItem('pwa-installed') === '1';
+}
+
+function shouldShowInstallNotice() {
+  return !isPwaInstalled() && localStorage.getItem('pwa-install-notice-shown') !== '1';
+}
+
+function createPwaInstallUi() {
+  const headerActions = document.querySelector('.header-actions') || document.querySelector('.header-inner > div:last-child');
+  if (headerActions && !document.getElementById('pwa-install-button')) {
+    headerActions.insertAdjacentHTML('afterbegin', '<button id="pwa-install-button" class="install-app-btn" type="button" aria-label="تثبيت الموقع كتطبيق" title="تثبيت الموقع كتطبيق"><i class="fas fa-download" aria-hidden="true"></i><span>تثبيت</span></button>');
+  }
+  pwaInstallButton = document.getElementById('pwa-install-button');
+  if (pwaInstallButton) pwaInstallButton.addEventListener('click', installPwa);
+
+  if (!document.getElementById('pwa-install-notice')) {
+    document.body.insertAdjacentHTML('beforeend', '<aside id="pwa-install-notice" class="pwa-install-notice" role="dialog" aria-labelledby="pwa-install-title" aria-describedby="pwa-install-description"><button class="pwa-notice-close" type="button" aria-label="إغلاق إشعار التثبيت"><i class="fas fa-times"></i></button><div class="pwa-notice-icon"><i class="fas fa-mobile-screen-button"></i></div><div class="pwa-notice-content"><strong id="pwa-install-title">ثبّت دليل الأعطال على جهازك</strong><p id="pwa-install-description">احصل على وصول أسرع للمقالات وأكواد الأخطاء، ويمكنك استخدام الموقع حتى عند ضعف الاتصال.</p><div class="pwa-notice-actions"><button id="pwa-install-now" class="btn btn-primary" type="button"><i class="fas fa-download"></i> تثبيت الآن</button><button id="pwa-install-later" class="pwa-later-btn" type="button">لاحقاً</button></div></div></aside>');
+  }
+  pwaInstallNotice = document.getElementById('pwa-install-notice');
+  document.getElementById('pwa-install-now')?.addEventListener('click', installPwa);
+  document.getElementById('pwa-install-later')?.addEventListener('click', dismissPwaNotice);
+  document.querySelector('.pwa-notice-close')?.addEventListener('click', dismissPwaNotice);
+  updatePwaInstallUi();
+}
+
+function updatePwaInstallUi() {
+  if (!pwaInstallButton) return;
+  const installed = isPwaInstalled();
+  pwaInstallButton.hidden = installed;
+  pwaInstallButton.classList.toggle('is-available', Boolean(deferredInstallPrompt));
+  pwaInstallButton.setAttribute('aria-label', deferredInstallPrompt ? 'تثبيت الموقع كتطبيق' : 'طريقة تثبيت الموقع');
+}
+
+function showPwaInstallNotice(manual = false) {
+  if (!pwaInstallNotice || isPwaInstalled()) return;
+  if (!manual && !shouldShowInstallNotice()) return;
+  if (!manual) localStorage.setItem('pwa-install-notice-shown', '1');
+  const description = document.getElementById('pwa-install-description');
+  const installNow = document.getElementById('pwa-install-now');
+  if (manual && !deferredInstallPrompt) {
+    if (description) description.textContent = 'من قائمة المتصفح اختر «تثبيت التطبيق» أو «إضافة إلى الشاشة الرئيسية» لإضافة الموقع إلى جهازك.';
+    if (installNow) installNow.hidden = true;
+  } else {
+    if (description) description.textContent = 'احصل على وصول أسرع للمقالات وأكواد الأخطاء، ويمكنك استخدام الموقع حتى عند ضعف الاتصال.';
+    if (installNow) installNow.hidden = false;
+  }
+  pwaInstallNotice.classList.add('show');
+}
+
+function hidePwaInstallNotice() {
+  pwaInstallNotice?.classList.remove('show');
+}
+
+function dismissPwaNotice() {
+  localStorage.setItem('pwa-install-notice-shown', '1');
+  hidePwaInstallNotice();
+}
+
+async function installPwa() {
+  if (!deferredInstallPrompt) {
+    showPwaInstallNotice(true);
+    return;
+  }
+  deferredInstallPrompt.prompt();
+  const choice = await deferredInstallPrompt.userChoice;
+  if (choice.outcome === 'accepted') {
+    localStorage.setItem('pwa-installed', '1');
+    hidePwaInstallNotice();
+  }
+  deferredInstallPrompt = null;
+  updatePwaInstallUi();
+}
+
+function initPWAInstall() {
+  createPwaInstallUi();
+  window.setTimeout(() => {
+    if (deferredInstallPrompt && shouldShowInstallNotice()) showPwaInstallNotice();
+    else if (!deferredInstallPrompt && shouldShowInstallNotice()) showPwaInstallNotice(true);
+  }, 900);
 }
 
 // ============================================
@@ -824,6 +929,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   initScrollReveal();
   initSearch();
   initFAQ();
+  initPWAInstall();
 
   // Load data
   const loaded = await loadData();

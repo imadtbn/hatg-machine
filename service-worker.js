@@ -1,5 +1,4 @@
-const CACHE_NAME = 'appliance-errors-v4';
-const SCOPE_PATH = self.registration.scope;
+const CACHE_NAME = 'appliance-errors-v5';
 const STATIC_ASSETS = [
   './',
   './index.html',
@@ -9,37 +8,61 @@ const STATIC_ASSETS = [
   './error.html',
   './articles.html',
   './article.html',
+  './faq.html',
+  './about.html',
+  './contact.html',
+  './privacy.html',
+  './disclaimer.html',
+  './manifest.webmanifest',
+  './data/brands.json',
+  './data/errors.json',
   './data/articles.json',
   './assets/css/style.css',
-  './assets/js/main.js'
+  './assets/js/main.js',
+  './assets/js/adsData.js',
+  './assets/images/icon-192.png',
+  './assets/images/icon-512.png',
+  './articles/maintenance-tips.html',
+  './articles/energy-saving.html',
+  './articles/washing-machine-care.html',
+  './articles/ac-maintenance.html',
+  './articles/dishwasher-errors.html',
+  './articles/choose-washing-machine.html',
+  './articles/dishwasher-filter.html',
+  './articles/washing-machine-drain.html',
+  './articles/washing-machine-vibration.html',
+  './articles/dishwasher-drying.html',
+  './articles/when-to-call-technician.html'
 ];
 
 self.addEventListener('install', event => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then(cache => cache.addAll(STATIC_ASSETS))
+    caches.open(CACHE_NAME)
+      .then(cache => cache.addAll(STATIC_ASSETS))
+      .then(() => self.skipWaiting())
   );
-  self.skipWaiting();
 });
 
 self.addEventListener('activate', event => {
   event.waitUntil(
-    caches.keys().then(keys => Promise.all(
-      keys.filter(key => key !== CACHE_NAME).map(key => caches.delete(key))
-    ))
+    caches.keys()
+      .then(keys => Promise.all(keys.filter(key => key !== CACHE_NAME).map(key => caches.delete(key))))
+      .then(() => self.clients.claim())
   );
-  self.clients.claim();
+});
+
+self.addEventListener('message', event => {
+  if (event.data?.type === 'SKIP_WAITING') self.skipWaiting();
 });
 
 self.addEventListener('fetch', event => {
-  if (event.request.method !== 'GET') return;
-  if (!event.request.url.startsWith(self.location.origin)) return;
+  if (event.request.method !== 'GET' || !event.request.url.startsWith(self.location.origin)) return;
 
-  const url = new URL(event.request.url);
-  const isDynamicData = /\/data\/(brands|errors|articles)\.json$/i.test(url.pathname);
+  const requestUrl = new URL(event.request.url);
+  const isDataRequest = /\/data\/(brands|errors|articles)\.json$/i.test(requestUrl.pathname);
+  const isNavigation = event.request.mode === 'navigate' || event.request.destination === 'document';
 
-  // JSON is always requested from the network first so new brands/errors
-  // are visible immediately after publishing. Cache is only a fallback.
-  if (isDynamicData) {
+  if (isDataRequest || isNavigation) {
     event.respondWith(
       fetch(event.request)
         .then(response => {
@@ -49,7 +72,7 @@ self.addEventListener('fetch', event => {
           }
           return response;
         })
-        .catch(() => caches.match(event.request))
+        .catch(() => caches.match(event.request).then(cached => cached || caches.match('./index.html')))
     );
     return;
   }
