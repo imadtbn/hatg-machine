@@ -2339,3 +2339,20 @@ textarea:focus-visible {
 @media (prefers-reduced-motion: reduce) {
   .pwa-install-notice { transition: none; }
 }
+
+
+/* === Full-width Header & Footer ===
+   الخلفية والصف الداخلي يمتدان مع عرض viewport، مع إبقاء padding آمناً للمحتوى. */
+body > .header,
+body > .footer {
+  width: 100%;
+  max-width: none;
+}
+
+body > .header > .header-inner,
+body > .footer > .container {
+  width: 100%;
+  max-width: none;
+  margin-inline: 0;
+  padding-inline: clamp(16px, 4vw, 64px);
+}
