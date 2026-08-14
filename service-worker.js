@@ -1,4 +1,4 @@
-const CACHE_NAME = 'appliance-errors-v8';
+const CACHE_NAME = 'appliance-errors-v9';
 const STATIC_ASSETS = [
   './',
   './index.html',
@@ -32,7 +32,13 @@ const STATIC_ASSETS = [
   './articles/washing-machine-drain.html',
   './articles/washing-machine-vibration.html',
   './articles/dishwasher-drying.html',
-  './articles/when-to-call-technician.html'
+  './articles/when-to-call-technician.html',
+  './articles/refrigerator-not-cooling.html',
+  './articles/dryer-not-drying.html',
+  './articles/ac-weak-airflow.html',
+  './articles/dishwasher-white-residue.html',
+  './articles/microwave-not-heating.html',
+  './articles/washing-machine-bad-smell.html'
 ];
 
 self.addEventListener('install', event => {

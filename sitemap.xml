@@ -601,37 +601,61 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/articles/maintenance-tips.html</loc>
-    <lastmod>2026-08-10</lastmod>
+    <loc>https://imadtbn.github.io/hatg-machine/articles/refrigerator-not-cooling.html</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/articles/energy-saving.html</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/articles/dryer-not-drying.html</loc>
+    <lastmod>2026-08-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://imadtbn.github.io/hatg-machine/articles/ac-weak-airflow.html</loc>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://imadtbn.github.io/hatg-machine/articles/when-to-call-technician.html</loc>
+    <lastmod>2026-08-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://imadtbn.github.io/hatg-machine/articles/dishwasher-white-residue.html</loc>
     <lastmod>2026-08-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/articles/washing-machine-care.html</loc>
-    <lastmod>2026-08-12</lastmod>
+    <loc>https://imadtbn.github.io/hatg-machine/articles/dishwasher-drying.html</loc>
+    <lastmod>2026-08-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/articles/ac-maintenance.html</loc>
-    <lastmod>2026-08-12</lastmod>
+    <loc>https://imadtbn.github.io/hatg-machine/articles/microwave-not-heating.html</loc>
+    <lastmod>2026-08-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/articles/dishwasher-errors.html</loc>
-    <lastmod>2026-08-12</lastmod>
+    <loc>https://imadtbn.github.io/hatg-machine/articles/washing-machine-vibration.html</loc>
+    <lastmod>2026-08-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/articles/choose-washing-machine.html</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/articles/washing-machine-bad-smell.html</loc>
+    <lastmod>2026-08-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://imadtbn.github.io/hatg-machine/articles/washing-machine-drain.html</loc>
     <lastmod>2026-08-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -643,26 +667,38 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/articles/washing-machine-drain.html</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/articles/choose-washing-machine.html</loc>
     <lastmod>2026-08-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/articles/washing-machine-vibration.html</loc>
-    <lastmod>2026-08-13</lastmod>
+    <loc>https://imadtbn.github.io/hatg-machine/articles/dishwasher-errors.html</loc>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/articles/dishwasher-drying.html</loc>
-    <lastmod>2026-08-13</lastmod>
+    <loc>https://imadtbn.github.io/hatg-machine/articles/ac-maintenance.html</loc>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/articles/when-to-call-technician.html</loc>
-    <lastmod>2026-08-13</lastmod>
+    <loc>https://imadtbn.github.io/hatg-machine/articles/washing-machine-care.html</loc>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://imadtbn.github.io/hatg-machine/articles/energy-saving.html</loc>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://imadtbn.github.io/hatg-machine/articles/maintenance-tips.html</loc>
+    <lastmod>2026-08-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
