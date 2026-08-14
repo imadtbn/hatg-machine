@@ -593,7 +593,10 @@ function renderBrands() {
     brandCounts[key] = (brandCounts[key] || 0) + 1;
   });
 
-  container.innerHTML = App.data.brands.map(brand => {
+  const isHomePage = document.body?.dataset.page === 'home';
+  const brandsToRender = isHomePage ? App.data.brands.slice(0, 8) : App.data.brands;
+
+  container.innerHTML = brandsToRender.map(brand => {
     const count = brandCounts[(brand.name || '').toLowerCase()] || 0;
     const logoUrl = getBrandLogo(brand.name);
     return `
