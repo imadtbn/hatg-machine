@@ -954,7 +954,7 @@ function scheduleThirdParty() {
 function registerServiceWorker() {
   if ('serviceWorker' in navigator) {
     const serviceWorkerPath = window.location.pathname.includes('/articles/') ? '../service-worker.js' : 'service-worker.js';
-    navigator.serviceWorker.register(serviceWorkerPath)
+    navigator.serviceWorker.register(serviceWorkerPath, { updateViaCache: 'none' })
       .then(reg => console.log('SW registered:', reg))
       .catch(err => console.log('SW registration failed:', err));
   }

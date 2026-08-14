@@ -1,4 +1,4 @@
-const CACHE_NAME = 'appliance-errors-v7';
+const CACHE_NAME = 'appliance-errors-v8';
 const STATIC_ASSETS = [
   './',
   './index.html',
@@ -61,6 +61,22 @@ self.addEventListener('fetch', event => {
   const requestUrl = new URL(event.request.url);
   const isDataRequest = /\/data\/(brands|errors|articles)\.json$/i.test(requestUrl.pathname);
   const isNavigation = event.request.mode === 'navigate' || event.request.destination === 'document';
+  const isCodeOrStyle = event.request.destination === 'script' || event.request.destination === 'style' || /\/assets\/(js|css)\//i.test(requestUrl.pathname);
+
+  if (isCodeOrStyle) {
+    event.respondWith(
+      fetch(event.request, { cache: 'no-store' })
+        .then(response => {
+          if (response && response.ok) {
+            const clone = response.clone();
+            caches.open(CACHE_NAME).then(cache => cache.put(event.request, clone));
+          }
+          return response;
+        })
+        .catch(() => caches.match(event.request))
+    );
+    return;
+  }
 
   if (isDataRequest || isNavigation) {
     event.respondWith(
