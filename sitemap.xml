@@ -2,502 +2,668 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://imadtbn.github.io/hatg-machine/</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>1</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/about.html</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/errors.html</loc>
+    <lastmod>2026-08-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://imadtbn.github.io/hatg-machine/brands.html</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://imadtbn.github.io/hatg-machine/articles.html</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://imadtbn.github.io/hatg-machine/brands.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://imadtbn.github.io/hatg-machine/errors.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://imadtbn.github.io/hatg-machine/faq.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-08-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://imadtbn.github.io/hatg-machine/about.html</loc>
+    <lastmod>2026-08-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://imadtbn.github.io/hatg-machine/contact.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-08-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://imadtbn.github.io/hatg-machine/privacy.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-08-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://imadtbn.github.io/hatg-machine/disclaimer.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-08-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/brand.html?id=lg</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/brand.html?name=LG</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/brand.html?id=samsung</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/brand.html?name=Samsung</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/brand.html?id=gree</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/brand.html?name=Gree</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/brand.html?id=midea</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/brand.html?name=Midea</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/brand.html?id=carrier</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/brand.html?name=Carrier</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/brand.html?id=trane</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/brand.html?name=Trane</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/brand.html?id=hitachi</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/brand.html?name=Hitachi</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/brand.html?id=panasonic</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/brand.html?name=Panasonic</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/brand.html?id=toshiba</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/brand.html?name=Toshiba</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/brand.html?id=haier</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/brand.html?name=Haier</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/brand.html?id=hisense</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/brand.html?name=Hisense</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/brand.html?id=brandet</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/brand.html?name=Brandet</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/brand.html?id=sharp</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/brand.html?name=Sharp</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/brand.html?id=electrolux</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/brand.html?name=Electrolux</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/brand.html?id=whirlpool</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/brand.html?name=Whirlpool</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/brand.html?id=bosch</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/brand.html?name=Bosch</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/brand.html?id=candy</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/brand.html?name=Candy</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/brand.html?id=beko</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/brand.html?name=Beko</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/brand.html?id=condor</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/brand.html?name=Condor</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/brand.html?id=geant</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/brand.html?name=Geant</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/brand.html?id=iris</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/brand.html?name=IRIS</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/brand.html?id=eniem</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/brand.html?name=ENIEM</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/brand.html?id=orient</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/brand.html?name=Orient</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/brand.html?id=nikai</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/brand.html?name=Nikai</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/brand.html?id=tcl</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/brand.html?name=TCL</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/brand.html?id=aux</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/brand.html?name=Aux</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/brand.html?id=sanyo</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/brand.html?name=Sanyo</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/brand.html?id=general</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/brand.html?name=General</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/brand.html?id=airwell</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/brand.html?name=Airwell</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/error.html?id=lg-ae</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/error.html?device=%D8%BA%D8%B3%D8%A7%D9%84%D8%A9%20%D9%85%D9%84%D8%A7%D8%A8%D8%B3&brand=LG&code=AE</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/error.html?id=lg-ie</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/error.html?device=%D8%BA%D8%B3%D8%A7%D9%84%D8%A9%20%D9%85%D9%84%D8%A7%D8%A8%D8%B3&brand=LG&code=IE</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/error.html?id=lg-oe</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/error.html?device=%D8%BA%D8%B3%D8%A7%D9%84%D8%A9%20%D9%85%D9%84%D8%A7%D8%A8%D8%B3&brand=LG&code=OE</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/error.html?id=lg-le</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/error.html?device=%D8%BA%D8%B3%D8%A7%D9%84%D8%A9%20%D9%85%D9%84%D8%A7%D8%A8%D8%B3&brand=LG&code=LE</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/error.html?id=lg-fe</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/error.html?device=%D8%BA%D8%B3%D8%A7%D9%84%D8%A9%20%D9%85%D9%84%D8%A7%D8%A8%D8%B3&brand=LG&code=FE</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/error.html?id=lg-ue</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/error.html?device=%D8%BA%D8%B3%D8%A7%D9%84%D8%A9%20%D9%85%D9%84%D8%A7%D8%A8%D8%B3&brand=LG&code=UE</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/error.html?id=lg-de</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/error.html?device=%D8%BA%D8%B3%D8%A7%D9%84%D8%A9%20%D9%85%D9%84%D8%A7%D8%A8%D8%B3&brand=LG&code=DE</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/error.html?id=lg-te</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/error.html?device=%D8%BA%D8%B3%D8%A7%D9%84%D8%A9%20%D9%85%D9%84%D8%A7%D8%A8%D8%B3&brand=LG&code=TE</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/error.html?id=lg-se</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/error.html?device=%D8%BA%D8%B3%D8%A7%D9%84%D8%A9%20%D9%85%D9%84%D8%A7%D8%A8%D8%B3&brand=LG&code=SE</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/error.html?id=lg-pe</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/error.html?device=%D8%BA%D8%B3%D8%A7%D9%84%D8%A9%20%D9%85%D9%84%D8%A7%D8%A8%D8%B3&brand=LG&code=PE</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/error.html?id=lg-e1</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/error.html?device=%D8%BA%D8%B3%D8%A7%D9%84%D8%A9%20%D8%A3%D9%88%D8%A7%D9%86%D9%8A&brand=LG&code=E1</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/error.html?id=lg-e2</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/error.html?device=%D8%BA%D8%B3%D8%A7%D9%84%D8%A9%20%D8%A3%D9%88%D8%A7%D9%86%D9%8A&brand=LG&code=E2</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/error.html?id=lg-e3</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/error.html?device=%D8%BA%D8%B3%D8%A7%D9%84%D8%A9%20%D8%A3%D9%88%D8%A7%D9%86%D9%8A&brand=LG&code=E3</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/error.html?id=lg-e4</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/error.html?device=%D8%BA%D8%B3%D8%A7%D9%84%D8%A9%20%D8%A3%D9%88%D8%A7%D9%86%D9%8A&brand=LG&code=E4</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/error.html?id=lg-e5</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/error.html?device=%D8%BA%D8%B3%D8%A7%D9%84%D8%A9%20%D8%A3%D9%88%D8%A7%D9%86%D9%8A&brand=LG&code=E5</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/error.html?id=samsung-ue</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/error.html?device=%D8%BA%D8%B3%D8%A7%D9%84%D8%A9%20%D9%85%D9%84%D8%A7%D8%A8%D8%B3&brand=samsung&code=UE%2FUE1%2FUE2%2FUE3%2FUE4</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/error.html?id=samsung-4e</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/error.html?device=%D8%BA%D8%B3%D8%A7%D9%84%D8%A9%20%D9%85%D9%84%D8%A7%D8%A8%D8%B3&brand=samsung&code=4E%2F4E1%2F4E2</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/error.html?id=samsung-5e</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/error.html?device=%D8%BA%D8%B3%D8%A7%D9%84%D8%A9%20%D9%85%D9%84%D8%A7%D8%A8%D8%B3&brand=samsung&code=5E%2FSE%2FSUD</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/error.html?id=samsung-de</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/error.html?device=%D8%BA%D8%B3%D8%A7%D9%84%D8%A9%20%D9%85%D9%84%D8%A7%D8%A8%D8%B3&brand=samsung&code=DE%2FDE1%2FDE2%2FDE3%2FDE4</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/error.html?id=samsung-le</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/error.html?device=%D8%BA%D8%B3%D8%A7%D9%84%D8%A9%20%D9%85%D9%84%D8%A7%D8%A8%D8%B3&brand=samsung&code=LE</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/error.html?id=samsung-te</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/error.html?device=%D8%BA%D8%B3%D8%A7%D9%84%D8%A9%20%D9%85%D9%84%D8%A7%D8%A8%D8%B3&brand=samsung&code=TE%2FTE1%2FTE2</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/error.html?id=samsung-ae</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/error.html?device=%D8%BA%D8%B3%D8%A7%D9%84%D8%A9%20%D9%85%D9%84%D8%A7%D8%A8%D8%B3&brand=samsung&code=AE%2FAC</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/error.html?id=samsung-he</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/error.html?device=%D8%BA%D8%B3%D8%A7%D9%84%D8%A9%20%D9%85%D9%84%D8%A7%D8%A8%D8%B3&brand=samsung&code=HE%2FHE1%2FHE2</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/error.html?id=samsung-bfe</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/error.html?device=%D8%BA%D8%B3%D8%A7%D9%84%D8%A9%20%D8%A3%D9%88%D8%A7%D9%86%D9%8A&brand=samsung&code=BFE%2F3E</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/error.html?id=samsung-4e-dish</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/error.html?device=%D8%BA%D8%B3%D8%A7%D9%84%D8%A9%20%D8%A3%D9%88%D8%A7%D9%86%D9%8A&brand=samsung&code=4E%2FLE</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/error.html?id=samsung-5e-dish</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/error.html?device=%D8%BA%D8%B3%D8%A7%D9%84%D8%A9%20%D8%A3%D9%88%D8%A7%D9%86%D9%8A&brand=samsung&code=5E%2FOE</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/error.html?id=samsung-te-dish</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/error.html?device=%D8%BA%D8%B3%D8%A7%D9%84%D8%A9%20%D8%A3%D9%88%D8%A7%D9%86%D9%8A&brand=samsung&code=TE%2FHE</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/error.html?id=gree-p1</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/error.html?device=%D8%BA%D8%B3%D8%A7%D9%84%D8%A9%20%D9%85%D9%84%D8%A7%D8%A8%D8%B3&brand=gree&code=P1</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/error.html?id=gree-p2</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/error.html?device=%D8%BA%D8%B3%D8%A7%D9%84%D8%A9%20%D9%85%D9%84%D8%A7%D8%A8%D8%B3&brand=gree&code=P2</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/error.html?id=gree-p3</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/error.html?device=%D8%BA%D8%B3%D8%A7%D9%84%D8%A9%20%D9%85%D9%84%D8%A7%D8%A8%D8%B3&brand=gree&code=P3</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/error.html?id=gree-e1</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/error.html?device=%D8%BA%D8%B3%D8%A7%D9%84%D8%A9%20%D8%A3%D9%88%D8%A7%D9%86%D9%8A&brand=gree&code=E1</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/error.html?id=gree-e2</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/error.html?device=%D8%BA%D8%B3%D8%A7%D9%84%D8%A9%20%D8%A3%D9%88%D8%A7%D9%86%D9%8A&brand=gree&code=E2</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/error.html?id=midea-e1</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/error.html?device=%D8%BA%D8%B3%D8%A7%D9%84%D8%A9%20%D9%85%D9%84%D8%A7%D8%A8%D8%B3&brand=midea&code=E1</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/error.html?id=midea-e2</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/error.html?device=%D8%BA%D8%B3%D8%A7%D9%84%D8%A9%20%D9%85%D9%84%D8%A7%D8%A8%D8%B3&brand=midea&code=E2</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/error.html?id=midea-e3</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/error.html?device=%D8%BA%D8%B3%D8%A7%D9%84%D8%A9%20%D9%85%D9%84%D8%A7%D8%A8%D8%B3&brand=midea&code=E3</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/error.html?id=midea-e4</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/error.html?device=%D8%BA%D8%B3%D8%A7%D9%84%D8%A9%20%D9%85%D9%84%D8%A7%D8%A8%D8%B3&brand=midea&code=E4</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/error.html?id=midea-e5</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/error.html?device=%D8%BA%D8%B3%D8%A7%D9%84%D8%A9%20%D9%85%D9%84%D8%A7%D8%A8%D8%B3&brand=midea&code=E5</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/error.html?id=midea-e6</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/error.html?device=%D8%BA%D8%B3%D8%A7%D9%84%D8%A9%20%D9%85%D9%84%D8%A7%D8%A8%D8%B3&brand=midea&code=E6</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/error.html?id=midea-e7</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/error.html?device=%D8%BA%D8%B3%D8%A7%D9%84%D8%A9%20%D9%85%D9%84%D8%A7%D8%A8%D8%B3&brand=midea&code=E7</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/error.html?id=midea-e8</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/error.html?device=%D8%BA%D8%B3%D8%A7%D9%84%D8%A9%20%D9%85%D9%84%D8%A7%D8%A8%D8%B3&brand=midea&code=E8</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/error.html?id=midea-e9</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/error.html?device=%D8%BA%D8%B3%D8%A7%D9%84%D8%A9%20%D9%85%D9%84%D8%A7%D8%A8%D8%B3&brand=midea&code=E9</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/error.html?id=midea-e10</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/error.html?device=%D8%BA%D8%B3%D8%A7%D9%84%D8%A9%20%D9%85%D9%84%D8%A7%D8%A8%D8%B3&brand=midea&code=E10</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/error.html?id=carrier-e1</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/error.html?device=%D8%BA%D8%B3%D8%A7%D9%84%D8%A9%20%D9%85%D9%84%D8%A7%D8%A8%D8%B3&brand=carrier&code=E1</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/error.html?id=carrier-e2</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/error.html?device=%D8%BA%D8%B3%D8%A7%D9%84%D8%A9%20%D9%85%D9%84%D8%A7%D8%A8%D8%B3&brand=carrier&code=E2</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/error.html?id=carrier-e3</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/error.html?device=%D8%BA%D8%B3%D8%A7%D9%84%D8%A9%20%D9%85%D9%84%D8%A7%D8%A8%D8%B3&brand=carrier&code=E3</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/error.html?id=carrier-e4</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/error.html?device=%D8%BA%D8%B3%D8%A7%D9%84%D8%A9%20%D8%A3%D9%88%D8%A7%D9%86%D9%8A&brand=carrier&code=E4</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/error.html?id=carrier-e5</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/error.html?device=%D8%BA%D8%B3%D8%A7%D9%84%D8%A9%20%D8%A3%D9%88%D8%A7%D9%86%D9%8A&brand=carrier&code=E5</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/error.html?id=bosch-e01</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/error.html?device=%D8%BA%D8%B3%D8%A7%D9%84%D8%A9%20%D9%85%D9%84%D8%A7%D8%A8%D8%B3&brand=bosch&code=E%3A01</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/error.html?id=bosch-e02</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/error.html?device=%D8%BA%D8%B3%D8%A7%D9%84%D8%A9%20%D9%85%D9%84%D8%A7%D8%A8%D8%B3&brand=bosch&code=E%3A02</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/error.html?id=bosch-e03</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/error.html?device=%D8%BA%D8%B3%D8%A7%D9%84%D8%A9%20%D9%85%D9%84%D8%A7%D8%A8%D8%B3&brand=bosch&code=E%3A03</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/error.html?id=bosch-e04</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/error.html?device=%D8%BA%D8%B3%D8%A7%D9%84%D8%A9%20%D9%85%D9%84%D8%A7%D8%A8%D8%B3&brand=bosch&code=E%3A04</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/error.html?id=bosch-e05</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/error.html?device=%D8%BA%D8%B3%D8%A7%D9%84%D8%A9%20%D9%85%D9%84%D8%A7%D8%A8%D8%B3&brand=bosch&code=E%3A05</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/error.html?id=electrolux-e10</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/error.html?device=%D8%BA%D8%B3%D8%A7%D9%84%D8%A9%20%D9%85%D9%84%D8%A7%D8%A8%D8%B3&brand=electrolux&code=E10</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/error.html?id=electrolux-e20</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/error.html?device=%D8%BA%D8%B3%D8%A7%D9%84%D8%A9%20%D9%85%D9%84%D8%A7%D8%A8%D8%B3&brand=electrolux&code=E20</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/error.html?id=electrolux-e30</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/error.html?device=%D8%BA%D8%B3%D8%A7%D9%84%D8%A9%20%D9%85%D9%84%D8%A7%D8%A8%D8%B3&brand=electrolux&code=E30</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/error.html?id=whirlpool-f01</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/error.html?device=%D8%BA%D8%B3%D8%A7%D9%84%D8%A9%20%D9%85%D9%84%D8%A7%D8%A8%D8%B3&brand=whirlpool&code=F01</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/error.html?id=whirlpool-f05</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/error.html?device=%D8%BA%D8%B3%D8%A7%D9%84%D8%A9%20%D9%85%D9%84%D8%A7%D8%A8%D8%B3&brand=whirlpool&code=F05</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/error.html?id=beko-e01</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/error.html?device=%D8%BA%D8%B3%D8%A7%D9%84%D8%A9%20%D9%85%D9%84%D8%A7%D8%A8%D8%B3&brand=beko&code=E01</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/error.html?id=beko-e02</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/error.html?device=%D8%BA%D8%B3%D8%A7%D9%84%D8%A9%20%D9%85%D9%84%D8%A7%D8%A8%D8%B3&brand=beko&code=E02</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/error.html?id=beko-e03</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/error.html?device=%D8%BA%D8%B3%D8%A7%D9%84%D8%A9%20%D9%85%D9%84%D8%A7%D8%A8%D8%B3&brand=beko&code=E03</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/error.html?id=panasonic-h01</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/error.html?device=%D8%BA%D8%B3%D8%A7%D9%84%D8%A9%20%D9%85%D9%84%D8%A7%D8%A8%D8%B3&brand=panasonic&code=H01</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imadtbn.github.io/hatg-machine/error.html?id=panasonic-h02</loc>
+    <loc>https://imadtbn.github.io/hatg-machine/error.html?device=%D8%BA%D8%B3%D8%A7%D9%84%D8%A9%20%D9%85%D9%84%D8%A7%D8%A8%D8%B3&brand=panasonic&code=H02</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://imadtbn.github.io/hatg-machine/articles/maintenance-tips.html</loc>
+    <lastmod>2026-08-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://imadtbn.github.io/hatg-machine/articles/energy-saving.html</loc>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://imadtbn.github.io/hatg-machine/articles/washing-machine-care.html</loc>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://imadtbn.github.io/hatg-machine/articles/ac-maintenance.html</loc>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://imadtbn.github.io/hatg-machine/articles/dishwasher-errors.html</loc>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://imadtbn.github.io/hatg-machine/articles/choose-washing-machine.html</loc>
+    <lastmod>2026-08-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://imadtbn.github.io/hatg-machine/articles/dishwasher-filter.html</loc>
+    <lastmod>2026-08-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://imadtbn.github.io/hatg-machine/articles/washing-machine-drain.html</loc>
+    <lastmod>2026-08-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://imadtbn.github.io/hatg-machine/articles/washing-machine-vibration.html</loc>
+    <lastmod>2026-08-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://imadtbn.github.io/hatg-machine/articles/dishwasher-drying.html</loc>
+    <lastmod>2026-08-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://imadtbn.github.io/hatg-machine/articles/when-to-call-technician.html</loc>
+    <lastmod>2026-08-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>

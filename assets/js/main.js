@@ -25,16 +25,20 @@ const App = {
 // ============================================
 async function loadData() {
   try {
-    const [errorsRes, brandsRes] = await Promise.all([
-      fetch('data/errors.json'),
-      fetch('data/brands.json')
+    const assetBase = window.location.pathname.includes('/articles/') ? '../' : '';
+    const [errorsRes, brandsRes, articlesRes] = await Promise.all([
+      fetch(`${assetBase}data/errors.json`),
+      fetch(`${assetBase}data/brands.json`),
+      fetch(`${assetBase}data/articles.json`)
     ]);
+
+    if (!errorsRes.ok || !brandsRes.ok || !articlesRes.ok) {
+      throw new Error('تعذر تحميل أحد ملفات البيانات');
+    }
 
     App.data.errors = await errorsRes.json();
     App.data.brands = await brandsRes.json();
-
-    // Add articles data
-    App.data.articles = generateArticles();
+    App.data.articles = await articlesRes.json();
 
     return true;
   } catch (error) {
@@ -44,57 +48,13 @@ async function loadData() {
   }
 }
 
-function generateArticles() {
-  return [
-    {
-      id: 'maintenance-tips',
-      title: 'نصائح صيانة دورية للأجهزة الكهرومنزلية',
-      excerpt: 'تعرف على أهم النصائح للحفاظ على أجهزتك الكهرومنزلية وتجنب الأعطال المفاجئة.',
-      icon: 'fa-tools',
-      date: '2024-01-15',
-      category: 'صيانة'
-    },
-    {
-      id: 'energy-saving',
-      title: 'كيفية توفير الطاقة في الأجهزة الكهرومنزلية',
-      excerpt: 'طرق فعالة لتقليل استهلاك الكهرباء والحفاظ على كفاءة الأجهزة.',
-      icon: 'fa-bolt',
-      date: '2024-02-10',
-      category: 'توفير الطاقة'
-    },
-    {
-      id: 'washing-machine-care',
-      title: 'العناية بغسالة الملابس - دليل شامل',
-      excerpt: 'كل ما تحتاج معرفته للحفاظ على غسالتك وتمديد عمرها الافتراضي.',
-      icon: 'fa-tshirt',
-      date: '2024-03-05',
-      category: 'غسالات'
-    },
-    {
-      id: 'ac-maintenance',
-      title: 'صيانة المكيفات قبل فصل الصيف',
-      excerpt: 'خطوات ضرورية للتحضير لموسم الصيف وضمان عمل المكيف بكفاءة.',
-      icon: 'fa-snowflake',
-      date: '2024-04-01',
-      category: 'مكيفات'
-    },
-    {
-      id: 'dishwasher-errors',
-      title: 'أشهر أخطاء غسالة الأطباق وكيفية إصلاحها',
-      excerpt: 'دليل شامل لأكثر الأخطاء شيوعاً في غسالات الأطباق وحلولها.',
-      icon: 'fa-utensils',
-      date: '2024-05-12',
-      category: 'غسالات أطباق'
-    },
-    {
-      id: 'choose-washing-machine',
-      title: 'كيف تختار غسالة الملابس المناسبة',
-      excerpt: 'دليل شراء شامل لاختيار الغسالة الأنسب لاحتياجاتك وميزانيتك.',
-      icon: 'fa-shopping-cart',
-      date: '2024-06-20',
-      category: 'دليل الشراء'
-    }
-  ];
+function getArticleById(id) {
+  return App.data.articles.find(article => article.id === id || article.slug === id);
+}
+
+function getArticleUrl(article) {
+  const articleBase = window.location.pathname.includes('/articles/') ? '' : 'articles/';
+  return `${articleBase}${encodeURIComponent(article.slug || article.id)}.html`;
 }
 
 // ============================================
@@ -564,21 +524,47 @@ function renderArticles() {
   const container = document.getElementById('articles-grid');
   if (!container) return;
 
-  container.innerHTML = App.data.articles.map(article => `
-    <a href="article.html?id=${article.id}" class="article-card reveal">
-      <div class="article-image"><i class="fas ${article.icon}"></i></div>
-      <div class="article-content">
-        <div class="article-meta">
-          <span><i class="fas fa-calendar"></i> ${formatDate(article.date)}</span>
-          <span><i class="fas fa-folder"></i> ${article.category}</span>
-        </div>
-        <h3 class="article-title">${article.title}</h3>
-        <p class="article-excerpt">${article.excerpt}</p>
-      </div>
-    </a>
-  `).join('');
+  const searchInput = document.getElementById('articles-search');
+  const categorySelect = document.getElementById('articles-category');
+  const resultCount = document.getElementById('articles-result-count');
 
-  initScrollReveal();
+  if (categorySelect && categorySelect.options.length <= 1) {
+    const categories = [...new Set(App.data.articles.map(article => article.category))].sort((a, b) => a.localeCompare(b, 'ar'));
+    categorySelect.insertAdjacentHTML('beforeend', categories.map(category => `<option value="${category}">${category}</option>`).join(''));
+  }
+
+  const draw = () => {
+    const query = (searchInput?.value || '').trim().toLowerCase();
+    const category = categorySelect?.value || '';
+    const filtered = App.data.articles.filter(article => {
+      const haystack = [article.title, article.excerpt, article.category, ...(article.keywords || [])].join(' ').toLowerCase();
+      return (!query || haystack.includes(query)) && (!category || article.category === category);
+    }).sort((a, b) => new Date(b.date) - new Date(a.date));
+
+    if (resultCount) resultCount.textContent = `${filtered.length} مقال${filtered.length === 1 ? '' : 'ات'} مفيد`;
+    container.innerHTML = filtered.length ? filtered.map(article => `
+      <a href="${getArticleUrl(article)}" class="article-card reveal">
+        <div class="article-image"><i class="fas ${article.icon}"></i><span class="article-badge">${article.category}</span></div>
+        <div class="article-content">
+          <div class="article-meta">
+            <span><i class="fas fa-calendar"></i> ${formatDate(article.date)}</span>
+            <span><i class="fas fa-clock"></i> ${article.readTime} دقائق</span>
+          </div>
+          <h3 class="article-title">${article.title}</h3>
+          <p class="article-excerpt">${article.excerpt}</p>
+          <span class="article-link">اقرأ المقال <i class="fas fa-arrow-left"></i></span>
+        </div>
+      </a>
+    `).join('') : '<div class="empty-state"><i class="fas fa-search"></i><h3>لم نعثر على مقال مطابق</h3><p>جرّب كلمة أخرى أو ألغِ التصفية لعرض جميع المقالات.</p></div>';
+    initScrollReveal();
+  };
+
+  if (!container.dataset.initialized) {
+    searchInput?.addEventListener('input', debounce(draw, 180));
+    categorySelect?.addEventListener('change', draw);
+    container.dataset.initialized = 'true';
+  }
+  draw();
 }
 
 function renderStats() {
@@ -631,6 +617,84 @@ function getBrandLogo(brandName) {
   };
 
   return logoMap[brandName] || null;
+}
+
+// ============================================
+// Article Detail
+// ============================================
+function setMeta(selector, attribute, value) {
+  const element = document.querySelector(selector);
+  if (element) element.setAttribute(attribute, value);
+}
+
+function renderArticleDetail() {
+  const article = getArticleById(getUrlParam('id') || getUrlParam('slug') || document.body.dataset.articleId);
+  const titleElement = document.getElementById('article-detail-title');
+  const bodyElement = document.getElementById('article-body');
+  if (!article || !titleElement || !bodyElement) {
+    if (titleElement) titleElement.textContent = 'المقال غير موجود';
+    if (bodyElement) bodyElement.innerHTML = '<div class="empty-state"><i class="fas fa-file-circle-xmark"></i><h2>تعذر العثور على المقال</h2><p>تحقق من الرابط ثم عد إلى صفحة المقالات.</p><a class="btn btn-primary" href="articles.html">العودة إلى المقالات</a></div>';
+    return;
+  }
+
+  const canonical = document.body.dataset.articlePath
+    ? `https://imadtbn.github.io/hatg-machine/${document.body.dataset.articlePath}`
+    : `https://imadtbn.github.io/hatg-machine/article.html?id=${encodeURIComponent(article.id)}`;
+  document.title = `${article.title} | دليل أعطال الأجهزة الكهرومنزلية`;
+  setMeta('meta[name="description"]', 'content', article.excerpt);
+  setMeta('link[rel="canonical"]', 'href', canonical);
+  setMeta('meta[property="og:title"]', 'content', article.title);
+  setMeta('meta[property="og:description"]', 'content', article.excerpt);
+  setMeta('meta[property="og:url"]', 'content', canonical);
+  setMeta('meta[name="twitter:title"]', 'content', article.title);
+  setMeta('meta[name="twitter:description"]', 'content', article.excerpt);
+
+  titleElement.textContent = article.title;
+  document.getElementById('article-category').textContent = article.category;
+  const breadcrumbCategory = document.getElementById('article-breadcrumb-category');
+  if (breadcrumbCategory) breadcrumbCategory.textContent = article.category;
+  document.getElementById('article-date').textContent = formatDate(article.date);
+  document.getElementById('article-updated').textContent = formatDate(article.updated);
+  document.getElementById('article-read-time').textContent = `${article.readTime} دقائق قراءة`;
+  document.getElementById('article-body').innerHTML = article.content;
+
+  const sourceList = document.getElementById('article-sources');
+  if (sourceList) sourceList.innerHTML = (article.sources || []).map(source => `<li><a href="${source.url}" target="_blank" rel="noopener noreferrer">${source.label}</a></li>`).join('');
+
+  const faqSection = document.getElementById('article-faq-section');
+  const faqList = document.getElementById('article-faq');
+  if (faqSection && faqList && article.faq?.length) {
+    faqSection.hidden = false;
+    faqList.innerHTML = article.faq.map(item => `<div class="faq-item"><button class="faq-question" type="button"><span>${item.q}</span><i class="fas fa-plus"></i></button><div class="faq-answer"><p>${item.a}</p></div></div>`).join('');
+    initFAQ();
+  }
+
+  const related = App.data.articles.filter(item => item.id !== article.id && item.category === article.category).slice(0, 3);
+  const relatedList = document.getElementById('related-articles');
+  if (relatedList) relatedList.innerHTML = (related.length ? related : App.data.articles.filter(item => item.id !== article.id).slice(0, 3)).map(item => `<a href="${getArticleUrl(item)}" class="related-article"><i class="fas ${item.icon}"></i><span><strong>${item.title}</strong><small>${item.readTime} دقائق قراءة</small></span><i class="fas fa-arrow-left"></i></a>`).join('');
+
+  const jsonLd = document.getElementById('article-jsonld');
+  if (jsonLd) jsonLd.textContent = JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: article.title,
+    description: article.excerpt,
+    datePublished: article.date,
+    dateModified: article.updated,
+    inLanguage: 'ar',
+    mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
+    author: { '@type': 'Organization', name: 'دليل أعطال الأجهزة الكهرومنزلية' },
+    publisher: { '@type': 'Organization', name: 'دليل أعطال الأجهزة الكهرومنزلية', url: 'https://imadtbn.github.io/hatg-machine/' },
+    keywords: article.keywords?.join(', '),
+    isAccessibleForFree: true
+  });
+
+  const faqJsonLd = document.getElementById('faq-jsonld');
+  if (faqJsonLd && article.faq?.length) faqJsonLd.textContent = JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: article.faq.map(item => ({ '@type': 'Question', name: item.q, acceptedAnswer: { '@type': 'Answer', text: item.a } }))
+  });
 }
 
 // ============================================
@@ -708,8 +772,8 @@ function debounce(func, wait) {
 }
 
 function formatDate(dateStr) {
-  const date = new Date(dateStr);
-  return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+  const date = new Date(`${dateStr}T00:00:00`);
+  return new Intl.DateTimeFormat('ar-DZ', { year: 'numeric', month: 'long', day: 'numeric' }).format(date);
 }
 
 function getUrlParam(param) {
@@ -742,7 +806,8 @@ function initAnalytics() {
 // ============================================
 function registerServiceWorker() {
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('sw.js')
+    const serviceWorkerPath = window.location.pathname.includes('/articles/') ? '../service-worker.js' : 'service-worker.js';
+    navigator.serviceWorker.register(serviceWorkerPath)
       .then(reg => console.log('SW registered:', reg))
       .catch(err => console.log('SW registration failed:', err));
   }
@@ -811,6 +876,10 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     case 'articles':
       renderArticles();
+      break;
+
+    case 'article':
+      renderArticleDetail();
       break;
 
     case 'search':

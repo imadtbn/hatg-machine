@@ -1,4 +1,4 @@
-const CACHE_NAME = 'appliance-errors-v3';
+const CACHE_NAME = 'appliance-errors-v4';
 const SCOPE_PATH = self.registration.scope;
 const STATIC_ASSETS = [
   './',
@@ -7,6 +7,9 @@ const STATIC_ASSETS = [
   './brand.html',
   './brands.html',
   './error.html',
+  './articles.html',
+  './article.html',
+  './data/articles.json',
   './assets/css/style.css',
   './assets/js/main.js'
 ];
@@ -32,7 +35,7 @@ self.addEventListener('fetch', event => {
   if (!event.request.url.startsWith(self.location.origin)) return;
 
   const url = new URL(event.request.url);
-  const isDynamicData = /\/data\/(brands|errors)\.json$/i.test(url.pathname);
+  const isDynamicData = /\/data\/(brands|errors|articles)\.json$/i.test(url.pathname);
 
   // JSON is always requested from the network first so new brands/errors
   // are visible immediately after publishing. Cache is only a fallback.

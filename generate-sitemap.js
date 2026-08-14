@@ -3,6 +3,7 @@ const path = require('path');
 
 const brands = JSON.parse(fs.readFileSync('data/brands.json', 'utf8'));
 const errors = JSON.parse(fs.readFileSync('data/errors.json', 'utf8'));
+const articles = JSON.parse(fs.readFileSync('data/articles.json', 'utf8'));
 
 const baseUrl = 'https://imadtbn.github.io/hatg-machine/';
 const today = new Date().toISOString().split('T')[0];
@@ -34,7 +35,7 @@ staticPages.forEach(page => {
 // صفحات الماركات
 brands.forEach(brand => {
   urls.push({
-    loc: `${baseUrl}brand.html?id=${brand.id}`,
+      loc: `${baseUrl}brand.html?name=${encodeURIComponent(brand.name)}`,
     lastmod: today,
     changefreq: 'monthly',
     priority: 0.7
@@ -44,8 +45,18 @@ brands.forEach(brand => {
 // صفحات الأعطال
 errors.forEach(error => {
   urls.push({
-    loc: `${baseUrl}error.html?id=${error.id}`,
+      loc: `${baseUrl}error.html?device=${encodeURIComponent(error.deviceTypeAr)}&brand=${encodeURIComponent(error.brand)}&code=${encodeURIComponent(error.errorCode)}`,
     lastmod: today,
+    changefreq: 'monthly',
+    priority: 0.7
+  });
+});
+
+// صفحات المقالات الثابتة
+articles.forEach(article => {
+  urls.push({
+    loc: `${baseUrl}articles/${article.slug}.html`,
+    lastmod: article.updated || article.date || today,
     changefreq: 'monthly',
     priority: 0.7
   });
