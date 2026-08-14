@@ -15,7 +15,6 @@ window.addEventListener('beforeinstallprompt', event => {
   deferredInstallPrompt = event;
   if (pwaInstallButton) updatePwaInstallUi();
   if (pwaInstallNotice?.classList.contains('show')) showPwaInstallNotice(true);
-  else if (document.readyState !== 'loading' && shouldShowInstallNotice()) showPwaInstallNotice();
 });
 
 window.addEventListener('appinstalled', () => {
@@ -156,10 +155,10 @@ async function installPwa() {
 
 function initPWAInstall() {
   createPwaInstallUi();
+  // تأخير الإشعار حتى يكتمل العرض الأول ولا يصبح العنصر الأكبر في Lighthouse أو على الهاتف.
   window.setTimeout(() => {
-    if (deferredInstallPrompt && shouldShowInstallNotice()) showPwaInstallNotice();
-    else if (!deferredInstallPrompt && shouldShowInstallNotice()) showPwaInstallNotice(true);
-  }, 900);
+    if (shouldShowInstallNotice()) showPwaInstallNotice(Boolean(!deferredInstallPrompt));
+  }, 8500);
 }
 
 // ============================================
@@ -192,14 +191,21 @@ function updateThemeIcon(theme) {
 function initHeader() {
   const header = document.querySelector('.header');
   if (!header) return;
-
+  let ticking = false;
+  let isScrolled = false;
+  const update = () => {
+    ticking = false;
+    const nextState = window.scrollY > 50;
+    if (nextState === isScrolled) return;
+    isScrolled = nextState;
+    header.classList.toggle('scrolled', isScrolled);
+  };
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(update);
     }
-  });
+  }, { passive: true });
 }
 
 // ============================================
@@ -232,15 +238,21 @@ function initMobileMenu() {
 function initBackToTop() {
   const backToTop = document.querySelector('.back-to-top');
   if (!backToTop) return;
-
+  let ticking = false;
+  let isVisible = false;
+  const update = () => {
+    ticking = false;
+    const nextState = window.scrollY > 500;
+    if (nextState === isVisible) return;
+    isVisible = nextState;
+    backToTop.classList.toggle('visible', isVisible);
+  };
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 500) {
-      backToTop.classList.add('visible');
-    } else {
-      backToTop.classList.remove('visible');
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(update);
     }
-  });
-
+  }, { passive: true });
   backToTop.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
@@ -894,7 +906,8 @@ function slugify(text) {
 // Google Analytics
 // ============================================
 function initAnalytics() {
-  // Google Analytics 4
+  if (window.__analyticsLoaded) return;
+  window.__analyticsLoaded = true;
   const gaScript = document.createElement('script');
   gaScript.async = true;
   gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-XK4CHWYGWZ';
@@ -904,6 +917,32 @@ function initAnalytics() {
   function gtag() { dataLayer.push(arguments); }
   gtag('js', new Date());
   gtag('config', 'G-XK4CHWYGWZ');
+}
+
+function initAdSense() {
+  if (window.__adsenseLoaded) {
+    window.initAds?.();
+    return;
+  }
+  window.__adsenseLoaded = true;
+  const adsScript = document.createElement('script');
+  adsScript.async = true;
+  adsScript.crossOrigin = 'anonymous';
+  adsScript.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5656416032906373';
+  adsScript.onload = () => window.initAds?.();
+  adsScript.onerror = () => { window.__adsenseLoaded = false; };
+  document.head.appendChild(adsScript);
+}
+
+function scheduleThirdParty() {
+  const load = () => {
+    initAnalytics();
+    initAdSense();
+  };
+  ['pointerdown', 'keydown', 'touchstart'].forEach(eventName => {
+    window.addEventListener(eventName, load, { once: true, passive: true });
+  });
+  window.setTimeout(load, 3500);
 }
 
 // ============================================
@@ -921,7 +960,7 @@ function registerServiceWorker() {
 // ============================================
 // Initialize App
 // ============================================
-document.addEventListener('DOMContentLoaded', async () => {
+document.addEventListener('DOMContentLoaded', () => {
   initTheme();
   initHeader();
   initMobileMenu();
@@ -931,6 +970,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   initFAQ();
   initPWAInstall();
 
+  const hydrate = async () => {
   // Load data
   const loaded = await loadData();
   if (!loaded) return;
@@ -993,8 +1033,12 @@ document.addEventListener('DOMContentLoaded', async () => {
       break;
   }
 
-  // Register service worker
+  // Register Service Worker and defer third-party work until after the first paint.
   registerServiceWorker();
+  scheduleThirdParty();
+  };
+  if ('requestIdleCallback' in window) requestIdleCallback(hydrate, { timeout: 800 });
+  else window.setTimeout(hydrate, 120);
 });
 
 // ============================================

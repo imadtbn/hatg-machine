@@ -1,4 +1,4 @@
-const CACHE_NAME = 'appliance-errors-v5';
+const CACHE_NAME = 'appliance-errors-v6';
 const STATIC_ASSETS = [
   './',
   './index.html',

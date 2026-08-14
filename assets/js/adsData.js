@@ -1,35 +1,38 @@
-// adsData.js
+(() => {
+  let initialized = false;
 
-document.addEventListener("DOMContentLoaded", function () {
-    // حساب عدد إعلانات AdSense المتوفرة في الصفحة
-    var adBlocks = document.querySelectorAll('ins.adsbygoogle');
-    adBlocks.forEach(function (adBlock) {
-        // التحقق من أن الإعلان لم يتم دفعه أو تحميله مسبقاً
-        if (!adBlock.hasAttribute('data-adsbygoogle-status')) {
-            try {
-                (adsbygoogle = window.adsbygoogle || []).push({});
-            } catch (e) {
-                console.error("AdSense push error: ", e);
-            }
+  function pushAd(adBlock) {
+    if (!adBlock || adBlock.dataset.adsInitialized === 'true') return;
+    adBlock.dataset.adsInitialized = 'true';
+    try {
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+    } catch (error) {
+      adBlock.dataset.adsInitialized = 'false';
+      console.warn('AdSense push deferred:', error);
+    }
+  }
+
+  function initAds() {
+    if (initialized) return;
+    initialized = true;
+    const adBlocks = [...document.querySelectorAll('ins.adsbygoogle')];
+    if (!adBlocks.length) return;
+
+    if (!('IntersectionObserver' in window)) {
+      adBlocks.forEach(pushAd);
+      return;
+    }
+
+    const observer = new IntersectionObserver((entries, currentObserver) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          pushAd(entry.target);
+          currentObserver.unobserve(entry.target);
         }
-    });
-});
+      });
+    }, { rootMargin: '500px 0px' });
+    adBlocks.forEach(adBlock => observer.observe(adBlock));
+  }
 
-// الانتظار حتى يتم تحميل الصفحة بالكامل
-window.addEventListener('load', function () {
-    // تأخير بسيط لضمان استقرار وسم الـ DOM وتجنب تضارب الـ Service Worker
-    setTimeout(function () {
-        var adBlocks = document.querySelectorAll('ins.adsbygoogle');
-        adBlocks.forEach(function (adBlock) {
-            // التحقق بدقة: إذا لم يكن الإعلان قد تم معالجته من قبل جوجل ولم يتم عمل push له
-            if (!adBlock.hasAttribute('data-adsbygoogle-status') && adBlock.children.length === 0) {
-                try {
-                    (window.adsbygoogle = window.adsbygoogle || []).push({});
-                    console.log('تم تحميل وحدة إعلانية بنجاح.');
-                } catch (e) {
-                    console.error('خطأ أثناء تحميل الإعلان:', e);
-                }
-            }
-        });
-    }, 2600); // تأخير نصف ثانية
-});
+  window.initAds = initAds;
+})();
