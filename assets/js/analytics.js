@@ -34,18 +34,7 @@
     });
   };
 
-  // === Google AdSense ===
-  // Replace ca-pub-XXXXXXXXXXXXXXXX with your actual AdSense publisher ID
-  const ADSENSE_PUB_ID = 'ca-pub-XXXXXXXXXXXXXXXX';
-  
-  /*
-  // Uncomment below to enable AdSense:
-  const adScript = document.createElement('script');
-  adScript.crossOrigin = 'anonymous';
-  adScript.async = true;
-  adScript.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=' + ADSENSE_PUB_ID;
-  document.head.appendChild(adScript);
-  */
+  // AdSense is managed centrally by assets/js/adsData.js.
 
   // === Schema.org Structured Data ===
   function addStructuredData() {

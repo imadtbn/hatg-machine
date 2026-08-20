@@ -922,26 +922,8 @@ function initAnalytics() {
   gtag('config', 'G-XK4CHWYGWZ');
 }
 
-function initAdSense() {
-  if (window.__adsenseLoaded) {
-    window.initAds?.();
-    return;
-  }
-  window.__adsenseLoaded = true;
-  const adsScript = document.createElement('script');
-  adsScript.async = true;
-  adsScript.crossOrigin = 'anonymous';
-  adsScript.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5656416032906373';
-  adsScript.onload = () => window.initAds?.();
-  adsScript.onerror = () => { window.__adsenseLoaded = false; };
-  document.head.appendChild(adsScript);
-}
-
 function scheduleThirdParty() {
-  const load = () => {
-    initAnalytics();
-    initAdSense();
-  };
+  const load = () => initAnalytics();
   ['pointerdown', 'keydown', 'touchstart'].forEach(eventName => {
     window.addEventListener(eventName, load, { once: true, passive: true });
   });
