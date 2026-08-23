@@ -33,7 +33,8 @@ appliance-errors/
 ├── search.html         (البحث)
 ├── data/
 │   ├── brands.json     (قاعدة بيانات الماركات)
-│   └── errors.json     (قاعدة بيانات الأعطال)
+│   ├── errors.json     (قاعدة بيانات الأعطال والتصنيف التشخيصي)
+│   └── taxonomy.json   (قاموس أنواع الأجهزة ومجموعات الأعطال)
 ├── assets/
 │   ├── css/style.css   (الملف الرئيسي)
 │   ├── js/
@@ -57,7 +58,9 @@ appliance-errors/
 ### التخصيص
 
 - **الألوان**: عدّل المتغيرات في `assets/css/style.css`
-- **المحتوى**: عدّل ملفات `data/brands.json` و `data/errors.json`
+- **المحتوى**: عدّل ملفات `data/brands.json` و`data/errors.json`
+- **التصنيف**: استخدم المعرفات الموجودة في `data/taxonomy.json` عند إضافة `deviceType` أو `faultGroup` أو `faultTags`؛ لا تضف قيمة تصنيف جديدة خارج القاموس
+- **الروابط**: استخدم `error.html?id=<error-id>` لروابط تفاصيل الأعطال الجديدة
 - **التواصل**: حدّث معلومات الاتصال في الـ footer
 
 ### الترخيص

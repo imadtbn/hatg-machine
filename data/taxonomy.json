@@ -1,0 +1,133 @@
+{
+  "version": "1.0.0",
+  "language": "ar",
+  "deviceFamilies": {
+    "laundry": {
+      "name": "Laundry",
+      "nameAr": "أجهزة الغسيل",
+      "descriptionAr": "الأجهزة المستخدمة لغسل وتجفيف الملابس"
+    },
+    "kitchen": {
+      "name": "Kitchen",
+      "nameAr": "أجهزة المطبخ",
+      "descriptionAr": "الأجهزة المستخدمة لغسل الأواني وأعمال المطبخ"
+    },
+    "climate": {
+      "name": "Climate",
+      "nameAr": "أجهزة التكييف والمناخ",
+      "descriptionAr": "أجهزة التكييف والتدفئة والتحكم بالمناخ"
+    },
+    "other": {
+      "name": "Other",
+      "nameAr": "أجهزة أخرى",
+      "descriptionAr": "أجهزة لا تنتمي إلى عائلة مصنفة بعد"
+    }
+  },
+  "deviceTypes": {
+    "washing-machine": {
+      "family": "laundry",
+      "name": "Washing machine",
+      "nameAr": "غسالة ملابس",
+      "icon": "fa-tshirt"
+    },
+    "dishwasher": {
+      "family": "kitchen",
+      "name": "Dishwasher",
+      "nameAr": "غسالة أواني",
+      "icon": "fa-utensils"
+    },
+    "dryer": {
+      "family": "laundry",
+      "name": "Dryer",
+      "nameAr": "مجفف ملابس",
+      "icon": "fa-wind"
+    },
+    "refrigerator": {
+      "family": "kitchen",
+      "name": "Refrigerator",
+      "nameAr": "ثلاجة",
+      "icon": "fa-temperature-low"
+    },
+    "oven": {
+      "family": "kitchen",
+      "name": "Oven",
+      "nameAr": "فرن",
+      "icon": "fa-fire"
+    },
+    "air-conditioner": {
+      "family": "climate",
+      "name": "Air conditioner",
+      "nameAr": "مكيف هواء",
+      "icon": "fa-snowflake"
+    },
+    "other": {
+      "family": "other",
+      "name": "Other appliance",
+      "nameAr": "جهاز آخر",
+      "icon": "fa-plug"
+    }
+  },
+  "deviceSubtypes": {
+    "unknown": {"nameAr": "غير محدد"},
+    "front-load-washer": {"deviceType": "washing-machine", "nameAr": "غسالة تحميل أمامي"},
+    "top-load-washer": {"deviceType": "washing-machine", "nameAr": "غسالة تحميل علوي"},
+    "washer-dryer": {"deviceType": "washing-machine", "nameAr": "غسالة ومجفف"},
+    "freestanding-dishwasher": {"deviceType": "dishwasher", "nameAr": "غسالة أواني قائمة"},
+    "built-in-dishwasher": {"deviceType": "dishwasher", "nameAr": "غسالة أواني مدمجة"},
+    "unknown-washing-machine": {"deviceType": "washing-machine", "nameAr": "غسالة ملابس غير محددة النوع"},
+    "unknown-dishwasher": {"deviceType": "dishwasher", "nameAr": "غسالة أواني غير محددة النوع"}
+  },
+  "faultGroups": {
+    "unknown": {"nameAr": "غير مصنف", "deviceTypes": ["washing-machine", "dishwasher", "dryer", "refrigerator", "oven", "air-conditioner", "other"]},
+    "water-inlet": {"nameAr": "إمداد المياه", "deviceTypes": ["washing-machine", "dishwasher"]},
+    "drainage": {"nameAr": "التصريف", "deviceTypes": ["washing-machine", "dishwasher"]},
+    "door-lock": {"nameAr": "الباب والقفل", "deviceTypes": ["washing-machine", "dishwasher"]},
+    "heating": {"nameAr": "التسخين ودرجة الحرارة", "deviceTypes": ["washing-machine", "dishwasher", "oven"]},
+    "temperature-sensor": {"nameAr": "حساس الحرارة", "deviceTypes": ["washing-machine", "dishwasher", "refrigerator", "oven", "air-conditioner"]},
+    "motor-drive": {"nameAr": "المحرك والحركة", "deviceTypes": ["washing-machine", "dryer", "air-conditioner"]},
+    "water-level": {"nameAr": "مستوى المياه", "deviceTypes": ["washing-machine", "dishwasher"]},
+    "leak-overflow": {"nameAr": "التسرب والامتلاء الزائد", "deviceTypes": ["washing-machine", "dishwasher", "refrigerator"]},
+    "electrical-communication": {"nameAr": "الكهرباء والاتصال", "deviceTypes": ["washing-machine", "dishwasher", "dryer", "refrigerator", "oven", "air-conditioner", "other"]},
+    "balance-vibration": {"nameAr": "التوازن والاهتزاز", "deviceTypes": ["washing-machine", "dryer"]},
+    "detergent-dosing": {"nameAr": "المنظف ونظام الجرعات", "deviceTypes": ["washing-machine", "dishwasher"]},
+    "filter-blockage": {"nameAr": "انسداد المرشح", "deviceTypes": ["washing-machine", "dishwasher", "dryer", "refrigerator", "air-conditioner"]},
+    "water-meter": {"nameAr": "عداد المياه وحساس التدفق", "deviceTypes": ["dishwasher", "washing-machine"]},
+    "refrigeration": {"nameAr": "التبريد", "deviceTypes": ["refrigerator", "air-conditioner"]}
+  },
+  "faultSubgroups": {
+    "inlet-filter": {"nameAr": "مرشح الدخول"},
+    "inlet-valve": {"nameAr": "صمام دخول المياه"},
+    "drain-pump": {"nameAr": "مضخة التصريف"},
+    "drain-hose": {"nameAr": "خرطوم التصريف"},
+    "door-latch": {"nameAr": "مزلاج أو قفل الباب"},
+    "temperature-sensor": {"nameAr": "حساس الحرارة"},
+    "heating-element": {"nameAr": "عنصر التسخين"},
+    "pressure-sensor": {"nameAr": "حساس الضغط أو المستوى"},
+    "water-meter": {"nameAr": "عداد المياه أو حساس التدفق"},
+    "control-board": {"nameAr": "لوحة التحكم"},
+    "motor": {"nameAr": "المحرك"},
+    "overflow-protection": {"nameAr": "حماية الفيضان"},
+    "unknown": {"nameAr": "غير محدد"}
+  },
+  "modelScopes": {
+    "all-known-models": {"nameAr": "كل الطرازات المعروفة"},
+    "series-specific": {"nameAr": "سلسلة طرازات محددة"},
+    "model-manual": {"nameAr": "كتيب طراز محدد"},
+    "unknown": {"nameAr": "نطاق غير محدد"}
+  },
+  "verificationStatuses": {
+    "manufacturer-confirmed-general": {"nameAr": "مؤكد من الشركة بشكل عام"},
+    "manufacturer-confirmed-model-manual": {"nameAr": "مؤكد من كتيب طراز الشركة"},
+    "model-specific-only": {"nameAr": "يعتمد على الطراز فقط"}
+  },
+  "brands": {
+    "lg": {"name": "LG", "nameAr": "إل جي"},
+    "samsung": {"name": "Samsung", "nameAr": "سامسونج"},
+    "midea": {"name": "Midea", "nameAr": "ميديا"},
+    "bosch": {"name": "Bosch", "nameAr": "بوش"},
+    "beko": {"name": "Beko", "nameAr": "بيكو"},
+    "electrolux": {"name": "Electrolux", "nameAr": "إلكترولوكس"},
+    "whirlpool": {"name": "Whirlpool", "nameAr": "ويرلبول"},
+    "panasonic": {"name": "Panasonic", "nameAr": "باناسونيك"}
+  }
+}

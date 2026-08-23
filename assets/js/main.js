@@ -29,7 +29,8 @@ const App = {
   data: {
     errors: [],
     brands: [],
-    articles: []
+    articles: [],
+    taxonomy: { deviceTypes: {}, faultGroups: {}, brands: {} }
   },
   config: {
     itemsPerPage: 12,
@@ -45,19 +46,21 @@ const App = {
 async function loadData() {
   try {
     const assetBase = window.location.pathname.includes('/articles/') ? '../' : '';
-    const [errorsRes, brandsRes, articlesRes] = await Promise.all([
+    const [errorsRes, brandsRes, articlesRes, taxonomyRes] = await Promise.all([
       fetch(`${assetBase}data/errors.json`),
       fetch(`${assetBase}data/brands.json`),
-      fetch(`${assetBase}data/articles.json`)
+      fetch(`${assetBase}data/articles.json`),
+      fetch(`${assetBase}data/taxonomy.json`)
     ]);
 
-    if (!errorsRes.ok || !brandsRes.ok || !articlesRes.ok) {
+    if (!errorsRes.ok || !brandsRes.ok || !articlesRes.ok || !taxonomyRes.ok) {
       throw new Error('تعذر تحميل أحد ملفات البيانات');
     }
 
     App.data.errors = await errorsRes.json();
     App.data.brands = await brandsRes.json();
     App.data.articles = await articlesRes.json();
+    App.data.taxonomy = await taxonomyRes.json();
 
     return true;
   } catch (error) {
@@ -65,6 +68,41 @@ async function loadData() {
     showToast('حدث خطأ في تحميل البيانات', 'error');
     return false;
   }
+}
+
+function getDeviceLabel(deviceId) {
+  return App.data.taxonomy?.deviceTypes?.[deviceId]?.nameAr || deviceId || '';
+}
+
+function getFaultGroupLabel(groupId) {
+  return App.data.taxonomy?.faultGroups?.[groupId]?.nameAr || groupId || 'غير مصنف';
+}
+
+function getBrandId(errorOrBrand) {
+  if (typeof errorOrBrand === 'string') return errorOrBrand.toLowerCase();
+  return errorOrBrand.brandId || (errorOrBrand.brand || '').toLowerCase();
+}
+
+function getBrandLabel(brandId, fallback = '') {
+  const brand = App.data.brands.find(item => item.id === brandId || (item.name || '').toLowerCase() === brandId);
+  return brand?.nameAr || fallback || brandId || '';
+}
+
+function getErrorUrl(error) {
+  return `error.html?id=${encodeURIComponent(error.id || '')}`;
+}
+
+function normalizeDeviceParam(value) {
+  if (!value) return '';
+  if (App.data.taxonomy?.deviceTypes?.[value]) return value;
+  const match = Object.entries(App.data.taxonomy?.deviceTypes || {}).find(([id, item]) => item.nameAr === value || item.name === value);
+  return match ? match[0] : value;
+}
+
+function normalizeBrandParam(value) {
+  if (!value) return '';
+  const match = App.data.brands.find(brand => brand.id === value.toLowerCase() || brand.name === value || brand.nameAr === value);
+  return match?.id || value.toLowerCase();
 }
 
 function getArticleById(id) {
@@ -367,15 +405,18 @@ function searchAll(query) {
 
   // Search errors
   App.data.errors.forEach(error => {
-    if ((error.errorCode || '').toLowerCase().includes(q) ||
-      (error.titleAr || error.title || '').toLowerCase().includes(q) ||
-      (error.deviceTypeAr || error.deviceType || '').toLowerCase().includes(q) ||
-      (error.brandAr || error.brand || '').toLowerCase().includes(q)) {
+    const searchable = [
+      error.errorCode, ...(error.codes || []), error.titleAr, error.title,
+      error.deviceType, error.deviceTypeAr, error.brand, error.brandAr,
+      error.faultGroup, getFaultGroupLabel(error.faultGroup), ...(error.faultTags || []),
+      ...(error.causes || []), ...(error.symptoms || [])
+    ].filter(Boolean).join(' ').toLowerCase();
+    if (searchable.includes(q)) {
       results.push({
         type: 'error',
-        title: `كود الخطأ ${error.errorCode || ''}`,
-        subtitle: `${error.deviceTypeAr || ''} - ${error.brandAr || ''}`,
-        url: `error.html?device=${encodeURIComponent(error.deviceTypeAr || '')}&brand=${encodeURIComponent(error.brandAr || '')}&code=${encodeURIComponent(error.errorCode || '')}`,
+        title: `كود الخطأ ${error.displayCode || error.errorCode || ''}`,
+        subtitle: `${getDeviceLabel(error.deviceType)} - ${error.brandAr || getBrandLabel(getBrandId(error))} - ${getFaultGroupLabel(error.faultGroup)}`,
+        url: getErrorUrl(error),
         icon: 'fa-exclamation-triangle'
       });
     }
@@ -431,10 +472,21 @@ function renderSearchResults(results, container) {
 function initFilters() {
   const deviceFilter = document.getElementById('device-filter');
   const brandFilter = document.getElementById('brand-filter');
+  const faultGroupFilter = document.getElementById('fault-group-filter');
   const severityFilter = document.getElementById('severity-filter');
   const sortFilter = document.getElementById('sort-filter');
 
-  const filters = [deviceFilter, brandFilter, severityFilter, sortFilter];
+  if (deviceFilter && deviceFilter.options.length <= 1) {
+    deviceFilter.insertAdjacentHTML('beforeend', Object.entries(App.data.taxonomy.deviceTypes).filter(([id]) => App.data.errors.some(error => error.deviceType === id)).map(([id, item]) => `<option value="${id}">${item.nameAr}</option>`).join(''));
+  }
+  if (brandFilter && brandFilter.options.length <= 1) {
+    brandFilter.insertAdjacentHTML('beforeend', App.data.brands.filter(brand => App.data.errors.some(error => getBrandId(error) === brand.id)).map(brand => `<option value="${brand.id}">${brand.nameAr || brand.name}</option>`).join(''));
+  }
+  if (faultGroupFilter && faultGroupFilter.options.length <= 1) {
+    faultGroupFilter.insertAdjacentHTML('beforeend', Object.entries(App.data.taxonomy.faultGroups).filter(([id]) => id !== 'unknown' && App.data.errors.some(error => error.faultGroup === id)).map(([id, item]) => `<option value="${id}">${item.nameAr}</option>`).join(''));
+  }
+
+  const filters = [deviceFilter, brandFilter, faultGroupFilter, severityFilter, sortFilter];
 
   filters.forEach(filter => {
     if (!filter) return;
@@ -442,6 +494,7 @@ function initFilters() {
       App.config.currentFilters = {
         device: deviceFilter?.value || '',
         brand: brandFilter?.value || '',
+        faultGroup: faultGroupFilter?.value || '',
         severity: severityFilter?.value || '',
         sort: sortFilter?.value || 'newest'
       };
@@ -456,12 +509,17 @@ function applyFilters() {
   const filters = App.config.currentFilters;
 
   if (filters.device) {
-    filtered = filtered.filter(e => (e.deviceTypeAr || '') === filters.device);
+    filtered = filtered.filter(e => (e.deviceType || '') === filters.device);
   }
   if (filters.brand) {
-    filtered = filtered.filter(e => (e.brandAr || '') === filters.brand);
+    filtered = filtered.filter(e => getBrandId(e) === filters.brand);
   }
-
+  if (filters.faultGroup) {
+    filtered = filtered.filter(e => (e.faultGroup || 'unknown') === filters.faultGroup);
+  }
+  if (filters.severity) {
+    filtered = filtered.filter(e => (e.severity || '') === filters.severity);
+  }
 
   switch (filters.sort) {
     case 'newest':
@@ -510,16 +568,17 @@ function renderErrors(errors) {
 
   container.innerHTML = paginated.map(error => `
     <div class="error-card ${error.severity} reveal">
-      <div class="error-code-display ${error.severity}">${error.errorCode || ''}</div>
+      <div class="error-code-display ${error.severity}">${error.displayCode || error.errorCode || ''}</div>
       <h3 class="card-title">${error.titleAr || error.title || ''}</h3>
       <p class="card-text">${(error.causes && error.causes.length ? error.causes[0] : 'سبب غير محدد').substring(0, 100)}...</p>
       <div class="card-meta">
-        <span class="badge badge-primary"><i class="fas fa-microchip"></i> ${error.deviceTypeAr || ''}</span>
-        <span class="badge badge-secondary"><i class="fas fa-tag"></i> ${error.brandAr || ''}</span>
+        <span class="badge badge-primary"><i class="fas fa-microchip"></i> ${getDeviceLabel(error.deviceType)}</span>
+        <span class="badge badge-secondary"><i class="fas fa-tag"></i> ${error.brandAr || getBrandLabel(getBrandId(error))}</span>
+        <span class="badge badge-secondary"><i class="fas fa-layer-group"></i> ${getFaultGroupLabel(error.faultGroup)}</span>
         ${getSeverityBadge(error.severity)}
       </div>
       <div class="mt-3">
-        <a href="error.html?device=${encodeURIComponent(error.deviceTypeAr || '')}&brand=${encodeURIComponent(error.brandAr || '')}&code=${encodeURIComponent(error.errorCode || '')}" 
+        <a href="${getErrorUrl(error)}"
            class="btn btn-sm btn-primary w-full">
           <i class="fas fa-info-circle"></i> تفاصيل الخطأ
         </a>
@@ -624,9 +683,9 @@ function renderDevices() {
   ];
 
   container.innerHTML = devices.map(device => {
-    const count = App.data.errors.filter(e => (e.deviceTypeAr || '') === device.name).length;
+    const count = App.data.errors.filter(e => e.deviceType === device.id).length;
     return `
-      <a href="errors.html?device=${encodeURIComponent(device.name)}" class="device-card ${device.color} reveal">
+      <a href="errors.html?device=${encodeURIComponent(device.id)}" class="device-card ${device.color} reveal">
         <div class="device-icon"><i class="fas ${device.icon}"></i></div>
         <div class="device-content">
           <h3>${device.name}</h3>
@@ -690,7 +749,7 @@ function renderArticles() {
 function renderStats() {
   const totalErrors = App.data.errors.length;
   const totalBrands = App.data.brands.length;
-  const totalDevices = new Set(App.data.errors.map(e => e.deviceTypeAr || '')).size;
+  const totalDevices = new Set(App.data.errors.map(e => e.deviceType || '')).size;
   const totalArticles = App.data.articles.length;
 
   const counters = document.querySelectorAll('.counter');
@@ -974,8 +1033,9 @@ document.addEventListener('DOMContentLoaded', () => {
     case 'errors':
       initFilters();
       // Apply URL params
-      const deviceParam = getUrlParam('device');
-      const brandParam = getUrlParam('brand');
+      const deviceParam = normalizeDeviceParam(getUrlParam('device') || getUrlParam('type'));
+      const brandParam = normalizeBrandParam(getUrlParam('brand'));
+      const faultGroupParam = getUrlParam('faultGroup');
       if (deviceParam) {
         const deviceFilter = document.getElementById('device-filter');
         if (deviceFilter) deviceFilter.value = deviceParam;
@@ -987,6 +1047,7 @@ document.addEventListener('DOMContentLoaded', () => {
       App.config.currentFilters = {
         device: deviceParam || '',
         brand: brandParam || '',
+        faultGroup: faultGroupParam || '',
         severity: '',
         sort: 'newest'
       };
@@ -1102,7 +1163,7 @@ function renderBrandDetail() {
             ${getSeverityBadge(error.severity)}
           </div>
           <div class="mt-3">
-            <a href="error.html?device=${encodeURIComponent(error.deviceTypeAr || '')}&brand=${encodeURIComponent(error.brandAr || '')}&code=${encodeURIComponent(error.errorCode || '')}"                class="btn btn-sm btn-primary w-full">
+            <a href="${getErrorUrl(error)}" class="btn btn-sm btn-primary w-full">
               <i class="fas fa-info-circle"></i> تفاصيل الخطأ
             </a>
           </div>
@@ -1115,16 +1176,18 @@ function renderBrandDetail() {
 }
 
 function renderErrorDetail() {
+  const errorId = getUrlParam('id');
   const device = getUrlParam('device');
   const brand = getUrlParam('brand');
   const code = getUrlParam('code');
 
-  if (!device || !brand || !code) return;
+  if (!errorId && (!device || !brand || !code)) return;
 
+  const legacyDevice = normalizeDeviceParam(device);
+  const legacyBrand = normalizeBrandParam(brand);
   const error = App.data.errors.find(e =>
-    (e.deviceTypeAr || '') === device &&
-    (e.brandAr || '') === brand &&
-    (e.errorCode || '') === code
+    (errorId && (e.id || '') === errorId) ||
+    (!errorId && (e.deviceType || '') === legacyDevice && getBrandId(e) === legacyBrand && (e.errorCode || '') === code)
   );
 
   if (!error) {
@@ -1148,18 +1211,18 @@ function renderErrorDetail() {
   const heroSubtitle = document.getElementById('error-hero-subtitle');
 
   if (heroCode) {
-    heroCode.textContent = error.code;
+    heroCode.textContent = error.displayCode || error.errorCode || '';
     heroCode.className = `error-code-large ${error.severity}`;
   }
 
-  if (heroTitle) heroTitle.textContent = error.description;
+  if (heroTitle) heroTitle.textContent = error.titleAr || error.title || '';
   if (heroSubtitle) {
     heroSubtitle.innerHTML = `
-    <span class="badge badge-primary">${error.deviceTypeAr || ''}</span>
-    <span class="badge badge-secondary">${error.brandAr || ''}</span>
-    <span class="badge badge-secondary">${error.brand|| ''}</span>
-    <span class="badge badge-secondary">${error.titleAr || ''}</span>
-    <span class="badge badge-secondary">${error.errorCode || ''}</span>
+    <span class="badge badge-primary">${getDeviceLabel(error.deviceType)}</span>
+    <span class="badge badge-secondary">${error.brandAr || getBrandLabel(getBrandId(error))}</span>
+    <span class="badge badge-secondary">${getFaultGroupLabel(error.faultGroup)}</span>
+    <span class="badge badge-secondary">${error.titleAr || error.title || ''}</span>
+    <span class="badge badge-secondary">${error.displayCode || error.errorCode || ''}</span>
 
     ${getSeverityBadge(error.severity)}
   `;
@@ -1186,22 +1249,34 @@ ${(error.repairSteps && Array.isArray(error.repairSteps) ? error.repairSteps : [
       <div class="detail-section">
         <h3><i class="fas fa-info-circle"></i> معلومات إضافية</h3>
         <div class="info-grid">
-          <div class="info-item">
-            <div class="label">الجهاز</div>
-  <div class="value">${error.deviceTypeAr || ''}</div>
-          </div>
-          <div class="info-item">
-            <div class="label">الماركة</div>
-  <div class="value">${error.brandAr || ''}</div>
-          </div>
-          <div class="info-item">
-            <div class="label">الخطورة</div>
+            <div class="info-item">
+              <div class="label">الجهاز</div>
+  <div class="value">${getDeviceLabel(error.deviceType)}</div>
+            </div>
+            <div class="info-item">
+              <div class="label">الماركة</div>
+  <div class="value">${error.brandAr || getBrandLabel(getBrandId(error))}</div>
+            </div>
+            <div class="info-item">
+              <div class="label">مجموعة العطل</div>
+  <div class="value">${getFaultGroupLabel(error.faultGroup)}</div>
+            </div>
+            <div class="info-item">
+              <div class="label">نطاق الطراز</div>
+  <div class="value">${App.data.taxonomy?.modelScopes?.[error.modelScope]?.nameAr || error.modelScope || 'غير محدد'}</div>
+            </div>
+            <div class="info-item">
+              <div class="label">الخطورة</div>
   <div class="value">${error.severityAr || error.severity || ''}</div>
           </div>
-          <div class="info-item">
-            <div class="label">تاريخ الإضافة</div>
-            <div class="value">${formatDate(error.date)}</div>
-          </div>
+              <div class="info-item">
+                <div class="label">الوسوم</div>
+                <div class="value">${(error.faultTags || []).map(tag => tag.replaceAll('-', ' ')).join('، ') || 'غير محدد'}</div>
+              </div>
+              <div class="info-item">
+                <div class="label">تاريخ الإضافة</div>
+                <div class="value">${formatDate(error.date)}</div>
+              </div>
         </div>
       </div>
       
@@ -1213,10 +1288,10 @@ ${(error.repairSteps && Array.isArray(error.repairSteps) ? error.repairSteps : [
 
 function renderRelatedErrors(currentError) {
   const related = App.data.errors.filter(e =>
-    (e.brandAr || '') === (currentError.brandAr || '') &&
-    (e.deviceTypeAr || '') === (currentError.deviceTypeAr || '') &&
+    getBrandId(e) === getBrandId(currentError) &&
+    (e.deviceType || '') === (currentError.deviceType || '') &&
     (e.errorCode || '') !== (currentError.errorCode || '')
-  ).slice(0, 3);
+  ).sort((a, b) => Number(b.faultGroup === currentError.faultGroup) - Number(a.faultGroup === currentError.faultGroup)).slice(0, 3);
 
   if (related.length === 0) return '';
 
@@ -1226,10 +1301,9 @@ function renderRelatedErrors(currentError) {
       <div class="cards-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
         ${related.map(error => `
           <div class="error-card ${error.severity}">
-            <div class="error-code-display ${error.severity}">${error.errorCode || ''}</div>
+            <div class="error-code-display ${error.severity}">${error.displayCode || error.errorCode || ''}</div>
   <h4 class="card-title">${error.titleAr || error.title || ''}</h4>
-  <a href="error.html?device=${encodeURIComponent(error.deviceTypeAr || '')}&brand=${encodeURIComponent(error.brandAr || '')}&code=${encodeURIComponent(error.errorCode || '')}">
-class="btn btn-sm btn-primary w-full">
+          <a href="${getErrorUrl(error)}" class="btn btn-sm btn-primary w-full">
               <i class="fas fa-info-circle"></i> التفاصيل
             </a>
           </div>

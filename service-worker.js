@@ -1,4 +1,4 @@
-const CACHE_NAME = 'appliance-errors-v9';
+const CACHE_NAME = 'appliance-errors-v10';
 const STATIC_ASSETS = [
   './',
   './index.html',
@@ -16,6 +16,7 @@ const STATIC_ASSETS = [
   './manifest.webmanifest',
   './data/brands.json',
   './data/errors.json',
+  './data/taxonomy.json',
   './data/articles.json',
   './assets/css/style.css',
   './assets/js/main.js',
@@ -65,7 +66,7 @@ self.addEventListener('fetch', event => {
   if (event.request.method !== 'GET' || !event.request.url.startsWith(self.location.origin)) return;
 
   const requestUrl = new URL(event.request.url);
-  const isDataRequest = /\/data\/(brands|errors|articles)\.json$/i.test(requestUrl.pathname);
+  const isDataRequest = /\/data\/(brands|errors|taxonomy|articles)\.json$/i.test(requestUrl.pathname);
   const isNavigation = event.request.mode === 'navigate' || event.request.destination === 'document';
   const isCodeOrStyle = event.request.destination === 'script' || event.request.destination === 'style' || /\/assets\/(js|css)\//i.test(requestUrl.pathname);
 

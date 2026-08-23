@@ -45,7 +45,7 @@ brands.forEach(brand => {
 // صفحات الأعطال
 errors.forEach(error => {
   urls.push({
-      loc: `${baseUrl}error.html?device=${encodeURIComponent(error.deviceTypeAr)}&brand=${encodeURIComponent(error.brand)}&code=${encodeURIComponent(error.errorCode)}`,
+      loc: `${baseUrl}error.html?id=${encodeURIComponent(error.id)}`,
     lastmod: today,
     changefreq: 'monthly',
     priority: 0.7

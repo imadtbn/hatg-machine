@@ -83,7 +83,25 @@
       "افصل الجهاز عن الكهرباء وأغلق مصدر المياه قبل فحص الخراطيم أو المرشحات.",
       "لا تفك اللوحة الإلكترونية أو تقِس الجهد الكهربائي دون فني مؤهل.",
       "قد يختلف معنى الكود وإجراء الإصلاح حسب رقم الطراز؛ راجع دليل المستخدم."
-    ]
+    ],
+    "classificationVersion": "1.0.0",
+    "deviceFamily": "laundry",
+    "deviceSubtype": [
+      "unknown-washing-machine"
+    ],
+    "faultGroup": "leak-overflow",
+    "faultSubgroup": "overflow-protection",
+    "faultTags": [
+      "leak",
+      "overflow"
+    ],
+    "displayCode": "AE",
+    "codes": [
+      "AE"
+    ],
+    "codeMatching": "exact",
+    "modelScope": "series-specific",
+    "confidence": "high"
   },
   {
     "id": "LG-ie",
@@ -173,7 +191,26 @@
       "افصل الجهاز عن الكهرباء وأغلق مصدر المياه قبل فحص الخراطيم أو المرشحات.",
       "لا تفك اللوحة الإلكترونية أو تقِس الجهد الكهربائي دون فني مؤهل.",
       "قد يختلف معنى الكود وإجراء الإصلاح حسب رقم الطراز؛ راجع دليل المستخدم."
-    ]
+    ],
+    "classificationVersion": "1.0.0",
+    "deviceFamily": "laundry",
+    "deviceSubtype": [
+      "unknown-washing-machine"
+    ],
+    "faultGroup": "water-inlet",
+    "faultSubgroup": "inlet-valve",
+    "faultTags": [
+      "no-fill",
+      "low-pressure",
+      "inlet-valve"
+    ],
+    "displayCode": "IE",
+    "codes": [
+      "IE"
+    ],
+    "codeMatching": "exact",
+    "modelScope": "series-specific",
+    "confidence": "high"
   },
   {
     "id": "LG-oe",
@@ -262,7 +299,26 @@
       "افصل الجهاز عن الكهرباء وأغلق مصدر المياه قبل فحص الخراطيم أو المرشحات.",
       "لا تفك اللوحة الإلكترونية أو تقِس الجهد الكهربائي دون فني مؤهل.",
       "قد يختلف معنى الكود وإجراء الإصلاح حسب رقم الطراز؛ راجع دليل المستخدم."
-    ]
+    ],
+    "classificationVersion": "1.0.0",
+    "deviceFamily": "laundry",
+    "deviceSubtype": [
+      "unknown-washing-machine"
+    ],
+    "faultGroup": "drainage",
+    "faultSubgroup": "drain-pump",
+    "faultTags": [
+      "not-draining",
+      "blocked-drain",
+      "drain-pump"
+    ],
+    "displayCode": "OE",
+    "codes": [
+      "OE"
+    ],
+    "codeMatching": "exact",
+    "modelScope": "series-specific",
+    "confidence": "high"
   },
   {
     "id": "LG-le",
@@ -351,7 +407,25 @@
       "افصل الجهاز عن الكهرباء وأغلق مصدر المياه قبل فحص الخراطيم أو المرشحات.",
       "لا تفك اللوحة الإلكترونية أو تقِس الجهد الكهربائي دون فني مؤهل.",
       "قد يختلف معنى الكود وإجراء الإصلاح حسب رقم الطراز؛ راجع دليل المستخدم."
-    ]
+    ],
+    "classificationVersion": "1.0.0",
+    "deviceFamily": "laundry",
+    "deviceSubtype": [
+      "unknown-washing-machine"
+    ],
+    "faultGroup": "motor-drive",
+    "faultSubgroup": "motor",
+    "faultTags": [
+      "motor",
+      "overload"
+    ],
+    "displayCode": "LE",
+    "codes": [
+      "LE"
+    ],
+    "codeMatching": "exact",
+    "modelScope": "series-specific",
+    "confidence": "high"
   },
   {
     "id": "LG-fe",
@@ -438,7 +512,25 @@
       "افصل الجهاز عن الكهرباء وأغلق مصدر المياه قبل فحص الخراطيم أو المرشحات.",
       "لا تفك اللوحة الإلكترونية أو تقِس الجهد الكهربائي دون فني مؤهل.",
       "قد يختلف معنى الكود وإجراء الإصلاح حسب رقم الطراز؛ راجع دليل المستخدم."
-    ]
+    ],
+    "classificationVersion": "1.0.0",
+    "deviceFamily": "laundry",
+    "deviceSubtype": [
+      "unknown-washing-machine"
+    ],
+    "faultGroup": "leak-overflow",
+    "faultSubgroup": "overflow-protection",
+    "faultTags": [
+      "overflow",
+      "water-level"
+    ],
+    "displayCode": "FE",
+    "codes": [
+      "FE"
+    ],
+    "codeMatching": "exact",
+    "modelScope": "series-specific",
+    "confidence": "high"
   },
   {
     "id": "LG-ue",
@@ -525,7 +617,25 @@
       "افصل الجهاز عن الكهرباء وأغلق مصدر المياه قبل فحص الخراطيم أو المرشحات.",
       "لا تفك اللوحة الإلكترونية أو تقِس الجهد الكهربائي دون فني مؤهل.",
       "قد يختلف معنى الكود وإجراء الإصلاح حسب رقم الطراز؛ راجع دليل المستخدم."
-    ]
+    ],
+    "classificationVersion": "1.0.0",
+    "deviceFamily": "laundry",
+    "deviceSubtype": [
+      "unknown-washing-machine"
+    ],
+    "faultGroup": "balance-vibration",
+    "faultSubgroup": "unknown",
+    "faultTags": [
+      "unbalanced-load",
+      "vibration"
+    ],
+    "displayCode": "UE",
+    "codes": [
+      "UE"
+    ],
+    "codeMatching": "exact",
+    "modelScope": "series-specific",
+    "confidence": "high"
   },
   {
     "id": "LG-de",
@@ -613,7 +723,25 @@
       "افصل الجهاز عن الكهرباء وأغلق مصدر المياه قبل فحص الخراطيم أو المرشحات.",
       "لا تفك اللوحة الإلكترونية أو تقِس الجهد الكهربائي دون فني مؤهل.",
       "قد يختلف معنى الكود وإجراء الإصلاح حسب رقم الطراز؛ راجع دليل المستخدم."
-    ]
+    ],
+    "classificationVersion": "1.0.0",
+    "deviceFamily": "laundry",
+    "deviceSubtype": [
+      "unknown-washing-machine"
+    ],
+    "faultGroup": "door-lock",
+    "faultSubgroup": "door-latch",
+    "faultTags": [
+      "door",
+      "door-lock"
+    ],
+    "displayCode": "DE",
+    "codes": [
+      "DE"
+    ],
+    "codeMatching": "exact",
+    "modelScope": "series-specific",
+    "confidence": "high"
   },
   {
     "id": "LG-te",
@@ -698,7 +826,25 @@
       "افصل الجهاز عن الكهرباء وأغلق مصدر المياه قبل فحص الخراطيم أو المرشحات.",
       "لا تفك اللوحة الإلكترونية أو تقِس الجهد الكهربائي دون فني مؤهل.",
       "قد يختلف معنى الكود وإجراء الإصلاح حسب رقم الطراز؛ راجع دليل المستخدم."
-    ]
+    ],
+    "classificationVersion": "1.0.0",
+    "deviceFamily": "laundry",
+    "deviceSubtype": [
+      "unknown-washing-machine"
+    ],
+    "faultGroup": "temperature-sensor",
+    "faultSubgroup": "temperature-sensor",
+    "faultTags": [
+      "temperature",
+      "temperature-sensor"
+    ],
+    "displayCode": "TE",
+    "codes": [
+      "TE"
+    ],
+    "codeMatching": "exact",
+    "modelScope": "series-specific",
+    "confidence": "high"
   },
   {
     "id": "LG-se",
@@ -784,7 +930,25 @@
       "افصل الجهاز عن الكهرباء وأغلق مصدر المياه قبل فحص الخراطيم أو المرشحات.",
       "لا تفك اللوحة الإلكترونية أو تقِس الجهد الكهربائي دون فني مؤهل.",
       "قد يختلف معنى الكود وإجراء الإصلاح حسب رقم الطراز؛ راجع دليل المستخدم."
-    ]
+    ],
+    "classificationVersion": "1.0.0",
+    "deviceFamily": "laundry",
+    "deviceSubtype": [
+      "unknown-washing-machine"
+    ],
+    "faultGroup": "electrical-communication",
+    "faultSubgroup": "control-board",
+    "faultTags": [
+      "electronics",
+      "control-board"
+    ],
+    "displayCode": "SE",
+    "codes": [
+      "SE"
+    ],
+    "codeMatching": "exact",
+    "modelScope": "series-specific",
+    "confidence": "high"
   },
   {
     "id": "LG-pe",
@@ -870,7 +1034,25 @@
       "افصل الجهاز عن الكهرباء وأغلق مصدر المياه قبل فحص الخراطيم أو المرشحات.",
       "لا تفك اللوحة الإلكترونية أو تقِس الجهد الكهربائي دون فني مؤهل.",
       "قد يختلف معنى الكود وإجراء الإصلاح حسب رقم الطراز؛ راجع دليل المستخدم."
-    ]
+    ],
+    "classificationVersion": "1.0.0",
+    "deviceFamily": "laundry",
+    "deviceSubtype": [
+      "unknown-washing-machine"
+    ],
+    "faultGroup": "water-level",
+    "faultSubgroup": "pressure-sensor",
+    "faultTags": [
+      "water-level",
+      "level-sensor"
+    ],
+    "displayCode": "PE",
+    "codes": [
+      "PE"
+    ],
+    "codeMatching": "exact",
+    "modelScope": "series-specific",
+    "confidence": "high"
   },
   {
     "id": "LG-e1",
@@ -954,7 +1136,26 @@
       "افصل الجهاز عن الكهرباء وأغلق مصدر المياه قبل الفحص.",
       "لا تستخدم سائل غسل الصحون العادي داخل غسالة الأواني.",
       "قد يختلف الكود حسب الطراز؛ راجع دليل المستخدم قبل أي إصلاح."
-    ]
+    ],
+    "classificationVersion": "1.0.0",
+    "deviceFamily": "kitchen",
+    "deviceSubtype": [
+      "unknown-dishwasher"
+    ],
+    "faultGroup": "leak-overflow",
+    "faultSubgroup": "overflow-protection",
+    "faultTags": [
+      "leak",
+      "overflow"
+    ],
+    "displayCode": "AE",
+    "codes": [
+      "AE",
+      "E1"
+    ],
+    "codeMatching": "any",
+    "modelScope": "series-specific",
+    "confidence": "high"
   },
   {
     "id": "LG-e2",
@@ -1037,7 +1238,26 @@
       "افصل الجهاز عن الكهرباء وأغلق مصدر المياه قبل الفحص.",
       "لا تستخدم سائل غسل الصحون العادي داخل غسالة الأواني.",
       "قد يختلف الكود حسب الطراز؛ راجع دليل المستخدم قبل أي إصلاح."
-    ]
+    ],
+    "classificationVersion": "1.0.0",
+    "deviceFamily": "kitchen",
+    "deviceSubtype": [
+      "unknown-dishwasher"
+    ],
+    "faultGroup": "drainage",
+    "faultSubgroup": "drain-pump",
+    "faultTags": [
+      "not-draining",
+      "blocked-drain",
+      "drain-pump"
+    ],
+    "displayCode": "OE",
+    "codes": [
+      "OE"
+    ],
+    "codeMatching": "exact",
+    "modelScope": "series-specific",
+    "confidence": "high"
   },
   {
     "id": "LG-e3",
@@ -1116,7 +1336,26 @@
       "افصل الجهاز عن الكهرباء وأغلق مصدر المياه قبل الفحص.",
       "لا تستخدم سائل غسل الصحون العادي داخل غسالة الأواني.",
       "قد يختلف الكود حسب الطراز؛ راجع دليل المستخدم قبل أي إصلاح."
-    ]
+    ],
+    "classificationVersion": "1.0.0",
+    "deviceFamily": "kitchen",
+    "deviceSubtype": [
+      "unknown-dishwasher"
+    ],
+    "faultGroup": "temperature-sensor",
+    "faultSubgroup": "temperature-sensor",
+    "faultTags": [
+      "temperature",
+      "temperature-sensor"
+    ],
+    "displayCode": "tE",
+    "codes": [
+      "tE",
+      "HE"
+    ],
+    "codeMatching": "any",
+    "modelScope": "series-specific",
+    "confidence": "high"
   },
   {
     "id": "LG-e4",
@@ -1197,7 +1436,26 @@
       "افصل الجهاز عن الكهرباء وأغلق مصدر المياه قبل الفحص.",
       "لا تستخدم سائل غسل الصحون العادي داخل غسالة الأواني.",
       "قد يختلف الكود حسب الطراز؛ راجع دليل المستخدم قبل أي إصلاح."
-    ]
+    ],
+    "classificationVersion": "1.0.0",
+    "deviceFamily": "kitchen",
+    "deviceSubtype": [
+      "unknown-dishwasher"
+    ],
+    "faultGroup": "water-inlet",
+    "faultSubgroup": "inlet-valve",
+    "faultTags": [
+      "no-fill",
+      "low-pressure",
+      "inlet-valve"
+    ],
+    "displayCode": "IE",
+    "codes": [
+      "IE"
+    ],
+    "codeMatching": "exact",
+    "modelScope": "series-specific",
+    "confidence": "high"
   },
   {
     "id": "LG-e5",
@@ -1275,7 +1533,25 @@
       "افصل الجهاز عن الكهرباء وأغلق مصدر المياه قبل الفحص.",
       "لا تستخدم سائل غسل الصحون العادي داخل غسالة الأواني.",
       "قد يختلف الكود حسب الطراز؛ راجع دليل المستخدم قبل أي إصلاح."
-    ]
+    ],
+    "classificationVersion": "1.0.0",
+    "deviceFamily": "kitchen",
+    "deviceSubtype": [
+      "unknown-dishwasher"
+    ],
+    "faultGroup": "water-level",
+    "faultSubgroup": "pressure-sensor",
+    "faultTags": [
+      "water-level",
+      "level-sensor"
+    ],
+    "displayCode": "PE",
+    "codes": [
+      "PE"
+    ],
+    "codeMatching": "exact",
+    "modelScope": "series-specific",
+    "confidence": "high"
   },
   {
     "id": "samsung-ue",
@@ -1355,7 +1631,28 @@
       "افصل الجهاز عن الكهرباء وأغلق مصدر المياه قبل فحص الخراطيم أو المرشحات.",
       "لا تفك اللوحة الإلكترونية أو تقِس الجهد الكهربائي دون فني مؤهل.",
       "قد يختلف معنى الكود وإجراء الإصلاح حسب رقم الطراز؛ راجع دليل المستخدم."
-    ]
+    ],
+    "classificationVersion": "1.0.0",
+    "deviceFamily": "laundry",
+    "deviceSubtype": [
+      "unknown-washing-machine"
+    ],
+    "faultGroup": "balance-vibration",
+    "faultSubgroup": "unknown",
+    "faultTags": [
+      "unbalanced-load",
+      "vibration"
+    ],
+    "displayCode": "UE",
+    "codes": [
+      "UE",
+      "Ub",
+      "U6",
+      "Ur"
+    ],
+    "codeMatching": "any",
+    "modelScope": "series-specific",
+    "confidence": "high"
   },
   {
     "id": "samsung-4e",
@@ -1441,7 +1738,29 @@
       "افصل الجهاز عن الكهرباء وأغلق مصدر المياه قبل فحص الخراطيم أو المرشحات.",
       "لا تفك اللوحة الإلكترونية أو تقِس الجهد الكهربائي دون فني مؤهل.",
       "قد يختلف معنى الكود وإجراء الإصلاح حسب رقم الطراز؛ راجع دليل المستخدم."
-    ]
+    ],
+    "classificationVersion": "1.0.0",
+    "deviceFamily": "laundry",
+    "deviceSubtype": [
+      "unknown-washing-machine"
+    ],
+    "faultGroup": "water-inlet",
+    "faultSubgroup": "inlet-filter",
+    "faultTags": [
+      "no-fill",
+      "low-pressure",
+      "inlet-filter"
+    ],
+    "displayCode": "4E",
+    "codes": [
+      "4E",
+      "4C",
+      "nF",
+      "1 4C"
+    ],
+    "codeMatching": "any",
+    "modelScope": "series-specific",
+    "confidence": "high"
   },
   {
     "id": "samsung-5e",
@@ -1525,7 +1844,30 @@
       "افصل الجهاز عن الكهرباء وأغلق مصدر المياه قبل فحص الخراطيم أو المرشحات.",
       "لا تفك اللوحة الإلكترونية أو تقِس الجهد الكهربائي دون فني مؤهل.",
       "قد يختلف معنى الكود وإجراء الإصلاح حسب رقم الطراز؛ راجع دليل المستخدم."
-    ]
+    ],
+    "classificationVersion": "1.0.0",
+    "deviceFamily": "laundry",
+    "deviceSubtype": [
+      "unknown-washing-machine"
+    ],
+    "faultGroup": "drainage",
+    "faultSubgroup": "drain-pump",
+    "faultTags": [
+      "not-draining",
+      "blocked-drain",
+      "drain-pump"
+    ],
+    "displayCode": "5E",
+    "codes": [
+      "5E",
+      "SE",
+      "5C",
+      "SC",
+      "nd"
+    ],
+    "codeMatching": "any",
+    "modelScope": "series-specific",
+    "confidence": "high"
   },
   {
     "id": "samsung-de",
@@ -1609,7 +1951,31 @@
       "افصل الجهاز عن الكهرباء وأغلق مصدر المياه قبل فحص الخراطيم أو المرشحات.",
       "لا تفك اللوحة الإلكترونية أو تقِس الجهد الكهربائي دون فني مؤهل.",
       "قد يختلف معنى الكود وإجراء الإصلاح حسب رقم الطراز؛ راجع دليل المستخدم."
-    ]
+    ],
+    "classificationVersion": "1.0.0",
+    "deviceFamily": "laundry",
+    "deviceSubtype": [
+      "unknown-washing-machine"
+    ],
+    "faultGroup": "door-lock",
+    "faultSubgroup": "door-latch",
+    "faultTags": [
+      "door",
+      "door-lock"
+    ],
+    "displayCode": "dE",
+    "codes": [
+      "dE",
+      "dE1",
+      "dE2",
+      "dC",
+      "dL",
+      "FL",
+      "LO"
+    ],
+    "codeMatching": "any",
+    "modelScope": "series-specific",
+    "confidence": "high"
   },
   {
     "id": "samsung-le",
@@ -1692,7 +2058,29 @@
       "افصل الجهاز عن الكهرباء وأغلق مصدر المياه قبل فحص الخراطيم أو المرشحات.",
       "لا تفك اللوحة الإلكترونية أو تقِس الجهد الكهربائي دون فني مؤهل.",
       "قد يختلف معنى الكود وإجراء الإصلاح حسب رقم الطراز؛ راجع دليل المستخدم."
-    ]
+    ],
+    "classificationVersion": "1.0.0",
+    "deviceFamily": "laundry",
+    "deviceSubtype": [
+      "unknown-washing-machine"
+    ],
+    "faultGroup": "leak-overflow",
+    "faultSubgroup": "overflow-protection",
+    "faultTags": [
+      "leak",
+      "water-level"
+    ],
+    "displayCode": "1E",
+    "codes": [
+      "1E",
+      "LE",
+      "1C",
+      "LC",
+      "LC1"
+    ],
+    "codeMatching": "any",
+    "modelScope": "series-specific",
+    "confidence": "high"
   },
   {
     "id": "samsung-te",
@@ -1771,7 +2159,27 @@
       "افصل الجهاز عن الكهرباء وأغلق مصدر المياه قبل فحص الخراطيم أو المرشحات.",
       "لا تفك اللوحة الإلكترونية أو تقِس الجهد الكهربائي دون فني مؤهل.",
       "قد يختلف معنى الكود وإجراء الإصلاح حسب رقم الطراز؛ راجع دليل المستخدم."
-    ]
+    ],
+    "classificationVersion": "1.0.0",
+    "deviceFamily": "laundry",
+    "deviceSubtype": [
+      "unknown-washing-machine"
+    ],
+    "faultGroup": "temperature-sensor",
+    "faultSubgroup": "temperature-sensor",
+    "faultTags": [
+      "temperature",
+      "temperature-sensor"
+    ],
+    "displayCode": "tE",
+    "codes": [
+      "tE",
+      "tE1",
+      "tC"
+    ],
+    "codeMatching": "any",
+    "modelScope": "series-specific",
+    "confidence": "high"
   },
   {
     "id": "samsung-ae",
@@ -1852,7 +2260,28 @@
       "افصل الجهاز عن الكهرباء وأغلق مصدر المياه قبل فحص الخراطيم أو المرشحات.",
       "لا تفك اللوحة الإلكترونية أو تقِس الجهد الكهربائي دون فني مؤهل.",
       "قد يختلف معنى الكود وإجراء الإصلاح حسب رقم الطراز؛ راجع دليل المستخدم."
-    ]
+    ],
+    "classificationVersion": "1.0.0",
+    "deviceFamily": "laundry",
+    "deviceSubtype": [
+      "unknown-washing-machine"
+    ],
+    "faultGroup": "electrical-communication",
+    "faultSubgroup": "control-board",
+    "faultTags": [
+      "electronics",
+      "communication"
+    ],
+    "displayCode": "AE",
+    "codes": [
+      "AE",
+      "AC",
+      "AE6",
+      "AC6"
+    ],
+    "codeMatching": "any",
+    "modelScope": "series-specific",
+    "confidence": "high"
   },
   {
     "id": "samsung-he",
@@ -1935,7 +2364,28 @@
       "افصل الجهاز عن الكهرباء وأغلق مصدر المياه قبل فحص الخراطيم أو المرشحات.",
       "لا تفك اللوحة الإلكترونية أو تقِس الجهد الكهربائي دون فني مؤهل.",
       "قد يختلف معنى الكود وإجراء الإصلاح حسب رقم الطراز؛ راجع دليل المستخدم."
-    ]
+    ],
+    "classificationVersion": "1.0.0",
+    "deviceFamily": "laundry",
+    "deviceSubtype": [
+      "unknown-washing-machine"
+    ],
+    "faultGroup": "heating",
+    "faultSubgroup": "heating-element",
+    "faultTags": [
+      "heating",
+      "heater"
+    ],
+    "displayCode": "HC",
+    "codes": [
+      "HC",
+      "HE",
+      "HE1",
+      "Hr"
+    ],
+    "codeMatching": "any",
+    "modelScope": "series-specific",
+    "confidence": "high"
   },
   {
     "id": "samsung-bfe",
@@ -2023,7 +2473,26 @@
       "افصل الجهاز عن الكهرباء وأغلق مصدر المياه قبل فحص الخراطيم أو المرشحات.",
       "لا تفك اللوحة الإلكترونية أو تقِس الجهد الكهربائي دون فني مؤهل.",
       "قد يختلف معنى الكود وإجراء الإصلاح حسب رقم الطراز؛ راجع دليل المستخدم."
-    ]
+    ],
+    "classificationVersion": "1.0.0",
+    "deviceFamily": "kitchen",
+    "deviceSubtype": [
+      "unknown-dishwasher"
+    ],
+    "faultGroup": "leak-overflow",
+    "faultSubgroup": "overflow-protection",
+    "faultTags": [
+      "leak",
+      "overflow"
+    ],
+    "displayCode": "LC",
+    "codes": [
+      "LC",
+      "LE"
+    ],
+    "codeMatching": "any",
+    "modelScope": "series-specific",
+    "confidence": "high"
   },
   {
     "id": "samsung-4e-dish",
@@ -2108,7 +2577,27 @@
       "افصل الجهاز عن الكهرباء وأغلق مصدر المياه قبل فحص الخراطيم أو المرشحات.",
       "لا تفك اللوحة الإلكترونية أو تقِس الجهد الكهربائي دون فني مؤهل.",
       "قد يختلف معنى الكود وإجراء الإصلاح حسب رقم الطراز؛ راجع دليل المستخدم."
-    ]
+    ],
+    "classificationVersion": "1.0.0",
+    "deviceFamily": "kitchen",
+    "deviceSubtype": [
+      "unknown-dishwasher"
+    ],
+    "faultGroup": "water-inlet",
+    "faultSubgroup": "inlet-filter",
+    "faultTags": [
+      "no-fill",
+      "low-pressure",
+      "inlet-filter"
+    ],
+    "displayCode": "4C",
+    "codes": [
+      "4C",
+      "4E"
+    ],
+    "codeMatching": "any",
+    "modelScope": "series-specific",
+    "confidence": "high"
   },
   {
     "id": "samsung-5e-dish",
@@ -2194,7 +2683,29 @@
       "افصل الجهاز عن الكهرباء وأغلق مصدر المياه قبل فحص الخراطيم أو المرشحات.",
       "لا تفك اللوحة الإلكترونية أو تقِس الجهد الكهربائي دون فني مؤهل.",
       "قد يختلف معنى الكود وإجراء الإصلاح حسب رقم الطراز؛ راجع دليل المستخدم."
-    ]
+    ],
+    "classificationVersion": "1.0.0",
+    "deviceFamily": "kitchen",
+    "deviceSubtype": [
+      "unknown-dishwasher"
+    ],
+    "faultGroup": "drainage",
+    "faultSubgroup": "drain-pump",
+    "faultTags": [
+      "not-draining",
+      "blocked-drain",
+      "drain-pump"
+    ],
+    "displayCode": "5C",
+    "codes": [
+      "5C",
+      "5E",
+      "SC",
+      "SE"
+    ],
+    "codeMatching": "any",
+    "modelScope": "series-specific",
+    "confidence": "high"
   },
   {
     "id": "samsung-te-dish",
@@ -2277,7 +2788,26 @@
       "افصل الجهاز عن الكهرباء وأغلق مصدر المياه قبل فحص الخراطيم أو المرشحات.",
       "لا تفك اللوحة الإلكترونية أو تقِس الجهد الكهربائي دون فني مؤهل.",
       "قد يختلف معنى الكود وإجراء الإصلاح حسب رقم الطراز؛ راجع دليل المستخدم."
-    ]
+    ],
+    "classificationVersion": "1.0.0",
+    "deviceFamily": "kitchen",
+    "deviceSubtype": [
+      "unknown-dishwasher"
+    ],
+    "faultGroup": "heating",
+    "faultSubgroup": "heating-element",
+    "faultTags": [
+      "heating",
+      "temperature"
+    ],
+    "displayCode": "HC",
+    "codes": [
+      "HC",
+      "HE"
+    ],
+    "codeMatching": "any",
+    "modelScope": "series-specific",
+    "confidence": "high"
   },
   {
     "id": "midea-e1",
@@ -2355,7 +2885,26 @@
       "افصل الجهاز عن الكهرباء وأغلق مصدر المياه قبل فحص الخراطيم أو المرشحات.",
       "لا تفك اللوحة الإلكترونية أو تقِس الجهد الكهربائي دون فني مؤهل.",
       "قد يختلف معنى الكود وإجراء الإصلاح حسب رقم الطراز؛ راجع دليل المستخدم."
-    ]
+    ],
+    "classificationVersion": "1.0.0",
+    "deviceFamily": "laundry",
+    "deviceSubtype": [
+      "unknown-washing-machine"
+    ],
+    "faultGroup": "unknown",
+    "faultSubgroup": "unknown",
+    "faultTags": [
+      "model-specific",
+      "needs-manual"
+    ],
+    "displayCode": "E1",
+    "codes": [
+      "E1"
+    ],
+    "codeMatching": "exact",
+    "modelScope": "unknown",
+    "confidence": "low",
+    "classificationNotes": "لم يُستنتج تصنيف وظيفي لأن معنى الكود يعتمد على رقم الطراز."
   },
   {
     "id": "midea-e2",
@@ -2433,7 +2982,26 @@
       "افصل الجهاز عن الكهرباء وأغلق مصدر المياه قبل فحص الخراطيم أو المرشحات.",
       "لا تفك اللوحة الإلكترونية أو تقِس الجهد الكهربائي دون فني مؤهل.",
       "قد يختلف معنى الكود وإجراء الإصلاح حسب رقم الطراز؛ راجع دليل المستخدم."
-    ]
+    ],
+    "classificationVersion": "1.0.0",
+    "deviceFamily": "laundry",
+    "deviceSubtype": [
+      "unknown-washing-machine"
+    ],
+    "faultGroup": "unknown",
+    "faultSubgroup": "unknown",
+    "faultTags": [
+      "model-specific",
+      "needs-manual"
+    ],
+    "displayCode": "E2",
+    "codes": [
+      "E2"
+    ],
+    "codeMatching": "exact",
+    "modelScope": "unknown",
+    "confidence": "low",
+    "classificationNotes": "لم يُستنتج تصنيف وظيفي لأن معنى الكود يعتمد على رقم الطراز."
   },
   {
     "id": "midea-e3",
@@ -2508,7 +3076,26 @@
       "افصل الجهاز عن الكهرباء وأغلق مصدر المياه قبل فحص الخراطيم أو المرشحات.",
       "لا تفك اللوحة الإلكترونية أو تقِس الجهد الكهربائي دون فني مؤهل.",
       "قد يختلف معنى الكود وإجراء الإصلاح حسب رقم الطراز؛ راجع دليل المستخدم."
-    ]
+    ],
+    "classificationVersion": "1.0.0",
+    "deviceFamily": "laundry",
+    "deviceSubtype": [
+      "unknown-washing-machine"
+    ],
+    "faultGroup": "unknown",
+    "faultSubgroup": "unknown",
+    "faultTags": [
+      "model-specific",
+      "needs-manual"
+    ],
+    "displayCode": "E3",
+    "codes": [
+      "E3"
+    ],
+    "codeMatching": "exact",
+    "modelScope": "unknown",
+    "confidence": "low",
+    "classificationNotes": "لم يُستنتج تصنيف وظيفي لأن معنى الكود يعتمد على رقم الطراز."
   },
   {
     "id": "midea-e4",
@@ -2586,7 +3173,26 @@
       "افصل الجهاز عن الكهرباء وأغلق مصدر المياه قبل فحص الخراطيم أو المرشحات.",
       "لا تفك اللوحة الإلكترونية أو تقِس الجهد الكهربائي دون فني مؤهل.",
       "قد يختلف معنى الكود وإجراء الإصلاح حسب رقم الطراز؛ راجع دليل المستخدم."
-    ]
+    ],
+    "classificationVersion": "1.0.0",
+    "deviceFamily": "laundry",
+    "deviceSubtype": [
+      "unknown-washing-machine"
+    ],
+    "faultGroup": "unknown",
+    "faultSubgroup": "unknown",
+    "faultTags": [
+      "model-specific",
+      "needs-manual"
+    ],
+    "displayCode": "E4",
+    "codes": [
+      "E4"
+    ],
+    "codeMatching": "exact",
+    "modelScope": "unknown",
+    "confidence": "low",
+    "classificationNotes": "لم يُستنتج تصنيف وظيفي لأن معنى الكود يعتمد على رقم الطراز."
   },
   {
     "id": "midea-e5",
@@ -2664,7 +3270,26 @@
       "افصل الجهاز عن الكهرباء وأغلق مصدر المياه قبل فحص الخراطيم أو المرشحات.",
       "لا تفك اللوحة الإلكترونية أو تقِس الجهد الكهربائي دون فني مؤهل.",
       "قد يختلف معنى الكود وإجراء الإصلاح حسب رقم الطراز؛ راجع دليل المستخدم."
-    ]
+    ],
+    "classificationVersion": "1.0.0",
+    "deviceFamily": "laundry",
+    "deviceSubtype": [
+      "unknown-washing-machine"
+    ],
+    "faultGroup": "unknown",
+    "faultSubgroup": "unknown",
+    "faultTags": [
+      "model-specific",
+      "needs-manual"
+    ],
+    "displayCode": "E5",
+    "codes": [
+      "E5"
+    ],
+    "codeMatching": "exact",
+    "modelScope": "unknown",
+    "confidence": "low",
+    "classificationNotes": "لم يُستنتج تصنيف وظيفي لأن معنى الكود يعتمد على رقم الطراز."
   },
   {
     "id": "midea-e6",
@@ -2743,7 +3368,26 @@
       "افصل الجهاز عن الكهرباء وأغلق مصدر المياه قبل فحص الخراطيم أو المرشحات.",
       "لا تفك اللوحة الإلكترونية أو تقِس الجهد الكهربائي دون فني مؤهل.",
       "قد يختلف معنى الكود وإجراء الإصلاح حسب رقم الطراز؛ راجع دليل المستخدم."
-    ]
+    ],
+    "classificationVersion": "1.0.0",
+    "deviceFamily": "laundry",
+    "deviceSubtype": [
+      "unknown-washing-machine"
+    ],
+    "faultGroup": "unknown",
+    "faultSubgroup": "unknown",
+    "faultTags": [
+      "model-specific",
+      "needs-manual"
+    ],
+    "displayCode": "E6",
+    "codes": [
+      "E6"
+    ],
+    "codeMatching": "exact",
+    "modelScope": "unknown",
+    "confidence": "low",
+    "classificationNotes": "لم يُستنتج تصنيف وظيفي لأن معنى الكود يعتمد على رقم الطراز."
   },
   {
     "id": "midea-e7",
@@ -2822,7 +3466,26 @@
       "افصل الجهاز عن الكهرباء وأغلق مصدر المياه قبل فحص الخراطيم أو المرشحات.",
       "لا تفك اللوحة الإلكترونية أو تقِس الجهد الكهربائي دون فني مؤهل.",
       "قد يختلف معنى الكود وإجراء الإصلاح حسب رقم الطراز؛ راجع دليل المستخدم."
-    ]
+    ],
+    "classificationVersion": "1.0.0",
+    "deviceFamily": "laundry",
+    "deviceSubtype": [
+      "unknown-washing-machine"
+    ],
+    "faultGroup": "unknown",
+    "faultSubgroup": "unknown",
+    "faultTags": [
+      "model-specific",
+      "needs-manual"
+    ],
+    "displayCode": "E7",
+    "codes": [
+      "E7"
+    ],
+    "codeMatching": "exact",
+    "modelScope": "unknown",
+    "confidence": "low",
+    "classificationNotes": "لم يُستنتج تصنيف وظيفي لأن معنى الكود يعتمد على رقم الطراز."
   },
   {
     "id": "midea-e8",
@@ -2900,7 +3563,26 @@
       "افصل الجهاز عن الكهرباء وأغلق مصدر المياه قبل فحص الخراطيم أو المرشحات.",
       "لا تفك اللوحة الإلكترونية أو تقِس الجهد الكهربائي دون فني مؤهل.",
       "قد يختلف معنى الكود وإجراء الإصلاح حسب رقم الطراز؛ راجع دليل المستخدم."
-    ]
+    ],
+    "classificationVersion": "1.0.0",
+    "deviceFamily": "laundry",
+    "deviceSubtype": [
+      "unknown-washing-machine"
+    ],
+    "faultGroup": "unknown",
+    "faultSubgroup": "unknown",
+    "faultTags": [
+      "model-specific",
+      "needs-manual"
+    ],
+    "displayCode": "E8",
+    "codes": [
+      "E8"
+    ],
+    "codeMatching": "exact",
+    "modelScope": "unknown",
+    "confidence": "low",
+    "classificationNotes": "لم يُستنتج تصنيف وظيفي لأن معنى الكود يعتمد على رقم الطراز."
   },
   {
     "id": "midea-e9",
@@ -2976,7 +3658,26 @@
       "افصل الجهاز عن الكهرباء وأغلق مصدر المياه قبل فحص الخراطيم أو المرشحات.",
       "لا تفك اللوحة الإلكترونية أو تقِس الجهد الكهربائي دون فني مؤهل.",
       "قد يختلف معنى الكود وإجراء الإصلاح حسب رقم الطراز؛ راجع دليل المستخدم."
-    ]
+    ],
+    "classificationVersion": "1.0.0",
+    "deviceFamily": "laundry",
+    "deviceSubtype": [
+      "unknown-washing-machine"
+    ],
+    "faultGroup": "unknown",
+    "faultSubgroup": "unknown",
+    "faultTags": [
+      "model-specific",
+      "needs-manual"
+    ],
+    "displayCode": "E9",
+    "codes": [
+      "E9"
+    ],
+    "codeMatching": "exact",
+    "modelScope": "unknown",
+    "confidence": "low",
+    "classificationNotes": "لم يُستنتج تصنيف وظيفي لأن معنى الكود يعتمد على رقم الطراز."
   },
   {
     "id": "midea-e10",
@@ -3053,7 +3754,26 @@
       "افصل الجهاز عن الكهرباء وأغلق مصدر المياه قبل فحص الخراطيم أو المرشحات.",
       "لا تفك اللوحة الإلكترونية أو تقِس الجهد الكهربائي دون فني مؤهل.",
       "قد يختلف معنى الكود وإجراء الإصلاح حسب رقم الطراز؛ راجع دليل المستخدم."
-    ]
+    ],
+    "classificationVersion": "1.0.0",
+    "deviceFamily": "laundry",
+    "deviceSubtype": [
+      "unknown-washing-machine"
+    ],
+    "faultGroup": "unknown",
+    "faultSubgroup": "unknown",
+    "faultTags": [
+      "model-specific",
+      "needs-manual"
+    ],
+    "displayCode": "E10",
+    "codes": [
+      "E10"
+    ],
+    "codeMatching": "exact",
+    "modelScope": "unknown",
+    "confidence": "low",
+    "classificationNotes": "لم يُستنتج تصنيف وظيفي لأن معنى الكود يعتمد على رقم الطراز."
   },
   {
     "id": "bosch-e01",
@@ -3131,7 +3851,26 @@
       "افصل الجهاز عن الكهرباء وأغلق مصدر المياه قبل فحص الخراطيم أو المرشحات.",
       "لا تفك اللوحة الإلكترونية أو تقِس الجهد الكهربائي دون فني مؤهل.",
       "قد يختلف معنى الكود وإجراء الإصلاح حسب رقم الطراز؛ راجع دليل المستخدم."
-    ]
+    ],
+    "classificationVersion": "1.0.0",
+    "deviceFamily": "laundry",
+    "deviceSubtype": [
+      "unknown-washing-machine"
+    ],
+    "faultGroup": "unknown",
+    "faultSubgroup": "unknown",
+    "faultTags": [
+      "model-specific",
+      "needs-manual"
+    ],
+    "displayCode": "E:01",
+    "codes": [
+      "E:01"
+    ],
+    "codeMatching": "exact",
+    "modelScope": "unknown",
+    "confidence": "low",
+    "classificationNotes": "لم يُستنتج تصنيف وظيفي لأن معنى الكود يعتمد على رقم الطراز."
   },
   {
     "id": "bosch-e02",
@@ -3209,7 +3948,26 @@
       "افصل الجهاز عن الكهرباء وأغلق مصدر المياه قبل فحص الخراطيم أو المرشحات.",
       "لا تفك اللوحة الإلكترونية أو تقِس الجهد الكهربائي دون فني مؤهل.",
       "قد يختلف معنى الكود وإجراء الإصلاح حسب رقم الطراز؛ راجع دليل المستخدم."
-    ]
+    ],
+    "classificationVersion": "1.0.0",
+    "deviceFamily": "laundry",
+    "deviceSubtype": [
+      "unknown-washing-machine"
+    ],
+    "faultGroup": "unknown",
+    "faultSubgroup": "unknown",
+    "faultTags": [
+      "model-specific",
+      "needs-manual"
+    ],
+    "displayCode": "E:02",
+    "codes": [
+      "E:02"
+    ],
+    "codeMatching": "exact",
+    "modelScope": "unknown",
+    "confidence": "low",
+    "classificationNotes": "لم يُستنتج تصنيف وظيفي لأن معنى الكود يعتمد على رقم الطراز."
   },
   {
     "id": "bosch-e03",
@@ -3287,7 +4045,26 @@
       "افصل الجهاز عن الكهرباء وأغلق مصدر المياه قبل فحص الخراطيم أو المرشحات.",
       "لا تفك اللوحة الإلكترونية أو تقِس الجهد الكهربائي دون فني مؤهل.",
       "قد يختلف معنى الكود وإجراء الإصلاح حسب رقم الطراز؛ راجع دليل المستخدم."
-    ]
+    ],
+    "classificationVersion": "1.0.0",
+    "deviceFamily": "laundry",
+    "deviceSubtype": [
+      "unknown-washing-machine"
+    ],
+    "faultGroup": "unknown",
+    "faultSubgroup": "unknown",
+    "faultTags": [
+      "model-specific",
+      "needs-manual"
+    ],
+    "displayCode": "E:03",
+    "codes": [
+      "E:03"
+    ],
+    "codeMatching": "exact",
+    "modelScope": "unknown",
+    "confidence": "low",
+    "classificationNotes": "لم يُستنتج تصنيف وظيفي لأن معنى الكود يعتمد على رقم الطراز."
   },
   {
     "id": "bosch-e04",
@@ -3362,7 +4139,26 @@
       "افصل الجهاز عن الكهرباء وأغلق مصدر المياه قبل فحص الخراطيم أو المرشحات.",
       "لا تفك اللوحة الإلكترونية أو تقِس الجهد الكهربائي دون فني مؤهل.",
       "قد يختلف معنى الكود وإجراء الإصلاح حسب رقم الطراز؛ راجع دليل المستخدم."
-    ]
+    ],
+    "classificationVersion": "1.0.0",
+    "deviceFamily": "laundry",
+    "deviceSubtype": [
+      "unknown-washing-machine"
+    ],
+    "faultGroup": "unknown",
+    "faultSubgroup": "unknown",
+    "faultTags": [
+      "model-specific",
+      "needs-manual"
+    ],
+    "displayCode": "E:04",
+    "codes": [
+      "E:04"
+    ],
+    "codeMatching": "exact",
+    "modelScope": "unknown",
+    "confidence": "low",
+    "classificationNotes": "لم يُستنتج تصنيف وظيفي لأن معنى الكود يعتمد على رقم الطراز."
   },
   {
     "id": "bosch-e05",
@@ -3440,7 +4236,26 @@
       "افصل الجهاز عن الكهرباء وأغلق مصدر المياه قبل فحص الخراطيم أو المرشحات.",
       "لا تفك اللوحة الإلكترونية أو تقِس الجهد الكهربائي دون فني مؤهل.",
       "قد يختلف معنى الكود وإجراء الإصلاح حسب رقم الطراز؛ راجع دليل المستخدم."
-    ]
+    ],
+    "classificationVersion": "1.0.0",
+    "deviceFamily": "laundry",
+    "deviceSubtype": [
+      "unknown-washing-machine"
+    ],
+    "faultGroup": "unknown",
+    "faultSubgroup": "unknown",
+    "faultTags": [
+      "model-specific",
+      "needs-manual"
+    ],
+    "displayCode": "E:05",
+    "codes": [
+      "E:05"
+    ],
+    "codeMatching": "exact",
+    "modelScope": "unknown",
+    "confidence": "low",
+    "classificationNotes": "لم يُستنتج تصنيف وظيفي لأن معنى الكود يعتمد على رقم الطراز."
   },
   {
     "id": "electrolux-e10",
@@ -3527,7 +4342,29 @@
       "افصل الجهاز عن الكهرباء وأغلق مصدر المياه قبل فحص الخراطيم أو المرشحات.",
       "لا تفك اللوحة الإلكترونية أو تقِس الجهد الكهربائي دون فني مؤهل.",
       "قد يختلف معنى الكود وإجراء الإصلاح حسب رقم الطراز؛ راجع دليل المستخدم."
-    ]
+    ],
+    "classificationVersion": "1.0.0",
+    "deviceFamily": "laundry",
+    "deviceSubtype": [
+      "unknown-washing-machine"
+    ],
+    "faultGroup": "unknown",
+    "faultSubgroup": "unknown",
+    "faultTags": [
+      "water-inlet",
+      "drainage",
+      "model-specific"
+    ],
+    "displayCode": "E10",
+    "codes": [
+      "E10",
+      "E11",
+      "C1"
+    ],
+    "codeMatching": "any",
+    "modelScope": "series-specific",
+    "confidence": "high",
+    "classificationNotes": "لم يُستنتج تصنيف وظيفي لأن معنى الكود يعتمد على رقم الطراز."
   },
   {
     "id": "electrolux-e20",
@@ -3607,7 +4444,26 @@
       "افصل الجهاز عن الكهرباء وأغلق مصدر المياه قبل فحص الخراطيم أو المرشحات.",
       "لا تفك اللوحة الإلكترونية أو تقِس الجهد الكهربائي دون فني مؤهل.",
       "قد يختلف معنى الكود وإجراء الإصلاح حسب رقم الطراز؛ راجع دليل المستخدم."
-    ]
+    ],
+    "classificationVersion": "1.0.0",
+    "deviceFamily": "laundry",
+    "deviceSubtype": [
+      "unknown-washing-machine"
+    ],
+    "faultGroup": "unknown",
+    "faultSubgroup": "unknown",
+    "faultTags": [
+      "model-specific",
+      "needs-manual"
+    ],
+    "displayCode": "E20",
+    "codes": [
+      "E20"
+    ],
+    "codeMatching": "exact",
+    "modelScope": "unknown",
+    "confidence": "low",
+    "classificationNotes": "لم يُستنتج تصنيف وظيفي لأن معنى الكود يعتمد على رقم الطراز."
   },
   {
     "id": "electrolux-e30",
@@ -3687,7 +4543,26 @@
       "افصل الجهاز عن الكهرباء وأغلق مصدر المياه قبل فحص الخراطيم أو المرشحات.",
       "لا تفك اللوحة الإلكترونية أو تقِس الجهد الكهربائي دون فني مؤهل.",
       "قد يختلف معنى الكود وإجراء الإصلاح حسب رقم الطراز؛ راجع دليل المستخدم."
-    ]
+    ],
+    "classificationVersion": "1.0.0",
+    "deviceFamily": "laundry",
+    "deviceSubtype": [
+      "unknown-washing-machine"
+    ],
+    "faultGroup": "unknown",
+    "faultSubgroup": "unknown",
+    "faultTags": [
+      "model-specific",
+      "needs-manual"
+    ],
+    "displayCode": "E30",
+    "codes": [
+      "E30"
+    ],
+    "codeMatching": "exact",
+    "modelScope": "unknown",
+    "confidence": "low",
+    "classificationNotes": "لم يُستنتج تصنيف وظيفي لأن معنى الكود يعتمد على رقم الطراز."
   },
   {
     "id": "whirlpool-f5e2",
@@ -3768,7 +4643,25 @@
       "افصل الجهاز عن الكهرباء وأغلق مصدر المياه قبل فحص الخراطيم أو المرشحات.",
       "لا تفك اللوحة الإلكترونية أو تقِس الجهد الكهربائي دون فني مؤهل.",
       "قد يختلف معنى الكود وإجراء الإصلاح حسب رقم الطراز؛ راجع دليل المستخدم."
-    ]
+    ],
+    "classificationVersion": "1.0.0",
+    "deviceFamily": "laundry",
+    "deviceSubtype": [
+      "unknown-washing-machine"
+    ],
+    "faultGroup": "door-lock",
+    "faultSubgroup": "door-latch",
+    "faultTags": [
+      "door",
+      "door-lock"
+    ],
+    "displayCode": "F5 E2",
+    "codes": [
+      "F5 E2"
+    ],
+    "codeMatching": "exact",
+    "modelScope": "series-specific",
+    "confidence": "high"
   },
   {
     "id": "whirlpool-f9e1",
@@ -3851,7 +4744,26 @@
       "افصل الجهاز عن الكهرباء وأغلق مصدر المياه قبل فحص الخراطيم أو المرشحات.",
       "لا تفك اللوحة الإلكترونية أو تقِس الجهد الكهربائي دون فني مؤهل.",
       "قد يختلف معنى الكود وإجراء الإصلاح حسب رقم الطراز؛ راجع دليل المستخدم."
-    ]
+    ],
+    "classificationVersion": "1.0.0",
+    "deviceFamily": "laundry",
+    "deviceSubtype": [
+      "unknown-washing-machine"
+    ],
+    "faultGroup": "drainage",
+    "faultSubgroup": "drain-pump",
+    "faultTags": [
+      "not-draining",
+      "blocked-drain",
+      "drain-pump"
+    ],
+    "displayCode": "F9 E1",
+    "codes": [
+      "F9 E1"
+    ],
+    "codeMatching": "exact",
+    "modelScope": "series-specific",
+    "confidence": "high"
   },
   {
     "id": "beko-e01",
@@ -3929,7 +4841,26 @@
       "افصل الجهاز عن الكهرباء وأغلق مصدر المياه قبل فحص الخراطيم أو المرشحات.",
       "لا تفك اللوحة الإلكترونية أو تقِس الجهد الكهربائي دون فني مؤهل.",
       "قد يختلف معنى الكود وإجراء الإصلاح حسب رقم الطراز؛ راجع دليل المستخدم."
-    ]
+    ],
+    "classificationVersion": "1.0.0",
+    "deviceFamily": "laundry",
+    "deviceSubtype": [
+      "unknown-washing-machine"
+    ],
+    "faultGroup": "unknown",
+    "faultSubgroup": "unknown",
+    "faultTags": [
+      "model-specific",
+      "needs-manual"
+    ],
+    "displayCode": "E01",
+    "codes": [
+      "E01"
+    ],
+    "codeMatching": "exact",
+    "modelScope": "unknown",
+    "confidence": "low",
+    "classificationNotes": "لم يُستنتج تصنيف وظيفي لأن معنى الكود يعتمد على رقم الطراز."
   },
   {
     "id": "beko-e02",
@@ -4007,7 +4938,26 @@
       "افصل الجهاز عن الكهرباء وأغلق مصدر المياه قبل فحص الخراطيم أو المرشحات.",
       "لا تفك اللوحة الإلكترونية أو تقِس الجهد الكهربائي دون فني مؤهل.",
       "قد يختلف معنى الكود وإجراء الإصلاح حسب رقم الطراز؛ راجع دليل المستخدم."
-    ]
+    ],
+    "classificationVersion": "1.0.0",
+    "deviceFamily": "laundry",
+    "deviceSubtype": [
+      "unknown-washing-machine"
+    ],
+    "faultGroup": "unknown",
+    "faultSubgroup": "unknown",
+    "faultTags": [
+      "model-specific",
+      "needs-manual"
+    ],
+    "displayCode": "E02",
+    "codes": [
+      "E02"
+    ],
+    "codeMatching": "exact",
+    "modelScope": "unknown",
+    "confidence": "low",
+    "classificationNotes": "لم يُستنتج تصنيف وظيفي لأن معنى الكود يعتمد على رقم الطراز."
   },
   {
     "id": "beko-e03",
@@ -4085,7 +5035,26 @@
       "افصل الجهاز عن الكهرباء وأغلق مصدر المياه قبل فحص الخراطيم أو المرشحات.",
       "لا تفك اللوحة الإلكترونية أو تقِس الجهد الكهربائي دون فني مؤهل.",
       "قد يختلف معنى الكود وإجراء الإصلاح حسب رقم الطراز؛ راجع دليل المستخدم."
-    ]
+    ],
+    "classificationVersion": "1.0.0",
+    "deviceFamily": "laundry",
+    "deviceSubtype": [
+      "unknown-washing-machine"
+    ],
+    "faultGroup": "unknown",
+    "faultSubgroup": "unknown",
+    "faultTags": [
+      "model-specific",
+      "needs-manual"
+    ],
+    "displayCode": "E03",
+    "codes": [
+      "E03"
+    ],
+    "codeMatching": "exact",
+    "modelScope": "unknown",
+    "confidence": "low",
+    "classificationNotes": "لم يُستنتج تصنيف وظيفي لأن معنى الكود يعتمد على رقم الطراز."
   },
   {
     "id": "panasonic-h01",
@@ -4164,7 +5133,26 @@
       "افصل الجهاز عن الكهرباء وأغلق مصدر المياه قبل فحص الخراطيم أو المرشحات.",
       "لا تفك اللوحة الإلكترونية أو تقِس الجهد الكهربائي دون فني مؤهل.",
       "قد يختلف معنى الكود وإجراء الإصلاح حسب رقم الطراز؛ راجع دليل المستخدم."
-    ]
+    ],
+    "classificationVersion": "1.0.0",
+    "deviceFamily": "laundry",
+    "deviceSubtype": [
+      "unknown-washing-machine"
+    ],
+    "faultGroup": "unknown",
+    "faultSubgroup": "unknown",
+    "faultTags": [
+      "model-specific",
+      "needs-manual"
+    ],
+    "displayCode": "H01",
+    "codes": [
+      "H01"
+    ],
+    "codeMatching": "exact",
+    "modelScope": "unknown",
+    "confidence": "low",
+    "classificationNotes": "لم يُستنتج تصنيف وظيفي لأن معنى الكود يعتمد على رقم الطراز."
   },
   {
     "id": "panasonic-h02",
@@ -4242,7 +5230,26 @@
       "افصل الجهاز عن الكهرباء وأغلق مصدر المياه قبل فحص الخراطيم أو المرشحات.",
       "لا تفك اللوحة الإلكترونية أو تقِس الجهد الكهربائي دون فني مؤهل.",
       "قد يختلف معنى الكود وإجراء الإصلاح حسب رقم الطراز؛ راجع دليل المستخدم."
-    ]
+    ],
+    "classificationVersion": "1.0.0",
+    "deviceFamily": "laundry",
+    "deviceSubtype": [
+      "unknown-washing-machine"
+    ],
+    "faultGroup": "unknown",
+    "faultSubgroup": "unknown",
+    "faultTags": [
+      "model-specific",
+      "needs-manual"
+    ],
+    "displayCode": "H02",
+    "codes": [
+      "H02"
+    ],
+    "codeMatching": "exact",
+    "modelScope": "unknown",
+    "confidence": "low",
+    "classificationNotes": "لم يُستنتج تصنيف وظيفي لأن معنى الكود يعتمد على رقم الطراز."
   },
   {
     "id": "samsung-tE-dish-sensor",
@@ -4310,7 +5317,25 @@
       "افصل الجهاز عن الكهرباء وأغلق مصدر المياه قبل فحص الخراطيم أو المرشحات.",
       "لا تفك اللوحة الإلكترونية أو تقِس الجهد الكهربائي دون فني مؤهل.",
       "قد يختلف معنى الكود وإجراء الإصلاح حسب رقم الطراز؛ راجع دليل المستخدم."
-    ]
+    ],
+    "classificationVersion": "1.0.0",
+    "deviceFamily": "kitchen",
+    "deviceSubtype": [
+      "unknown-dishwasher"
+    ],
+    "faultGroup": "temperature-sensor",
+    "faultSubgroup": "temperature-sensor",
+    "faultTags": [
+      "temperature",
+      "temperature-sensor"
+    ],
+    "displayCode": "tE",
+    "codes": [
+      "tE"
+    ],
+    "codeMatching": "exact",
+    "modelScope": "unknown",
+    "confidence": "high"
   },
   {
     "id": "bosch-e10-dosing",
@@ -4383,7 +5408,29 @@
       "افصل الجهاز عن الكهرباء وأغلق مصدر المياه قبل الفحص.",
       "انتبه إلى سخونة الماء المتبقي عند فحص التصريف.",
       "قد يختلف الكود حسب الطراز؛ راجع دليل المستخدم قبل استبدال أي قطعة."
-    ]
+    ],
+    "classificationVersion": "1.0.0",
+    "deviceFamily": "laundry",
+    "deviceSubtype": [
+      "unknown-washing-machine"
+    ],
+    "faultGroup": "detergent-dosing",
+    "faultSubgroup": "unknown",
+    "faultTags": [
+      "detergent",
+      "dosing",
+      "blocked-pump"
+    ],
+    "displayCode": "E:10",
+    "codes": [
+      "E:10",
+      "-00",
+      "-10",
+      "-20"
+    ],
+    "codeMatching": "any",
+    "modelScope": "unknown",
+    "confidence": "high"
   },
   {
     "id": "bosch-e16-door",
@@ -4458,7 +5505,28 @@
       "افصل الجهاز عن الكهرباء وأغلق مصدر المياه قبل الفحص.",
       "انتبه إلى سخونة الماء المتبقي عند فحص التصريف.",
       "قد يختلف الكود حسب الطراز؛ راجع دليل المستخدم قبل استبدال أي قطعة."
-    ]
+    ],
+    "classificationVersion": "1.0.0",
+    "deviceFamily": "laundry",
+    "deviceSubtype": [
+      "unknown-washing-machine"
+    ],
+    "faultGroup": "door-lock",
+    "faultSubgroup": "door-latch",
+    "faultTags": [
+      "door",
+      "door-lock"
+    ],
+    "displayCode": "E16",
+    "codes": [
+      "E16",
+      "E34",
+      "F16",
+      "F34"
+    ],
+    "codeMatching": "any",
+    "modelScope": "unknown",
+    "confidence": "high"
   },
   {
     "id": "bosch-e17-water",
@@ -4535,7 +5603,28 @@
       "افصل الجهاز عن الكهرباء وأغلق مصدر المياه قبل الفحص.",
       "انتبه إلى سخونة الماء المتبقي عند فحص التصريف.",
       "قد يختلف الكود حسب الطراز؛ راجع دليل المستخدم قبل استبدال أي قطعة."
-    ]
+    ],
+    "classificationVersion": "1.0.0",
+    "deviceFamily": "laundry",
+    "deviceSubtype": [
+      "unknown-washing-machine"
+    ],
+    "faultGroup": "water-inlet",
+    "faultSubgroup": "inlet-filter",
+    "faultTags": [
+      "no-fill",
+      "low-pressure",
+      "inlet-filter"
+    ],
+    "displayCode": "E17",
+    "codes": [
+      "E17",
+      "F17",
+      "F29"
+    ],
+    "codeMatching": "any",
+    "modelScope": "unknown",
+    "confidence": "high"
   },
   {
     "id": "bosch-e18-drain",
@@ -4613,7 +5702,27 @@
       "افصل الجهاز عن الكهرباء وأغلق مصدر المياه قبل الفحص.",
       "انتبه إلى سخونة الماء المتبقي عند فحص التصريف.",
       "قد يختلف الكود حسب الطراز؛ راجع دليل المستخدم قبل استبدال أي قطعة."
-    ]
+    ],
+    "classificationVersion": "1.0.0",
+    "deviceFamily": "laundry",
+    "deviceSubtype": [
+      "unknown-washing-machine"
+    ],
+    "faultGroup": "drainage",
+    "faultSubgroup": "drain-pump",
+    "faultTags": [
+      "not-draining",
+      "blocked-drain",
+      "drain-pump"
+    ],
+    "displayCode": "E18",
+    "codes": [
+      "E18",
+      "F18"
+    ],
+    "codeMatching": "any",
+    "modelScope": "unknown",
+    "confidence": "high"
   },
   {
     "id": "bosch-e30-water",
@@ -4692,7 +5801,27 @@
       "افصل الجهاز عن الكهرباء وأغلق مصدر المياه قبل الفحص.",
       "انتبه إلى سخونة الماء المتبقي عند فحص التصريف.",
       "قد يختلف الكود حسب الطراز؛ راجع دليل المستخدم قبل استبدال أي قطعة."
-    ]
+    ],
+    "classificationVersion": "1.0.0",
+    "deviceFamily": "laundry",
+    "deviceSubtype": [
+      "unknown-washing-machine"
+    ],
+    "faultGroup": "water-inlet",
+    "faultSubgroup": "inlet-filter",
+    "faultTags": [
+      "no-fill",
+      "low-pressure",
+      "water-level"
+    ],
+    "displayCode": "E:30",
+    "codes": [
+      "E:30",
+      "-10"
+    ],
+    "codeMatching": "any",
+    "modelScope": "unknown",
+    "confidence": "high"
   },
   {
     "id": "beko-dishwasher-e01",
@@ -4764,7 +5893,26 @@
       "افصل الجهاز عن الكهرباء وأغلق مصدر المياه قبل الفحص.",
       "انتبه إلى سخونة الماء المتبقي عند فحص التصريف.",
       "قد يختلف الكود حسب الطراز؛ راجع دليل المستخدم قبل استبدال أي قطعة."
-    ]
+    ],
+    "classificationVersion": "1.0.0",
+    "deviceFamily": "kitchen",
+    "deviceSubtype": [
+      "unknown-dishwasher"
+    ],
+    "faultGroup": "leak-overflow",
+    "faultSubgroup": "overflow-protection",
+    "faultTags": [
+      "leak",
+      "overflow",
+      "water-in-base"
+    ],
+    "displayCode": "E01",
+    "codes": [
+      "E01"
+    ],
+    "codeMatching": "exact",
+    "modelScope": "model-manual",
+    "confidence": "high"
   },
   {
     "id": "beko-dishwasher-e02",
@@ -4840,7 +5988,25 @@
       "افصل الجهاز عن الكهرباء وأغلق مصدر المياه قبل الفحص.",
       "انتبه إلى سخونة الماء المتبقي عند فحص التصريف.",
       "قد يختلف الكود حسب الطراز؛ راجع دليل المستخدم قبل استبدال أي قطعة."
-    ]
+    ],
+    "classificationVersion": "1.0.0",
+    "deviceFamily": "kitchen",
+    "deviceSubtype": [
+      "unknown-dishwasher"
+    ],
+    "faultGroup": "water-inlet",
+    "faultSubgroup": "inlet-filter",
+    "faultTags": [
+      "no-fill",
+      "inlet-filter"
+    ],
+    "displayCode": "E02",
+    "codes": [
+      "E02"
+    ],
+    "codeMatching": "exact",
+    "modelScope": "model-manual",
+    "confidence": "high"
   },
   {
     "id": "beko-dishwasher-e06",
@@ -4910,7 +6076,25 @@
       "افصل الجهاز عن الكهرباء وأغلق مصدر المياه قبل الفحص.",
       "انتبه إلى سخونة الماء المتبقي عند فحص التصريف.",
       "قد يختلف الكود حسب الطراز؛ راجع دليل المستخدم قبل استبدال أي قطعة."
-    ]
+    ],
+    "classificationVersion": "1.0.0",
+    "deviceFamily": "kitchen",
+    "deviceSubtype": [
+      "unknown-dishwasher"
+    ],
+    "faultGroup": "temperature-sensor",
+    "faultSubgroup": "temperature-sensor",
+    "faultTags": [
+      "temperature",
+      "temperature-sensor"
+    ],
+    "displayCode": "E06",
+    "codes": [
+      "E06"
+    ],
+    "codeMatching": "exact",
+    "modelScope": "model-manual",
+    "confidence": "high"
   },
   {
     "id": "beko-dishwasher-e07",
@@ -4980,6 +6164,24 @@
       "افصل الجهاز عن الكهرباء وأغلق مصدر المياه قبل الفحص.",
       "انتبه إلى سخونة الماء المتبقي عند فحص التصريف.",
       "قد يختلف الكود حسب الطراز؛ راجع دليل المستخدم قبل استبدال أي قطعة."
-    ]
+    ],
+    "classificationVersion": "1.0.0",
+    "deviceFamily": "kitchen",
+    "deviceSubtype": [
+      "unknown-dishwasher"
+    ],
+    "faultGroup": "water-meter",
+    "faultSubgroup": "water-meter",
+    "faultTags": [
+      "water-meter",
+      "flow-sensor"
+    ],
+    "displayCode": "E07",
+    "codes": [
+      "E07"
+    ],
+    "codeMatching": "exact",
+    "modelScope": "model-manual",
+    "confidence": "high"
   }
 ]
