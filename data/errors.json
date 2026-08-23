@@ -4311,5 +4311,675 @@
       "لا تفك اللوحة الإلكترونية أو تقِس الجهد الكهربائي دون فني مؤهل.",
       "قد يختلف معنى الكود وإجراء الإصلاح حسب رقم الطراز؛ راجع دليل المستخدم."
     ]
+  },
+  {
+    "id": "bosch-e10-dosing",
+    "brand": "bosch",
+    "brandAr": "بوش",
+    "deviceType": "washing-machine",
+    "deviceTypeAr": "غسالة ملابس",
+    "category": "error-code",
+    "categoryAr": "أكواد الأخطاء",
+    "errorCode": "E:10/-00/-10/-20",
+    "title": "E:10 / -00 / -10 / -20 - Intelligent dosing pump blocked",
+    "titleAr": "خطأ E:10/-00/-10/-20 - مضخة الجرعات الذكية مسدودة",
+    "severity": "medium",
+    "severityAr": "متوسط",
+    "symptoms": [
+      "ظهور الكود على الشاشة",
+      "تعذر بدء البرنامج أو توقفه",
+      "عدم ضخ المنظف من نظام الجرعات الذكي"
+    ],
+    "causes": [
+      "انسداد مضخة نظام الجرعات الذكي",
+      "تراكم منظف داخل وحدة المضخة"
+    ],
+    "affectedParts": [
+      "مضخة الجرعات الذكية",
+      "درج أو وحدة المنظف"
+    ],
+    "diagnosisSteps": [
+      "ضع الجهاز في وضع الاستعداد",
+      "نظف وحدة المضخة وفق دليل المستخدم",
+      "أعد تشغيل الجهاز وتحقق من عودة الكود"
+    ],
+    "repairSteps": [
+      "تنظيف وحدة المضخة حسب دليل الطراز",
+      "تعطيل نظام الجرعات الذكي مؤقتاً وفق الدليل",
+      "طلب دعم Bosch إذا عاد الكود أو تعذر بدء البرنامج"
+    ],
+    "commonMistakes": [
+      "استبدال قطعة قبل مطابقة الكود مع دليل الطراز",
+      "إعادة تشغيل الجهاز مع استمرار سبب العطل"
+    ],
+    "preventionTips": [
+      "تنظيف المرشحات دورياً",
+      "فحص الخراطيم والوصلات بعد التركيب أو نقل الجهاز"
+    ],
+    "homeRepair": true,
+    "needsTechnician": true,
+    "repairDuration": "حسب حالة الانسداد",
+    "toolsRequired": [
+      "فرشاة صغيرة",
+      "ماء فاتر حسب دليل الطراز"
+    ],
+    "models": [],
+    "faq": [
+      {
+        "q": "ماذا يعني كود E:10 في غسالة Bosch؟",
+        "a": "يشير في صفحة Bosch الرسمية إلى انسداد مضخة نظام الجرعات الذكي، وليس إلى عطل عام في دخول المياه."
+      }
+    ],
+    "references": [
+      "المصدر الرسمي: https://www.bosch-home.com/us/owner-support/error-codes/washers"
+    ],
+    "sourceUrls": [
+      "https://www.bosch-home.com/us/owner-support/error-codes/washers"
+    ],
+    "lastVerified": "2026-08-23",
+    "verificationStatus": "manufacturer-confirmed-general",
+    "modelDependent": true,
+    "safetyNotes": [
+      "افصل الجهاز عن الكهرباء وأغلق مصدر المياه قبل الفحص.",
+      "انتبه إلى سخونة الماء المتبقي عند فحص التصريف.",
+      "قد يختلف الكود حسب الطراز؛ راجع دليل المستخدم قبل استبدال أي قطعة."
+    ]
+  },
+  {
+    "id": "bosch-e16-door",
+    "brand": "bosch",
+    "brandAr": "بوش",
+    "deviceType": "washing-machine",
+    "deviceTypeAr": "غسالة ملابس",
+    "category": "error-code",
+    "categoryAr": "أكواد الأخطاء",
+    "errorCode": "E16/E34/F16/F34",
+    "title": "E16 / E34 / F16 / F34 - Door not locked properly",
+    "titleAr": "خطأ E16/E34/F16/F34 - الباب لا يُقفل بشكل صحيح",
+    "severity": "medium",
+    "severityAr": "متوسط",
+    "symptoms": [
+      "عدم بدء البرنامج",
+      "ظهور كود قفل الباب",
+      "بقاء الباب غير محكم الإغلاق"
+    ],
+    "causes": [
+      "الباب غير مغلق بالكامل",
+      "حمولة كبيرة تمنع إغلاق الباب",
+      "قطعة عالقة بين الباب والهيكل"
+    ],
+    "affectedParts": [
+      "قفل الباب",
+      "حشية الباب",
+      "مزلاج الباب"
+    ],
+    "diagnosisSteps": [
+      "افحص عدم وجود ملابس أو جسم عالق",
+      "أغلق الباب حتى تسمع نقرة القفل",
+      "خفف الحمولة وأعد تشغيل البرنامج",
+      "اطلب فنيًا إذا عاد الكود"
+    ],
+    "repairSteps": [
+      "إزالة العائق وإغلاق الباب",
+      "تقليل الحمولة",
+      "فحص القفل أو استبداله بواسطة فني"
+    ],
+    "commonMistakes": [
+      "استبدال قطعة قبل مطابقة الكود مع دليل الطراز",
+      "إعادة تشغيل الجهاز مع استمرار سبب العطل"
+    ],
+    "preventionTips": [
+      "تنظيف المرشحات دورياً",
+      "فحص الخراطيم والوصلات بعد التركيب أو نقل الجهاز"
+    ],
+    "homeRepair": true,
+    "needsTechnician": true,
+    "repairDuration": "15-45 دقيقة",
+    "toolsRequired": [
+      "لا توجد أدوات للفحص الأولي"
+    ],
+    "models": [],
+    "faq": [
+      {
+        "q": "هل تعني هذه الأكواد أن القفل تالف؟",
+        "a": "ليس دائماً؛ قد يكون الباب غير مغلق أو توجد قطعة عالقة، لكن تكرار الكود يحتاج فحص القفل."
+      }
+    ],
+    "references": [
+      "المصدر الرسمي: https://www.bosch-home.com/us/owner-support/error-codes/washers"
+    ],
+    "sourceUrls": [
+      "https://www.bosch-home.com/us/owner-support/error-codes/washers"
+    ],
+    "lastVerified": "2026-08-23",
+    "verificationStatus": "manufacturer-confirmed-general",
+    "modelDependent": true,
+    "safetyNotes": [
+      "افصل الجهاز عن الكهرباء وأغلق مصدر المياه قبل الفحص.",
+      "انتبه إلى سخونة الماء المتبقي عند فحص التصريف.",
+      "قد يختلف الكود حسب الطراز؛ راجع دليل المستخدم قبل استبدال أي قطعة."
+    ]
+  },
+  {
+    "id": "bosch-e17-water",
+    "brand": "bosch",
+    "brandAr": "بوش",
+    "deviceType": "washing-machine",
+    "deviceTypeAr": "غسالة ملابس",
+    "category": "error-code",
+    "categoryAr": "أكواد الأخطاء",
+    "errorCode": "E17/F17/F29",
+    "title": "E17 / F17 / F29 - Low water pressure or blocked inlet filters",
+    "titleAr": "خطأ E17/F17/F29 - ضغط ماء منخفض أو مرشحات دخول مسدودة",
+    "severity": "medium",
+    "severityAr": "متوسط",
+    "symptoms": [
+      "عدم امتلاء الغسالة بالماء",
+      "بطء دخول المياه",
+      "ظهور رمز خطأ الإمداد"
+    ],
+    "causes": [
+      "ضغط مياه منخفض",
+      "انسداد مرشح خرطوم الدخول أو AquaStop",
+      "الصنبور غير مفتوح بالكامل"
+    ],
+    "affectedParts": [
+      "مرشح مدخل المياه",
+      "خرطوم الدخول",
+      "صمام AquaStop",
+      "صنبور المياه"
+    ],
+    "diagnosisSteps": [
+      "أغلق الصنبور قبل فصل الخرطوم",
+      "نظف المرشح بفرشاة صغيرة",
+      "أعد التوصيل وافحص التسرب",
+      "تحقق من تدفق الماء واطلب سباكاً عند انخفاض الضغط"
+    ],
+    "repairSteps": [
+      "فتح الصنبور بالكامل",
+      "تنظيف مرشح الدخول",
+      "استبدال الخرطوم أو صمام AquaStop بواسطة فني عند الحاجة"
+    ],
+    "commonMistakes": [
+      "استبدال قطعة قبل مطابقة الكود مع دليل الطراز",
+      "إعادة تشغيل الجهاز مع استمرار سبب العطل"
+    ],
+    "preventionTips": [
+      "تنظيف المرشحات دورياً",
+      "فحص الخراطيم والوصلات بعد التركيب أو نقل الجهاز"
+    ],
+    "homeRepair": true,
+    "needsTechnician": false,
+    "repairDuration": "20-30 دقيقة",
+    "toolsRequired": [
+      "فرشاة صغيرة",
+      "كماشة عند الحاجة"
+    ],
+    "models": [],
+    "faq": [
+      {
+        "q": "هل يمكن غمر خرطوم AquaStop في الماء؟",
+        "a": "لا؛ تذكر Bosch أن جهاز AquaStop يحتوي صماماً كهربائياً ويجب عدم غمره بالماء."
+      }
+    ],
+    "references": [
+      "المصدر الرسمي: https://www.bosch-home.com/us/owner-support/error-codes/washers"
+    ],
+    "sourceUrls": [
+      "https://www.bosch-home.com/us/owner-support/error-codes/washers"
+    ],
+    "lastVerified": "2026-08-23",
+    "verificationStatus": "manufacturer-confirmed-general",
+    "modelDependent": true,
+    "safetyNotes": [
+      "افصل الجهاز عن الكهرباء وأغلق مصدر المياه قبل الفحص.",
+      "انتبه إلى سخونة الماء المتبقي عند فحص التصريف.",
+      "قد يختلف الكود حسب الطراز؛ راجع دليل المستخدم قبل استبدال أي قطعة."
+    ]
+  },
+  {
+    "id": "bosch-e18-drain",
+    "brand": "bosch",
+    "brandAr": "بوش",
+    "deviceType": "washing-machine",
+    "deviceTypeAr": "غسالة ملابس",
+    "category": "error-code",
+    "categoryAr": "أكواد الأخطاء",
+    "errorCode": "E18/F18",
+    "title": "E18 / F18 - Drain hose or pump blocked",
+    "titleAr": "خطأ E18/F18 - خرطوم التصريف أو المضخة مسدودان",
+    "severity": "medium",
+    "severityAr": "متوسط",
+    "symptoms": [
+      "بقاء الماء داخل الحوض",
+      "توقف الدورة أثناء التصريف",
+      "ظهور كود التصريف"
+    ],
+    "causes": [
+      "خرطوم التصريف ملتف أو مسدود",
+      "انسداد السيفون أو وصلة التصريف",
+      "انسداد مضخة التصريف أو غطاؤها"
+    ],
+    "affectedParts": [
+      "خرطوم التصريف",
+      "مرشح التصريف",
+      "مضخة التصريف",
+      "السيفون"
+    ],
+    "diagnosisSteps": [
+      "أوقف الجهاز وافصل القابس",
+      "انتظر حتى يبرد الماء ثم افحص الخرطوم والسيفون",
+      "نظف المضخة والمرشح وفق دليل الطراز",
+      "تحقق من عدم وجود تسرب بعد إعادة التركيب"
+    ],
+    "repairSteps": [
+      "فرد الخرطوم وإزالة الانسداد",
+      "تنظيف المرشح والمضخة",
+      "استبدال المضخة بواسطة فني إذا لم تعمل"
+    ],
+    "commonMistakes": [
+      "استبدال قطعة قبل مطابقة الكود مع دليل الطراز",
+      "إعادة تشغيل الجهاز مع استمرار سبب العطل"
+    ],
+    "preventionTips": [
+      "تنظيف المرشحات دورياً",
+      "فحص الخراطيم والوصلات بعد التركيب أو نقل الجهاز"
+    ],
+    "homeRepair": true,
+    "needsTechnician": true,
+    "repairDuration": "30-60 دقيقة",
+    "toolsRequired": [
+      "حوض لتجميع الماء",
+      "مفك براغي",
+      "قفازات"
+    ],
+    "models": [],
+    "faq": [
+      {
+        "q": "هل يمكن أن يكون الماء ساخناً عند ظهور E18؟",
+        "a": "نعم، تحذر Bosch من احتمال سخونة الماء المتبقي؛ اتركه يبرد وافصل الكهرباء قبل الفحص."
+      }
+    ],
+    "references": [
+      "المصدر الرسمي: https://www.bosch-home.com/us/owner-support/error-codes/washers"
+    ],
+    "sourceUrls": [
+      "https://www.bosch-home.com/us/owner-support/error-codes/washers"
+    ],
+    "lastVerified": "2026-08-23",
+    "verificationStatus": "manufacturer-confirmed-general",
+    "modelDependent": true,
+    "safetyNotes": [
+      "افصل الجهاز عن الكهرباء وأغلق مصدر المياه قبل الفحص.",
+      "انتبه إلى سخونة الماء المتبقي عند فحص التصريف.",
+      "قد يختلف الكود حسب الطراز؛ راجع دليل المستخدم قبل استبدال أي قطعة."
+    ]
+  },
+  {
+    "id": "bosch-e30-water",
+    "brand": "bosch",
+    "brandAr": "بوش",
+    "deviceType": "washing-machine",
+    "deviceTypeAr": "غسالة ملابس",
+    "category": "error-code",
+    "categoryAr": "أكواد الأخطاء",
+    "errorCode": "E:30/-10",
+    "title": "E:30/-10 - Water inlet or level measurement issue",
+    "titleAr": "خطأ E:30/-10 - مشكلة في دخول المياه أو قياس المستوى",
+    "severity": "medium",
+    "severityAr": "متوسط",
+    "symptoms": [
+      "ظهور رمز الصنبور",
+      "عدم دخول كمية كافية من الماء",
+      "توقف البرنامج أو بدء التصريف"
+    ],
+    "causes": [
+      "ضغط ماء منخفض",
+      "مرشحات مدخل المياه مسدودة",
+      "الصنبور مغلق",
+      "خرطوم الدخول ملتف",
+      "خلل في نظام قياس مستوى الماء"
+    ],
+    "affectedParts": [
+      "صنبور المياه",
+      "مرشح الدخول",
+      "خرطوم الدخول",
+      "نظام قياس مستوى الماء"
+    ],
+    "diagnosisSteps": [
+      "تحقق من فتح الصنبور وتدفق الماء",
+      "نظف مرشحات الدخول بعد إغلاق الماء",
+      "افحص الخرطوم وفرده",
+      "أعد ضبط الجهاز مرة واحدة، واطلب الدعم إذا عاد الكود"
+    ],
+    "repairSteps": [
+      "فتح الصنبور وفرد الخرطوم",
+      "تنظيف مرشحات الدخول",
+      "فحص نظام قياس المستوى بواسطة فني عند استمرار الكود"
+    ],
+    "commonMistakes": [
+      "استبدال قطعة قبل مطابقة الكود مع دليل الطراز",
+      "إعادة تشغيل الجهاز مع استمرار سبب العطل"
+    ],
+    "preventionTips": [
+      "تنظيف المرشحات دورياً",
+      "فحص الخراطيم والوصلات بعد التركيب أو نقل الجهاز"
+    ],
+    "homeRepair": true,
+    "needsTechnician": true,
+    "repairDuration": "20-40 دقيقة",
+    "toolsRequired": [
+      "فرشاة صغيرة",
+      "كماشة عند الحاجة"
+    ],
+    "models": [],
+    "faq": [
+      {
+        "q": "متى أطلب فنيًا؟",
+        "a": "إذا عاد الكود بعد فتح الصنبور وتنظيف المرشحات وفرد الخرطوم، فقد يكون نظام قياس المستوى معطلاً."
+      }
+    ],
+    "references": [
+      "المصدر الرسمي: https://www.bosch-home.com/us/owner-support/error-codes/washers"
+    ],
+    "sourceUrls": [
+      "https://www.bosch-home.com/us/owner-support/error-codes/washers"
+    ],
+    "lastVerified": "2026-08-23",
+    "verificationStatus": "manufacturer-confirmed-general",
+    "modelDependent": true,
+    "safetyNotes": [
+      "افصل الجهاز عن الكهرباء وأغلق مصدر المياه قبل الفحص.",
+      "انتبه إلى سخونة الماء المتبقي عند فحص التصريف.",
+      "قد يختلف الكود حسب الطراز؛ راجع دليل المستخدم قبل استبدال أي قطعة."
+    ]
+  },
+  {
+    "id": "beko-dishwasher-e01",
+    "brand": "beko",
+    "brandAr": "بيكو",
+    "deviceType": "dishwasher",
+    "deviceTypeAr": "غسالة أواني",
+    "category": "error-code",
+    "categoryAr": "أكواد الأخطاء",
+    "errorCode": "E01",
+    "title": "E01 - Water in the base / overflow protection",
+    "titleAr": "خطأ E01 - وصول الماء إلى القاعدة وتفعيل حماية الفيضان",
+    "severity": "high",
+    "severityAr": "خطير",
+    "symptoms": [
+      "ظهور E01",
+      "توقف البرنامج",
+      "احتمال وجود ماء في قاعدة الجهاز"
+    ],
+    "causes": [
+      "تسرب أو امتلاء ماء في قاعدة غسالة الأواني",
+      "تفعيل خوارزمية حماية الفيضان"
+    ],
+    "affectedParts": [
+      "قاعدة الجهاز",
+      "حساس/حماية الفيضان",
+      "خراطيم المياه"
+    ],
+    "diagnosisSteps": [
+      "أوقف الجهاز وافصل الكهرباء",
+      "أغلق صمام المياه",
+      "لا تعاود التشغيل إذا استمر الكود",
+      "اتصل بمركز خدمة Beko معتمد"
+    ],
+    "repairSteps": [
+      "إيقاف الماء والكهرباء",
+      "فحص مصدر التسرب وإصلاحه بواسطة فني",
+      "إعادة التشغيل فقط بعد معالجة سبب التسرب"
+    ],
+    "commonMistakes": [
+      "استبدال قطعة قبل مطابقة الكود مع دليل الطراز",
+      "إعادة تشغيل الجهاز مع استمرار سبب العطل"
+    ],
+    "preventionTips": [
+      "تنظيف المرشحات دورياً",
+      "فحص الخراطيم والوصلات بعد التركيب أو نقل الجهاز"
+    ],
+    "homeRepair": false,
+    "needsTechnician": true,
+    "repairDuration": "حسب التشخيص",
+    "toolsRequired": [],
+    "models": [],
+    "faq": [
+      {
+        "q": "هل أستطيع متابعة تشغيل الجهاز مع E01؟",
+        "a": "لا؛ أغلق الماء وافصل الكهرباء واتصل بخدمة معتمدة إذا استمر الكود."
+      }
+    ],
+    "references": [
+      "المصدر الرسمي: https://documents.beko.com/DW/7615210277/tr-TR/884097931943628811.html"
+    ],
+    "sourceUrls": [
+      "https://documents.beko.com/DW/7615210277/tr-TR/884097931943628811.html"
+    ],
+    "lastVerified": "2026-08-23",
+    "verificationStatus": "manufacturer-confirmed-model-manual",
+    "modelDependent": true,
+    "safetyNotes": [
+      "افصل الجهاز عن الكهرباء وأغلق مصدر المياه قبل الفحص.",
+      "انتبه إلى سخونة الماء المتبقي عند فحص التصريف.",
+      "قد يختلف الكود حسب الطراز؛ راجع دليل المستخدم قبل استبدال أي قطعة."
+    ]
+  },
+  {
+    "id": "beko-dishwasher-e02",
+    "brand": "beko",
+    "brandAr": "بيكو",
+    "deviceType": "dishwasher",
+    "deviceTypeAr": "غسالة أواني",
+    "category": "error-code",
+    "categoryAr": "أكواد الأخطاء",
+    "errorCode": "E02",
+    "title": "E02 - Water supply interruption or blocked inlet filter",
+    "titleAr": "خطأ E02 - انقطاع إمداد المياه أو انسداد مرشح الدخول",
+    "severity": "medium",
+    "severityAr": "متوسط",
+    "symptoms": [
+      "عدم دخول المياه",
+      "توقف أو انتهاء البرنامج دون تعبئة كافية",
+      "ظهور E02"
+    ],
+    "causes": [
+      "انقطاع أو إغلاق إمداد المياه",
+      "مرشح الدخول مسدود",
+      "خرطوم الدخول أو الصمام يحتاج فحصاً"
+    ],
+    "affectedParts": [
+      "صمام المياه",
+      "مرشح الدخول",
+      "خرطوم الدخول"
+    ],
+    "diagnosisSteps": [
+      "تحقق من وجود المياه وفتح الصمام",
+      "افصل الكهرباء والماء قبل فك خرطوم الدخول",
+      "نظف المرشح وأعد التوصيل مع فحص التسرب",
+      "اطلب خدمة إذا استمر الكود"
+    ],
+    "repairSteps": [
+      "فتح صمام المياه",
+      "تنظيف مرشح الدخول",
+      "فحص الصمام أو الخرطوم بواسطة فني عند الحاجة"
+    ],
+    "commonMistakes": [
+      "استبدال قطعة قبل مطابقة الكود مع دليل الطراز",
+      "إعادة تشغيل الجهاز مع استمرار سبب العطل"
+    ],
+    "preventionTips": [
+      "تنظيف المرشحات دورياً",
+      "فحص الخراطيم والوصلات بعد التركيب أو نقل الجهاز"
+    ],
+    "homeRepair": true,
+    "needsTechnician": true,
+    "repairDuration": "20-30 دقيقة",
+    "toolsRequired": [
+      "فرشاة صغيرة",
+      "حوض لتجميع الماء"
+    ],
+    "models": [],
+    "faq": [
+      {
+        "q": "ما أول خطوة عند ظهور E02؟",
+        "a": "تحقق من شبكة المياه والصمام، ثم افصل الماء والكهرباء ونظف مرشح الدخول بحذر."
+      }
+    ],
+    "references": [
+      "المصدر الرسمي: https://documents.beko.com/DW/7615210277/tr-TR/884097931943628811.html"
+    ],
+    "sourceUrls": [
+      "https://documents.beko.com/DW/7615210277/tr-TR/884097931943628811.html"
+    ],
+    "lastVerified": "2026-08-23",
+    "verificationStatus": "manufacturer-confirmed-model-manual",
+    "modelDependent": true,
+    "safetyNotes": [
+      "افصل الجهاز عن الكهرباء وأغلق مصدر المياه قبل الفحص.",
+      "انتبه إلى سخونة الماء المتبقي عند فحص التصريف.",
+      "قد يختلف الكود حسب الطراز؛ راجع دليل المستخدم قبل استبدال أي قطعة."
+    ]
+  },
+  {
+    "id": "beko-dishwasher-e06",
+    "brand": "beko",
+    "brandAr": "بيكو",
+    "deviceType": "dishwasher",
+    "deviceTypeAr": "غسالة أواني",
+    "category": "error-code",
+    "categoryAr": "أكواد الأخطاء",
+    "errorCode": "E06",
+    "title": "E06 - Internal temperature sensor fault",
+    "titleAr": "خطأ E06 - عطل حساس الحرارة الداخلي",
+    "severity": "high",
+    "severityAr": "خطير",
+    "symptoms": [
+      "ظهور E06 بشكل متكرر",
+      "انخفاض أداء الغسيل أو تغيره",
+      "عدم ضبط التسخين بصورة صحيحة"
+    ],
+    "causes": [
+      "عطل حساس الحرارة الداخلي",
+      "خلل في توصيلات الحساس أو لوحة التحكم"
+    ],
+    "affectedParts": [
+      "حساس الحرارة",
+      "الأسلاك",
+      "لوحة التحكم"
+    ],
+    "diagnosisSteps": [
+      "أوقف الجهاز إذا تكرر الكود",
+      "لا تفتح اللوحة أو تقِس الجهد بنفسك",
+      "اتصل بمركز خدمة Beko لفحص الحساس"
+    ],
+    "repairSteps": [
+      "فحص الحساس والتوصيلات بواسطة فني",
+      "استبدال الحساس أو الجزء التالف وفق دليل الطراز"
+    ],
+    "commonMistakes": [
+      "استبدال قطعة قبل مطابقة الكود مع دليل الطراز",
+      "إعادة تشغيل الجهاز مع استمرار سبب العطل"
+    ],
+    "preventionTips": [
+      "تنظيف المرشحات دورياً",
+      "فحص الخراطيم والوصلات بعد التركيب أو نقل الجهاز"
+    ],
+    "homeRepair": false,
+    "needsTechnician": true,
+    "repairDuration": "حسب التشخيص",
+    "toolsRequired": [],
+    "models": [],
+    "faq": [
+      {
+        "q": "هل يمكن إصلاح E06 بتنظيف المرشح؟",
+        "a": "المصدر الرسمي يربطه بحساس الحرارة الداخلي؛ استمرار الكود يحتاج مركز خدمة معتمداً."
+      }
+    ],
+    "references": [
+      "المصدر الرسمي: https://documents.beko.com/DW/7615210277/tr-TR/884097931943628811.html"
+    ],
+    "sourceUrls": [
+      "https://documents.beko.com/DW/7615210277/tr-TR/884097931943628811.html"
+    ],
+    "lastVerified": "2026-08-23",
+    "verificationStatus": "manufacturer-confirmed-model-manual",
+    "modelDependent": true,
+    "safetyNotes": [
+      "افصل الجهاز عن الكهرباء وأغلق مصدر المياه قبل الفحص.",
+      "انتبه إلى سخونة الماء المتبقي عند فحص التصريف.",
+      "قد يختلف الكود حسب الطراز؛ راجع دليل المستخدم قبل استبدال أي قطعة."
+    ]
+  },
+  {
+    "id": "beko-dishwasher-e07",
+    "brand": "beko",
+    "brandAr": "بيكو",
+    "deviceType": "dishwasher",
+    "deviceTypeAr": "غسالة أواني",
+    "category": "error-code",
+    "categoryAr": "أكواد الأخطاء",
+    "errorCode": "E07",
+    "title": "E07 - Water meter fault",
+    "titleAr": "خطأ E07 - عطل عداد المياه",
+    "severity": "high",
+    "severityAr": "خطير",
+    "symptoms": [
+      "ظهور E07 بشكل متكرر",
+      "توقف البرنامج بعد بدء التعبئة",
+      "اضطراب كمية المياه داخل الجهاز"
+    ],
+    "causes": [
+      "عطل عداد المياه",
+      "خلل في الحساس أو التوصيلات المرتبطة بقياس التدفق"
+    ],
+    "affectedParts": [
+      "عداد المياه/حساس التدفق",
+      "الأسلاك",
+      "لوحة التحكم"
+    ],
+    "diagnosisSteps": [
+      "أوقف الجهاز وأغلق صمام المياه إذا استمر الكود",
+      "لا تغيّر الحساس دون مطابقة رقم الطراز",
+      "اتصل بمركز خدمة Beko معتمد"
+    ],
+    "repairSteps": [
+      "فحص عداد المياه والحساس والتوصيلات بواسطة فني",
+      "استبدال الجزء وفق دليل الطراز"
+    ],
+    "commonMistakes": [
+      "استبدال قطعة قبل مطابقة الكود مع دليل الطراز",
+      "إعادة تشغيل الجهاز مع استمرار سبب العطل"
+    ],
+    "preventionTips": [
+      "تنظيف المرشحات دورياً",
+      "فحص الخراطيم والوصلات بعد التركيب أو نقل الجهاز"
+    ],
+    "homeRepair": false,
+    "needsTechnician": true,
+    "repairDuration": "حسب التشخيص",
+    "toolsRequired": [],
+    "models": [],
+    "faq": [
+      {
+        "q": "هل يعني E07 وجود انسداد في خرطوم التصريف؟",
+        "a": "ليس وفق الكتيب الرسمي المستخدم هنا؛ الكود مرتبط بعداد المياه ويحتاج فحص خدمة عند تكراره."
+      }
+    ],
+    "references": [
+      "المصدر الرسمي: https://documents.beko.com/DW/7615210277/tr-TR/884097931943628811.html"
+    ],
+    "sourceUrls": [
+      "https://documents.beko.com/DW/7615210277/tr-TR/884097931943628811.html"
+    ],
+    "lastVerified": "2026-08-23",
+    "verificationStatus": "manufacturer-confirmed-model-manual",
+    "modelDependent": true,
+    "safetyNotes": [
+      "افصل الجهاز عن الكهرباء وأغلق مصدر المياه قبل الفحص.",
+      "انتبه إلى سخونة الماء المتبقي عند فحص التصريف.",
+      "قد يختلف الكود حسب الطراز؛ راجع دليل المستخدم قبل استبدال أي قطعة."
+    ]
   }
 ]

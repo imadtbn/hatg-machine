@@ -15,7 +15,7 @@
 | Electrolux — غسالات الملابس | [Electrolux E10/E11/C1 support](https://support.electrolux.co.uk/support-articles/article/washing-machine-displays-error-code-e10-e11-c1-or-emits-1-beep-1-flash) | تم تصحيح E10 إلى E10/E11/C1 كتدفق مياه أو تصريف، بينما وُسم E20 وE30 بأنهما معتمدان على الطراز بدلاً من الإسناد العام. |
 | Whirlpool — غسالات الملابس | [Whirlpool Front Load Washer Error Codes](https://producthelp.whirlpool.com/Laundry/Washers/Product_Info/Washer_Product_Assistance/Error_Codes_in_Front_Load_Washers) | أُعيدت تسمية السجلين إلى F5 E2 لقفل الباب وF9 E1 لزمن التصريف؛ الصفحة تؤكد أن القائمة تختلف حسب الطراز. |
 | Bosch — غسالات الملابس | [Bosch Error Codes](https://www.bosch-home.com/us/owner-support/get-support/general-error-codes) | بوابة Bosch تطلب اختيار فئة الجهاز والبحث برقم الطراز؛ لذلك وُسمت E:01–E:05 بأنها معتمدة على الطراز، وأزيلت التفسيرات العامة غير المثبتة. |
-| Beko — غسالات الملابس | [Beko User Manuals](https://www.beko.com/us-en/support/user-manual) | دليل Beko الرسمي يعتمد على رقم الطراز؛ لذلك وُسمت E01–E03 بأنها معتمدة على الطراز دون تشخيص عام. |
+| Beko — غسالات الملابس وغسالات الأواني | [Beko User Manuals](https://www.beko.com/us-en/support/user-manual)؛ [Beko Error Codes manual](https://documents.beko.com/DW/7615210277/tr-TR/884097931943628811.html) | بوابة Beko العامة تعتمد على رقم الطراز. أما الكتيب الرسمي المحدد فيثبت لغسالة الأواني E01 لماء في القاعدة/حماية الفيضان، وE02 لانقطاع إمداد المياه أو انسداد المرشح، وE06 لعطل حساس الحرارة الداخلي، وE07 لعطل عداد المياه. |
 | Midea — غسالات الملابس | [Midea Manuals & Downloads](https://www.midea.com/th-en/support/manuals-downloads) | لم يُعتمد معنى موحد لـE1–E10 عبر الطرازات؛ وُسمت السجلات بأنها تحتاج مطابقة دليل الطراز. |
 | Panasonic — غسالات الملابس | [Panasonic How to solve Error Code H**](https://p-cube.panasonic.com/ph/s/article/How-to-solve-Error-Code-H-ph-pm-psp-pnz) | لم يُعتمد معنى موحد لـH01 وH02 دون دليل طراز؛ وُسمت السجلات بأنها تحتاج مطابقة دليل الطراز وفنيًا عند استمرارها. |
 | Gree وCarrier | [GREE Troubleshoot Error Codes](https://www.greecomfort.com/troubleshoot-error-codes/)؛ [Carrier Fault Codes](https://www.carrierair.com.au/installer-and-technical-support/fault-codes/) | المصادر الرسمية التي تم العثور عليها تخص أنظمة التكييف والتدفئة، لا غسالات الملابس أو غسالات الأواني؛ أزيلت السجلات العشر غير المسندة حتى لا تعرض القاعدة تشخيصات مضللة. |
@@ -23,3 +23,17 @@
 ## ملاحظات السلامة
 
 أضيف إلى السجلات تنبيه بفصل الكهرباء وإغلاق المياه قبل الفحص، وعدم فتح اللوحات أو قياس الجهد دون فني مؤهل، والرجوع إلى دليل الطراز قبل استبدال أي قطعة. كما أزيلت إجابة سعرية غير موثقة واستُبدلت بعبارة تفيد بأن التكلفة تختلف حسب الطراز والمنطقة والقطعة.
+
+## توسعة Bosch وBeko — جلسة 2026-08-23
+
+المصدر الرسمي لـBosch: [Bosch Washer Error Codes](https://www.bosch-home.com/us/owner-support/error-codes/washers). تعرض الصفحة أكواداً إضافية لغسالات الملابس، منها E:10/-00/-10/-20، E16/E34/F16/F34، E17/F17/F29، E18/F18، E:30/-10، E32/F32، E33/F33، E:36-10، E:36-25-26، E:38/-25/-26، E:60-2B، E80، E:92/-01 وH:32. وتؤكد أن Bosch توفر أيضاً رابطاً للأكواد الأخرى، لذلك يجب التعامل مع الكود وفق الطراز.
+
+المصدر الرسمي لـBeko: [Beko User Manuals](https://www.beko.com/us-en/support/user-manual). البوابة تطلب البحث برقم الطراز للوصول إلى دليل الاستخدام، ولا تعرض جدولاً عاماً موحداً لأكواد الغسالات. لذلك لن تُضاف أكواد Beko بتفسيرات عامة غير مثبتة؛ ستُضاف سجلات موسعة مع حالة `model-specific-only` وروابط البوابة الرسمية وتعليمات الرجوع إلى دليل الطراز.
+
+### تفاصيل Bosch الموثقة
+
+في صفحة [Bosch Washer Error Codes](https://www.bosch-home.com/us/owner-support/error-codes/washers)، يوضح تفصيل `E:10 / -00 / -10 / -20` أن مضخة نظام الجرعات الذكي للمنظف مسدودة؛ يوصى بوضع الجهاز في وضع الاستعداد وتنظيف وحدة المضخة وفق دليل المستخدم، ثم طلب الدعم إذا عاد الكود. هذا الكود يختلف عن أكواد تعبئة أو تصريف المياه العامة، لذلك سيُضاف بسجل مستقل.
+
+تفاصيل إضافية من صفحة Bosch الرسمية:
+
+تثبت الصفحة أن `E16/E34/F16/F34` تعني أن الباب غير مقفل بشكل صحيح، وأن `E17/F17/F29` ترتبط بانسداد مرشحات وصلة المياه أو خرطوم AquaStop أو بانخفاض ضغط الماء. كما تذكر أن `E18/F18` تعني أن خرطوم التصريف مسدود أو ملتف، وأن `E:30/-10` قد تنتج عن انخفاض الضغط أو انسداد مرشحات الدخول أو إغلاق الصنبور أو التواء خرطوم الدخول، مع احتمال خلل قياس مستوى الماء عند استمرارها. أُضيفت هذه الأكواد الخمسة إلى قاعدة البيانات مع إبقاء التحذيرات الخاصة بالطراز والسلامة.
