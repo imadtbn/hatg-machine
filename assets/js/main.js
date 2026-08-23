@@ -1100,6 +1100,10 @@ document.addEventListener('DOMContentLoaded', () => {
       renderArticles();
       break;
 
+    case 'troubleshooting':
+      initTroubleshootingWizard();
+      break;
+
     case 'errors':
       initFilters();
       // Apply URL params
@@ -1160,6 +1164,170 @@ document.addEventListener('DOMContentLoaded', () => {
 // ============================================
 // Page-Specific Render Functions
 // ============================================
+const WizardState = {
+  step: 1,
+  device: '',
+  brand: '',
+  code: '',
+  symptom: '',
+  matches: [],
+  match: null,
+  diagnosisStep: 0,
+  completed: false
+};
+
+function wizardDeviceTypes() {
+  return Object.entries(App.data.taxonomy?.deviceTypes || {}).filter(([id]) => App.data.errors.some(error => error.deviceType === id));
+}
+
+function wizardErrors() {
+  return App.data.errors.filter(error => !WizardState.device || error.deviceType === WizardState.device);
+}
+
+function normalizeWizardCode(value) {
+  return String(value || '').toLowerCase().replace(/[\s\-_/]/g, '');
+}
+
+function setWizardStep(step) {
+  WizardState.step = step;
+  document.querySelectorAll('[data-wizard-panel]').forEach(panel => panel.classList.toggle('active', Number(panel.dataset.wizardPanel) === step));
+  document.querySelectorAll('[data-progress-step]').forEach(item => {
+    const itemStep = Number(item.dataset.progressStep);
+    item.classList.toggle('active', itemStep === step);
+    item.classList.toggle('complete', itemStep < step);
+  });
+  const progress = document.getElementById('wizard-progress-bar');
+  if (progress) progress.style.width = `${Math.max(0, Math.min(100, ((step - 1) / 3) * 100))}%`;
+  window.scrollTo({top: document.querySelector('.wizard-shell')?.offsetTop - 24 || 0, behavior: 'smooth'});
+}
+
+function renderWizardDevices() {
+  const container = document.getElementById('wizard-device-grid');
+  if (!container) return;
+  container.innerHTML = wizardDeviceTypes().map(([id, item]) => {
+    const count = App.data.errors.filter(error => error.deviceType === id).length;
+    return `<button type="button" class="wizard-choice-card ${WizardState.device === id ? 'selected' : ''}" data-wizard-device="${id}"><span class="wizard-choice-icon"><i class="fas ${item.icon || 'fa-plug'}"></i></span><span><strong>${item.nameAr}</strong><small>${count} أعطال مسجلة</small></span><i class="fas fa-check wizard-choice-check"></i></button>`;
+  }).join('');
+  container.querySelectorAll('[data-wizard-device]').forEach(button => button.addEventListener('click', () => {
+    WizardState.device = button.dataset.wizardDevice;
+    container.querySelectorAll('[data-wizard-device]').forEach(item => item.classList.toggle('selected', item === button));
+    const next = document.getElementById('wizard-device-next');
+    if (next) next.disabled = false;
+  }));
+}
+
+function renderWizardBrands() {
+  const select = document.getElementById('wizard-brand');
+  if (!select) return;
+  const counts = new Map();
+  wizardErrors().forEach(error => counts.set(getBrandId(error), (counts.get(getBrandId(error)) || 0) + 1));
+  const brands = App.data.brands.filter(brand => counts.has(brand.id)).sort((a, b) => (a.nameAr || a.name).localeCompare(b.nameAr || b.name, 'ar'));
+  select.innerHTML = '<option value="">كل الماركات</option>' + brands.map(brand => `<option value="${brand.id}">${brand.nameAr || brand.name} — ${counts.get(brand.id)} عطل</option>`).join('');
+  select.value = WizardState.brand;
+}
+
+function renderWizardSymptoms() {
+  const select = document.getElementById('wizard-symptom');
+  const datalist = document.getElementById('wizard-code-suggestions');
+  if (!select || !datalist) return;
+  const errors = wizardErrors().filter(error => !WizardState.brand || getBrandId(error) === WizardState.brand);
+  const groups = [...new Set(errors.map(error => error.faultGroup).filter(Boolean))];
+  select.innerHTML = '<option value="">اختر العرض الأقرب</option>' + groups.map(group => `<option value="${group}">${getFaultGroupLabel(group)}</option>`).join('') + '<option value="unknown">لا أعرف المجموعة</option>';
+  select.value = WizardState.symptom;
+  const codes = [...new Set(errors.flatMap(error => error.codes || [error.errorCode]).filter(Boolean))];
+  datalist.innerHTML = codes.map(code => `<option value="${code}"></option>`).join('');
+}
+
+function wizardFindMatches() {
+  const code = normalizeWizardCode(WizardState.code);
+  const base = wizardErrors().filter(error => !WizardState.brand || getBrandId(error) === WizardState.brand);
+  const scored = base.map(error => {
+    const codes = (error.codes || [error.errorCode]).map(normalizeWizardCode);
+    const exact = code && codes.includes(code);
+    const groupMatch = WizardState.symptom && WizardState.symptom !== 'unknown' && error.faultGroup === WizardState.symptom;
+    const textMatch = WizardState.symptom && error.faultTags?.some(tag => tag === WizardState.symptom);
+    let score = 0;
+    if (exact) score += 100;
+    if (groupMatch || textMatch) score += 40;
+    if (!code && error.confidence === 'high') score += 8;
+    if (error.verificationStatus === 'model-specific-only') score -= 8;
+    return {...error, wizardScore: score, wizardExact: exact};
+  }).filter(error => {
+    if (code) return error.wizardExact;
+    if (WizardState.symptom && WizardState.symptom !== 'unknown') return error.wizardScore > 0;
+    return false;
+  });
+  return scored.sort((a, b) => b.wizardScore - a.wizardScore || (a.needsTechnician === b.needsTechnician ? 0 : a.needsTechnician ? -1 : 1)).slice(0, 5);
+}
+
+function renderWizardResult() {
+  const container = document.getElementById('wizard-result');
+  if (!container) return;
+  const match = WizardState.match;
+  if (!match) {
+    container.innerHTML = `<div class="wizard-result-empty"><span class="wizard-result-icon"><i class="fas fa-search"></i></span><h2>لم نجد تطابقاً مباشراً</h2><p>لم نربط المدخلات بكود مؤكد في قاعدة البيانات. يمكنك تصفح الأعطال حسب الجهاز أو العودة وتغيير العرض.</p><div class="wizard-actions"><button class="btn btn-outline" data-wizard-back="3"><i class="fas fa-arrow-right"></i> تعديل الإجابات</button><a class="btn btn-primary" href="errors.html${WizardState.device ? `?device=${encodeURIComponent(WizardState.device)}` : ''}">تصفح قائمة الأخطاء <i class="fas fa-arrow-left"></i></a></div></div>`;
+    bindWizardBackButtons();
+    return;
+  }
+  const steps = match.diagnosisSteps?.length ? match.diagnosisSteps : (match.repairSteps || []);
+  if (WizardState.completed || !steps.length) {
+    container.innerHTML = `<div class="wizard-result-success"><span class="wizard-result-icon"><i class="fas fa-check"></i></span><h2>اكتمل مسار الفحص</h2><p>إذا استمر الكود بعد تنفيذ الخطوات، لا تكرر التشغيل واطلب فحصاً متخصصاً.</p><div class="wizard-result-actions"><a class="btn btn-primary" href="${getErrorUrl(match)}">فتح تفاصيل ${match.displayCode || match.errorCode} <i class="fas fa-arrow-left"></i></a><button class="btn btn-outline" id="wizard-restart">بدء تشخيص جديد</button></div></div>`;
+    document.getElementById('wizard-restart')?.addEventListener('click', () => resetWizard());
+    return;
+  }
+  const current = steps[WizardState.diagnosisStep] || steps[0];
+  const safety = Array.isArray(match.safetyNotes) ? match.safetyNotes : [];
+  container.innerHTML = `<div class="wizard-result-header"><div><span class="wizard-step-label">نتيجة أولية · ${WizardState.diagnosisStep + 1} من ${steps.length}</span><h2>${match.titleAr || match.title}</h2><p><strong>${match.displayCode || match.errorCode}</strong> · ${getDeviceLabel(match.deviceType)} · ${getFaultGroupLabel(match.faultGroup)}</p></div>${getSeverityBadge(match.severity)}</div>${match.needsTechnician || match.severity === 'high' ? `<div class="wizard-inline-warning"><i class="fas fa-triangle-exclamation"></i><span>قد يحتاج هذا العطل إلى فني مؤهل. لا تفك اللوحات الكهربائية ولا تقِس الجهد بنفسك.</span></div>` : ''}<div class="wizard-step-card"><span class="wizard-current-step"><i class="fas fa-list-check"></i> افحص الآن</span><strong>${current}</strong><p>نفّذ الخطوة بأمان، ثم اختر النتيجة للانتقال.</p><div class="wizard-actions"><button class="btn btn-primary" id="wizard-step-done"><i class="fas fa-check"></i> تمت الخطوة</button><button class="btn btn-outline" id="wizard-step-unresolved"><i class="fas fa-arrow-left"></i> لم تُحل المشكلة</button></div></div>${safety.length ? `<details class="wizard-safety-details"><summary><i class="fas fa-shield-alt"></i> تعليمات السلامة لهذا العطل</summary>${renderList(safety)}</details>` : ''}<div class="wizard-match-footer"><span><i class="fas fa-chart-line"></i> تطابق ${match.wizardScore >= 100 ? 'مباشر مع الكود' : 'تقريبي حسب العرض'}</span><a href="${getErrorUrl(match)}">عرض التفاصيل الكاملة <i class="fas fa-external-link-alt"></i></a></div>`;
+  const advance = () => {
+    if (WizardState.diagnosisStep >= steps.length - 1) WizardState.completed = true;
+    else WizardState.diagnosisStep += 1;
+    renderWizardResult();
+  };
+  document.getElementById('wizard-step-done')?.addEventListener('click', advance);
+  document.getElementById('wizard-step-unresolved')?.addEventListener('click', advance);
+}
+
+function bindWizardBackButtons() {
+  document.querySelectorAll('[data-wizard-back]').forEach(button => button.addEventListener('click', () => setWizardStep(Number(button.dataset.wizardBack))));
+}
+
+function resetWizard() {
+  Object.assign(WizardState, {step: 1, device: '', brand: '', code: '', symptom: '', matches: [], match: null, diagnosisStep: 0, completed: false});
+  const brand = document.getElementById('wizard-brand');
+  const code = document.getElementById('wizard-code');
+  const symptom = document.getElementById('wizard-symptom');
+  if (brand) brand.value = '';
+  if (code) code.value = '';
+  if (symptom) symptom.value = '';
+  renderWizardDevices();
+  renderWizardBrands();
+  setWizardStep(1);
+}
+
+function initTroubleshootingWizard() {
+  renderWizardDevices();
+  renderWizardBrands();
+  const deviceNext = document.getElementById('wizard-device-next');
+  const brandSelect = document.getElementById('wizard-brand');
+  const brandNext = document.getElementById('wizard-brand-next');
+  const codeInput = document.getElementById('wizard-code');
+  const symptomSelect = document.getElementById('wizard-symptom');
+  deviceNext?.addEventListener('click', () => { renderWizardBrands(); setWizardStep(2); });
+  brandSelect?.addEventListener('change', () => { WizardState.brand = brandSelect.value; renderWizardSymptoms(); });
+  brandNext?.addEventListener('click', () => { renderWizardSymptoms(); setWizardStep(3); });
+  codeInput?.addEventListener('input', () => { WizardState.code = codeInput.value; });
+  symptomSelect?.addEventListener('change', () => { WizardState.symptom = symptomSelect.value; });
+  document.getElementById('wizard-diagnose')?.addEventListener('click', () => {
+    WizardState.matches = wizardFindMatches();
+    WizardState.match = WizardState.matches[0] || null;
+    WizardState.diagnosisStep = 0;
+    WizardState.completed = false;
+    setWizardStep(4);
+    renderWizardResult();
+  });
+  bindWizardBackButtons();
+}
+
 function renderBrandDetail() {
   const brandName = getUrlParam('name');
   if (!brandName) return;

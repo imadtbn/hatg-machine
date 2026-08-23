@@ -14,6 +14,7 @@ let urls = [];
 const staticPages = [
   { loc: '', priority: 1.0, changefreq: 'weekly' },
   { loc: 'errors.html', priority: 0.9, changefreq: 'weekly' },
+  { loc: 'troubleshooting.html', priority: 0.95, changefreq: 'weekly' },
   { loc: 'brands.html', priority: 0.8, changefreq: 'weekly' },
   { loc: 'articles.html', priority: 0.7, changefreq: 'weekly' },
   { loc: 'faq.html', priority: 0.6, changefreq: 'monthly' },

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>التشخيص التفاعلي للأعطال | دليل أعطال الأجهزة</title>
+  <meta name="description" content="معالج تشخيص تفاعلي يساعدك على تحديد العطل وفحص الجهاز خطوة بخطوة بأمان.">
+  <link rel="canonical" href="https://imadtbn.github.io/hatg-machine/troubleshooting.html">
+  <link rel="icon" type="image/png" href="assets/images/icon.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#0066CC">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap"></noscript>
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="troubleshooting">
+  <a href="#main-content" class="skip-link">تخطي إلى المحتوى الرئيسي</a>
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo"><div class="logo-icon"><i class="fas fa-tools"></i></div><div class="logo-text"><span>دليل الأعطال</span><span>الأجهزة الكهرومنزلية</span></div></a>
+      <nav class="nav">
+        <a href="index.html" class="nav-link">الرئيسية</a>
+        <a href="errors.html" class="nav-link">الأخطاء</a>
+        <a href="troubleshooting.html" class="nav-link active">التشخيص التفاعلي</a>
+        <a href="brands.html" class="nav-link">الماركات</a>
+        <a href="articles.html" class="nav-link">المقالات</a>
+      </nav>
+      <div class="search-bar"><input type="text" class="search-input" placeholder="ابحث عن كود خطأ..." aria-label="بحث"><span class="search-icon"><i class="fas fa-search"></i></span><div class="search-results"></div></div>
+      <div style="display:flex; gap:8px; align-items:center;"><button class="theme-toggle" aria-label="تبديل الوضع" onclick="toggleTheme()"><i class="fas fa-moon"></i></button><button class="menu-toggle" aria-label="القائمة"><i class="fas fa-bars"></i></button></div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="wizard-hero">
+      <div class="container">
+        <span class="wizard-hero-icon"><i class="fas fa-compass"></i></span>
+        <span class="eyebrow wizard-eyebrow">مساعد الصيانة الذكي</span>
+        <h1>شخّص العطل خطوة بخطوة</h1>
+        <p>أجب عن أسئلة قصيرة لنصل إلى الكود الأقرب ونرشدك إلى فحص آمن ومناسب لجهازك.</p>
+      </div>
+    </section>
+
+    <section class="content-section wizard-section">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="مسار التنقل"><a href="index.html">الرئيسية</a><span class="separator"><i class="fas fa-chevron-left"></i></span><span>التشخيص التفاعلي</span></nav>
+
+        <div class="wizard-shell" id="wizard-app">
+          <div class="wizard-progress" aria-label="تقدم التشخيص">
+            <div class="wizard-progress-line"><span id="wizard-progress-bar"></span></div>
+            <div class="wizard-progress-step active" data-progress-step="1"><span>1</span><small>الجهاز</small></div>
+            <div class="wizard-progress-step" data-progress-step="2"><span>2</span><small>الماركة</small></div>
+            <div class="wizard-progress-step" data-progress-step="3"><span>3</span><small>العرض</small></div>
+            <div class="wizard-progress-step" data-progress-step="4"><span>4</span><small>الفحص</small></div>
+          </div>
+
+          <div class="wizard-panel active" data-wizard-panel="1">
+            <div class="wizard-panel-heading"><span class="wizard-step-label">الخطوة 1 من 4</span><h2>ما نوع الجهاز؟</h2><p>سنستخدم نوع الجهاز لتضييق الأكواد والخطوات المناسبة.</p></div>
+            <div id="wizard-device-grid" class="wizard-choice-grid"></div>
+            <div class="wizard-actions"><button class="btn btn-primary" id="wizard-device-next" disabled>متابعة <i class="fas fa-arrow-left"></i></button></div>
+          </div>
+
+          <div class="wizard-panel" data-wizard-panel="2">
+            <div class="wizard-panel-heading"><span class="wizard-step-label">الخطوة 2 من 4</span><h2>ما ماركة الجهاز؟</h2><p>اختر الماركة، أو استخدم الخيار العام إذا لم تجدها في القائمة.</p></div>
+            <div class="wizard-field"><label for="wizard-brand">الماركة</label><select id="wizard-brand"><option value="">كل الماركات</option></select></div>
+            <div class="wizard-brand-hint"><i class="fas fa-lightbulb"></i><span>تجد اسم الماركة عادةً على الواجهة أو الملصق الجانبي للجهاز.</span></div>
+            <div class="wizard-actions"><button class="btn btn-outline" data-wizard-back="1"><i class="fas fa-arrow-right"></i> رجوع</button><button class="btn btn-primary" id="wizard-brand-next">متابعة <i class="fas fa-arrow-left"></i></button></div>
+          </div>
+
+          <div class="wizard-panel" data-wizard-panel="3">
+            <div class="wizard-panel-heading"><span class="wizard-step-label">الخطوة 3 من 4</span><h2>ماذا يظهر على الجهاز؟</h2><p>أدخل الكود إن كان ظاهراً، أو اختر العرض الأقرب إلى ما تلاحظه.</p></div>
+            <div class="wizard-field"><label for="wizard-code">كود الخطأ <span>(اختياري)</span></label><input id="wizard-code" list="wizard-code-suggestions" type="text" inputmode="text" autocomplete="off" placeholder="مثال: E18 أو OE"><datalist id="wizard-code-suggestions"></datalist></div>
+            <div class="wizard-divider"><span>أو اختر العرض</span></div>
+            <div class="wizard-field"><label for="wizard-symptom">العرض أو مجموعة العطل</label><select id="wizard-symptom"><option value="">اختر العرض الأقرب</option></select></div>
+            <div class="wizard-choice-note"><i class="fas fa-circle-info"></i><span>يمكنك ترك الكود فارغاً إذا لم يظهر على الشاشة. سنقترح أقرب مسارات الفحص.</span></div>
+            <div class="wizard-actions"><button class="btn btn-outline" data-wizard-back="2"><i class="fas fa-arrow-right"></i> رجوع</button><button class="btn btn-primary" id="wizard-diagnose"><i class="fas fa-stethoscope"></i> بدء التشخيص</button></div>
+          </div>
+
+          <div class="wizard-panel" data-wizard-panel="4">
+            <div id="wizard-result"></div>
+          </div>
+        </div>
+
+        <div class="wizard-disclaimer"><i class="fas fa-shield-alt"></i><p>هذا المعالج إرشادي ولا يغني عن دليل المستخدم أو الفني المؤهل. افصل الكهرباء والماء قبل الفحص، ولا تفتح اللوحات الكهربائية أو دوائر التبريد بنفسك.</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-col"><h4><i class="fas fa-tools"></i> دليل أعطال الأجهزة الكهرومنزلية</h4><p>منصة تساعدك على فهم رموز الأعطال وفحص الأجهزة المنزلية بصورة أكثر أماناً.</p></div><div class="footer-col"><h4>روابط سريعة</h4><ul class="footer-links"><li><a href="index.html"><i class="fas fa-home"></i> الرئيسية</a></li><li><a href="errors.html"><i class="fas fa-bug"></i> قائمة الأخطاء</a></li><li><a href="troubleshooting.html"><i class="fas fa-compass"></i> التشخيص التفاعلي</a></li><li><a href="brands.html"><i class="fas fa-industry"></i> الماركات</a></li></ul></div><div class="footer-col"><h4>معلومات</h4><ul class="footer-links"><li><a href="about.html">عن الموقع</a></li><li><a href="disclaimer.html">إخلاء المسؤولية</a></li><li><a href="contact.html">اتصل بنا</a></li></ul></div></div><div class="footer-bottom"><p>جميع الحقوق محفوظة &copy; 2026 دليل أعطال الأجهزة الكهرومنزلية | <a href="https://imadtbn.github.io/hatg-machine/">hatg-machine</a></p></div></div></footer>
+  <button class="back-to-top"><i class="fas fa-arrow-up"></i></button>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/adsData.js"></script>
+</body>
+</html>
