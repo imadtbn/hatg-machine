@@ -132,16 +132,26 @@
                 </div>
 
                 <!-- Filters -->
+                <div class="errors-toolbar reveal">
+                    <div>
+                        <span class="eyebrow"><i class="fas fa-filter"></i> بحث منظم</span>
+                        <h2>اعثر على كود الخطأ بسرعة</h2>
+                        <p>اختر الماركة ونوع الجهاز ومجموعة العطل لتضييق النتائج.</p>
+                    </div>
+                    <button type="button" id="reset-filters" class="btn btn-sm btn-outline">
+                        <i class="fas fa-rotate-right"></i> إعادة الضبط
+                    </button>
+                </div>
                 <div class="filters-bar reveal">
                     <div class="filter-group">
-                        <label>نوع الجهاز</label>
-                        <select id="device-filter">
+                        <label for="device-filter">نوع الجهاز</label>
+                        <select id="device-filter" aria-label="تصفية حسب نوع الجهاز">
                             <option value="">جميع الأجهزة</option>
                         </select>
                     </div>
                     <div class="filter-group">
-                        <label>الماركة</label>
-                        <select id="brand-filter">
+                        <label for="brand-filter">الماركة</label>
+                        <select id="brand-filter" aria-label="تصفية حسب الماركة">
                             <option value="">جميع الماركات</option>
                         </select>
                     </div>
@@ -152,8 +162,8 @@
                         </select>
                     </div>
                     <div class="filter-group">
-                        <label>الخطورة</label>
-                        <select id="severity-filter">
+                        <label for="severity-filter">الخطورة</label>
+                        <select id="severity-filter" aria-label="تصفية حسب مستوى الخطورة">
                             <option value="">جميع المستويات</option>
                             <option value="high">خطير</option>
                             <option value="medium">متوسط</option>
@@ -161,8 +171,8 @@
                         </select>
                     </div>
                     <div class="filter-group">
-                        <label>الترتيب</label>
-                        <select id="sort-filter">
+                        <label for="sort-filter">الترتيب</label>
+                        <select id="sort-filter" aria-label="ترتيب النتائج">
                             <option value="newest">الأحدث</option>
                             <option value="oldest">الأقدم</option>
                             <option value="severity">الخطورة</option>
@@ -170,8 +180,12 @@
                     </div>
                 </div>
 
-                <div class="flex justify-between items-center mb-3">
-                    <span id="errors-count" class="text-secondary" style="font-size: 0.9rem;">جاري التحميل...</span>
+                <div class="results-heading reveal">
+                    <div>
+                        <span id="errors-count" class="results-count" aria-live="polite">جاري التحميل...</span>
+                        <span id="errors-filter-hint" class="results-hint">يتم تجهيز قاعدة البيانات...</span>
+                    </div>
+                    <div id="active-filters" class="active-filters" aria-live="polite"></div>
                 </div>
 
                 <div class="cards-grid" id="errors-grid">

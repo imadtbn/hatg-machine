@@ -88,6 +88,48 @@ function getBrandLabel(brandId, fallback = '') {
   return brand?.nameAr || fallback || brandId || '';
 }
 
+function getModelScopeLabel(scope) {
+  return App.data.taxonomy?.modelScopes?.[scope]?.nameAr || scope || 'غير محدد';
+}
+
+function getVerificationLabel(status) {
+  return App.data.taxonomy?.verificationStatuses?.[status]?.nameAr || status || 'غير محدد';
+}
+
+function getErrorSummary(error) {
+  return (error.causes && error.causes.length ? error.causes[0] : error.titleAr || error.title || 'لا يوجد وصف مختصر مسجل').trim();
+}
+
+function getActiveFilterLabel(key, value) {
+  if (!value) return '';
+  if (key === 'device') return getDeviceLabel(value);
+  if (key === 'brand') return getBrandLabel(value);
+  if (key === 'faultGroup') return getFaultGroupLabel(value);
+  if (key === 'severity') return ({high: 'خطير', medium: 'متوسط', low: 'بسيط'})[value] || value;
+  return value;
+}
+
+function renderActiveFilters(filters) {
+  const container = document.getElementById('active-filters');
+  if (!container) return;
+  const entries = [['device', filters.device], ['brand', filters.brand], ['faultGroup', filters.faultGroup], ['severity', filters.severity]]
+    .filter(([, value]) => value);
+  container.innerHTML = entries.length ? entries.map(([key, value]) => `
+    <button type="button" class="active-filter-chip" data-filter-key="${key}" title="إزالة هذا المرشح">
+      ${getActiveFilterLabel(key, value)} <i class="fas fa-times"></i>
+    </button>
+  `).join('') : '<span class="no-active-filters"><i class="fas fa-layer-group"></i> كل النتائج معروضة</span>';
+  container.querySelectorAll('[data-filter-key]').forEach(button => {
+    button.addEventListener('click', () => {
+      const select = document.getElementById(`${button.dataset.filterKey}-filter`);
+      if (select) select.value = '';
+      App.config.currentFilters[button.dataset.filterKey] = '';
+      App.config.currentPage = 1;
+      applyFilters();
+    });
+  });
+}
+
 function getErrorUrl(error) {
   return `error.html?id=${encodeURIComponent(error.id || '')}`;
 }
@@ -480,13 +522,27 @@ function initFilters() {
     deviceFilter.insertAdjacentHTML('beforeend', Object.entries(App.data.taxonomy.deviceTypes).filter(([id]) => App.data.errors.some(error => error.deviceType === id)).map(([id, item]) => `<option value="${id}">${item.nameAr}</option>`).join(''));
   }
   if (brandFilter && brandFilter.options.length <= 1) {
-    brandFilter.insertAdjacentHTML('beforeend', App.data.brands.filter(brand => App.data.errors.some(error => getBrandId(error) === brand.id)).map(brand => `<option value="${brand.id}">${brand.nameAr || brand.name}</option>`).join(''));
+    const brandOptions = App.data.brands
+      .map(brand => ({...brand, errorCount: App.data.errors.filter(error => getBrandId(error) === brand.id).length}))
+      .filter(brand => brand.errorCount > 0)
+      .sort((a, b) => b.errorCount - a.errorCount || (a.nameAr || a.name).localeCompare(b.nameAr || b.name, 'ar'));
+    brandFilter.insertAdjacentHTML('beforeend', brandOptions.map(brand => `<option value="${brand.id}">${brand.nameAr || brand.name} — ${brand.errorCount} ${brand.errorCount === 1 ? 'عطل' : 'أعطال'}</option>`).join(''));
+    brandFilter.title = 'عدد الأعطال المسجلة حسب الماركة';
   }
   if (faultGroupFilter && faultGroupFilter.options.length <= 1) {
     faultGroupFilter.insertAdjacentHTML('beforeend', Object.entries(App.data.taxonomy.faultGroups).filter(([id]) => id !== 'unknown' && App.data.errors.some(error => error.faultGroup === id)).map(([id, item]) => `<option value="${id}">${item.nameAr}</option>`).join(''));
   }
 
   const filters = [deviceFilter, brandFilter, faultGroupFilter, severityFilter, sortFilter];
+  const resetButton = document.getElementById('reset-filters');
+
+  resetButton?.addEventListener('click', () => {
+    [deviceFilter, brandFilter, faultGroupFilter, severityFilter].forEach(filter => { if (filter) filter.value = ''; });
+    if (sortFilter) sortFilter.value = 'newest';
+    App.config.currentFilters = {device: '', brand: '', faultGroup: '', severity: '', sort: 'newest'};
+    App.config.currentPage = 1;
+    applyFilters();
+  });
 
   filters.forEach(filter => {
     if (!filter) return;
@@ -535,6 +591,7 @@ function applyFilters() {
       break;
   }
 
+  renderActiveFilters(filters);
   renderErrors(filtered);
 }
 
@@ -547,7 +604,12 @@ function renderErrors(errors) {
   if (!container) return;
 
   if (countEl) {
-    countEl.textContent = `${errors.length} نتيجة`;
+    const total = App.data.errors.length;
+    countEl.textContent = errors.length === total ? `${total} عطل مسجل` : `${errors.length} من ${total} عطل`;
+  }
+  const hintEl = document.getElementById('errors-filter-hint');
+  if (hintEl) {
+    hintEl.textContent = errors.length ? 'اختر أي بطاقة لعرض التشخيص والخطوات والمصادر.' : 'لا توجد نتائج بهذه المعايير؛ جرّب إعادة الضبط.';
   }
 
   if (errors.length === 0) {
@@ -567,23 +629,31 @@ function renderErrors(errors) {
   const paginated = errors.slice(start, end);
 
   container.innerHTML = paginated.map(error => `
-    <div class="error-card ${error.severity} reveal">
-      <div class="error-code-display ${error.severity}">${error.displayCode || error.errorCode || ''}</div>
-      <h3 class="card-title">${error.titleAr || error.title || ''}</h3>
-      <p class="card-text">${(error.causes && error.causes.length ? error.causes[0] : 'سبب غير محدد').substring(0, 100)}...</p>
+    <article class="error-card ${error.severity} reveal">
+      <div class="error-card-topline">
+        <span class="error-card-index"><i class="fas fa-hashtag"></i> ${error.id}</span>
+        ${error.confidence === 'high' ? '<span class="verification-dot" title="موثق من الشركة المصنعة"><i class="fas fa-check-circle"></i> موثق</span>' : '<span class="verification-dot muted" title="راجع دليل الطراز"><i class="fas fa-book"></i> راجع الطراز</span>'}
+      </div>
+      <div class="error-card-code-row">
+        <div class="error-code-display ${error.severity}">${error.displayCode || error.errorCode || ''}</div>
+        <div class="error-card-heading">
+          <span class="card-kicker">${getBrandLabel(getBrandId(error), error.brandAr || '')}</span>
+          <h3 class="card-title">${error.titleAr || error.title || ''}</h3>
+        </div>
+      </div>
+      <p class="card-text">${getErrorSummary(error).substring(0, 125)}${getErrorSummary(error).length > 125 ? '…' : ''}</p>
       <div class="card-meta">
         <span class="badge badge-primary"><i class="fas fa-microchip"></i> ${getDeviceLabel(error.deviceType)}</span>
-        <span class="badge badge-secondary"><i class="fas fa-tag"></i> ${error.brandAr || getBrandLabel(getBrandId(error))}</span>
         <span class="badge badge-secondary"><i class="fas fa-layer-group"></i> ${getFaultGroupLabel(error.faultGroup)}</span>
         ${getSeverityBadge(error.severity)}
       </div>
-      <div class="mt-3">
-        <a href="${getErrorUrl(error)}"
-           class="btn btn-sm btn-primary w-full">
-          <i class="fas fa-info-circle"></i> تفاصيل الخطأ
+      <div class="error-card-footer">
+        <span class="error-card-scope"><i class="fas fa-crosshairs"></i> ${getModelScopeLabel(error.modelScope)}</span>
+        <a href="${getErrorUrl(error)}" class="btn btn-sm btn-primary">
+          التفاصيل <i class="fas fa-arrow-left"></i>
         </a>
       </div>
-    </div>
+    </article>
   `).join('');
 
   renderPagination(errors.length);
@@ -1175,6 +1245,37 @@ function renderBrandDetail() {
   initScrollReveal();
 }
 
+function renderList(items, emptyText = 'لا توجد معلومات مسجلة') {
+  return Array.isArray(items) && items.length
+    ? `<ul class="detail-list">${items.map(item => `<li>${item}</li>`).join('')}</ul>`
+    : `<p class="detail-empty">${emptyText}</p>`;
+}
+
+function renderNumberedList(items, emptyText = 'لا توجد خطوات مسجلة') {
+  return Array.isArray(items) && items.length
+    ? `<ol class="steplist">${items.map(item => `<li>${item}</li>`).join('')}</ol>`
+    : `<p class="detail-empty">${emptyText}</p>`;
+}
+
+function renderSafetyNotice(error) {
+  const notes = Array.isArray(error.safetyNotes) ? error.safetyNotes : [];
+  if (!error.needsTechnician && !notes.length && error.severity !== 'high') return '';
+  const title = error.needsTechnician || error.severity === 'high' ? 'تنبيه سلامة مهم' : 'قبل الفحص';
+  const intro = error.needsTechnician ? 'هذا العطل قد يتطلب فنيّاً مؤهلاً. افصل الجهاز عن الكهرباء ولا تفك الأجزاء الداخلية.' : 'افصل الجهاز عن الكهرباء والماء عند الحاجة، واتبع دليل الطراز قبل أي فحص.';
+  return `<div class="safety-notice"><div class="safety-notice-icon"><i class="fas fa-shield-alt"></i></div><div><h3>${title}</h3><p>${intro}</p>${notes.length ? renderList(notes) : ''}</div></div>`;
+}
+
+function renderSourceSection(error) {
+  const urls = Array.isArray(error.sourceUrls) ? error.sourceUrls : [];
+  if (!urls.length) return '';
+  return `<div class="detail-section source-section"><div class="section-heading-row"><h3><i class="fas fa-link"></i> المصادر والتحقق</h3><span class="verification-status"><i class="fas fa-check-circle"></i> ${getVerificationLabel(error.verificationStatus)}</span></div><p class="source-meta">آخر تحقق: ${error.lastVerified || 'غير محدد'} · الثقة: ${error.confidence === 'high' ? 'مرتفعة' : error.confidence === 'medium' ? 'متوسطة' : 'محدودة'}</p><div class="source-links">${urls.map((url, index) => `<a href="${url}" target="_blank" rel="noopener noreferrer"><span>${index + 1}</span><span>${url.replace(/^https?:\/\//, '').split('/')[0]}</span><i class="fas fa-external-link-alt"></i></a>`).join('')}</div></div>`;
+}
+
+function renderFaqSection(error) {
+  if (!Array.isArray(error.faq) || !error.faq.length) return '';
+  return `<div class="detail-section faq-detail-section"><h3><i class="fas fa-question-circle"></i> أسئلة شائعة حول الكود</h3><div class="faq-list">${error.faq.map(item => `<details><summary>${item.q}</summary><p>${item.a}</p></details>`).join('')}</div></div>`;
+}
+
 function renderErrorDetail() {
   const errorId = getUrlParam('id');
   const device = getUrlParam('device');
@@ -1203,7 +1304,7 @@ function renderErrorDetail() {
   }
 
   // Update page title
-  document.title = `كود الخطأ ${error.errorCode || ''} - ${error.deviceTypeAr || ''} ${error.brandAr || ''}`;
+  document.title = `كود ${error.displayCode || error.errorCode || ''} - ${getDeviceLabel(error.deviceType)} ${error.brandAr || getBrandLabel(getBrandId(error))}`;
 
   // Update hero
   const heroCode = document.getElementById('error-hero-code');
@@ -1216,71 +1317,98 @@ function renderErrorDetail() {
   }
 
   if (heroTitle) heroTitle.textContent = error.titleAr || error.title || '';
+  const breadcrumbError = document.getElementById('breadcrumb-error');
+  if (breadcrumbError) breadcrumbError.textContent = error.displayCode || error.errorCode || 'تفاصيل الخطأ';
   if (heroSubtitle) {
     heroSubtitle.innerHTML = `
-    <span class="badge badge-primary">${getDeviceLabel(error.deviceType)}</span>
-    <span class="badge badge-secondary">${error.brandAr || getBrandLabel(getBrandId(error))}</span>
-    <span class="badge badge-secondary">${getFaultGroupLabel(error.faultGroup)}</span>
-    <span class="badge badge-secondary">${error.titleAr || error.title || ''}</span>
-    <span class="badge badge-secondary">${error.displayCode || error.errorCode || ''}</span>
-
-    ${getSeverityBadge(error.severity)}
-  `;
+      <span class="badge badge-primary"><i class="fas fa-microchip"></i> ${getDeviceLabel(error.deviceType)}</span>
+      <span class="badge badge-secondary"><i class="fas fa-tag"></i> ${error.brandAr || getBrandLabel(getBrandId(error))}</span>
+      <span class="badge badge-secondary"><i class="fas fa-layer-group"></i> ${getFaultGroupLabel(error.faultGroup)}</span>
+      ${error.confidence === 'high' ? '<span class="badge badge-success"><i class="fas fa-check-circle"></i> موثق</span>' : '<span class="badge badge-warning"><i class="fas fa-book"></i> راجع دليل الطراز</span>'}
+      ${getSeverityBadge(error.severity)}
+    `;
   }
 
   // Render details
   const content = document.getElementById('error-detail-content');
   if (content) {
+    const summary = getErrorSummary(error);
+    const modelNames = Array.isArray(error.models) && error.models.length ? error.models.join('، ') : 'غير محدد؛ راجع دليل الطراز';
     content.innerHTML = `
-      <!-- Cause -->
-      <div class="detail-section">
-        <h3><i class="fas fa-search"></i> سبب الخطأ</h3>
-  <p>${error.causes && error.causes.length ? error.causes.join('، ') : 'سبب غير محدد'}</p>
+      ${renderSafetyNotice(error)}
+
+      <div class="detail-summary-grid">
+        <div class="detail-summary-card detail-summary-primary">
+          <span class="summary-card-label"><i class="fas fa-bullseye"></i> الخلاصة</span>
+          <strong>${summary}</strong>
+          <span>الكود ${error.displayCode || error.errorCode || ''} في ${getDeviceLabel(error.deviceType)}</span>
         </div>
-      
-      <!-- Solution -->
-      <div class="detail-section">
-        <h3><i class="fas fa-wrench"></i> الحل المقترح</h3>
-        <ol class="steplist">
-${(error.repairSteps && Array.isArray(error.repairSteps) ? error.repairSteps : ['لا توجد خطوات حل مسجلة']).map(step => `<li>${step}</li>`).join('')}        </ol>
+        <div class="detail-summary-card">
+          <span class="summary-card-label"><i class="fas fa-clipboard-check"></i> حالة التحقق</span>
+          <strong>${getVerificationLabel(error.verificationStatus)}</strong>
+          <span>${error.confidence === 'high' ? 'المعلومة موثقة من مصدر الشركة' : 'تحقق من دليل رقم الطراز قبل الإصلاح'}</span>
+        </div>
+        <div class="detail-summary-card">
+          <span class="summary-card-label"><i class="fas fa-clock"></i> زمن الإصلاح</span>
+          <strong>${error.repairDuration || 'غير محدد'}</strong>
+          <span>${error.homeRepair === false ? 'يفضل تدخل فني' : 'قد يكون الفحص الأولي منزلياً'}</span>
+        </div>
       </div>
-      
-      <!-- Info Grid -->
+
       <div class="detail-section">
-        <h3><i class="fas fa-info-circle"></i> معلومات إضافية</h3>
+        <div class="section-heading-row"><h3><i class="fas fa-search"></i> لماذا ظهر هذا الكود؟</h3><span class="section-count">${(error.causes || []).length} أسباب محتملة</span></div>
+        <p class="detail-lead">${summary}</p>
+        ${renderList(error.causes, 'لم يُسجل سبب تفصيلي لهذا الكود.')}
+      </div>
+
+      <div class="detail-two-column">
+        <div class="detail-section">
+          <h3><i class="fas fa-eye"></i> الأعراض التي قد تلاحظها</h3>
+          ${renderList(error.symptoms)}
+        </div>
+        <div class="detail-section">
+          <h3><i class="fas fa-cogs"></i> الأجزاء المرتبطة</h3>
+          ${renderList(error.affectedParts)}
+        </div>
+      </div>
+
+      <div class="detail-section diagnosis-section">
+        <div class="section-heading-row"><h3><i class="fas fa-stethoscope"></i> خطوات التشخيص</h3><span class="section-count">افحص بالترتيب</span></div>
+        ${renderNumberedList(error.diagnosisSteps, 'لا توجد خطوات تشخيص منشورة؛ راجع دليل الطراز.')}
+      </div>
+
+      <div class="detail-section repair-section">
+        <div class="section-heading-row"><h3><i class="fas fa-wrench"></i> الحل والإصلاح المقترح</h3><span class="section-count">${error.needsTechnician ? 'يحتاج فني' : 'خطوات أولية'}</span></div>
+        ${renderNumberedList(error.repairSteps)}
+        ${Array.isArray(error.toolsRequired) && error.toolsRequired.length ? `<div class="tools-row"><strong><i class="fas fa-toolbox"></i> الأدوات المحتملة:</strong>${error.toolsRequired.map(tool => `<span class="tag">${tool}</span>`).join('')}</div>` : ''}
+      </div>
+
+      <div class="detail-section">
+        <h3><i class="fas fa-info-circle"></i> معلومات الجهاز والطراز</h3>
         <div class="info-grid">
-            <div class="info-item">
-              <div class="label">الجهاز</div>
-  <div class="value">${getDeviceLabel(error.deviceType)}</div>
-            </div>
-            <div class="info-item">
-              <div class="label">الماركة</div>
-  <div class="value">${error.brandAr || getBrandLabel(getBrandId(error))}</div>
-            </div>
-            <div class="info-item">
-              <div class="label">مجموعة العطل</div>
-  <div class="value">${getFaultGroupLabel(error.faultGroup)}</div>
-            </div>
-            <div class="info-item">
-              <div class="label">نطاق الطراز</div>
-  <div class="value">${App.data.taxonomy?.modelScopes?.[error.modelScope]?.nameAr || error.modelScope || 'غير محدد'}</div>
-            </div>
-            <div class="info-item">
-              <div class="label">الخطورة</div>
-  <div class="value">${error.severityAr || error.severity || ''}</div>
-          </div>
-              <div class="info-item">
-                <div class="label">الوسوم</div>
-                <div class="value">${(error.faultTags || []).map(tag => tag.replaceAll('-', ' ')).join('، ') || 'غير محدد'}</div>
-              </div>
-              <div class="info-item">
-                <div class="label">تاريخ الإضافة</div>
-                <div class="value">${formatDate(error.date)}</div>
-              </div>
+          <div class="info-item"><div class="label">الجهاز</div><div class="value">${getDeviceLabel(error.deviceType)}</div></div>
+          <div class="info-item"><div class="label">الماركة</div><div class="value">${error.brandAr || getBrandLabel(getBrandId(error))}</div></div>
+          <div class="info-item"><div class="label">مجموعة العطل</div><div class="value">${getFaultGroupLabel(error.faultGroup)}</div></div>
+          <div class="info-item"><div class="label">نطاق الطراز</div><div class="value">${getModelScopeLabel(error.modelScope)}</div></div>
+          <div class="info-item"><div class="label">الطرازات المذكورة</div><div class="value">${modelNames}</div></div>
+          <div class="info-item"><div class="label">آخر تحقق</div><div class="value">${error.lastVerified || 'غير محدد'}</div></div>
+        </div>
+        <div class="tag-list">${(error.faultTags || []).map(tag => `<span class="tag"><i class="fas fa-tag"></i> ${tag.replaceAll('-', ' ')}</span>`).join('')}</div>
+      </div>
+
+      <div class="detail-two-column">
+        <div class="detail-section">
+          <h3><i class="fas fa-ban"></i> أخطاء شائعة يجب تجنبها</h3>
+          ${renderList(error.commonMistakes)}
+        </div>
+        <div class="detail-section">
+          <h3><i class="fas fa-leaf"></i> نصائح الوقاية</h3>
+          ${renderList(error.preventionTips)}
         </div>
       </div>
-      
-      <!-- Related Errors -->
+
+      ${renderFaqSection(error)}
+      ${renderSourceSection(error)}
       ${renderRelatedErrors(error)}
     `;
   }
