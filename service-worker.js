@@ -1,4 +1,4 @@
-const CACHE_NAME = 'appliance-errors-v11';
+const CACHE_NAME = 'appliance-errors-v12';
 const STATIC_ASSETS = [
   './',
   './index.html',
@@ -19,6 +19,7 @@ const STATIC_ASSETS = [
   './data/errors.json',
   './data/taxonomy.json',
   './data/articles.json',
+  './data/i18n.json',
   './assets/css/style.css',
   './assets/js/main.js',
   './assets/js/adsData.js',
@@ -40,7 +41,27 @@ const STATIC_ASSETS = [
   './articles/ac-weak-airflow.html',
   './articles/dishwasher-white-residue.html',
   './articles/microwave-not-heating.html',
-  './articles/washing-machine-bad-smell.html'
+  './articles/washing-machine-bad-smell.html',
+  './assets/images/articles/refrigerator-not-cooling.jpg',
+  './assets/images/articles/dryer-not-drying.jpg',
+  './assets/images/articles/ac-weak-airflow.jpg',
+  './assets/images/articles/when-to-call-technician.jpg',
+  './assets/images/articles/dishwasher-white-residue.jpg',
+  './assets/images/articles/dishwasher-drying.jpg',
+  './assets/images/articles/ac-maintenance.jpg',
+  './assets/images/articles/choose-washing-machine.jpg',
+  './assets/images/articles/dishwasher-errors.jpg',
+  './assets/images/articles/dishwasher-filter.jpg',
+  './assets/images/articles/energy-saving.jpg',
+  './assets/images/articles/maintenance-tips.jpg',
+  './assets/images/articles/microwave-not-heating.jpg',
+  './assets/images/articles/washing-machine-bad-smell.jpg',
+  './assets/images/articles/washing-machine-care.jpg',
+  './assets/images/articles/washing-machine-drain.jpg',
+  './assets/images/articles/washing-machine-vibration.jpg',
+  './en/index.html', './en/errors.html', './en/troubleshooting.html', './en/brand.html', './en/brands.html',
+  './en/error.html', './en/articles.html', './en/article.html', './en/faq.html', './en/about.html', './en/contact.html',
+  './en/privacy.html', './en/disclaimer.html'
 ];
 
 self.addEventListener('install', event => {
@@ -67,7 +88,7 @@ self.addEventListener('fetch', event => {
   if (event.request.method !== 'GET' || !event.request.url.startsWith(self.location.origin)) return;
 
   const requestUrl = new URL(event.request.url);
-  const isDataRequest = /\/data\/(brands|errors|taxonomy|articles)\.json$/i.test(requestUrl.pathname);
+  const isDataRequest = /\/data\/(brands|errors|taxonomy|articles|i18n)\.json$/i.test(requestUrl.pathname);
   const isNavigation = event.request.mode === 'navigate' || event.request.destination === 'document';
   const isCodeOrStyle = event.request.destination === 'script' || event.request.destination === 'style' || /\/assets\/(js|css)\//i.test(requestUrl.pathname);
 

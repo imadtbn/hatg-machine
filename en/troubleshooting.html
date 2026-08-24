@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html data-language="en" data-theme="light" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Interactive fault diagnosis | Faults Guide</title>
+<meta content="An interactive diagnostic wizard helps you identify the fault and inspect the device step by step safely." name="description"/>
+
+<link href="../assets/images/icon.png" rel="icon" type="image/png"/>
+<link href="../manifest.webmanifest" rel="manifest"/>
+<meta content="#0066CC" name="theme-color"/>
+<link as="style" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'" rel="preload"/>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/></noscript>
+<link as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'" rel="preload"/>
+<noscript><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/></noscript>
+<link href="../assets/css/style.css" rel="stylesheet"/>
+<link href="https://imadtbn.github.io/hatg-machine/en/troubleshooting.html" rel="canonical"/><link href="https://imadtbn.github.io/hatg-machine/troubleshooting.html" hreflang="ar" rel="alternate"/><link href="https://imadtbn.github.io/hatg-machine/en/troubleshooting.html" hreflang="en" rel="alternate"/><link href="https://imadtbn.github.io/hatg-machine/troubleshooting.html" hreflang="x-default" rel="alternate"/></head>
+<body data-language="en" data-page="troubleshooting">
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="header">
+<div class="container header-inner">
+<a class="logo" href="index.html"><div class="logo-icon"><i class="fas fa-tools"></i></div><div class="logo-text"><span>Troubleshooting guide</span><span>Home appliances</span></div></a>
+<nav class="nav">
+<a class="nav-link" href="index.html">Home</a>
+<a class="nav-link" href="errors.html">Errors</a>
+<a class="nav-link active" href="troubleshooting.html">Interactive diagnosis</a>
+<a class="nav-link" href="brands.html">Brands</a>
+<a class="nav-link" href="articles.html">Articles</a>
+</nav>
+<div class="search-bar"><input aria-label="Search" class="search-input" placeholder="Search for an error code..." type="text"/><span class="search-icon"><i class="fas fa-search"></i></span><div class="search-results"></div></div>
+<div style="display:flex; gap:8px; align-items:center;"><button aria-label="Toggle mode" class="theme-toggle" onclick="toggleTheme()"><i class="fas fa-moon"></i></button><button aria-label="Menu" class="menu-toggle"><i class="fas fa-bars"></i></button></div>
+</div>
+</header>
+<main id="main-content">
+<section class="wizard-hero">
+<div class="container">
+<span class="wizard-hero-icon"><i class="fas fa-compass"></i></span>
+<span class="eyebrow wizard-eyebrow">Smart maintenance assistant</span>
+<h1>Diagnose the fault step by step</h1>
+<p>Answer short questions to reach the closest code and guide you to a safe, appropriate inspection for your device.</p>
+</div>
+</section>
+<section class="content-section wizard-section">
+<div class="container">
+<nav aria-label="مسار التنقل" class="breadcrumb"><a href="index.html">Home</a><span class="separator"><i class="fas fa-chevron-left"></i></span><span>Interactive diagnosis</span></nav>
+<div class="wizard-shell" id="wizard-app">
+<div aria-label="تقدم التشخيص" class="wizard-progress">
+<div class="wizard-progress-line"><span id="wizard-progress-bar"></span></div>
+<div class="wizard-progress-step active" data-progress-step="1"><span>1</span><small>Device</small></div>
+<div class="wizard-progress-step" data-progress-step="2"><span>2</span><small>Brand</small></div>
+<div class="wizard-progress-step" data-progress-step="3"><span>3</span><small>Model</small></div>
+<div class="wizard-progress-step" data-progress-step="4"><span>4</span><small>Check</small></div>
+</div>
+<div class="wizard-panel active" data-wizard-panel="1">
+<div class="wizard-panel-heading"><span class="wizard-step-label">Step 1 of 4</span><h2>What type of device?</h2><p>We'll use the device type to narrow codes and suitable steps.</p></div>
+<div class="wizard-choice-grid" id="wizard-device-grid"></div>
+<div class="wizard-actions"><button class="btn btn-primary" disabled="" id="wizard-device-next">Follow <i class="fas fa-arrow-left"></i></button></div>
+</div>
+<div class="wizard-panel" data-wizard-panel="2">
+<div class="wizard-panel-heading"><span class="wizard-step-label">Step 2 of 4</span><h2>What is the device brand?</h2><p>Choose the brand, or use the general option if you don't find it in the list.</p></div>
+<div class="wizard-field"><label for="wizard-brand">Brand</label><select id="wizard-brand"><option value="">All brands</option></select></div>
+<div class="wizard-brand-hint"><i class="fas fa-lightbulb"></i><span>You can usually find the brand name on the front or on the side sticker of the device.</span></div>
+<div class="wizard-actions"><button class="btn btn-outline" data-wizard-back="1"><i class="fas fa-arrow-right"></i> Back</button><button class="btn btn-primary" id="wizard-brand-next">Follow <i class="fas fa-arrow-left"></i></button></div>
+</div>
+<div class="wizard-panel" data-wizard-panel="3">
+<div class="wizard-panel-heading"><span class="wizard-step-label">Step 3 of 4</span><h2>What appears on the device?</h2><p>Enter the code if visible, or choose the model closest to what you observe.</p></div>
+<div class="wizard-field"><label for="wizard-code">Error code <span>(optional)</span></label><input autocomplete="off" id="wizard-code" inputmode="text" list="wizard-code-suggestions" placeholder="Example: E18 or OE" type="text"/><datalist id="wizard-code-suggestions"></datalist></div>
+<div class="wizard-divider"><span>Or choose the model</span></div>
+<div class="wizard-field"><label for="wizard-symptom">Model or fault group</label><select id="wizard-symptom"><option value="">Choose the closest model</option></select></div>
+<div class="wizard-choice-note"><i class="fas fa-circle-info"></i><span>You can leave the code empty if it's not shown on the screen. We'll suggest the closest inspection paths.</span></div>
+<div class="wizard-actions"><button class="btn btn-outline" data-wizard-back="2"><i class="fas fa-arrow-right"></i> Back</button><button class="btn btn-primary" id="wizard-diagnose"><i class="fas fa-stethoscope"></i> Start diagnosis</button></div>
+</div>
+<div class="wizard-panel" data-wizard-panel="4">
+<div id="wizard-result"></div>
+</div>
+</div>
+<div class="wizard-disclaimer"><i class="fas fa-shield-alt"></i><p>This wizard is a guide and does not replace the user manual or a qualified technician. Disconnect power and water before inspection, and do not open electrical panels or refrigeration circuits yourself.</p></div>
+</div>
+</section>
+</main>
+<footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-col"><h4><i class="fas fa-tools"></i> Home Appliances Faults Guide</h4><p>A platform that helps you understand fault codes and inspect home appliances more safely.</p></div><div class="footer-col"><h4>Quick links</h4><ul class="footer-links"><li><a href="index.html"><i class="fas fa-home"></i> Home</a></li><li><a href="errors.html"><i class="fas fa-bug"></i> Error list</a></li><li><a href="troubleshooting.html"><i class="fas fa-compass"></i> Interactive diagnosis</a></li><li><a href="brands.html"><i class="fas fa-industry"></i> Brands</a></li></ul></div><div class="footer-col"><h4>Info</h4><ul class="footer-links"><li><a href="about.html">About the site</a></li><li><a href="disclaimer.html">Disclaimer</a></li><li><a href="contact.html">Contact us</a></li></ul></div></div><div class="footer-bottom"><p>All rights reserved © 2026 Home Appliances Faults Guide | <a href="https://imadtbn.github.io/hatg-machine/">hatg-machine</a></p></div></div></footer>
+<button class="back-to-top"><i class="fas fa-arrow-up"></i></button>
+<script src="../assets/js/main.js"></script>
+<script src="../assets/js/adsData.js"></script>
+</body>
+</html>

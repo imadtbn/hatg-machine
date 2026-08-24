@@ -101,7 +101,65 @@
     ],
     "codeMatching": "exact",
     "modelScope": "series-specific",
-    "confidence": "high"
+    "confidence": "high",
+    "en": {
+      "title": "Error AE - Water Leak",
+      "category": "error-code",
+      "severity": "high",
+      "symptoms": [
+        "Washer stopped operating",
+        "AE code displayed",
+        "Water pooling around the washer"
+      ],
+      "causes": [
+        "Internal water leak",
+        "Damaged inlet hose or loose connection",
+        "Leak safety switch activated"
+      ],
+      "affectedParts": [
+        "Water inlet hose",
+        "Water connections",
+        "Leak safety switch"
+      ],
+      "diagnosisSteps": [
+        "Disconnect power and shut off the water tap",
+        "Inspect the inlet hose and connections for leaks",
+        "If the code persists, request inspection from an LG service center"
+      ],
+      "repairSteps": [
+        "Turn off the appliance and the water supply",
+        "Tighten the connection or replace the damaged hose",
+        "Have the leak safety switch inspected by a technician if the code continues"
+      ],
+      "commonMistakes": [
+        "Not checking all connection points",
+        "Using a non‑original hose"
+      ],
+      "preventionTips": [
+        "Inspect the water hose every 6 months",
+        "Avoid kinking the hose"
+      ],
+      "toolsRequired": [
+        "Screwdriver",
+        "Pliers"
+      ],
+      "repairDuration": "30 minutes",
+      "safetyNotes": [
+        "Disconnect the appliance from power and shut off the water supply before inspecting hoses or filters.",
+        "Do not open the control board or measure live voltages without a qualified technician.",
+        "Code meaning and repair procedures may vary by model number; consult the user manual."
+      ],
+      "faq": [
+        {
+          "q": "What should I do when AE appears?",
+          "a": "Stop the appliance, shut off the water, and check for leaks. If the code continues, call a service technician."
+        },
+        {
+          "q": "Can I ignore the code?",
+          "a": "No. The leak protection may be activated to prevent water damage."
+        }
+      ]
+    }
   },
   {
     "id": "LG-ie",
@@ -210,7 +268,69 @@
     ],
     "codeMatching": "exact",
     "modelScope": "series-specific",
-    "confidence": "high"
+    "confidence": "high",
+    "en": {
+      "title": "Error IE - Water Supply Problem",
+      "category": "error-code",
+      "severity": "medium",
+      "symptoms": [
+        "No water entering the washer",
+        "IE code displayed",
+        "Program stops"
+      ],
+      "causes": [
+        "Water supply cut off or tap closed",
+        "Inlet hose kinked, pinched, or frozen",
+        "Clogged inlet filter",
+        "Possible fault in the water inlet valve"
+      ],
+      "affectedParts": [
+        "Water tap",
+        "Inlet hose",
+        "Inlet filter",
+        "Water inlet valve"
+      ],
+      "diagnosisSteps": [
+        "Ensure the tap is open and there is adequate water pressure",
+        "Inspect and straighten the hose and clean the inlet filter after shutting off the water",
+        "Reconnect the hose and run a test cycle",
+        "Call a technician if the code persists"
+      ],
+      "repairSteps": [
+        "Fully open the water tap",
+        "Straighten or replace a damaged hose",
+        "Clean the inlet filter",
+        "Replace the valve by a technician if needed"
+      ],
+      "commonMistakes": [
+        "Not cleaning the filter regularly",
+        "Not checking water pressure"
+      ],
+      "preventionTips": [
+        "Clean the water valve filter every 3 months",
+        "Ensure sufficient water pressure"
+      ],
+      "toolsRequired": [
+        "Pliers",
+        "Screwdriver"
+      ],
+      "repairDuration": "20 minutes",
+      "safetyNotes": [
+        "Disconnect the appliance from power and shut off the water supply before inspecting hoses or filters.",
+        "Do not open the control board or measure live voltages without a qualified technician.",
+        "Code meaning and repair procedures may vary by model number; consult the user manual."
+      ],
+      "faq": [
+        {
+          "q": "Why isn't water entering the washer?",
+          "a": "The water valve filter may be clogged or the tap may be closed."
+        },
+        {
+          "q": "How do I clean the water valve filter?",
+          "a": "Shut off the water, disconnect the hose from the washer, and clean the filter with a soft brush."
+        }
+      ]
+    }
   },
   {
     "id": "LG-oe",
@@ -318,7 +438,68 @@
     ],
     "codeMatching": "exact",
     "modelScope": "series-specific",
-    "confidence": "high"
+    "confidence": "high",
+    "en": {
+      "title": "Error OE - Drainage Problem",
+      "category": "error-code",
+      "severity": "medium",
+      "symptoms": [
+        "Water not draining",
+        "OE code displayed",
+        "Washer stops during drain stage"
+      ],
+      "causes": [
+        "Drain hose kinked or blocked",
+        "Clogged pump filter",
+        "Excessive foam interfering with pumping",
+        "Possible pump failure"
+      ],
+      "affectedParts": [
+        "Drain hose",
+        "Pump filter",
+        "Drain pump"
+      ],
+      "diagnosisSteps": [
+        "Inspect and straighten the drain hose",
+        "Clean the pump filter after disconnecting power and draining water safely",
+        "Run a spin cycle and listen to the pump",
+        "Request service if the code returns after clearing the path"
+      ],
+      "repairSteps": [
+        "Remove blockages and straighten the hose",
+        "Clean the pump filter",
+        "Reduce detergent and run a tub clean cycle if there is excessive foam",
+        "Replace the pump by a technician if required"
+      ],
+      "commonMistakes": [
+        "Not cleaning the filter regularly",
+        "Not checking the drain hose height"
+      ],
+      "preventionTips": [
+        "Clean the pump filter every two months",
+        "Ensure pockets are empty of items"
+      ],
+      "toolsRequired": [
+        "Screwdriver",
+        "Water collection tray"
+      ],
+      "repairDuration": "30 minutes",
+      "safetyNotes": [
+        "Disconnect the appliance from power and shut off the water supply before inspecting hoses or filters.",
+        "Do not open the control board or measure live voltages without a qualified technician.",
+        "Code meaning and repair procedures may vary by model number; consult the user manual."
+      ],
+      "faq": [
+        {
+          "q": "Where is the pump filter located?",
+          "a": "At the front, bottom of the washer behind a small access panel."
+        },
+        {
+          "q": "How often should I clean the pump filter?",
+          "a": "It is recommended to clean it at least every two months."
+        }
+      ]
+    }
   },
   {
     "id": "LG-le",
@@ -425,7 +606,68 @@
     ],
     "codeMatching": "exact",
     "modelScope": "series-specific",
-    "confidence": "high"
+    "confidence": "high",
+    "en": {
+      "title": "Error LE - Motor Fault",
+      "category": "error-code",
+      "severity": "high",
+      "symptoms": [
+        "Drum not rotating",
+        "LE code displayed",
+        "Abnormal noises from the motor"
+      ],
+      "causes": [
+        "Overload or heavy blanket",
+        "Foreign object trapped in the tub or drum plate",
+        "Temporary motor strain",
+        "Motor fault if the code persists"
+      ],
+      "affectedParts": [
+        "Motor",
+        "Drum/tub",
+        "Motor connections"
+      ],
+      "diagnosisSteps": [
+        "Stop the appliance and reduce the load",
+        "Check for coins or foreign objects after disconnecting power",
+        "Restart the appliance after waiting five minutes",
+        "Call a technician if the code continues"
+      ],
+      "repairSteps": [
+        "Remove excess load",
+        "Remove foreign objects with appropriate tools without operating the machine",
+        "Have the motor and connections inspected by a technician if the fault continues"
+      ],
+      "commonMistakes": [
+        "Not checking wiring first",
+        "Replacing the motor without inspecting the control board"
+      ],
+      "preventionTips": [
+        "Do not overload the washer",
+        "Ensure laundry is evenly distributed"
+      ],
+      "toolsRequired": [
+        "Multimeter",
+        "Screwdriver",
+        "Wrench set"
+      ],
+      "repairDuration": "1-2 hours",
+      "safetyNotes": [
+        "Disconnect the appliance from power and shut off the water supply before inspecting hoses or filters.",
+        "Do not open the control board or measure live voltages without a qualified technician.",
+        "Code meaning and repair procedures may vary by model number; consult the user manual."
+      ],
+      "faq": [
+        {
+          "q": "Does LE always mean the motor is damaged?",
+          "a": "No. It can result from overload or a foreign object, but persistent codes require technical inspection."
+        },
+        {
+          "q": "How much will the repair cost?",
+          "a": "Costs vary by model, region, and required parts; request a quote from an authorized service center."
+        }
+      ]
+    }
   },
   {
     "id": "LG-fe",
@@ -530,7 +772,66 @@
     ],
     "codeMatching": "exact",
     "modelScope": "series-specific",
-    "confidence": "high"
+    "confidence": "high",
+    "en": {
+      "title": "Error FE - Overfilling / High Water Level",
+      "category": "error-code",
+      "severity": "high",
+      "symptoms": [
+        "Water overflow",
+        "FE code displayed",
+        "Water leaking from the door"
+      ],
+      "causes": [
+        "Stuck or faulty water inlet valve",
+        "Water level rising above normal limit",
+        "Fault in water level sensing or control system"
+      ],
+      "affectedParts": [
+        "Water inlet valve",
+        "Water level sensor",
+        "Control board"
+      ],
+      "diagnosisSteps": [
+        "Shut off the water valves immediately",
+        "Drain water using a drain or spin-only program if safe",
+        "Restart once after draining",
+        "Call a technician if the code returns or the tub fills while the machine is off"
+      ],
+      "repairSteps": [
+        "Close the water supply",
+        "Drain excess water",
+        "Have the valve, sensor, and control board inspected by a technician"
+      ],
+      "commonMistakes": [
+        "Not stopping the washer immediately",
+        "Not checking the sensor first"
+      ],
+      "preventionTips": [
+        "Inspect the water level sensor periodically",
+        "Do not leave the washer operating unattended"
+      ],
+      "toolsRequired": [
+        "Multimeter",
+        "Screwdriver"
+      ],
+      "repairDuration": "1 hour",
+      "safetyNotes": [
+        "Disconnect the appliance from power and shut off the water supply before inspecting hoses or filters.",
+        "Do not open the control board or measure live voltages without a qualified technician.",
+        "Code meaning and repair procedures may vary by model number; consult the user manual."
+      ],
+      "faq": [
+        {
+          "q": "What should I do when FE appears?",
+          "a": "Stop the washer immediately, shut off the water tap, and contact a technician."
+        },
+        {
+          "q": "Is this fault dangerous?",
+          "a": "Yes, it can cause flooding and property damage."
+        }
+      ]
+    }
   },
   {
     "id": "LG-ue",
@@ -635,7 +936,66 @@
     ],
     "codeMatching": "exact",
     "modelScope": "series-specific",
-    "confidence": "high"
+    "confidence": "high",
+    "en": {
+      "title": "Error UE - Unbalanced Drum",
+      "category": "error-code",
+      "severity": "low",
+      "symptoms": [
+        "Severe washer vibration",
+        "UE code displayed",
+        "Program stops during spin"
+      ],
+      "causes": [
+        "Laundry gathered on one side",
+        "Load too small or too large",
+        "Mixing heavy and light items",
+        "Washer not level"
+      ],
+      "affectedParts": [
+        "Laundry in the tub",
+        "Leveling feet",
+        "Suspension/shock absorbers if fault repeats"
+      ],
+      "diagnosisSteps": [
+        "Stop the cycle and redistribute the laundry",
+        "Ensure the load is appropriate and not a single large item",
+        "Check leveling feet with a spirit level",
+        "Call a technician if the code repeats with a balanced load"
+      ],
+      "repairSteps": [
+        "Redistribute the clothes",
+        "Select a cycle appropriate for blankets and large items",
+        "Adjust the leveling feet",
+        "Have suspension parts inspected by a technician if vibration continues"
+      ],
+      "commonMistakes": [
+        "Loading only heavy items",
+        "Failing to distribute laundry evenly"
+      ],
+      "preventionTips": [
+        "Distribute laundry evenly",
+        "Do not exceed maximum load",
+        "Mix different types of laundry"
+      ],
+      "toolsRequired": [],
+      "repairDuration": "5 minutes",
+      "safetyNotes": [
+        "Disconnect the appliance from power and shut off the water supply before inspecting hoses or filters.",
+        "Do not open the control board or measure live voltages without a qualified technician.",
+        "Code meaning and repair procedures may vary by model number; consult the user manual."
+      ],
+      "faq": [
+        {
+          "q": "Why does the washer vibrate heavily?",
+          "a": "Usually due to unevenly distributed laundry or an issue with the suspension."
+        },
+        {
+          "q": "How do I balance the laundry?",
+          "a": "Stop the washer, redistribute the laundry evenly, then restart the program."
+        }
+      ]
+    }
   },
   {
     "id": "LG-de",
@@ -741,7 +1101,67 @@
     ],
     "codeMatching": "exact",
     "modelScope": "series-specific",
-    "confidence": "high"
+    "confidence": "high",
+    "en": {
+      "title": "Error DE - Door Problem",
+      "category": "error-code",
+      "severity": "medium",
+      "symptoms": [
+        "Door will not lock",
+        "DE code displayed",
+        "Program will not start"
+      ],
+      "causes": [
+        "Door not fully closed",
+        "Clothes caught between the door and seal",
+        "Door misalignment",
+        "Damaged latch or lock"
+      ],
+      "affectedParts": [
+        "Door lock",
+        "Door latch",
+        "Door seal"
+      ],
+      "diagnosisSteps": [
+        "Check for items caught in the seal",
+        "Close the door without excessive force",
+        "Restart the appliance after disconnecting power for ten seconds",
+        "Call a technician if the code persists"
+      ],
+      "repairSteps": [
+        "Remove obstructions and clean the lock area",
+        "Close the door properly",
+        "Replace the lock or latch by a technician"
+      ],
+      "commonMistakes": [
+        "Forcing the door",
+        "Not cleaning regularly"
+      ],
+      "preventionTips": [
+        "Avoid forcing the door",
+        "Clean the door seal regularly"
+      ],
+      "toolsRequired": [
+        "Screwdriver",
+        "Multimeter"
+      ],
+      "repairDuration": "45 minutes",
+      "safetyNotes": [
+        "Disconnect the appliance from power and shut off the water supply before inspecting hoses or filters.",
+        "Do not open the control board or measure live voltages without a qualified technician.",
+        "Code meaning and repair procedures may vary by model number; consult the user manual."
+      ],
+      "faq": [
+        {
+          "q": "Why won't the door lock?",
+          "a": "The electronic door lock may be faulty or there may be an obstruction."
+        },
+        {
+          "q": "Can the door be opened manually?",
+          "a": "Yes — there is a manual pull cord behind the lower front access panel."
+        }
+      ]
+    }
   },
   {
     "id": "LG-te",
@@ -844,7 +1264,64 @@
     ],
     "codeMatching": "exact",
     "modelScope": "series-specific",
-    "confidence": "high"
+    "confidence": "high",
+    "en": {
+      "title": "Error TE - Temperature Sensor Fault",
+      "category": "error-code",
+      "severity": "medium",
+      "symptoms": [
+        "Water not heating",
+        "TE code displayed",
+        "Program does not complete"
+      ],
+      "causes": [
+        "Faulty thermistor or temperature sensor",
+        "Fault in the heating circuit",
+        "Wiring or connection issue"
+      ],
+      "affectedParts": [
+        "Temperature sensor/thermistor",
+        "Heating element",
+        "Wiring"
+      ],
+      "diagnosisSteps": [
+        "Disconnect the appliance and restart after ten seconds",
+        "Check for leaks or burning smell",
+        "Do not open the control board; request a technician if the code returns"
+      ],
+      "repairSteps": [
+        "Perform a single reset",
+        "Have the sensor, heating element, and connections tested by a technician",
+        "Replace the faulty part according to the model number"
+      ],
+      "commonMistakes": [
+        "Not checking the sensor first",
+        "Disconnecting wires without documenting their positions"
+      ],
+      "preventionTips": [
+        "Avoid running the washer at the highest temperature continuously"
+      ],
+      "toolsRequired": [
+        "Multimeter",
+        "Screwdriver"
+      ],
+      "repairDuration": "45 minutes",
+      "safetyNotes": [
+        "Disconnect the appliance from power and shut off the water supply before inspecting hoses or filters.",
+        "Do not open the control board or measure live voltages without a qualified technician.",
+        "Code meaning and repair procedures may vary by model number; consult the user manual."
+      ],
+      "faq": [
+        {
+          "q": "Why isn't the water heating?",
+          "a": "The temperature sensor or heating element may be faulty."
+        },
+        {
+          "q": "How do I test the temperature sensor?",
+          "a": "With a multimeter the resistance should be about 12–15 kΩ at 25°C."
+        }
+      ]
+    }
   },
   {
     "id": "LG-se",
@@ -948,7 +1425,65 @@
     ],
     "codeMatching": "exact",
     "modelScope": "series-specific",
-    "confidence": "high"
+    "confidence": "high",
+    "en": {
+      "title": "SE - Control board fault",
+      "category": "error-code",
+      "severity": "high",
+      "symptoms": [
+        "Buttons unresponsive",
+        "SE code displayed",
+        "Complete shutdown"
+      ],
+      "causes": [
+        "Fault in one of the sensors",
+        "Unstable connection between sensor and control board",
+        "Electronic fault requiring diagnostic"
+      ],
+      "affectedParts": [
+        "Sensors",
+        "Control board",
+        "Wiring harness"
+      ],
+      "diagnosisSteps": [
+        "Disconnect power and restart once",
+        "If the code returns, stop the appliance and do not disassemble the control board",
+        "Call a service technician to inspect sensors and connections"
+      ],
+      "repairSteps": [
+        "Reset the device",
+        "Inspect connections and sensors",
+        "Repair or replace the faulty part by a qualified technician"
+      ],
+      "commonMistakes": [
+        "Not checking cables first",
+        "Exposing the control board to moisture"
+      ],
+      "preventionTips": [
+        "Keep the area around the control board dry"
+      ],
+      "toolsRequired": [
+        "Multimeter",
+        "Screwdriver",
+        "USB programming cable"
+      ],
+      "repairDuration": "1-2 hours",
+      "safetyNotes": [
+        "Disconnect the appliance from power and shut off the water supply before inspecting hoses or filters.",
+        "Do not open the electronic control board or measure voltages without a qualified technician.",
+        "Code meaning and repair procedure may vary by model; consult the user manual."
+      ],
+      "faq": [
+        {
+          "q": "Why are the buttons unresponsive?",
+          "a": "There may be a fault in the control board or a connection problem."
+        },
+        {
+          "q": "Can the control board be repaired?",
+          "a": "Yes. It can be repaired or replaced by a qualified technician."
+        }
+      ]
+    }
   },
   {
     "id": "LG-pe",
@@ -1052,7 +1587,65 @@
     ],
     "codeMatching": "exact",
     "modelScope": "series-specific",
-    "confidence": "high"
+    "confidence": "high",
+    "en": {
+      "title": "PE - Pressure sensor fault",
+      "category": "error-code",
+      "severity": "medium",
+      "symptoms": [
+        "Unable to detect water level",
+        "PE code displayed",
+        "Wash cycle does not complete"
+      ],
+      "causes": [
+        "Faulty water level (pressure) sensor",
+        "Blocked or damaged pressure hose",
+        "Problem in the connections or control board"
+      ],
+      "affectedParts": [
+        "Water level sensor",
+        "Pressure (air) hose",
+        "Control board"
+      ],
+      "diagnosisSteps": [
+        "Disconnect power for ten seconds and restart",
+        "Check for visible kinks in the pressure hose without opening the panel",
+        "Call a technician if the code continues"
+      ],
+      "repairSteps": [
+        "Reset the device",
+        "Have a technician inspect the pressure hose, sensor and connections",
+        "Replace the sensor or faulty part according to the model"
+      ],
+      "commonMistakes": [
+        "Not checking the hose first",
+        "Failing to secure connections properly"
+      ],
+      "preventionTips": [
+        "Inspect the pressure hose periodically",
+        "Ensure the pressure hose is not kinked"
+      ],
+      "toolsRequired": [
+        "Multimeter",
+        "Screwdriver"
+      ],
+      "repairDuration": "45 minutes",
+      "safetyNotes": [
+        "Disconnect the appliance from power and shut off the water supply before inspecting hoses or filters.",
+        "Do not open the electronic control board or measure voltages without a qualified technician.",
+        "Code meaning and repair procedure may vary by model; consult the user manual."
+      ],
+      "faq": [
+        {
+          "q": "What does the pressure sensor do?",
+          "a": "It measures the water level inside the tub and sends the signal to the control board."
+        },
+        {
+          "q": "How do I check the pressure hose?",
+          "a": "Remove it and blow into it to confirm there is no blockage."
+        }
+      ]
+    }
   },
   {
     "id": "LG-e1",
@@ -1155,7 +1748,63 @@
     ],
     "codeMatching": "any",
     "modelScope": "series-specific",
-    "confidence": "high"
+    "confidence": "high",
+    "en": {
+      "title": "AE/E1 - Leakage or overfill",
+      "category": "error-code",
+      "severity": "high",
+      "symptoms": [
+        "Water leaking from the dishwasher",
+        "E1 code displayed",
+        "Program stopped"
+      ],
+      "causes": [
+        "Internal leak that activated the safety float",
+        "Door gasket dirty or damaged",
+        "Excessive foam due to incorrect detergent or overdose",
+        "Appliance not level or door misaligned"
+      ],
+      "affectedParts": [
+        "Door gasket",
+        "Water and drain hoses",
+        "Safety float (anti-flood device)",
+        "Filter / spray arms"
+      ],
+      "diagnosisSteps": [
+        "Shut off the water supply and trip the breaker if there is an active leak",
+        "Inspect the door gasket and remove grease and food buildup",
+        "Check spray arms and filters and use dishwasher detergent only",
+        "Call a technician if water remains in the base or the code returns"
+      ],
+      "repairSteps": [
+        "Remove buildup and clean the gasket and filter",
+        "Correct appliance leveling if needed",
+        "Repair the leak or replace the gasket by a qualified technician"
+      ],
+      "commonMistakes": [
+        "Not checking all potential leak points"
+      ],
+      "preventionTips": [
+        "Inspect water hoses every 6 months",
+        "Clean the door seal regularly"
+      ],
+      "toolsRequired": [
+        "Screwdriver",
+        "Pliers"
+      ],
+      "repairDuration": "30 minutes",
+      "safetyNotes": [
+        "Disconnect the appliance from power and shut off the water supply before inspection.",
+        "Do not use regular dishwashing liquid in a dishwasher.",
+        "Code meaning and procedures may vary by model; consult the user manual before any repair."
+      ],
+      "faq": [
+        {
+          "q": "Does this code apply to all LG models?",
+          "a": "Codes and details may vary by model; consult the user manual or LG support page for your model."
+        }
+      ]
+    }
   },
   {
     "id": "LG-e2",
@@ -1257,7 +1906,62 @@
     ],
     "codeMatching": "exact",
     "modelScope": "series-specific",
-    "confidence": "high"
+    "confidence": "high",
+    "en": {
+      "title": "OE - Outlet / Drain error",
+      "category": "error-code",
+      "severity": "medium",
+      "symptoms": [
+        "Water not draining",
+        "E2 code displayed",
+        "Water remaining in the base"
+      ],
+      "causes": [
+        "Drain filter clogged with food debris",
+        "Drain hose kinked or clogged",
+        "Blocked drain connection or air gap",
+        "Possible failure of the drain pump"
+      ],
+      "affectedParts": [
+        "Drain filter",
+        "Drain hose",
+        "Drain pump",
+        "Drain connection / air gap"
+      ],
+      "diagnosisSteps": [
+        "Stop the appliance and disconnect power",
+        "Clean the filter after the tub has cooled",
+        "Inspect and straighten the drain hose and check the drain connection",
+        "Call a technician if the code returns after clearing the drain path"
+      ],
+      "repairSteps": [
+        "Clean the filter and spray arms",
+        "Straighten the hose and remove any blockage",
+        "Have a technician inspect the pump if necessary"
+      ],
+      "commonMistakes": [
+        "Not cleaning the filter regularly"
+      ],
+      "preventionTips": [
+        "Clean the drain filter weekly",
+        "Remove food scraps before loading the dishwasher"
+      ],
+      "toolsRequired": [
+        "Screwdriver"
+      ],
+      "repairDuration": "20 minutes",
+      "safetyNotes": [
+        "Disconnect the appliance from power and shut off the water supply before inspection.",
+        "Do not use regular dishwashing liquid in a dishwasher.",
+        "Code meaning and procedures may vary by model; consult the user manual before any repair."
+      ],
+      "faq": [
+        {
+          "q": "Does this code apply to all LG models?",
+          "a": "Codes and details may vary by model; consult the user manual or LG support page for your model."
+        }
+      ]
+    }
   },
   {
     "id": "LG-e3",
@@ -1355,7 +2059,60 @@
     ],
     "codeMatching": "any",
     "modelScope": "series-specific",
-    "confidence": "high"
+    "confidence": "high",
+    "en": {
+      "title": "tE / HE - Temperature sensor or heater error",
+      "category": "error-code",
+      "severity": "high",
+      "symptoms": [
+        "Water not heating",
+        "E3 code displayed",
+        "Dishes not clean"
+      ],
+      "causes": [
+        "Faulty temperature sensor",
+        "Failure of the heating element",
+        "Problem in the wiring or control board"
+      ],
+      "affectedParts": [
+        "Temperature sensor",
+        "Heating element",
+        "Wiring",
+        "Control board"
+      ],
+      "diagnosisSteps": [
+        "Empty the appliance and repeat the test according to the model manual",
+        "Trip the breaker if the code returns",
+        "Call a technician to inspect the sensor and heating element"
+      ],
+      "repairSteps": [
+        "Run an empty test cycle",
+        "Have a technician inspect and replace the sensor or heating element as needed"
+      ],
+      "commonMistakes": [
+        "Not checking the temperature sensor first"
+      ],
+      "preventionTips": [
+        "Use appropriate dishwasher detergent",
+        "Avoid opening the door during heating"
+      ],
+      "toolsRequired": [
+        "Multimeter",
+        "Screwdriver"
+      ],
+      "repairDuration": "1 hour",
+      "safetyNotes": [
+        "Disconnect the appliance from power and shut off the water supply before inspection.",
+        "Do not use regular dishwashing liquid in a dishwasher.",
+        "Code meaning and procedures may vary by model; consult the user manual before any repair."
+      ],
+      "faq": [
+        {
+          "q": "Does this code apply to all LG models?",
+          "a": "Codes and details may vary by model; consult the user manual or LG support page for your model."
+        }
+      ]
+    }
   },
   {
     "id": "LG-e4",
@@ -1455,7 +2212,60 @@
     ],
     "codeMatching": "exact",
     "modelScope": "series-specific",
-    "confidence": "high"
+    "confidence": "high",
+    "en": {
+      "title": "IE - Water inlet error",
+      "category": "error-code",
+      "severity": "medium",
+      "symptoms": [
+        "No water entering the appliance",
+        "E4 code displayed",
+        "Program stopped"
+      ],
+      "causes": [
+        "Water supply interrupted or inlet valve closed",
+        "Inlet hose kinked or pinched",
+        "Inlet valve filter clogged",
+        "Low water pressure"
+      ],
+      "affectedParts": [
+        "Inlet valve",
+        "Water inlet hose",
+        "Inlet valve filter"
+      ],
+      "diagnosisSteps": [
+        "Verify water supply is available and the supply valve is open",
+        "Inspect and straighten the inlet hose and clean the inlet filter",
+        "Call a technician if the code persists after water flow is restored"
+      ],
+      "repairSteps": [
+        "Open the water supply valve",
+        "Straighten or replace a damaged inlet hose",
+        "Clean the inlet filter",
+        "Have a technician inspect the inlet valve if needed"
+      ],
+      "commonMistakes": [
+        "Not checking the household tap first"
+      ],
+      "preventionTips": [
+        "Clean the inlet valve filter every 3 months"
+      ],
+      "toolsRequired": [
+        "Pliers"
+      ],
+      "repairDuration": "15 minutes",
+      "safetyNotes": [
+        "Disconnect the appliance from power and shut off the water supply before inspection.",
+        "Do not use regular dishwashing liquid in a dishwasher.",
+        "Code meaning and procedures may vary by model; consult the user manual before any repair."
+      ],
+      "faq": [
+        {
+          "q": "Does this code apply to all LG models?",
+          "a": "Codes and details may vary by model; consult the user manual or LG support page for your model."
+        }
+      ]
+    }
   },
   {
     "id": "LG-e5",
@@ -1551,7 +2361,59 @@
     ],
     "codeMatching": "exact",
     "modelScope": "series-specific",
-    "confidence": "high"
+    "confidence": "high",
+    "en": {
+      "title": "PE - Water level sensor error",
+      "category": "error-code",
+      "severity": "medium",
+      "symptoms": [
+        "Abnormal behavior",
+        "E5 code displayed",
+        "Program errors"
+      ],
+      "causes": [
+        "Faulty water level sensor",
+        "Problem in the sensor hose or level sensing circuit",
+        "Fault in the connections or control board"
+      ],
+      "affectedParts": [
+        "Water level sensor",
+        "Sensor hose",
+        "Wiring",
+        "Control board"
+      ],
+      "diagnosisSteps": [
+        "Restart the appliance once",
+        "If the code returns, stop the appliance and do not open the control panel",
+        "Call a technician to inspect the sensor and measurement circuit"
+      ],
+      "repairSteps": [
+        "Reset the device",
+        "Have a technician inspect and replace the sensor or connections as required"
+      ],
+      "commonMistakes": [
+        "Not checking all sensors"
+      ],
+      "preventionTips": [
+        "Keep the electronic control board area dry"
+      ],
+      "toolsRequired": [
+        "Multimeter",
+        "Screwdriver"
+      ],
+      "repairDuration": "1 hour",
+      "safetyNotes": [
+        "Disconnect the appliance from power and shut off the water supply before inspection.",
+        "Do not use regular dishwashing liquid in a dishwasher.",
+        "Code meaning and procedures may vary by model; consult the user manual before any repair."
+      ],
+      "faq": [
+        {
+          "q": "Does this code apply to all LG models?",
+          "a": "Codes and details may vary by model; consult the user manual or LG support page for your model."
+        }
+      ]
+    }
   },
   {
     "id": "samsung-ue",
@@ -1652,7 +2514,61 @@
     ],
     "codeMatching": "any",
     "modelScope": "series-specific",
-    "confidence": "high"
+    "confidence": "high",
+    "en": {
+      "title": "UE - Unbalanced load / tub",
+      "category": "error-code",
+      "severity": "low",
+      "symptoms": [
+        "Severe vibration",
+        "Stopped during spin stage",
+        "Vibrating noises"
+      ],
+      "causes": [
+        "Uneven distribution of laundry",
+        "Very small or very large load, or single heavy items",
+        "Washer not level"
+      ],
+      "affectedParts": [
+        "Laundry inside the tub",
+        "Leveling feet",
+        "Suspension system (if the fault repeats)"
+      ],
+      "diagnosisSteps": [
+        "Rearrange the laundry inside the tub",
+        "Close the door and restart the cycle",
+        "Check appliance level if the code repeats"
+      ],
+      "repairSteps": [
+        "Redistribute the load evenly",
+        "Reduce or increase the load to an appropriate level",
+        "Adjust the leveling feet and call a technician if the code persists"
+      ],
+      "commonMistakes": [
+        "Loading only heavy items"
+      ],
+      "preventionTips": [
+        "Distribute laundry evenly",
+        "Mix different types of items in a load"
+      ],
+      "toolsRequired": [],
+      "repairDuration": "5 minutes",
+      "safetyNotes": [
+        "Disconnect the appliance from power and shut off the water supply before checking hoses or filters.",
+        "Do not open the electronic control board or measure voltages without a qualified technician.",
+        "Code meaning and repair procedures may vary by model; consult the user manual."
+      ],
+      "faq": [
+        {
+          "q": "Why is the washer vibrating?",
+          "a": "Usually due to uneven distribution of the laundry load."
+        },
+        {
+          "q": "How can I prevent vibration?",
+          "a": "Distribute the laundry evenly and do not exceed the maximum load."
+        }
+      ]
+    }
   },
   {
     "id": "samsung-4e",
@@ -1760,7 +2676,67 @@
     ],
     "codeMatching": "any",
     "modelScope": "series-specific",
-    "confidence": "high"
+    "confidence": "high",
+    "en": {
+      "title": "Error 4E - Water Supply Issue",
+      "category": "error-code",
+      "severity": "medium",
+      "symptoms": [
+        "No water entering",
+        "4E code displayed",
+        "Program stops"
+      ],
+      "causes": [
+        "Tap closed or insufficient water pressure",
+        "Inlet hose kinked or connected to wrong inlet",
+        "Clogged inlet filter",
+        "Drain hose inserted too deep or installed incorrectly"
+      ],
+      "affectedParts": [
+        "Water valves",
+        "Inlet hoses",
+        "Inlet filter",
+        "Drain hose"
+      ],
+      "diagnosisSteps": [
+        "Open the water taps and verify hot and cold are connected correctly",
+        "Inspect hoses and inlet filters",
+        "Ensure drain hose is installed according to the manual",
+        "Disconnect power for one minute then run a test cycle"
+      ],
+      "repairSteps": [
+        "Open the water valves",
+        "Straighten hoses and clean filters",
+        "Correct drain hose installation",
+        "Contact a technician if the code persists"
+      ],
+      "commonMistakes": [
+        "Not checking the water tap first"
+      ],
+      "preventionTips": [
+        "Clean the valve filter every 3 months"
+      ],
+      "toolsRequired": [
+        "Pliers",
+        "Screwdriver"
+      ],
+      "repairDuration": "20 minutes",
+      "safetyNotes": [
+        "Disconnect power and shut off the water supply before inspecting hoses or filters.",
+        "Do not open the electronic panel or measure voltage without a qualified technician.",
+        "The code meaning and repair procedure may vary by model; consult the user manual."
+      ],
+      "faq": [
+        {
+          "q": "What does code 4E mean?",
+          "a": "It indicates a problem with the washer's water supply."
+        },
+        {
+          "q": "How do I fix it?",
+          "a": "Check that the water tap is open, then clean the valve filter."
+        }
+      ]
+    }
   },
   {
     "id": "samsung-5e",
@@ -1867,7 +2843,65 @@
     ],
     "codeMatching": "any",
     "modelScope": "series-specific",
-    "confidence": "high"
+    "confidence": "high",
+    "en": {
+      "title": "Error 5E - Drain Problem",
+      "category": "error-code",
+      "severity": "medium",
+      "symptoms": [
+        "Water not draining",
+        "5E code displayed",
+        "Residual water remains"
+      ],
+      "causes": [
+        "Clogged filter or drain hose",
+        "Faulty drain pump",
+        "Drain hose kinked or installed incorrectly"
+      ],
+      "affectedParts": [
+        "Drain filter",
+        "Drain hose",
+        "Drain pump"
+      ],
+      "diagnosisSteps": [
+        "Disconnect power and safely drain remaining water",
+        "Clean the filter and inspect the hose",
+        "Test a drain cycle",
+        "Request service if the code persists"
+      ],
+      "repairSteps": [
+        "Clean the filter",
+        "Remove kinks or blockages",
+        "Replace the pump through a technician if needed"
+      ],
+      "commonMistakes": [
+        "Not cleaning the filter regularly"
+      ],
+      "preventionTips": [
+        "Clean the drain filter at least weekly",
+        "Remove pocket debris from clothes"
+      ],
+      "toolsRequired": [
+        "Screwdriver",
+        "Drain pan"
+      ],
+      "repairDuration": "25 minutes",
+      "safetyNotes": [
+        "Disconnect power and shut off the water supply before inspecting hoses or filters.",
+        "Do not open the electronic panel or measure voltage without a qualified technician.",
+        "The code meaning and repair procedure may vary by model; consult the user manual."
+      ],
+      "faq": [
+        {
+          "q": "Where is the drain filter located?",
+          "a": "At the bottom of the washer behind a small access panel."
+        },
+        {
+          "q": "How often should I clean the filter?",
+          "a": "At least weekly."
+        }
+      ]
+    }
   },
   {
     "id": "samsung-de",
@@ -1975,7 +3009,65 @@
     ],
     "codeMatching": "any",
     "modelScope": "series-specific",
-    "confidence": "high"
+    "confidence": "high",
+    "en": {
+      "title": "Error DE - Door Problem",
+      "category": "error-code",
+      "severity": "medium",
+      "symptoms": [
+        "Door not locking",
+        "DE code displayed",
+        "Program won't start"
+      ],
+      "causes": [
+        "Door not fully closed or an item stuck in the door",
+        "Damaged door latch or lock",
+        "The meaning of dC may vary by model"
+      ],
+      "affectedParts": [
+        "Door latch",
+        "Door lock",
+        "Door seal"
+      ],
+      "diagnosisSteps": [
+        "Check the latch and ensure no clothing is jammed",
+        "Close the door firmly without forcing it",
+        "Refer to the model manual if dC appears",
+        "Request service if the code persists"
+      ],
+      "repairSteps": [
+        "Remove obstructions and clean the lock",
+        "Reseat the door",
+        "Replace the lock through a technician"
+      ],
+      "commonMistakes": [
+        "Forcing the door closed"
+      ],
+      "preventionTips": [
+        "Clean the door seal regularly",
+        "Avoid using excessive force on the door"
+      ],
+      "toolsRequired": [
+        "Screwdriver",
+        "Multimeter"
+      ],
+      "repairDuration": "45 minutes",
+      "safetyNotes": [
+        "Disconnect power and shut off the water supply before inspecting hoses or filters.",
+        "Do not open the electronic panel or measure voltage without a qualified technician.",
+        "The code meaning and repair procedure may vary by model; consult the user manual."
+      ],
+      "faq": [
+        {
+          "q": "Why won't the door lock?",
+          "a": "The door lock may be damaged or an obstruction may be present."
+        },
+        {
+          "q": "Can I open the door?",
+          "a": "Yes, there is a manual release pull cord at the bottom."
+        }
+      ]
+    }
   },
   {
     "id": "samsung-le",
@@ -2080,7 +3172,64 @@
     ],
     "codeMatching": "any",
     "modelScope": "series-specific",
-    "confidence": "high"
+    "confidence": "high",
+    "en": {
+      "title": "Error LE - Water Leak",
+      "category": "error-code",
+      "severity": "high",
+      "symptoms": [
+        "Water leak",
+        "LE code displayed",
+        "Washer stopped"
+      ],
+      "causes": [
+        "Minor leak or moisture detected where it shouldn't be",
+        "Kinked or leaking inlet or drain hose",
+        "Excessive foam or a faulty water level sensor"
+      ],
+      "affectedParts": [
+        "Water hoses",
+        "Drain filter/pump",
+        "Water level sensor"
+      ],
+      "diagnosisSteps": [
+        "Inspect the appliance and hoses for leaks",
+        "Check for excessive foam and use HE detergent if required",
+        "Stop the machine and contact a technician if the code persists"
+      ],
+      "repairSteps": [
+        "Shut off water and power if a leak is present",
+        "Correct hose positioning and clean filters",
+        "Have a technician repair leaks or the sensor"
+      ],
+      "commonMistakes": [
+        "Not stopping the washer immediately"
+      ],
+      "preventionTips": [
+        "Inspect water hoses every 6 months"
+      ],
+      "toolsRequired": [
+        "Screwdriver",
+        "Pliers",
+        "Multimeter"
+      ],
+      "repairDuration": "1-2 hours",
+      "safetyNotes": [
+        "Disconnect power and shut off the water supply before inspecting hoses or filters.",
+        "Do not open the electronic panel or measure voltage without a qualified technician.",
+        "The code meaning and repair procedure may vary by model; consult the user manual."
+      ],
+      "faq": [
+        {
+          "q": "What should I do when there is a leak?",
+          "a": "Stop the washer immediately and turn off the water supply."
+        },
+        {
+          "q": "Is a leak dangerous?",
+          "a": "Yes, it can cause damage to the home."
+        }
+      ]
+    }
   },
   {
     "id": "samsung-te",
@@ -2179,7 +3328,60 @@
     ],
     "codeMatching": "any",
     "modelScope": "series-specific",
-    "confidence": "high"
+    "confidence": "high",
+    "en": {
+      "title": "Error TE - Temperature Sensor Fault",
+      "category": "error-code",
+      "severity": "medium",
+      "symptoms": [
+        "Water not heating",
+        "TE code displayed",
+        "Temperature-related errors"
+      ],
+      "causes": [
+        "Faulty temperature sensor",
+        "Issues with connections or control board"
+      ],
+      "affectedParts": [
+        "Temperature sensor",
+        "Wiring",
+        "Control board"
+      ],
+      "diagnosisSteps": [
+        "Power-cycle the appliance by disconnecting it and restarting",
+        "If the code returns, stop the machine and request service"
+      ],
+      "repairSteps": [
+        "Reset the machine",
+        "Have a technician inspect and replace the sensor or connections as needed"
+      ],
+      "commonMistakes": [
+        "Not checking the sensor first"
+      ],
+      "preventionTips": [
+        "Avoid using the highest temperature setting continuously"
+      ],
+      "toolsRequired": [
+        "Multimeter",
+        "Screwdriver"
+      ],
+      "repairDuration": "45 minutes",
+      "safetyNotes": [
+        "Disconnect power and shut off the water supply before inspecting hoses or filters.",
+        "Do not open the electronic panel or measure voltage without a qualified technician.",
+        "The code meaning and repair procedure may vary by model; consult the user manual."
+      ],
+      "faq": [
+        {
+          "q": "Why won't the water heat?",
+          "a": "The temperature sensor or heating element may be faulty."
+        },
+        {
+          "q": "How do I test the temperature sensor?",
+          "a": "With a multimeter: resistance should be between 12–15 kΩ at 25°C."
+        }
+      ]
+    }
   },
   {
     "id": "samsung-ae",
@@ -2281,7 +3483,62 @@
     ],
     "codeMatching": "any",
     "modelScope": "series-specific",
-    "confidence": "high"
+    "confidence": "high",
+    "en": {
+      "title": "Error AE - Motor Fault",
+      "category": "error-code",
+      "severity": "high",
+      "symptoms": [
+        "Drum not turning",
+        "AE code displayed",
+        "Unusual noises"
+      ],
+      "causes": [
+        "Loss of communication between control boards",
+        "Loose or unstable connector/cable",
+        "Faulty electronic board"
+      ],
+      "affectedParts": [
+        "Control boards",
+        "Communication cables"
+      ],
+      "diagnosisSteps": [
+        "Stop the machine and disconnect power",
+        "Restart once",
+        "Request a technician if the code returns"
+      ],
+      "repairSteps": [
+        "Reset the machine",
+        "Have a technician inspect cables and boards"
+      ],
+      "commonMistakes": [
+        "Not checking wiring first"
+      ],
+      "preventionTips": [
+        "Do not exceed the maximum load"
+      ],
+      "toolsRequired": [
+        "Multimeter",
+        "Screwdriver",
+        "Socket set"
+      ],
+      "repairDuration": "1-2 hours",
+      "safetyNotes": [
+        "Disconnect power and shut off the water supply before inspecting hoses or filters.",
+        "Do not open the electronic panel or measure voltage without a qualified technician.",
+        "The code meaning and repair procedure may vary by model; consult the user manual."
+      ],
+      "faq": [
+        {
+          "q": "Can I repair the motor myself?",
+          "a": "It is recommended to contact a qualified technician."
+        },
+        {
+          "q": "How much does motor repair cost?",
+          "a": "Cost varies by model, region, and parts; request a quote from an authorized service center."
+        }
+      ]
+    }
   },
   {
     "id": "samsung-he",
@@ -2385,7 +3642,64 @@
     ],
     "codeMatching": "any",
     "modelScope": "series-specific",
-    "confidence": "high"
+    "confidence": "high",
+    "en": {
+      "title": "Error HE - Heating Problem",
+      "category": "error-code",
+      "severity": "high",
+      "symptoms": [
+        "Water not heating",
+        "HE code displayed",
+        "Poor cleaning"
+      ],
+      "causes": [
+        "Faulty heating element",
+        "Temperature sensor fault",
+        "Wiring or control board issue"
+      ],
+      "affectedParts": [
+        "Heating element",
+        "Temperature sensor",
+        "Wiring",
+        "Control board"
+      ],
+      "diagnosisSteps": [
+        "Power-cycle the appliance once",
+        "Do not open the panel or measure voltage without a technician",
+        "Request service if the code persists"
+      ],
+      "repairSteps": [
+        "Reset the machine",
+        "Have a technician inspect the heater, sensor, and connections",
+        "Replace parts according to model requirements"
+      ],
+      "commonMistakes": [
+        "Not checking the sensor first"
+      ],
+      "preventionTips": [
+        "Use detergent suitable for the washer"
+      ],
+      "toolsRequired": [
+        "Multimeter",
+        "Screwdriver"
+      ],
+      "repairDuration": "1 hour",
+      "safetyNotes": [
+        "Disconnect power and shut off the water supply before inspecting hoses or filters.",
+        "Do not open the electronic panel or measure voltage without a qualified technician.",
+        "The code meaning and repair procedure may vary by model; consult the user manual."
+      ],
+      "faq": [
+        {
+          "q": "Why won't the water heat?",
+          "a": "The heating element or temperature sensor may be faulty."
+        },
+        {
+          "q": "Can I wash without heating?",
+          "a": "Yes, but cleaning performance may be reduced."
+        }
+      ]
+    }
   },
   {
     "id": "samsung-bfe",
@@ -2492,7 +3806,67 @@
     ],
     "codeMatching": "any",
     "modelScope": "series-specific",
-    "confidence": "high"
+    "confidence": "high",
+    "en": {
+      "title": "Error BFE - Water Leak",
+      "category": "error-code",
+      "severity": "high",
+      "symptoms": [
+        "Water leak",
+        "BFE code displayed",
+        "Program stopped"
+      ],
+      "causes": [
+        "Leak from inlet or drain hose",
+        "Leak from pump, tub, or dispenser",
+        "Dishwasher not level",
+        "Clogged filter or foam from inappropriate detergent"
+      ],
+      "affectedParts": [
+        "Water hoses",
+        "Pump",
+        "Tub",
+        "Dispenser",
+        "Appliance filter"
+      ],
+      "diagnosisSteps": [
+        "Turn off the water supply and disconnect the circuit breaker if a leak is present",
+        "Inspect hoses, filter, and appliance level",
+        "Do not restart if moisture remains or the code returns",
+        "Contact Samsung service center"
+      ],
+      "repairSteps": [
+        "Shut off water and power",
+        "Clean the filter and correct leveling if safe to do so",
+        "Have a technician repair the leak"
+      ],
+      "commonMistakes": [
+        "Failing to check all potential leak points"
+      ],
+      "preventionTips": [
+        "Inspect water hoses every 6 months"
+      ],
+      "toolsRequired": [
+        "Screwdriver",
+        "Pliers"
+      ],
+      "repairDuration": "30 minutes",
+      "safetyNotes": [
+        "Disconnect power and shut off the water supply before inspecting hoses or filters.",
+        "Do not open the electronic panel or measure voltage without a qualified technician.",
+        "The code meaning and repair procedure may vary by model; consult the user manual."
+      ],
+      "faq": [
+        {
+          "q": "Where do leaks usually occur?",
+          "a": "At the water hose connections or the door seal."
+        },
+        {
+          "q": "Can I repair it myself?",
+          "a": "Yes, you can replace a water hose yourself."
+        }
+      ]
+    }
   },
   {
     "id": "samsung-4e-dish",
@@ -2597,7 +3971,64 @@
     ],
     "codeMatching": "any",
     "modelScope": "series-specific",
-    "confidence": "high"
+    "confidence": "high",
+    "en": {
+      "title": "Error 4E - Water Supply Problem",
+      "category": "error-code",
+      "severity": "medium",
+      "symptoms": [
+        "No water entering",
+        "4E code displayed",
+        "Program stops"
+      ],
+      "causes": [
+        "Water valve closed or supply stopped",
+        "Inlet hose or valve frozen or clogged",
+        "Inlet valve filter dirty",
+        "Faulty inlet valve or control board"
+      ],
+      "affectedParts": [
+        "Inlet valve",
+        "Inlet filter",
+        "Water hose"
+      ],
+      "diagnosisSteps": [
+        "Open the water valve and check the supply",
+        "Inspect the hose and filter for blockages",
+        "Restart after correcting the cause",
+        "Call a technician if the code persists"
+      ],
+      "repairSteps": [
+        "Open the water valve",
+        "Clean the filter and straighten the hose",
+        "Replace the inlet valve by a qualified technician"
+      ],
+      "commonMistakes": [
+        "Not checking the household water tap first"
+      ],
+      "preventionTips": [
+        "Clean the inlet valve filter every 3 months"
+      ],
+      "toolsRequired": [
+        "Pliers"
+      ],
+      "repairDuration": "15 minutes",
+      "safetyNotes": [
+        "Disconnect the appliance from power and shut off the water supply before inspecting hoses or filters.",
+        "Do not open the electronic control board or measure voltage without a qualified technician.",
+        "The code meaning and repair procedure may vary by model; consult the user manual."
+      ],
+      "faq": [
+        {
+          "q": "Why is no water entering?",
+          "a": "The household water tap may be closed or the valve filter may be blocked."
+        },
+        {
+          "q": "How do I clean the filter?",
+          "a": "Shut off the water, disconnect the hose, and clean the filter."
+        }
+      ]
+    }
   },
   {
     "id": "samsung-5e-dish",
@@ -2705,7 +4136,65 @@
     ],
     "codeMatching": "any",
     "modelScope": "series-specific",
-    "confidence": "high"
+    "confidence": "high",
+    "en": {
+      "title": "Error 5E - Drain Problem",
+      "category": "error-code",
+      "severity": "medium",
+      "symptoms": [
+        "Water not draining",
+        "5E code displayed",
+        "Water remains in the appliance"
+      ],
+      "causes": [
+        "Drain hose blocked or kinked",
+        "Washer filter clogged with food debris",
+        "Drain pump not working",
+        "Faulty sensor or control board"
+      ],
+      "affectedParts": [
+        "Washer filter",
+        "Drain hose",
+        "Drain pump",
+        "Water level sensor"
+      ],
+      "diagnosisSteps": [
+        "Turn off water and disconnect power",
+        "Clean the filter and inspect the drain hose",
+        "Check the pump without touching electrical parts",
+        "Call a technician if the code persists"
+      ],
+      "repairSteps": [
+        "Clean the filter",
+        "Remove blockages or straighten the hose",
+        "Have a technician inspect or replace the pump"
+      ],
+      "commonMistakes": [
+        "Not cleaning the filter regularly"
+      ],
+      "preventionTips": [
+        "Clean the drain filter at least weekly"
+      ],
+      "toolsRequired": [
+        "Screwdriver"
+      ],
+      "repairDuration": "20 minutes",
+      "safetyNotes": [
+        "Disconnect the appliance from power and shut off the water supply before inspecting hoses or filters.",
+        "Do not open the electronic control board or measure voltage without a qualified technician.",
+        "The code meaning and repair procedure may vary by model; consult the user manual."
+      ],
+      "faq": [
+        {
+          "q": "Where is the drain filter?",
+          "a": "At the bottom of the appliance."
+        },
+        {
+          "q": "How often should I clean the filter?",
+          "a": "At least weekly."
+        }
+      ]
+    }
   },
   {
     "id": "samsung-te-dish",
@@ -2807,7 +4296,62 @@
     ],
     "codeMatching": "any",
     "modelScope": "series-specific",
-    "confidence": "high"
+    "confidence": "high",
+    "en": {
+      "title": "Error TE - Heating Problem",
+      "category": "error-code",
+      "severity": "high",
+      "symptoms": [
+        "Water not heating",
+        "TE code displayed",
+        "Dishes not clean"
+      ],
+      "causes": [
+        "Abnormally high internal temperature or heater fault",
+        "Faulty temperature sensor",
+        "Control board issue"
+      ],
+      "affectedParts": [
+        "Heating element",
+        "Temperature sensor",
+        "Control board"
+      ],
+      "diagnosisSteps": [
+        "Empty the appliance and run a normal cycle with detergent as the manual recommends",
+        "Switch off the circuit breaker if the code returns",
+        "Contact a Samsung service center"
+      ],
+      "repairSteps": [
+        "Repeat test with an empty cycle",
+        "Have a qualified technician inspect the heater, sensor and control board"
+      ],
+      "commonMistakes": [
+        "Not checking the temperature sensor first"
+      ],
+      "preventionTips": [
+        "Use the appropriate detergent"
+      ],
+      "toolsRequired": [
+        "Multimeter",
+        "Screwdriver"
+      ],
+      "repairDuration": "1 hour",
+      "safetyNotes": [
+        "Disconnect the appliance from power and shut off the water supply before inspecting hoses or filters.",
+        "Do not open the electronic control board or measure voltage without a qualified technician.",
+        "The code meaning and repair procedure may vary by model; consult the user manual."
+      ],
+      "faq": [
+        {
+          "q": "Why is the water not heating?",
+          "a": "The heating element or temperature sensor may be faulty."
+        },
+        {
+          "q": "Can I run a cycle without heating?",
+          "a": "Yes, but cleaning performance may be incomplete."
+        }
+      ]
+    }
   },
   {
     "id": "midea-e1",
@@ -2904,7 +4448,59 @@
     "codeMatching": "exact",
     "modelScope": "unknown",
     "confidence": "low",
-    "classificationNotes": "لم يُستنتج تصنيف وظيفي لأن معنى الكود يعتمد على رقم الطراز."
+    "classificationNotes": "لم يُستنتج تصنيف وظيفي لأن معنى الكود يعتمد على رقم الطراز.",
+    "en": {
+      "title": "Error E1 - Water Supply Problem",
+      "category": "error-code",
+      "severity": "medium",
+      "symptoms": [
+        "No water entering",
+        "E1 code displayed",
+        "Program stops"
+      ],
+      "causes": [
+        "There is no universal meaning for this code across all models",
+        "Use the official user manual for your model number to determine the cause"
+      ],
+      "affectedParts": [
+        "Specified by the model's manual"
+      ],
+      "diagnosisSteps": [
+        "Record the model number and code precisely",
+        "Search the brand's official manual portal for the model",
+        "Do not replace parts before matching the code to the manual"
+      ],
+      "repairSteps": [
+        "Follow the model-specific manual instructions only",
+        "Contact an authorized technician if the manual does not describe a home repair"
+      ],
+      "commonMistakes": [
+        "Not checking the household water tap first"
+      ],
+      "preventionTips": [
+        "Clean the inlet valve filter every 3 months"
+      ],
+      "toolsRequired": [
+        "Pliers",
+        "Screwdriver"
+      ],
+      "repairDuration": "20 minutes",
+      "safetyNotes": [
+        "Disconnect the appliance from power and shut off the water supply before inspecting hoses or filters.",
+        "Do not open the electronic control board or measure voltage without a qualified technician.",
+        "The code meaning and repair procedure may vary by model; consult the user manual."
+      ],
+      "faq": [
+        {
+          "q": "What does E1 mean?",
+          "a": "Indicates a problem with the water supply."
+        },
+        {
+          "q": "How do I fix it?",
+          "a": "Check that the household water tap is open, then clean the inlet valve filter."
+        }
+      ]
+    }
   },
   {
     "id": "midea-e2",
@@ -3001,7 +4597,59 @@
     "codeMatching": "exact",
     "modelScope": "unknown",
     "confidence": "low",
-    "classificationNotes": "لم يُستنتج تصنيف وظيفي لأن معنى الكود يعتمد على رقم الطراز."
+    "classificationNotes": "لم يُستنتج تصنيف وظيفي لأن معنى الكود يعتمد على رقم الطراز.",
+    "en": {
+      "title": "Error E2 - Drain Problem",
+      "category": "error-code",
+      "severity": "medium",
+      "symptoms": [
+        "Water not draining",
+        "E2 code displayed",
+        "Water remains"
+      ],
+      "causes": [
+        "There is no universal meaning for this code across all models",
+        "Use the official user manual for your model number to determine the cause"
+      ],
+      "affectedParts": [
+        "Specified by the model's manual"
+      ],
+      "diagnosisSteps": [
+        "Record the model number and code precisely",
+        "Search the brand's official manual portal for the model",
+        "Do not replace parts before matching the code to the manual"
+      ],
+      "repairSteps": [
+        "Follow the model-specific manual instructions only",
+        "Contact an authorized technician if the manual does not describe a home repair"
+      ],
+      "commonMistakes": [
+        "Not cleaning the filter regularly"
+      ],
+      "preventionTips": [
+        "Clean the drain filter at least weekly"
+      ],
+      "toolsRequired": [
+        "Screwdriver",
+        "Drip tray"
+      ],
+      "repairDuration": "25 minutes",
+      "safetyNotes": [
+        "Disconnect the appliance from power and shut off the water supply before inspecting hoses or filters.",
+        "Do not open the electronic control board or measure voltage without a qualified technician.",
+        "The code meaning and repair procedure may vary by model; consult the user manual."
+      ],
+      "faq": [
+        {
+          "q": "Where is the drain filter?",
+          "a": "At the bottom of the appliance behind a small panel."
+        },
+        {
+          "q": "How often should I clean the filter?",
+          "a": "At least weekly."
+        }
+      ]
+    }
   },
   {
     "id": "midea-e3",
@@ -3095,7 +4743,56 @@
     "codeMatching": "exact",
     "modelScope": "unknown",
     "confidence": "low",
-    "classificationNotes": "لم يُستنتج تصنيف وظيفي لأن معنى الكود يعتمد على رقم الطراز."
+    "classificationNotes": "لم يُستنتج تصنيف وظيفي لأن معنى الكود يعتمد على رقم الطراز.",
+    "en": {
+      "title": "Error E3 - Drum Imbalance",
+      "category": "error-code",
+      "severity": "medium",
+      "symptoms": [
+        "Severe vibration",
+        "Stops during spin phase",
+        "Vibrating noises"
+      ],
+      "causes": [
+        "There is no universal meaning for this code across all models",
+        "Use the official user manual for your model number to determine the cause"
+      ],
+      "affectedParts": [
+        "Specified by the model's manual"
+      ],
+      "diagnosisSteps": [
+        "Record the model number and code precisely",
+        "Search the brand's official manual portal for the model",
+        "Do not replace parts before matching the code to the manual"
+      ],
+      "repairSteps": [
+        "Follow the model-specific manual instructions only",
+        "Contact an authorized technician if the manual does not describe a home repair"
+      ],
+      "commonMistakes": [
+        "Loading only heavy items"
+      ],
+      "preventionTips": [
+        "Distribute laundry evenly"
+      ],
+      "toolsRequired": [],
+      "repairDuration": "5 minutes",
+      "safetyNotes": [
+        "Disconnect the appliance from power and shut off the water supply before inspecting hoses or filters.",
+        "Do not open the electronic control board or measure voltage without a qualified technician.",
+        "The code meaning and repair procedure may vary by model; consult the user manual."
+      ],
+      "faq": [
+        {
+          "q": "Why is the washer vibrating?",
+          "a": "Usually due to unevenly distributed laundry."
+        },
+        {
+          "q": "How do I prevent vibration?",
+          "a": "Distribute the laundry evenly."
+        }
+      ]
+    }
   },
   {
     "id": "midea-e4",
@@ -3192,7 +4889,59 @@
     "codeMatching": "exact",
     "modelScope": "unknown",
     "confidence": "low",
-    "classificationNotes": "لم يُستنتج تصنيف وظيفي لأن معنى الكود يعتمد على رقم الطراز."
+    "classificationNotes": "لم يُستنتج تصنيف وظيفي لأن معنى الكود يعتمد على رقم الطراز.",
+    "en": {
+      "title": "Error E4 - Door Problem",
+      "category": "error-code",
+      "severity": "medium",
+      "symptoms": [
+        "Door not locking",
+        "E4 code displayed",
+        "Program will not start"
+      ],
+      "causes": [
+        "There is no universal meaning for this code across all models",
+        "Use the official user manual for your model number to determine the cause"
+      ],
+      "affectedParts": [
+        "Specified by the model's manual"
+      ],
+      "diagnosisSteps": [
+        "Record the model number and code precisely",
+        "Search the brand's official manual portal for the model",
+        "Do not replace parts before matching the code to the manual"
+      ],
+      "repairSteps": [
+        "Follow the model-specific manual instructions only",
+        "Contact an authorized technician if the manual does not describe a home repair"
+      ],
+      "commonMistakes": [
+        "Forcing the door closed"
+      ],
+      "preventionTips": [
+        "Clean the door seal regularly"
+      ],
+      "toolsRequired": [
+        "Screwdriver",
+        "Multimeter"
+      ],
+      "repairDuration": "45 minutes",
+      "safetyNotes": [
+        "Disconnect the appliance from power and shut off the water supply before inspecting hoses or filters.",
+        "Do not open the electronic control board or measure voltage without a qualified technician.",
+        "The code meaning and repair procedure may vary by model; consult the user manual."
+      ],
+      "faq": [
+        {
+          "q": "Why won't the door lock?",
+          "a": "The door lock may be faulty or there may be an obstruction."
+        },
+        {
+          "q": "Can I open the door manually?",
+          "a": "Yes — there is a manual pull cord located at the bottom."
+        }
+      ]
+    }
   },
   {
     "id": "midea-e5",
@@ -3289,7 +5038,59 @@
     "codeMatching": "exact",
     "modelScope": "unknown",
     "confidence": "low",
-    "classificationNotes": "لم يُستنتج تصنيف وظيفي لأن معنى الكود يعتمد على رقم الطراز."
+    "classificationNotes": "لم يُستنتج تصنيف وظيفي لأن معنى الكود يعتمد على رقم الطراز.",
+    "en": {
+      "title": "Error E5 - Heating Problem",
+      "category": "error-code",
+      "severity": "medium",
+      "symptoms": [
+        "Water not heating",
+        "E5 code displayed",
+        "Wash not clean"
+      ],
+      "causes": [
+        "There is no universal meaning for this code across all models",
+        "Use the official user manual for your model number to determine the cause"
+      ],
+      "affectedParts": [
+        "Specified by the model's manual"
+      ],
+      "diagnosisSteps": [
+        "Record the model number and code precisely",
+        "Search the brand's official manual portal for the model",
+        "Do not replace parts before matching the code to the manual"
+      ],
+      "repairSteps": [
+        "Follow the model-specific manual instructions only",
+        "Contact an authorized technician if the manual does not describe a home repair"
+      ],
+      "commonMistakes": [
+        "Not checking the temperature sensor first"
+      ],
+      "preventionTips": [
+        "Use appropriate detergent"
+      ],
+      "toolsRequired": [
+        "Multimeter",
+        "Screwdriver"
+      ],
+      "repairDuration": "1 hour",
+      "safetyNotes": [
+        "Disconnect the appliance from power and shut off the water supply before inspecting hoses or filters.",
+        "Do not open the electronic control board or measure voltage without a qualified technician.",
+        "The code meaning and repair procedure may vary by model; consult the user manual."
+      ],
+      "faq": [
+        {
+          "q": "Why is the water not heating?",
+          "a": "The heating element or temperature sensor may be faulty."
+        },
+        {
+          "q": "How do I check the heating element?",
+          "a": "With a multimeter, the resistance should be between 20-30 ohms."
+        }
+      ]
+    }
   },
   {
     "id": "midea-e6",
@@ -3387,7 +5188,60 @@
     "codeMatching": "exact",
     "modelScope": "unknown",
     "confidence": "low",
-    "classificationNotes": "لم يُستنتج تصنيف وظيفي لأن معنى الكود يعتمد على رقم الطراز."
+    "classificationNotes": "لم يُستنتج تصنيف وظيفي لأن معنى الكود يعتمد على رقم الطراز.",
+    "en": {
+      "title": "Error E6 - Water Leak",
+      "category": "error-code",
+      "severity": "medium",
+      "symptoms": [
+        "Water leakage",
+        "E6 code displayed",
+        "Washer stops"
+      ],
+      "causes": [
+        "No single universal meaning for this code across all models",
+        "Use the official user manual for the exact model number to determine the cause"
+      ],
+      "affectedParts": [
+        "Specified by the model manual"
+      ],
+      "diagnosisSteps": [
+        "Record the model number and error code exactly",
+        "Check the brand’s official manual portal for that model",
+        "Do not replace parts before matching the code to the manual"
+      ],
+      "repairSteps": [
+        "Follow the model-specific manual instructions only",
+        "Contact an authorized technician if the manual does not describe a safe home repair"
+      ],
+      "commonMistakes": [
+        "Not stopping the washer immediately"
+      ],
+      "preventionTips": [
+        "Inspect water hoses every 6 months"
+      ],
+      "toolsRequired": [
+        "Screwdriver",
+        "Pliers",
+        "Multimeter"
+      ],
+      "repairDuration": "1-2 hours",
+      "safetyNotes": [
+        "Disconnect power and shut off the water supply before inspecting hoses or filters.",
+        "Do not open the electronic control board or measure voltages unless you are a qualified technician.",
+        "Code meaning and repair procedures may vary by model; consult the user manual."
+      ],
+      "faq": [
+        {
+          "q": "What should I do when there is a water leak?",
+          "a": "Stop the washer immediately and shut off the water tap."
+        },
+        {
+          "q": "Is the leak dangerous?",
+          "a": "Yes. It can cause damage to the home."
+        }
+      ]
+    }
   },
   {
     "id": "midea-e7",
@@ -3485,7 +5339,60 @@
     "codeMatching": "exact",
     "modelScope": "unknown",
     "confidence": "low",
-    "classificationNotes": "لم يُستنتج تصنيف وظيفي لأن معنى الكود يعتمد على رقم الطراز."
+    "classificationNotes": "لم يُستنتج تصنيف وظيفي لأن معنى الكود يعتمد على رقم الطراز.",
+    "en": {
+      "title": "Error E7 - Motor Fault",
+      "category": "error-code",
+      "severity": "medium",
+      "symptoms": [
+        "Drum not spinning",
+        "E7 code displayed",
+        "Unusual noises"
+      ],
+      "causes": [
+        "No single universal meaning for this code across all models",
+        "Use the official user manual for the exact model number to determine the cause"
+      ],
+      "affectedParts": [
+        "Specified by the model manual"
+      ],
+      "diagnosisSteps": [
+        "Record the model number and error code exactly",
+        "Check the brand’s official manual portal for that model",
+        "Do not replace parts before matching the code to the manual"
+      ],
+      "repairSteps": [
+        "Follow the model-specific manual instructions only",
+        "Contact an authorized technician if the manual does not describe a safe home repair"
+      ],
+      "commonMistakes": [
+        "Not checking wiring first"
+      ],
+      "preventionTips": [
+        "Do not exceed the maximum load capacity"
+      ],
+      "toolsRequired": [
+        "Multimeter",
+        "Screwdriver",
+        "Socket/wrench set"
+      ],
+      "repairDuration": "1-2 hours",
+      "safetyNotes": [
+        "Disconnect power and shut off the water supply before inspecting hoses or filters.",
+        "Do not open the electronic control board or measure voltages unless you are a qualified technician.",
+        "Code meaning and repair procedures may vary by model; consult the user manual."
+      ],
+      "faq": [
+        {
+          "q": "Can I repair the motor myself?",
+          "a": "It is recommended to contact a specialist technician."
+        },
+        {
+          "q": "How much does motor repair cost?",
+          "a": "Costs vary by model, region and spare parts; request a quote from an authorized service center."
+        }
+      ]
+    }
   },
   {
     "id": "midea-e8",
@@ -3582,7 +5489,59 @@
     "codeMatching": "exact",
     "modelScope": "unknown",
     "confidence": "low",
-    "classificationNotes": "لم يُستنتج تصنيف وظيفي لأن معنى الكود يعتمد على رقم الطراز."
+    "classificationNotes": "لم يُستنتج تصنيف وظيفي لأن معنى الكود يعتمد على رقم الطراز.",
+    "en": {
+      "title": "Error E8 - Sensor Issue",
+      "category": "error-code",
+      "severity": "medium",
+      "symptoms": [
+        "Abnormal behavior",
+        "E8 code displayed",
+        "Software errors"
+      ],
+      "causes": [
+        "No single universal meaning for this code across all models",
+        "Use the official user manual for the exact model number to determine the cause"
+      ],
+      "affectedParts": [
+        "Specified by the model manual"
+      ],
+      "diagnosisSteps": [
+        "Record the model number and error code exactly",
+        "Check the brand’s official manual portal for that model",
+        "Do not replace parts before matching the code to the manual"
+      ],
+      "repairSteps": [
+        "Follow the model-specific manual instructions only",
+        "Contact an authorized technician if the manual does not describe a safe home repair"
+      ],
+      "commonMistakes": [
+        "Not checking all sensors"
+      ],
+      "preventionTips": [
+        "Keep the electronic control board dry"
+      ],
+      "toolsRequired": [
+        "Multimeter",
+        "Screwdriver"
+      ],
+      "repairDuration": "1 hour",
+      "safetyNotes": [
+        "Disconnect power and shut off the water supply before inspecting hoses or filters.",
+        "Do not open the electronic control board or measure voltages unless you are a qualified technician.",
+        "Code meaning and repair procedures may vary by model; consult the user manual."
+      ],
+      "faq": [
+        {
+          "q": "What are the washer sensors?",
+          "a": "They include the temperature sensor and the pressure sensor."
+        },
+        {
+          "q": "Can I replace a sensor myself?",
+          "a": "It is recommended to contact a technician."
+        }
+      ]
+    }
   },
   {
     "id": "midea-e9",
@@ -3677,7 +5636,57 @@
     "codeMatching": "exact",
     "modelScope": "unknown",
     "confidence": "low",
-    "classificationNotes": "لم يُستنتج تصنيف وظيفي لأن معنى الكود يعتمد على رقم الطراز."
+    "classificationNotes": "لم يُستنتج تصنيف وظيفي لأن معنى الكود يعتمد على رقم الطراز.",
+    "en": {
+      "title": "Error E9 - Wi‑Fi Problem",
+      "category": "error-code",
+      "severity": "medium",
+      "symptoms": [
+        "Cannot connect to network",
+        "E9 code displayed",
+        "App not working"
+      ],
+      "causes": [
+        "No single universal meaning for this code across all models",
+        "Use the official user manual for the exact model number to determine the cause"
+      ],
+      "affectedParts": [
+        "Specified by the model manual"
+      ],
+      "diagnosisSteps": [
+        "Record the model number and error code exactly",
+        "Check the brand’s official manual portal for that model",
+        "Do not replace parts before matching the code to the manual"
+      ],
+      "repairSteps": [
+        "Follow the model-specific manual instructions only",
+        "Contact an authorized technician if the manual does not describe a safe home repair"
+      ],
+      "commonMistakes": [
+        "Not checking the Wi‑Fi network first"
+      ],
+      "preventionTips": [
+        "Use a 2.4 GHz network",
+        "Ensure adequate signal strength"
+      ],
+      "toolsRequired": [],
+      "repairDuration": "15 minutes",
+      "safetyNotes": [
+        "Disconnect power and shut off the water supply before inspecting hoses or filters.",
+        "Do not open the electronic control board or measure voltages unless you are a qualified technician.",
+        "Code meaning and repair procedures may vary by model; consult the user manual."
+      ],
+      "faq": [
+        {
+          "q": "Why won't the washer connect to Wi‑Fi?",
+          "a": "There may be a network issue or a fault in the Wi‑Fi module."
+        },
+        {
+          "q": "How do I reset it?",
+          "a": "Press and hold the Wi‑Fi button for 5 seconds."
+        }
+      ]
+    }
   },
   {
     "id": "midea-e10",
@@ -3773,7 +5782,58 @@
     "codeMatching": "exact",
     "modelScope": "unknown",
     "confidence": "low",
-    "classificationNotes": "لم يُستنتج تصنيف وظيفي لأن معنى الكود يعتمد على رقم الطراز."
+    "classificationNotes": "لم يُستنتج تصنيف وظيفي لأن معنى الكود يعتمد على رقم الطراز.",
+    "en": {
+      "title": "Error E10 - Remote Control Problem",
+      "category": "error-code",
+      "severity": "medium",
+      "symptoms": [
+        "Remote not responding",
+        "E10 code displayed",
+        "Buttons not working"
+      ],
+      "causes": [
+        "No single universal meaning for this code across all models",
+        "Use the official user manual for the exact model number to determine the cause"
+      ],
+      "affectedParts": [
+        "Specified by the model manual"
+      ],
+      "diagnosisSteps": [
+        "Record the model number and error code exactly",
+        "Check the brand’s official manual portal for that model",
+        "Do not replace parts before matching the code to the manual"
+      ],
+      "repairSteps": [
+        "Follow the model-specific manual instructions only",
+        "Contact an authorized technician if the manual does not describe a safe home repair"
+      ],
+      "commonMistakes": [
+        "Not checking the battery first"
+      ],
+      "preventionTips": [
+        "Replace the battery annually"
+      ],
+      "toolsRequired": [
+        "New battery"
+      ],
+      "repairDuration": "5 minutes",
+      "safetyNotes": [
+        "Disconnect power and shut off the water supply before inspecting hoses or filters.",
+        "Do not open the electronic control board or measure voltages unless you are a qualified technician.",
+        "Code meaning and repair procedures may vary by model; consult the user manual."
+      ],
+      "faq": [
+        {
+          "q": "Why won't the remote work?",
+          "a": "Usually due to a depleted battery."
+        },
+        {
+          "q": "What type of battery?",
+          "a": "Typically a CR2032 battery."
+        }
+      ]
+    }
   },
   {
     "id": "bosch-e01",
@@ -3870,7 +5930,59 @@
     "codeMatching": "exact",
     "modelScope": "unknown",
     "confidence": "low",
-    "classificationNotes": "لم يُستنتج تصنيف وظيفي لأن معنى الكود يعتمد على رقم الطراز."
+    "classificationNotes": "لم يُستنتج تصنيف وظيفي لأن معنى الكود يعتمد على رقم الطراز.",
+    "en": {
+      "title": "Error E:01 - Door Problem",
+      "category": "error-code",
+      "severity": "medium",
+      "symptoms": [
+        "Door not locking",
+        "E:01 code displayed",
+        "Program won't start"
+      ],
+      "causes": [
+        "No single universal meaning for this code across all models",
+        "Use the official user manual for the exact model number to determine the cause"
+      ],
+      "affectedParts": [
+        "Specified by the model manual"
+      ],
+      "diagnosisSteps": [
+        "Record the model number and error code exactly",
+        "Check the brand’s official manual portal for that model",
+        "Do not replace parts before matching the code to the manual"
+      ],
+      "repairSteps": [
+        "Follow the model-specific manual instructions only",
+        "Contact an authorized technician if the manual does not describe a safe home repair"
+      ],
+      "commonMistakes": [
+        "Forcing the door"
+      ],
+      "preventionTips": [
+        "Clean the door seal regularly"
+      ],
+      "toolsRequired": [
+        "Screwdriver",
+        "Multimeter"
+      ],
+      "repairDuration": "45 minutes",
+      "safetyNotes": [
+        "Disconnect power and shut off the water supply before inspecting hoses or filters.",
+        "Do not open the electronic control board or measure voltages unless you are a qualified technician.",
+        "Code meaning and repair procedures may vary by model; consult the user manual."
+      ],
+      "faq": [
+        {
+          "q": "Why won't the door lock?",
+          "a": "The door lock may be faulty or there may be an obstruction."
+        },
+        {
+          "q": "Can I open the door?",
+          "a": "Yes. There is a manual pull cord at the bottom."
+        }
+      ]
+    }
   },
   {
     "id": "bosch-e02",
@@ -3967,7 +6079,59 @@
     "codeMatching": "exact",
     "modelScope": "unknown",
     "confidence": "low",
-    "classificationNotes": "لم يُستنتج تصنيف وظيفي لأن معنى الكود يعتمد على رقم الطراز."
+    "classificationNotes": "لم يُستنتج تصنيف وظيفي لأن معنى الكود يعتمد على رقم الطراز.",
+    "en": {
+      "title": "Error E:02 - Drain Problem",
+      "category": "error-code",
+      "severity": "medium",
+      "symptoms": [
+        "Water not draining",
+        "E:02 code displayed",
+        "Residual water remains"
+      ],
+      "causes": [
+        "No single universal meaning for this code across all models",
+        "Use the official user manual for the exact model number to determine the cause"
+      ],
+      "affectedParts": [
+        "Specified by the model manual"
+      ],
+      "diagnosisSteps": [
+        "Record the model number and error code exactly",
+        "Check the brand’s official manual portal for that model",
+        "Do not replace parts before matching the code to the manual"
+      ],
+      "repairSteps": [
+        "Follow the model-specific manual instructions only",
+        "Contact an authorized technician if the manual does not describe a safe home repair"
+      ],
+      "commonMistakes": [
+        "Not cleaning the filter regularly"
+      ],
+      "preventionTips": [
+        "Clean the drain filter weekly"
+      ],
+      "toolsRequired": [
+        "Screwdriver",
+        "Collection container"
+      ],
+      "repairDuration": "25 minutes",
+      "safetyNotes": [
+        "Disconnect power and shut off the water supply before inspecting hoses or filters.",
+        "Do not open the electronic control board or measure voltages unless you are a qualified technician.",
+        "Code meaning and repair procedures may vary by model; consult the user manual."
+      ],
+      "faq": [
+        {
+          "q": "Where is the drain filter located?",
+          "a": "At the bottom of the washer behind a small access panel."
+        },
+        {
+          "q": "How often should I clean the filter?",
+          "a": "At least weekly."
+        }
+      ]
+    }
   },
   {
     "id": "bosch-e03",
@@ -4064,7 +6228,59 @@
     "codeMatching": "exact",
     "modelScope": "unknown",
     "confidence": "low",
-    "classificationNotes": "لم يُستنتج تصنيف وظيفي لأن معنى الكود يعتمد على رقم الطراز."
+    "classificationNotes": "لم يُستنتج تصنيف وظيفي لأن معنى الكود يعتمد على رقم الطراز.",
+    "en": {
+      "title": "Error E:03 - Water Supply Problem",
+      "category": "error-code",
+      "severity": "medium",
+      "symptoms": [
+        "No water intake",
+        "E:03 code displayed",
+        "Program stops"
+      ],
+      "causes": [
+        "No single universal meaning for this code across all models",
+        "Use the official user manual for the exact model number to determine the cause"
+      ],
+      "affectedParts": [
+        "Specified by the model manual"
+      ],
+      "diagnosisSteps": [
+        "Record the model number and error code exactly",
+        "Check the brand’s official manual portal for that model",
+        "Do not replace parts before matching the code to the manual"
+      ],
+      "repairSteps": [
+        "Follow the model-specific manual instructions only",
+        "Contact an authorized technician if the manual does not describe a safe home repair"
+      ],
+      "commonMistakes": [
+        "Not checking the water tap first"
+      ],
+      "preventionTips": [
+        "Clean the inlet valve filter every 3 months"
+      ],
+      "toolsRequired": [
+        "Pliers",
+        "Screwdriver"
+      ],
+      "repairDuration": "20 minutes",
+      "safetyNotes": [
+        "Disconnect power and shut off the water supply before inspecting hoses or filters.",
+        "Do not open the electronic control board or measure voltages unless you are a qualified technician.",
+        "Code meaning and repair procedures may vary by model; consult the user manual."
+      ],
+      "faq": [
+        {
+          "q": "What does E:03 mean?",
+          "a": "It indicates a problem with the water supply."
+        },
+        {
+          "q": "How do I fix it?",
+          "a": "Check that the water tap is open, then clean the inlet valve filter."
+        }
+      ]
+    }
   },
   {
     "id": "bosch-e04",
@@ -4158,7 +6374,56 @@
     "codeMatching": "exact",
     "modelScope": "unknown",
     "confidence": "low",
-    "classificationNotes": "لم يُستنتج تصنيف وظيفي لأن معنى الكود يعتمد على رقم الطراز."
+    "classificationNotes": "لم يُستنتج تصنيف وظيفي لأن معنى الكود يعتمد على رقم الطراز.",
+    "en": {
+      "title": "Error E:04 - Drum imbalance",
+      "category": "error-code",
+      "severity": "medium",
+      "symptoms": [
+        "Severe vibration",
+        "Stops during spin cycle",
+        "Vibrating noises"
+      ],
+      "causes": [
+        "No single universal meaning of this code across all models",
+        "Use the official user manual for the specific model number to determine cause"
+      ],
+      "affectedParts": [
+        "Specified by the model manual"
+      ],
+      "diagnosisSteps": [
+        "Record the model number and error code exactly as shown",
+        "Search the brand's official manual portal for the model",
+        "Do not replace any part before matching the code with the manual"
+      ],
+      "repairSteps": [
+        "Follow the instructions in the model's manual only",
+        "Contact an authorized technician if the manual does not specify a home repair"
+      ],
+      "commonMistakes": [
+        "Loading only heavy items"
+      ],
+      "preventionTips": [
+        "Distribute laundry evenly"
+      ],
+      "toolsRequired": [],
+      "repairDuration": "5 minutes",
+      "safetyNotes": [
+        "Unplug the appliance and shut off the water supply before inspecting hoses or filters.",
+        "Do not open the electronic control panel or measure mains voltage unless you are a qualified technician.",
+        "Code meaning and repair procedure may vary by model; consult the user manual."
+      ],
+      "faq": [
+        {
+          "q": "Why is the washer vibrating?",
+          "a": "Usually due to uneven distribution of the laundry."
+        },
+        {
+          "q": "How do I prevent vibration?",
+          "a": "Distribute the laundry evenly."
+        }
+      ]
+    }
   },
   {
     "id": "bosch-e05",
@@ -4255,7 +6520,59 @@
     "codeMatching": "exact",
     "modelScope": "unknown",
     "confidence": "low",
-    "classificationNotes": "لم يُستنتج تصنيف وظيفي لأن معنى الكود يعتمد على رقم الطراز."
+    "classificationNotes": "لم يُستنتج تصنيف وظيفي لأن معنى الكود يعتمد على رقم الطراز.",
+    "en": {
+      "title": "Error E:05 - Heating problem",
+      "category": "error-code",
+      "severity": "medium",
+      "symptoms": [
+        "Water not heating",
+        "E:05 error code displayed",
+        "Laundry not cleaned properly"
+      ],
+      "causes": [
+        "No single universal meaning of this code across all models",
+        "Use the official user manual for the specific model number to determine cause"
+      ],
+      "affectedParts": [
+        "Specified by the model manual"
+      ],
+      "diagnosisSteps": [
+        "Record the model number and error code exactly as shown",
+        "Search the brand's official manual portal for the model",
+        "Do not replace any part before matching the code with the manual"
+      ],
+      "repairSteps": [
+        "Follow the instructions in the model's manual only",
+        "Contact an authorized technician if the manual does not specify a home repair"
+      ],
+      "commonMistakes": [
+        "Not checking the sensor first"
+      ],
+      "preventionTips": [
+        "Use appropriate detergent"
+      ],
+      "toolsRequired": [
+        "Multimeter",
+        "Screwdriver"
+      ],
+      "repairDuration": "1 hour",
+      "safetyNotes": [
+        "Unplug the appliance and shut off the water supply before inspecting hoses or filters.",
+        "Do not open the electronic control panel or measure mains voltage unless you are a qualified technician.",
+        "Code meaning and repair procedure may vary by model; consult the user manual."
+      ],
+      "faq": [
+        {
+          "q": "Why is the water not heating?",
+          "a": "The heating element or temperature sensor may be faulty."
+        },
+        {
+          "q": "How do I test the heating element?",
+          "a": "With a multimeter, the resistance should be between 20–30 ohms."
+        }
+      ]
+    }
   },
   {
     "id": "electrolux-e10",
@@ -4364,7 +6681,68 @@
     "codeMatching": "any",
     "modelScope": "series-specific",
     "confidence": "high",
-    "classificationNotes": "لم يُستنتج تصنيف وظيفي لأن معنى الكود يعتمد على رقم الطراز."
+    "classificationNotes": "لم يُستنتج تصنيف وظيفي لأن معنى الكود يعتمد على رقم الطراز.",
+    "en": {
+      "title": "Error E10 - Water supply problem",
+      "category": "error-code",
+      "severity": "medium",
+      "symptoms": [
+        "No water entering",
+        "E10 error code displayed",
+        "Program stops"
+      ],
+      "causes": [
+        "Low or interrupted water supply",
+        "Blocked inlet filter or hose",
+        "Issue with drain hose or pump",
+        "Excessive detergent or incorrect drain installation"
+      ],
+      "affectedParts": [
+        "Water tap",
+        "Inlet hose",
+        "Inlet filter",
+        "Drain hose and filter",
+        "Pump"
+      ],
+      "diagnosisSteps": [
+        "Check the tap and water pressure",
+        "Clean the inlet filter and pump filter after unplugging the appliance",
+        "Inspect hoses and the height of the drain hose",
+        "Contact a technician if the code persists or if a valve or pump is suspected"
+      ],
+      "repairSteps": [
+        "Open the water tap and straighten hoses",
+        "Clean the filters",
+        "Correct the drain hose installation",
+        "Have a technician inspect the valve or pump"
+      ],
+      "commonMistakes": [
+        "Not checking the water tap first"
+      ],
+      "preventionTips": [
+        "Clean the valve filter every 3 months"
+      ],
+      "toolsRequired": [
+        "Pliers",
+        "Screwdriver"
+      ],
+      "repairDuration": "20 minutes",
+      "safetyNotes": [
+        "Unplug the appliance and shut off the water supply before inspecting hoses or filters.",
+        "Do not open the electronic control panel or measure mains voltage unless you are a qualified technician.",
+        "Code meaning and repair procedure may vary by model; consult the user manual."
+      ],
+      "faq": [
+        {
+          "q": "What does E10 mean?",
+          "a": "It indicates a problem with the water supply."
+        },
+        {
+          "q": "How can I fix it?",
+          "a": "Check that the water tap is open, then clean the valve filter."
+        }
+      ]
+    }
   },
   {
     "id": "electrolux-e20",
@@ -4463,7 +6841,61 @@
     "codeMatching": "exact",
     "modelScope": "unknown",
     "confidence": "low",
-    "classificationNotes": "لم يُستنتج تصنيف وظيفي لأن معنى الكود يعتمد على رقم الطراز."
+    "classificationNotes": "لم يُستنتج تصنيف وظيفي لأن معنى الكود يعتمد على رقم الطراز.",
+    "en": {
+      "title": "Error E20 - Drain problem",
+      "category": "error-code",
+      "severity": "medium",
+      "symptoms": [
+        "Water not draining",
+        "E20 error code displayed",
+        "Residual water remains"
+      ],
+      "causes": [
+        "No single universal meaning of this code across all models",
+        "Consult the user manual for the model number before replacing parts"
+      ],
+      "affectedParts": [
+        "Drain pump",
+        "Drain filter",
+        "Drain hose"
+      ],
+      "diagnosisSteps": [
+        "Record the model number and error code as shown on the display",
+        "Search the official user manual for the model",
+        "Arrange authorized service if the manual does not list a home repair"
+      ],
+      "repairSteps": [
+        "Do not replace any part based on the code alone",
+        "Follow the model manual procedure or contact a technician"
+      ],
+      "commonMistakes": [
+        "Not cleaning the filter regularly"
+      ],
+      "preventionTips": [
+        "Clean the drain filter weekly"
+      ],
+      "toolsRequired": [
+        "Screwdriver",
+        "Collection tray"
+      ],
+      "repairDuration": "25 minutes",
+      "safetyNotes": [
+        "Unplug the appliance and shut off the water supply before inspecting hoses or filters.",
+        "Do not open the electronic control panel or measure mains voltage unless you are a qualified technician.",
+        "Code meaning and repair procedure may vary by model; consult the user manual."
+      ],
+      "faq": [
+        {
+          "q": "Where is the drain filter?",
+          "a": "At the bottom of the washer behind a small panel."
+        },
+        {
+          "q": "How often should I clean the filter?",
+          "a": "At least weekly."
+        }
+      ]
+    }
   },
   {
     "id": "electrolux-e30",
@@ -4562,7 +6994,61 @@
     "codeMatching": "exact",
     "modelScope": "unknown",
     "confidence": "low",
-    "classificationNotes": "لم يُستنتج تصنيف وظيفي لأن معنى الكود يعتمد على رقم الطراز."
+    "classificationNotes": "لم يُستنتج تصنيف وظيفي لأن معنى الكود يعتمد على رقم الطراز.",
+    "en": {
+      "title": "Error E30 - Door problem",
+      "category": "error-code",
+      "severity": "medium",
+      "symptoms": [
+        "Door does not lock",
+        "E30 error code displayed",
+        "Program does not start"
+      ],
+      "causes": [
+        "No single universal meaning of this code across all models",
+        "Consult the user manual for the model number before replacing parts"
+      ],
+      "affectedParts": [
+        "Door lock",
+        "Door sensor",
+        "Door seal"
+      ],
+      "diagnosisSteps": [
+        "Record the model number and error code as shown on the display",
+        "Search the official user manual for the model",
+        "Arrange authorized service if the manual does not list a home repair"
+      ],
+      "repairSteps": [
+        "Do not replace any part based on the code alone",
+        "Follow the model manual procedure or contact a technician"
+      ],
+      "commonMistakes": [
+        "Forcing the door"
+      ],
+      "preventionTips": [
+        "Clean the door seal regularly"
+      ],
+      "toolsRequired": [
+        "Screwdriver",
+        "Multimeter"
+      ],
+      "repairDuration": "45 minutes",
+      "safetyNotes": [
+        "Unplug the appliance and shut off the water supply before inspecting hoses or filters.",
+        "Do not open the electronic control panel or measure mains voltage unless you are a qualified technician.",
+        "Code meaning and repair procedure may vary by model; consult the user manual."
+      ],
+      "faq": [
+        {
+          "q": "Why won't the door lock?",
+          "a": "The door lock may be faulty or there may be an obstruction."
+        },
+        {
+          "q": "Can I open the door manually?",
+          "a": "Yes, there is a manual pull cord at the bottom."
+        }
+      ]
+    }
   },
   {
     "id": "whirlpool-f5e2",
@@ -4661,7 +7147,62 @@
     ],
     "codeMatching": "exact",
     "modelScope": "series-specific",
-    "confidence": "high"
+    "confidence": "high",
+    "en": {
+      "title": "Error F01 - Control board fault",
+      "category": "error-code",
+      "severity": "medium",
+      "symptoms": [
+        "Buttons not responding",
+        "F01 error code displayed",
+        "Complete stoppage"
+      ],
+      "causes": [
+        "An item preventing the door from closing",
+        "Door not fully closed",
+        "Faulty door lock"
+      ],
+      "affectedParts": [
+        "Door lock",
+        "Door latch"
+      ],
+      "diagnosisSteps": [
+        "Ensure nothing is preventing the door from closing",
+        "Close the door fully",
+        "Clear the code per the model manual; request service if it returns"
+      ],
+      "repairSteps": [
+        "Remove the obstruction and close the door",
+        "Reset the code following the manual's procedure",
+        "Have the lock inspected by a technician"
+      ],
+      "commonMistakes": [
+        "Not checking the cables first"
+      ],
+      "preventionTips": [
+        "Keep the control board dry"
+      ],
+      "toolsRequired": [
+        "Multimeter",
+        "Screwdriver"
+      ],
+      "repairDuration": "1-2 hours",
+      "safetyNotes": [
+        "Unplug the appliance and shut off the water supply before inspecting hoses or filters.",
+        "Do not open the electronic control panel or measure mains voltage unless you are a qualified technician.",
+        "Code meaning and repair procedure may vary by model; consult the user manual."
+      ],
+      "faq": [
+        {
+          "q": "Why are the buttons unresponsive?",
+          "a": "There may be a fault in the control board."
+        },
+        {
+          "q": "Can the control board be repaired?",
+          "a": "Yes, it can be repaired or replaced."
+        }
+      ]
+    }
   },
   {
     "id": "whirlpool-f9e1",
@@ -4763,7 +7304,64 @@
     ],
     "codeMatching": "exact",
     "modelScope": "series-specific",
-    "confidence": "high"
+    "confidence": "high",
+    "en": {
+      "title": "Error F05 - Drain problem",
+      "category": "error-code",
+      "severity": "medium",
+      "symptoms": [
+        "Water not draining",
+        "F05 error code displayed",
+        "Residual water remains"
+      ],
+      "causes": [
+        "Kinked or blocked drain hose",
+        "Blocked filter or drain pump",
+        "Problem with household drain"
+      ],
+      "affectedParts": [
+        "Drain hose",
+        "Drain filter",
+        "Drain pump"
+      ],
+      "diagnosisSteps": [
+        "Inspect the drain hose and straighten it",
+        "Clean the filter if it is user-accessible",
+        "Check for blockages in the household drain",
+        "Request service if the code persists"
+      ],
+      "repairSteps": [
+        "Remove kinks or blockages",
+        "Clean the filter",
+        "Have the pump inspected by a technician"
+      ],
+      "commonMistakes": [
+        "Not cleaning the filter regularly"
+      ],
+      "preventionTips": [
+        "Clean the drain filter weekly"
+      ],
+      "toolsRequired": [
+        "Screwdriver",
+        "Collection tray"
+      ],
+      "repairDuration": "25 minutes",
+      "safetyNotes": [
+        "Unplug the appliance and shut off the water supply before inspecting hoses or filters.",
+        "Do not open the electronic control panel or measure mains voltage unless you are a qualified technician.",
+        "Code meaning and repair procedure may vary by model; consult the user manual."
+      ],
+      "faq": [
+        {
+          "q": "Where is the drain filter?",
+          "a": "At the bottom of the washer behind a small panel."
+        },
+        {
+          "q": "How often should I clean the filter?",
+          "a": "At least weekly."
+        }
+      ]
+    }
   },
   {
     "id": "beko-e01",
@@ -4860,7 +7458,59 @@
     "codeMatching": "exact",
     "modelScope": "unknown",
     "confidence": "low",
-    "classificationNotes": "لم يُستنتج تصنيف وظيفي لأن معنى الكود يعتمد على رقم الطراز."
+    "classificationNotes": "لم يُستنتج تصنيف وظيفي لأن معنى الكود يعتمد على رقم الطراز.",
+    "en": {
+      "title": "Error E01 - Door problem",
+      "category": "error-code",
+      "severity": "medium",
+      "symptoms": [
+        "Door does not lock",
+        "E01 error code displayed",
+        "Program does not start"
+      ],
+      "causes": [
+        "No single universal meaning of this code across all models",
+        "Use the official user manual for the specific model number to determine cause"
+      ],
+      "affectedParts": [
+        "Specified by the model manual"
+      ],
+      "diagnosisSteps": [
+        "Record the model number and error code exactly as shown",
+        "Search the brand's official manual portal for the model",
+        "Do not replace any part before matching the code with the manual"
+      ],
+      "repairSteps": [
+        "Follow the instructions in the model's manual only",
+        "Contact an authorized technician if the manual does not specify a home repair"
+      ],
+      "commonMistakes": [
+        "Forcing the door"
+      ],
+      "preventionTips": [
+        "Clean the door seal regularly"
+      ],
+      "toolsRequired": [
+        "Screwdriver",
+        "Multimeter"
+      ],
+      "repairDuration": "45 minutes",
+      "safetyNotes": [
+        "Unplug the appliance and shut off the water supply before inspecting hoses or filters.",
+        "Do not open the electronic control panel or measure mains voltage unless you are a qualified technician.",
+        "Code meaning and repair procedure may vary by model; consult the user manual."
+      ],
+      "faq": [
+        {
+          "q": "Why won't the door lock?",
+          "a": "The door lock may be faulty or there may be an obstruction."
+        },
+        {
+          "q": "Can I open the door manually?",
+          "a": "Yes, there is a manual pull cord at the bottom."
+        }
+      ]
+    }
   },
   {
     "id": "beko-e02",
@@ -4957,7 +7607,59 @@
     "codeMatching": "exact",
     "modelScope": "unknown",
     "confidence": "low",
-    "classificationNotes": "لم يُستنتج تصنيف وظيفي لأن معنى الكود يعتمد على رقم الطراز."
+    "classificationNotes": "لم يُستنتج تصنيف وظيفي لأن معنى الكود يعتمد على رقم الطراز.",
+    "en": {
+      "title": "Error E02 - Drainage issue",
+      "category": "error-code",
+      "severity": "medium",
+      "symptoms": [
+        "Water not draining",
+        "E02 code displayed",
+        "Residual water remains"
+      ],
+      "causes": [
+        "No single universal meaning across all models",
+        "Use the official user manual with the model number to determine the cause"
+      ],
+      "affectedParts": [
+        "Specified by the model manual"
+      ],
+      "diagnosisSteps": [
+        "Record the exact model number and code",
+        "Search the brand's official manual portal",
+        "Do not replace any part before matching the code to the manual"
+      ],
+      "repairSteps": [
+        "Follow only the model manual instructions",
+        "Contact an authorized technician if the manual does not provide a home-repair procedure"
+      ],
+      "commonMistakes": [
+        "Not cleaning the filter regularly"
+      ],
+      "preventionTips": [
+        "Clean the drain filter weekly"
+      ],
+      "toolsRequired": [
+        "Screwdriver",
+        "Drain pan"
+      ],
+      "repairDuration": "25 minutes",
+      "safetyNotes": [
+        "Disconnect power and shut off the water supply before inspecting hoses or filters.",
+        "Do not open the electronic control board or measure voltages without a qualified technician.",
+        "Code meaning and repair procedure may vary by model; consult the user manual."
+      ],
+      "faq": [
+        {
+          "q": "Where is the drain filter?",
+          "a": "At the bottom of the washer behind a small access panel."
+        },
+        {
+          "q": "How often should I clean the filter?",
+          "a": "At least weekly."
+        }
+      ]
+    }
   },
   {
     "id": "beko-e03",
@@ -5054,7 +7756,59 @@
     "codeMatching": "exact",
     "modelScope": "unknown",
     "confidence": "low",
-    "classificationNotes": "لم يُستنتج تصنيف وظيفي لأن معنى الكود يعتمد على رقم الطراز."
+    "classificationNotes": "لم يُستنتج تصنيف وظيفي لأن معنى الكود يعتمد على رقم الطراز.",
+    "en": {
+      "title": "Error E03 - Water supply issue",
+      "category": "error-code",
+      "severity": "medium",
+      "symptoms": [
+        "No water entering",
+        "E03 code displayed",
+        "Program stopped"
+      ],
+      "causes": [
+        "No single universal meaning across all models",
+        "Use the official user manual with the model number to determine the cause"
+      ],
+      "affectedParts": [
+        "Specified by the model manual"
+      ],
+      "diagnosisSteps": [
+        "Record the exact model number and code",
+        "Search the brand's official manual portal",
+        "Do not replace any part before matching the code to the manual"
+      ],
+      "repairSteps": [
+        "Follow only the model manual instructions",
+        "Contact an authorized technician if the manual does not provide a home-repair procedure"
+      ],
+      "commonMistakes": [
+        "Not checking the water tap first"
+      ],
+      "preventionTips": [
+        "Clean the inlet valve filter every 3 months"
+      ],
+      "toolsRequired": [
+        "Pliers",
+        "Screwdriver"
+      ],
+      "repairDuration": "20 minutes",
+      "safetyNotes": [
+        "Disconnect power and shut off the water supply before inspecting hoses or filters.",
+        "Do not open the electronic control board or measure voltages without a qualified technician.",
+        "Code meaning and repair procedure may vary by model; consult the user manual."
+      ],
+      "faq": [
+        {
+          "q": "What does E03 mean?",
+          "a": "Indicates an issue with the water supply."
+        },
+        {
+          "q": "How do I fix it?",
+          "a": "Check the water tap is open, then clean the inlet valve filter."
+        }
+      ]
+    }
   },
   {
     "id": "panasonic-h01",
@@ -5152,7 +7906,60 @@
     "codeMatching": "exact",
     "modelScope": "unknown",
     "confidence": "low",
-    "classificationNotes": "لم يُستنتج تصنيف وظيفي لأن معنى الكود يعتمد على رقم الطراز."
+    "classificationNotes": "لم يُستنتج تصنيف وظيفي لأن معنى الكود يعتمد على رقم الطراز.",
+    "en": {
+      "title": "Error H01 - Motor issue",
+      "category": "error-code",
+      "severity": "medium",
+      "symptoms": [
+        "Drum does not rotate",
+        "H01 code displayed",
+        "Unusual noises"
+      ],
+      "causes": [
+        "No single universal meaning across all models",
+        "Use the official user manual with the model number to determine the cause"
+      ],
+      "affectedParts": [
+        "Specified by the model manual"
+      ],
+      "diagnosisSteps": [
+        "Record the exact model number and code",
+        "Search the brand's official manual portal",
+        "Do not replace any part before matching the code to the manual"
+      ],
+      "repairSteps": [
+        "Follow only the model manual instructions",
+        "Contact an authorized technician if the manual does not provide a home-repair procedure"
+      ],
+      "commonMistakes": [
+        "Not checking wiring first"
+      ],
+      "preventionTips": [
+        "Do not exceed the maximum load"
+      ],
+      "toolsRequired": [
+        "Multimeter",
+        "Screwdriver",
+        "Wrench set"
+      ],
+      "repairDuration": "1-2 hours",
+      "safetyNotes": [
+        "Disconnect power and shut off the water supply before inspecting hoses or filters.",
+        "Do not open the electronic control board or measure voltages without a qualified technician.",
+        "Code meaning and repair procedure may vary by model; consult the user manual."
+      ],
+      "faq": [
+        {
+          "q": "Can I repair the motor myself?",
+          "a": "It is recommended to contact a specialized technician."
+        },
+        {
+          "q": "How much does motor repair cost?",
+          "a": "Cost varies by model, region and spare parts; obtain a quote from an authorized service center."
+        }
+      ]
+    }
   },
   {
     "id": "panasonic-h02",
@@ -5249,7 +8056,59 @@
     "codeMatching": "exact",
     "modelScope": "unknown",
     "confidence": "low",
-    "classificationNotes": "لم يُستنتج تصنيف وظيفي لأن معنى الكود يعتمد على رقم الطراز."
+    "classificationNotes": "لم يُستنتج تصنيف وظيفي لأن معنى الكود يعتمد على رقم الطراز.",
+    "en": {
+      "title": "Error H02 - Sensor issue",
+      "category": "error-code",
+      "severity": "medium",
+      "symptoms": [
+        "Abnormal behavior",
+        "H02 code displayed",
+        "Program errors"
+      ],
+      "causes": [
+        "No single universal meaning across all models",
+        "Use the official user manual with the model number to determine the cause"
+      ],
+      "affectedParts": [
+        "Specified by the model manual"
+      ],
+      "diagnosisSteps": [
+        "Record the exact model number and code",
+        "Search the brand's official manual portal",
+        "Do not replace any part before matching the code to the manual"
+      ],
+      "repairSteps": [
+        "Follow only the model manual instructions",
+        "Contact an authorized technician if the manual does not provide a home-repair procedure"
+      ],
+      "commonMistakes": [
+        "Not checking all sensors"
+      ],
+      "preventionTips": [
+        "Keep the electronic control board dry"
+      ],
+      "toolsRequired": [
+        "Multimeter",
+        "Screwdriver"
+      ],
+      "repairDuration": "1 hour",
+      "safetyNotes": [
+        "Disconnect power and shut off the water supply before inspecting hoses or filters.",
+        "Do not open the electronic control board or measure voltages without a qualified technician.",
+        "Code meaning and repair procedure may vary by model; consult the user manual."
+      ],
+      "faq": [
+        {
+          "q": "What are the sensors in the washer?",
+          "a": "They include the temperature sensor and the pressure sensor."
+        },
+        {
+          "q": "Can I replace a sensor myself?",
+          "a": "It is recommended to contact a technician."
+        }
+      ]
+    }
   },
   {
     "id": "samsung-tE-dish-sensor",
@@ -5335,7 +8194,54 @@
     ],
     "codeMatching": "exact",
     "modelScope": "unknown",
-    "confidence": "high"
+    "confidence": "high",
+    "en": {
+      "title": "tE - Temperature sensor error",
+      "category": "error-code",
+      "severity": "medium",
+      "symptoms": [
+        "tE displayed",
+        "Incorrect temperature reading",
+        "Cycle stopped"
+      ],
+      "causes": [
+        "Faulty temperature sensor",
+        "Issue with wiring or control board"
+      ],
+      "affectedParts": [
+        "Temperature sensor",
+        "Wiring",
+        "Control board"
+      ],
+      "diagnosisSteps": [
+        "Empty the dishwasher and run a normal cycle as recommended by the manual",
+        "Turn off the circuit breaker if the code returns",
+        "Call a technician to inspect the sensor"
+      ],
+      "repairSteps": [
+        "Repeat the test with an empty cycle",
+        "Have the sensor inspected or replaced by a technician"
+      ],
+      "commonMistakes": [
+        "Assuming the code indicates a pump fault or a leak without checking the model manual"
+      ],
+      "preventionTips": [
+        "Use dishwasher detergent suitable for your model and do not open the control panel without a technician"
+      ],
+      "toolsRequired": [],
+      "repairDuration": "Depends on diagnosis",
+      "safetyNotes": [
+        "Disconnect power and shut off the water supply before inspecting hoses or filters.",
+        "Do not open the electronic control board or measure voltages without a qualified technician.",
+        "Code meaning and repair procedure may vary by model; consult the user manual."
+      ],
+      "faq": [
+        {
+          "q": "What does tE mean?",
+          "a": "In Samsung manuals it indicates a temperature sensor error; details may vary by model."
+        }
+      ]
+    }
   },
   {
     "id": "bosch-e10-dosing",
@@ -5430,7 +8336,59 @@
     ],
     "codeMatching": "any",
     "modelScope": "unknown",
-    "confidence": "high"
+    "confidence": "high",
+    "en": {
+      "title": "E:10 / -00 / -10 / -20 - Intelligent dosing pump blocked",
+      "category": "error-code",
+      "severity": "medium",
+      "symptoms": [
+        "Code displayed on screen",
+        "Program cannot start or stops",
+        "Detergent not being pumped from the intelligent dosing system"
+      ],
+      "causes": [
+        "Clogged intelligent dosing pump",
+        "Detergent buildup inside the pump unit"
+      ],
+      "affectedParts": [
+        "Intelligent dosing pump",
+        "Dispenser/detergent unit"
+      ],
+      "diagnosisSteps": [
+        "Put the appliance in standby mode",
+        "Clean the pump unit according to the user manual",
+        "Restart the appliance and check if the code returns"
+      ],
+      "repairSteps": [
+        "Clean the pump unit per the model manual",
+        "Temporarily disable the intelligent dosing system according to the manual",
+        "Contact Bosch support if the code returns or the program will not start"
+      ],
+      "commonMistakes": [
+        "Replacing a part before matching the code to the model manual",
+        "Restarting the appliance while the root cause persists"
+      ],
+      "preventionTips": [
+        "Clean filters periodically",
+        "Check hoses and connections after installation or moving the appliance"
+      ],
+      "toolsRequired": [
+        "Small brush",
+        "Lukewarm water per the model manual"
+      ],
+      "repairDuration": "Varies depending on blockage",
+      "safetyNotes": [
+        "Disconnect power and shut off the water supply before inspection.",
+        "Beware of hot residual water when checking the drain.",
+        "Code meaning may vary by model; consult the user manual before replacing any part."
+      ],
+      "faq": [
+        {
+          "q": "What does E:10 mean in a Bosch washer?",
+          "a": "On Bosch's official documentation it indicates a blockage in the intelligent dosing pump, not a general water inlet fault."
+        }
+      ]
+    }
   },
   {
     "id": "bosch-e16-door",
@@ -5526,7 +8484,61 @@
     ],
     "codeMatching": "any",
     "modelScope": "unknown",
-    "confidence": "high"
+    "confidence": "high",
+    "en": {
+      "title": "E16 / E34 / F16 / F34 - Door not locked properly",
+      "category": "error-code",
+      "severity": "medium",
+      "symptoms": [
+        "Program will not start",
+        "Door lock error code displayed",
+        "Door remains not fully closed"
+      ],
+      "causes": [
+        "Door not fully closed",
+        "Oversized load preventing door closure",
+        "Object stuck between door and tub"
+      ],
+      "affectedParts": [
+        "Door lock",
+        "Door gasket",
+        "Door latch"
+      ],
+      "diagnosisSteps": [
+        "Check for trapped clothing or objects",
+        "Close the door until you hear the lock click",
+        "Reduce the load and restart the program",
+        "Contact a technician if the code returns"
+      ],
+      "repairSteps": [
+        "Remove the obstruction and close the door",
+        "Reduce the load",
+        "Have the lock inspected or replaced by a technician"
+      ],
+      "commonMistakes": [
+        "Replacing a part before matching the code to the model manual",
+        "Restarting the appliance while the root cause persists"
+      ],
+      "preventionTips": [
+        "Clean filters periodically",
+        "Check hoses and connections after installation or moving the appliance"
+      ],
+      "toolsRequired": [
+        "No tools required for initial checks"
+      ],
+      "repairDuration": "15-45 minutes",
+      "safetyNotes": [
+        "Disconnect power and shut off the water supply before inspection.",
+        "Beware of hot residual water when checking the drain.",
+        "Code meaning may vary by model; consult the user manual before replacing any part."
+      ],
+      "faq": [
+        {
+          "q": "Do these codes mean the lock is damaged?",
+          "a": "Not always; the door may be not fully closed or an object may be stuck, but repeated occurrences require lock inspection."
+        }
+      ]
+    }
   },
   {
     "id": "bosch-e17-water",
@@ -5624,7 +8636,63 @@
     ],
     "codeMatching": "any",
     "modelScope": "unknown",
-    "confidence": "high"
+    "confidence": "high",
+    "en": {
+      "title": "E17 / F17 / F29 - Low water pressure or blocked inlet filters",
+      "category": "error-code",
+      "severity": "medium",
+      "symptoms": [
+        "Washer does not fill with water",
+        "Slow water intake",
+        "Water supply error code displayed"
+      ],
+      "causes": [
+        "Low mains water pressure",
+        "Blocked inlet hose filter or AquaStop",
+        "Tap not fully open"
+      ],
+      "affectedParts": [
+        "Inlet filter",
+        "Inlet hose",
+        "AquaStop valve",
+        "Water tap"
+      ],
+      "diagnosisSteps": [
+        "Turn off the tap before disconnecting the hose",
+        "Clean the inlet filter with a small brush",
+        "Reconnect and check for leaks",
+        "Check the water flow and consult a plumber if low pressure persists"
+      ],
+      "repairSteps": [
+        "Open the tap fully",
+        "Clean the inlet filter",
+        "Replace the hose or AquaStop valve by a technician if needed"
+      ],
+      "commonMistakes": [
+        "Replacing a part before matching the code to the model manual",
+        "Restarting the appliance while the root cause persists"
+      ],
+      "preventionTips": [
+        "Clean filters periodically",
+        "Check hoses and connections after installation or moving the appliance"
+      ],
+      "toolsRequired": [
+        "Small brush",
+        "Pliers if needed"
+      ],
+      "repairDuration": "20-30 minutes",
+      "safetyNotes": [
+        "Disconnect power and shut off the water supply before inspection.",
+        "Beware of hot residual water when checking the drain.",
+        "Code meaning may vary by model; consult the user manual before replacing any part."
+      ],
+      "faq": [
+        {
+          "q": "Can the AquaStop hose be submerged in water?",
+          "a": "No; Bosch warns that the AquaStop contains an electrical valve and must not be submerged."
+        }
+      ]
+    }
   },
   {
     "id": "bosch-e18-drain",
@@ -5722,7 +8790,64 @@
     ],
     "codeMatching": "any",
     "modelScope": "unknown",
-    "confidence": "high"
+    "confidence": "high",
+    "en": {
+      "title": "E18 / F18 - Drain hose or pump blocked",
+      "category": "error-code",
+      "severity": "medium",
+      "symptoms": [
+        "Water remaining in the tub",
+        "Cycle stops during drain",
+        "Drain error code displayed"
+      ],
+      "causes": [
+        "Drain hose kinked or blocked",
+        "U-bend (siphon) or drain connection clogged",
+        "Drain pump or pump cover blocked"
+      ],
+      "affectedParts": [
+        "Drain hose",
+        "Drain filter",
+        "Drain pump",
+        "U-bend (siphon)"
+      ],
+      "diagnosisSteps": [
+        "Stop the appliance and unplug it",
+        "Wait for any hot water to cool, then inspect the hose and siphon",
+        "Clean the pump and filter according to the model manual",
+        "After reassembly, check for leaks"
+      ],
+      "repairSteps": [
+        "Straighten the hose and remove the blockage",
+        "Clean the filter and pump",
+        "Replace the pump by a technician if it does not operate"
+      ],
+      "commonMistakes": [
+        "Replacing parts before confirming the code against the model manual",
+        "Restarting the appliance while the cause persists"
+      ],
+      "preventionTips": [
+        "Clean filters regularly",
+        "Check hoses and connections after installation or moving the appliance"
+      ],
+      "toolsRequired": [
+        "Basin to collect water",
+        "Screwdriver",
+        "Gloves"
+      ],
+      "repairDuration": "30-60 minutes",
+      "safetyNotes": [
+        "Disconnect the appliance from power and shut off the water supply before inspection.",
+        "Be careful of hot residual water when inspecting the drain.",
+        "Codes may vary by model; consult the user manual before replacing any part."
+      ],
+      "faq": [
+        {
+          "q": "Can the water be hot when E18 appears?",
+          "a": "Yes. Bosch warns that residual water may be hot; allow it to cool and disconnect power before inspection."
+        }
+      ]
+    }
   },
   {
     "id": "bosch-e30-water",
@@ -5821,7 +8946,65 @@
     ],
     "codeMatching": "any",
     "modelScope": "unknown",
-    "confidence": "high"
+    "confidence": "high",
+    "en": {
+      "title": "E:30/-10 - Water inlet or level measurement issue",
+      "category": "error-code",
+      "severity": "medium",
+      "symptoms": [
+        "Tap/faucet symbol displayed",
+        "Insufficient water entering",
+        "Program stops or starts draining"
+      ],
+      "causes": [
+        "Low water pressure",
+        "Inlet filters blocked",
+        "Faucet closed",
+        "Inlet hose kinked",
+        "Fault in the water level measurement system"
+      ],
+      "affectedParts": [
+        "Water faucet/tap",
+        "Inlet filter",
+        "Inlet hose",
+        "Water level measurement system"
+      ],
+      "diagnosisSteps": [
+        "Check the faucet is open and verify water flow",
+        "Shut off the water and clean the inlet filters",
+        "Inspect and straighten the inlet hose",
+        "Reset the appliance once; contact support if the code returns"
+      ],
+      "repairSteps": [
+        "Open the water tap and straighten the hose",
+        "Clean the inlet filters",
+        "Have a technician inspect the water level measurement system if the code persists"
+      ],
+      "commonMistakes": [
+        "Replacing parts before confirming the code against the model manual",
+        "Restarting the appliance while the cause persists"
+      ],
+      "preventionTips": [
+        "Clean filters regularly",
+        "Check hoses and connections after installation or moving the appliance"
+      ],
+      "toolsRequired": [
+        "Small brush",
+        "Pliers if needed"
+      ],
+      "repairDuration": "20-40 minutes",
+      "safetyNotes": [
+        "Disconnect the appliance from power and shut off the water supply before inspection.",
+        "Be careful of hot residual water when inspecting the drain.",
+        "Codes may vary by model; consult the user manual before replacing any part."
+      ],
+      "faq": [
+        {
+          "q": "When should I call a technician?",
+          "a": "If the code returns after opening the tap, cleaning the filters and straightening the hose, the water level measurement system may be faulty and requires a technician."
+        }
+      ]
+    }
   },
   {
     "id": "beko-dishwasher-e01",
@@ -5912,7 +9095,58 @@
     ],
     "codeMatching": "exact",
     "modelScope": "model-manual",
-    "confidence": "high"
+    "confidence": "high",
+    "en": {
+      "title": "E01 - Water in the base / overflow protection",
+      "category": "error-code",
+      "severity": "high",
+      "symptoms": [
+        "E01 displayed",
+        "Program stops",
+        "Possible water in the appliance base"
+      ],
+      "causes": [
+        "Leak or water accumulation in the dishwasher base",
+        "Flood protection algorithm activated"
+      ],
+      "affectedParts": [
+        "Appliance base",
+        "Flood sensor/protection",
+        "Water hoses"
+      ],
+      "diagnosisSteps": [
+        "Stop the appliance and disconnect power",
+        "Shut off the water supply",
+        "Do not restart if the code persists",
+        "Contact an authorized Beko service center"
+      ],
+      "repairSteps": [
+        "Turn off water and power",
+        "Have a technician locate and repair the source of the leak",
+        "Restart only after the leak cause has been resolved"
+      ],
+      "commonMistakes": [
+        "Replacing parts before confirming the code against the model manual",
+        "Restarting the appliance while the cause persists"
+      ],
+      "preventionTips": [
+        "Clean filters regularly",
+        "Check hoses and connections after installation or moving the appliance"
+      ],
+      "toolsRequired": [],
+      "repairDuration": "Depends on diagnosis",
+      "safetyNotes": [
+        "Disconnect the appliance from power and shut off the water supply before inspection.",
+        "Be careful of hot residual water when inspecting the drain.",
+        "Codes may vary by model; consult the user manual before replacing any part."
+      ],
+      "faq": [
+        {
+          "q": "Can I continue running the appliance with E01?",
+          "a": "No. Shut off the water, disconnect power, and contact authorized service if the code persists."
+        }
+      ]
+    }
   },
   {
     "id": "beko-dishwasher-e02",
@@ -6006,7 +9240,62 @@
     ],
     "codeMatching": "exact",
     "modelScope": "model-manual",
-    "confidence": "high"
+    "confidence": "high",
+    "en": {
+      "title": "E02 - Water supply interruption or blocked inlet filter",
+      "category": "error-code",
+      "severity": "medium",
+      "symptoms": [
+        "No water entering",
+        "Program stops or finishes without sufficient fill",
+        "E02 displayed"
+      ],
+      "causes": [
+        "Water supply interrupted or shut off",
+        "Inlet filter blocked",
+        "Inlet hose or valve requires inspection"
+      ],
+      "affectedParts": [
+        "Water valve",
+        "Inlet filter",
+        "Inlet hose"
+      ],
+      "diagnosisSteps": [
+        "Verify water supply and that the valve is open",
+        "Disconnect power and water before removing the inlet hose",
+        "Clean the inlet filter and reconnect, checking for leaks",
+        "Request service if the code persists"
+      ],
+      "repairSteps": [
+        "Open the water valve",
+        "Clean the inlet filter",
+        "Have a technician check the valve or hose if needed"
+      ],
+      "commonMistakes": [
+        "Replacing parts before confirming the code against the model manual",
+        "Restarting the appliance while the cause persists"
+      ],
+      "preventionTips": [
+        "Clean filters regularly",
+        "Check hoses and connections after installation or moving the appliance"
+      ],
+      "toolsRequired": [
+        "Small brush",
+        "Basin to collect water"
+      ],
+      "repairDuration": "20-30 minutes",
+      "safetyNotes": [
+        "Disconnect the appliance from power and shut off the water supply before inspection.",
+        "Be careful of hot residual water when inspecting the drain.",
+        "Codes may vary by model; consult the user manual before replacing any part."
+      ],
+      "faq": [
+        {
+          "q": "What is the first step when E02 appears?",
+          "a": "Check the water supply and valve, then disconnect water and power and carefully clean the inlet filter."
+        }
+      ]
+    }
   },
   {
     "id": "beko-dishwasher-e06",
@@ -6094,7 +9383,56 @@
     ],
     "codeMatching": "exact",
     "modelScope": "model-manual",
-    "confidence": "high"
+    "confidence": "high",
+    "en": {
+      "title": "E06 - Internal temperature sensor fault",
+      "category": "error-code",
+      "severity": "high",
+      "symptoms": [
+        "E06 recurring",
+        "Reduced or altered wash performance",
+        "Heating not being regulated correctly"
+      ],
+      "causes": [
+        "Faulty internal temperature sensor",
+        "Fault in sensor wiring or control board"
+      ],
+      "affectedParts": [
+        "Temperature sensor",
+        "Wiring",
+        "Control board"
+      ],
+      "diagnosisSteps": [
+        "Stop the appliance if the code repeats",
+        "Do not open the panel or measure voltages yourself",
+        "Contact an authorized Beko service center to inspect the sensor"
+      ],
+      "repairSteps": [
+        "Technician to inspect the sensor and its connections",
+        "Replace the sensor or the faulty component according to the model manual"
+      ],
+      "commonMistakes": [
+        "Replacing parts before confirming the code against the model manual",
+        "Restarting the appliance while the cause persists"
+      ],
+      "preventionTips": [
+        "Clean filters regularly",
+        "Check hoses and connections after installation or moving the appliance"
+      ],
+      "toolsRequired": [],
+      "repairDuration": "Depends on diagnosis",
+      "safetyNotes": [
+        "Disconnect the appliance from power and shut off the water supply before inspection.",
+        "Be careful of hot residual water when inspecting the drain.",
+        "Codes may vary by model; consult the user manual before replacing any part."
+      ],
+      "faq": [
+        {
+          "q": "Can E06 be fixed by cleaning the filter?",
+          "a": "The official source links E06 to the internal temperature sensor; if the code persists, contact an authorized service center."
+        }
+      ]
+    }
   },
   {
     "id": "beko-dishwasher-e07",
@@ -6182,6 +9520,55 @@
     ],
     "codeMatching": "exact",
     "modelScope": "model-manual",
-    "confidence": "high"
+    "confidence": "high",
+    "en": {
+      "title": "E07 - Water meter fault",
+      "category": "error-code",
+      "severity": "high",
+      "symptoms": [
+        "E07 recurring",
+        "Program stops after starting to fill",
+        "Irregular water quantity inside the appliance"
+      ],
+      "causes": [
+        "Water meter fault",
+        "Fault in the sensor or wiring related to flow measurement"
+      ],
+      "affectedParts": [
+        "Water meter / flow sensor",
+        "Wiring",
+        "Control board"
+      ],
+      "diagnosisSteps": [
+        "Stop the appliance and shut off the water supply if the code persists",
+        "Do not replace the sensor without matching the model number",
+        "Contact an authorized Beko service center"
+      ],
+      "repairSteps": [
+        "Technician to inspect the water meter, flow sensor and wiring",
+        "Replace the part according to the model manual"
+      ],
+      "commonMistakes": [
+        "Replacing parts before confirming the code against the model manual",
+        "Restarting the appliance while the cause persists"
+      ],
+      "preventionTips": [
+        "Clean filters regularly",
+        "Check hoses and connections after installation or moving the appliance"
+      ],
+      "toolsRequired": [],
+      "repairDuration": "Depends on diagnosis",
+      "safetyNotes": [
+        "Disconnect the appliance from power and shut off the water supply before inspection.",
+        "Be careful of hot residual water when inspecting the drain.",
+        "Codes may vary by model; consult the user manual before replacing any part."
+      ],
+      "faq": [
+        {
+          "q": "Does E07 mean there is a clog in the drain hose?",
+          "a": "Not according to the official manual referenced here; the code is related to the water meter and requires service inspection if it recurs."
+        }
+      ]
+    }
   }
 ]

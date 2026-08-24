@@ -36,7 +36,43 @@
         "label": "ENERGY STAR — Refrigerators",
         "url": "https://www.energystar.gov/products/refrigerators"
       }
-    ]
+    ],
+    "en": {
+      "title": "Fridge not cooling well? A practical check before calling a technician",
+      "excerpt": "Safe steps to diagnose weak refrigerator cooling, from temperature and condenser ventilation to the door gasket and food arrangement.",
+      "category": "Refrigerators",
+      "keywords": [
+        "fridge not cooling",
+        "weak refrigerator cooling",
+        "refrigerator temperature",
+        "cleaning refrigerator condenser",
+        "refrigerator maintenance"
+      ],
+      "content": "<p>When a refrigerator's cooling weakens, don't start by randomly changing the thermostat or adding refrigerant. Begin by measuring the temperature and checking airflow and the door, because the cause may be an incorrect setting or stacking that prevents air circulation. The <a href='https://www.fda.gov/food/buy-store-serve-safe-food/refrigerator-thermometers-cold-facts-about-food-safety' target='_blank' rel='noopener noreferrer'>FDA</a> recommends keeping the refrigerator compartment at 4 °C or below, and the freezer around −18 °C, using an independent thermometer if the digital readout is absent.</p><h2>Start by measuring temperature, not guessing</h2><p>Place a thermometer made for appliances in the middle of the refrigerator compartment, away from the door, and leave it for the time recommended by the manufacturer. Do not rely on the temperature of a single interior wall; measuring air and food in more than one location reveals whether the problem is overall or confined to a specific spot. If the temperature is high, move perishable foods to a cold place and follow food safety rules before continuing diagnosis.</p><h2>Simple causes you can check safely</h2><ul><li>Ensure air distribution vents are not blocked by cans or bags, and do not overfill shelves so as to prevent air circulation.</li><li>Inspect the door gasket for cracks or gaps. Close the door on a sheet of paper; if it slides out easily from multiple spots the seal may not be adequate.</li><li>Keep the refrigerator away from the oven and direct sunlight and leave clearance behind it according to the model manual. <a href='https://www.energystar.gov/products/refrigerators' target='_blank' rel='noopener noreferrer'>ENERGY STAR</a> points to the importance of clearance, ventilation and checking the gasket.</li><li>If the model allows condenser coil cleaning, unplug and remove dust with a soft brush or vacuum, and do not remove covers or touch exposed wiring.</li></ul><h2>When does the fault require a technician?</h2><p>Call a qualified refrigeration technician if the temperature remains high after adjusting ventilation and seals, or if there is an unusual sound from the compressor, or heavy ice buildup on one area, or signs of oil and leakage. Do not pierce ice with a sharp tool or open the refrigeration circuit; these actions can cause damage, leaks and safety hazards.</p><h2>Tip to reduce energy use</h2><p>Reduce how long the door is open, let hot food cool safely before putting it inside, and clean spills promptly. Also see the article <a href='https://imadtbn.github.io/hatg-machine/articles/energy-saving.html'>Energy saving in home appliances</a> and the article <a href='https://imadtbn.github.io/hatg-machine/articles/maintenance-tips.html'>Routine maintenance checklist</a> to develop a regular follow-up schedule.</p>",
+      "faq": [
+        {
+          "q": "What is the proper refrigerator temperature for storing food?",
+          "a": "Set it at 4 °C or below, and the freezer close to −18 °C; check with an independent thermometer when needed and refer to the model manual."
+        },
+        {
+          "q": "Does cleaning the condenser coils fix all refrigerators?",
+          "a": "No. The access method varies by model; disconnect power and follow the manual, and call a technician if removing a cover or dealing with wiring or the refrigeration circuit is required."
+        }
+      ],
+      "sources": [
+        {
+          "label": "FDA — Refrigerator Thermometers and Food Safety",
+          "url": "https://www.fda.gov/food/buy-store-serve-safe-food/refrigerator-thermometers-cold-facts-about-food-safety"
+        },
+        {
+          "label": "ENERGY STAR — Refrigerators",
+          "url": "https://www.energystar.gov/products/refrigerators"
+        }
+      ],
+      "imageAlt": "Open refrigerator with a diagnostic symbol for weak cooling"
+    },
+    "image": "assets/images/articles/refrigerator-not-cooling.jpg",
+    "imageAlt": "ثلاجة مفتوحة مع رمز فحص لضعف التبريد"
   },
   {
     "id": "dryer-not-drying",
@@ -71,7 +107,39 @@
         "label": "U.S. Fire Administration — Appliance and Electrical Fire Safety",
         "url": "https://www.usfa.fema.gov/prevention/home-fires/prevent-fires/appliance-and-electrical/"
       }
-    ]
+    ],
+    "en": {
+      "title": "Dryer not drying clothes? Causes of poor drying and safe steps",
+      "excerpt": "A practical guide to checking the lint filter, airflow path, and load before calling for service, with warnings to prevent dryer overheating and fires.",
+      "category": "Dryers",
+      "keywords": [
+        "dryer not drying",
+        "poor clothes drying",
+        "cleaning dryer filter",
+        "dryer vent blockage",
+        "clothes dryer safety"
+      ],
+      "content": "<p>If a dryer cycle finishes and clothes remain damp, raising the heat is often not the solution. Drying depends on sufficient air passing through the clothes and the exhaust of moist air; therefore a clogged lint filter or duct leads to longer cycles and higher temperatures. The <a href='https://www.usfa.fema.gov/prevention/home-fires/prevent-fires/appliance-and-electrical/' target='_blank' rel='noopener noreferrer'>U.S. Fire Administration</a> notes that lack of cleaning was a major factor in a significant share of clothes dryer fires, so poor drying should be treated as both a performance and a safety issue.</p><h2>Initial check before starting a new cycle</h2><p>Unplug the dryer, then clean the lint filter as described in the model's manual. Visually inspect it for any layer blocking airflow, and clean the surrounding area without pushing lint into the machine. Do not use the dryer if you smell burning, see smoke, or notice abnormal heat at the plug.</p><h2>Check the airflow path</h2><ul><li>Make sure the rear hose is not kinked or crushed behind the appliance.</li><li>Check that the external exhaust vent opens during operation and that there is not an extremely weak airflow coming out.</li><li>Do not block the vent and do not replace the duct with non-approved materials or one that is excessively long.</li><li>If the run is long or reaches a high location, make deep cleaning a job for a technician or a specialized service.</li></ul><h2>Load and cycle</h2><p>Separate heavy loads like towels, and do not mix them with very lightweight items. Overloading prevents clothes from tumbling and reduces airflow, while very small loads may cause the sensor to end the cycle early on some models. Choose a program that matches the fabric type and desired dryness level, and follow the garment care labels.</p><h2>Signs that require stopping</h2><p>Stop immediately if you smell burning, the dryer cabinet becomes excessively hot, you hear rubbing or grinding noises, or the circuit breaker trips repeatedly. Do not use an extension cord with a dryer; the Fire Administration recommends plugging large appliances directly into a wall outlet and not using temporary cords. After any repair, run a short test cycle and monitor the airflow instead of leaving the appliance operating unattended.</p><h2>Relation of the problem to energy use</h2><p>A clogged run makes cycles longer and increases energy consumption. After cleaning it, monitor drying time for a similar load, and note any change in sound or temperature. Also see the article <a href='https://imadtbn.github.io/hatg-machine/articles/energy-saving.html'>Energy saving</a> for general practices that reduce appliance runtime without compromising safety.</p>",
+      "faq": [
+        {
+          "q": "Is cleaning the lint filter enough to solve poor drying?",
+          "a": "Not always; you should also check the duct, the exhaust vent, the load and the program. If airflow remains weak or abnormal heat appears, stop the appliance and call a technician."
+        },
+        {
+          "q": "Is it permissible to run a dryer using an extension cord?",
+          "a": "Do not use an extension cord with a large appliance like a dryer. Plug it directly into a suitable wall outlet according to manufacturer specifications and local codes."
+        }
+      ],
+      "sources": [
+        {
+          "label": "U.S. Fire Administration — Appliance and Electrical Fire Safety",
+          "url": "https://www.usfa.fema.gov/prevention/home-fires/prevent-fires/appliance-and-electrical/"
+        }
+      ],
+      "imageAlt": "Clothes dryer with airflow and lint filter"
+    },
+    "image": "assets/images/articles/dryer-not-drying.jpg",
+    "imageAlt": "مجفف ملابس مع تدفق هواء وفلتر الوبر"
   },
   {
     "id": "ac-weak-airflow",
@@ -106,7 +174,39 @@
         "label": "ENERGY STAR — Heat & Cool Efficiently",
         "url": "https://www.energystar.gov/saveathome/heating-cooling"
       }
-    ]
+    ],
+    "en": {
+      "title": "Is Your AC's Air Weak? Filter and Airflow Inspection Guide",
+      "excerpt": "Safe steps to diagnose weak air output in the AC, from the filter and vents to signs of coil freezing and when to call an HVAC technician.",
+      "category": "Air Conditioners",
+      "keywords": [
+        "weak AC airflow",
+        "AC not cooling",
+        "cleaning AC filter",
+        "AC freezing",
+        "air conditioner maintenance"
+      ],
+      "content": "<p>Weak air coming from the AC does not automatically mean a refrigerant shortage. A clogged filter, closed return vents, or a dirty coil can reduce airflow, and continued operation under such conditions can lead to internal components freezing. <a href='https://www.energystar.gov/saveathome/heating-cooling' target='_blank' rel='noopener noreferrer'>ENERGY STAR</a> recommends checking the filter monthly during heavy-use periods and replacing it when dirty and at minimum every three months.</p><h2>Safe inspection steps</h2><p>Turn off the AC and disconnect power before removing the filter. Check the arrow direction and filter size, and clean or replace it according to the manufacturer's instructions; do not use a filter denser than recommended because it may choke airflow. Reinstall the cover properly so the unit does not draw air from unintended openings.</p><h2>Check the vents and airflow path</h2><ul><li>Open the supply and return vents and make sure they are not blocked by curtains or furniture.</li><li>Visually inspect the outdoor grille and remove surface dust without spraying water on electrical parts.</li><li>Listen to the fan; repeated scraping or whining may indicate a mechanical problem.</li><li>If you see ice on the pipes or coil, stop cooling and let it thaw naturally, then call a technician if it recurs.</li></ul><h2>Why lowering the set temperature isn't enough</h2><p>Setting the thermostat very low does not fix weak airflow and may lengthen compressor run times. Start by improving airflow and the filter, then compare comfort after a suitable cycle. ENERGY STAR guidance shows that a dirty filter slows airflow and makes the system work harder, increasing energy use and the likelihood of early maintenance.</p><h2>When to call an HVAC technician</h2><p>Contact a qualified technician if freezing recurs, if there is abnormal water leakage, if airflow is severely weak despite a clean filter, or if the refrigerant or electrical circuit needs to be opened. Do not attempt to add refrigerant, puncture ice, or disassemble the indoor panel yourself.</p><h2>Improving seasonal maintenance</h2><p>Record the date you change the filter, clean the outdoor unit according to its manual, and request a periodic inspection before the season of use. You can link these steps with <a href='https://imadtbn.github.io/hatg-machine/articles/ac-maintenance.html'>Air Conditioner Pre-Summer Maintenance Guide</a> and <a href='https://imadtbn.github.io/hatg-machine/articles/energy-saving.html'>Energy Saving article</a>.</p>",
+      "faq": [
+        {
+          "q": "How often should I change the AC filter?",
+          "a": "Check it monthly during heavy use and replace it when it becomes dirty, and at minimum every three months, following the size and manufacturer's instructions."
+        },
+        {
+          "q": "Does AC freezing always mean a refrigerant leak?",
+          "a": "No. It may be caused by weak airflow, a dirty filter, or a fan fault; a professional inspection is needed before adding refrigerant."
+        }
+      ],
+      "sources": [
+        {
+          "label": "ENERGY STAR — Heat & Cool Efficiently",
+          "url": "https://www.energystar.gov/saveathome/heating-cooling"
+        }
+      ],
+      "imageAlt": "Air conditioner with a filter and blue airflow"
+    },
+    "image": "assets/images/articles/ac-weak-airflow.jpg",
+    "imageAlt": "مكيف هواء مع فلتر وتدفق هواء أزرق"
   },
   {
     "id": "when-to-call-technician",
@@ -144,7 +244,42 @@
         "label": "Recalls & Product Safety Warnings – CPSC",
         "url": "https://www.cpsc.gov/Recalls"
       }
-    ]
+    ],
+    "en": {
+      "title": "When to Fix the Appliance Yourself and When to Call a Technician?",
+      "excerpt": "A clear decision rule that separates cleaning and simple checks from electrical, gas, and refrigeration faults that shouldn't be experimented with.",
+      "category": "Safety",
+      "keywords": [
+        "appliance repair technician",
+        "appliance repair safety",
+        "when to call a technician",
+        "serious electrical faults"
+      ],
+      "content": "<p>Good home diagnosis knows its limits. You can often clean a filter, rearrange a load, or inspect a visible hose, but you don't need to prove your skill by disassembling an electrical control panel or a refrigeration circuit. The cost of a qualified technician is less than the risk of shock, fire, or damaging the entire appliance.</p><h2>Low-risk household tasks</h2><p>Unplugging, reading the manual, cleaning permitted filters, checking for kinked hoses, adjusting the feet, and recording an error code are reasonable first steps if the appliance is unplugged and there is no hazardous leak. Use non-conductive tools, and do not bypass safety devices.</p><h2>Call a technician immediately when</h2><ul><li>a burning smell, smoke, sparking, or excessive heat at the plug.</li><li>repeated tripping of a breaker or electric shock when touching the casing.</li><li>water leaking near an outlet or electrical panel.</li><li>the need to open a refrigeration circuit or handle refrigerant or pressurized gas.</li><li>the error code recurs after following the manual steps or the fault immediately returns.</li></ul><p>ESFI recommends unplugging damaged small appliances and repairing or replacing them, and the <a href='https://www.cpsc.gov/Recalls' target='_blank' rel='noopener noreferrer'>CPSC website</a> allows checking recalls and safety warnings. Check your country and brand because warranty and recall procedures vary.</p><h2>How to choose a technician?</h2><p>Ask for a license or certification number where applicable, a written description of the diagnosis and cost, and a warranty on the work. Prepare the model number, a photo of the error code, and a record of what was tried, and do not allow bypassing a sensor or fuse as a permanent fix.</p>",
+      "faq": [
+        {
+          "q": "Does restarting the appliance clear all error codes?",
+          "a": "It may only clear a temporary condition. If the code returns, follow the model's manual and do not repeatedly restart the appliance if there is a leak or a burning smell."
+        },
+        {
+          "q": "Can a technician disable a leak sensor?",
+          "a": "No. Disabling protective measures is unsafe and should be refused; the cause of the fault should be repaired and the appropriate part replaced."
+        }
+      ],
+      "sources": [
+        {
+          "label": "Appliance Safety Tips – ESFI",
+          "url": "https://www.esfi.org/appliance-safety-tips/"
+        },
+        {
+          "label": "Recalls & Product Safety Warnings – CPSC",
+          "url": "https://www.cpsc.gov/Recalls"
+        }
+      ],
+      "imageAlt": "Appliance technician checking a home appliance safely"
+    },
+    "image": "assets/images/articles/when-to-call-technician.jpg",
+    "imageAlt": "فني صيانة يفحص جهازاً منزلياً بأدوات آمنة"
   },
   {
     "id": "dishwasher-white-residue",
@@ -179,7 +314,39 @@
         "label": "ENERGY STAR — Dishwashers",
         "url": "https://www.energystar.gov/products/holiday/dishwashers"
       }
-    ]
+    ],
+    "en": {
+      "title": "Dishwasher leaving a white film? Causes of deposits and solutions",
+      "excerpt": "How to distinguish between hard-water deposits and detergent residues, and how to set salt, rinse aid and the program without randomly changing parts.",
+      "category": "Dishwashers",
+      "keywords": [
+        "white film in dishwasher",
+        "dishwasher deposits",
+        "rinse aid",
+        "dishwasher salt",
+        "dishwasher not cleaning"
+      ],
+      "content": "<p>The white film on cups or the dishwasher interior may be salt deposits from hard water, undissolved detergent residue, or the result of a program with unsuitable temperature and water flow. Do not start by replacing the pump; first check the type and location of the deposit and the salt and rinse aid settings according to the model's manual.</p><h2>How to distinguish the type of deposit?</h2><p>If the residue is powdery and appears on surfaces after a short cycle, it may be related to the detergent dose or poor dissolution. If it is cloudy or chalky and recurring on glass, it may be related to hard water or low salt in models that use a softening system. Try cleaning a single item using the method recommended in the manual, and do not mix different chemicals.</p><h2>Practical steps to improve</h2><ul><li>Clean the filter and spray arms, and make sure their holes are not blocked by food debris.</li><li>Check for dishwasher-specific salt if the model has a salt tank, and do not use table salt instead.</li><li>Adjust the rinse aid according to your water hardness and the manufacturer's instructions, and avoid increasing the dose arbitrarily.</li><li>Load dishes so they do not block the spray arms, and choose a program suited to the level of soiling.</li><li>Do not fully rinse dishes before loading; <a href='https://www.energystar.gov/products/holiday/dishwashers' target='_blank' rel='noopener noreferrer'>ENERGY STAR</a> recommends scraping off leftovers and running a full load instead of pre-rinsing.</li></ul><h2>When do you need a technician?</h2><p>If the residue remains after cleaning the filter and spray arms and adjusting consumables, or if there is a heating or leaking problem or a clear loss of spray pressure, call a technician. Do not open the heater or tamper with the drain pump; disconnect the appliance and water before any external inspection.</p><h2>Reduce consumption with better results</h2><p>ENERGY STAR notes that the no-heat drying option combined with rinse aid can give good results with lower energy use in some models. Test it on a full load, and consult the <a href='https://imadtbn.github.io/hatg-machine/articles/dishwasher-filter.html'>dishwasher filter cleaning guide</a> if you notice weak spray or odors.</p>",
+      "faq": [
+        {
+          "q": "Does a white film mean the dishwasher is broken?",
+          "a": "Not necessarily; it may be from hard water, the detergent, or loading. Start with the filter, spray arms, salt and rinse aid before ordering spare parts."
+        },
+        {
+          "q": "Should I use vinegar with every dishwasher?",
+          "a": "Do not use any substance that is not recommended without checking the model manual; some substances can damage seals or metals. Use a dedicated product when needed and follow dosing instructions."
+        }
+      ],
+      "sources": [
+        {
+          "label": "ENERGY STAR — Dishwashers",
+          "url": "https://www.energystar.gov/products/holiday/dishwashers"
+        }
+      ],
+      "imageAlt": "Dishwasher with water-drop and mineral-residue symbols"
+    },
+    "image": "assets/images/articles/dishwasher-white-residue.jpg",
+    "imageAlt": "غسالة أطباق مع رمز قطرات الماء وأملاح الترسب"
   },
   {
     "id": "dishwasher-drying",
@@ -213,7 +380,38 @@
         "label": "منتجات كفاءة الطاقة – ENERGY STAR",
         "url": "https://www.energystar.gov/products"
       }
-    ]
+    ],
+    "en": {
+      "title": "Dishwasher Doesn't Dry Dishes: Common Causes and Practical Solutions",
+      "excerpt": "From program selection and dish arrangement to rinse aid and vents, steps that improve drying quality without randomly replacing parts.",
+      "category": "Dishwashers",
+      "keywords": [
+        "dishwasher doesn't dry",
+        "wet dishes",
+        "rinse aid",
+        "drying cycle"
+      ],
+      "content": "<p>Some eco programs may leave more water droplets because they use less heat or time. So distinguish between normal program behaviour and a fault in the heating or ventilation. Plastic also retains water more than glass and metal.</p><h2>Improving results without repair</h2><p>Load dishes at an angle to allow water to drain and do not nest cups inside each other. Make sure the spray arms rotate freely and the filter is clean. Use the recommended rinse aid and set the dosage according to water hardness and the model manual. Open the door slightly after the cycle ends if the function is allowed and safe.</p><h2>Signs of a heating fault</h2><p>If dishes remain very cold with an absence of steam on a heated program, or detergent residues appear with a recurring problem, the cause may be a heater, a temperature sensor, or a control board. Do not disassemble the heater; disconnect the appliance and call a technician, especially if the circuit breaker tripped or there was a burning smell.</p><p>Clean the filter periodically because poor water flow affects cleaning and drying together. When an error code appears, write down the code and the model number before restarting so it can be matched with the manufacturer's manual or a fault database.</p>",
+      "faq": [
+        {
+          "q": "Does wetness after the eco program indicate a fault?",
+          "a": "Not necessarily; eco programs may use lower heat. Try the appropriate program and follow the rinse aid instructions before requesting service."
+        },
+        {
+          "q": "Can I increase the heat manually?",
+          "a": "Do not exceed the manufacturer's settings. High heat may damage plastics and increase energy consumption."
+        }
+      ],
+      "sources": [
+        {
+          "label": "Energy-Efficient Products – ENERGY STAR",
+          "url": "https://www.energystar.gov/products"
+        }
+      ],
+      "imageAlt": "Dishwasher with dry dishes and warm airflow"
+    },
+    "image": "assets/images/articles/dishwasher-drying.jpg",
+    "imageAlt": "غسالة أطباق مع أطباق جافة وتدفق هواء دافئ"
   },
   {
     "id": "microwave-not-heating",
@@ -248,7 +446,39 @@
         "label": "FDA — Microwave Ovens",
         "url": "https://www.fda.gov/radiation-emitting-products/resources-you-radiation-emitting-products/microwave-ovens"
       }
-    ]
+    ],
+    "en": {
+      "title": "Microwave not heating? Initial diagnosis and safe repair limits",
+      "excerpt": "Simple checks for a microwave that won't heat, with a clear warning against opening or running the appliance if the door or seals are damaged.",
+      "category": "Microwave Ovens",
+      "keywords": [
+        "microwave not heating",
+        "weak microwave heating",
+        "microwave inspection",
+        "microwave oven safety",
+        "microwave runs without heat"
+      ],
+      "content": "<p>The microwave may operate and the fan and turntable may run while the food does not get hot. Before assuming a magnetron failure, check the settings/program, time, container and the electrical load. The <a href='https://www.fda.gov/radiation-emitting-products/resources-you-radiation-emitting-products/microwave-ovens' target='_blank' rel='noopener noreferrer'>FDA</a> confirms that microwave ovens manufactured to standard and used according to their manual are safe, but a damaged appliance needs to be stopped and professionally inspected.</p><h2>Checks that don't require opening the appliance</h2><ul><li>Make sure you have selected a heating mode, not the timer or demo/display mode, and set a suitable time for the food.</li><li>Try a known good outlet without using an extension cord, and check that the circuit breaker hasn't tripped.</li><li>Place a cup of water in a microwave-safe container and run a short cycle according to the manual; do not run the appliance empty.</li><li>Ensure the door fully closes and there is no debris preventing the latch from engaging.</li></ul><h2>Container and heating method</h2><p>Use glass, ceramic, or microwave-safe plastic, and do not use metals or aluminum foil unless the model's manual explicitly allows it. Cover the food and stir or rotate it as needed, and allow standing time to complete heat transfer within the food. Do not heat water or liquids longer than the manufacturer's recommendations to avoid superheating and sudden violent boiling.</p><h2>Signs that prohibit use</h2><p>Do not use the appliance if the door does not close properly, or if the hinges, seals, or latch are bent or damaged, or if the appliance continues to operate with the door open. The FDA recommends stopping the appliance immediately in the latter case and not attempting to test for leakage or repair the high-voltage circuit at home.</p><h2>When to call a technician?</h2><p>If outlet, settings and container checks succeed and heating remains weak, you will likely need a professional diagnosis of the door switches, the power circuit, or internal components. Do not remove the cover even after unplugging; some components can retain a dangerous electrical charge.</p><h2>Reading the error code</h2><p>Note the error code and model number if displayed, then consult <a href='https://imadtbn.github.io/hatg-machine/errors.html'>Error Codes Guide</a> or the <a href='https://imadtbn.github.io/hatg-machine/articles/when-to-call-technician.html'>When to Call a Technician</a> article before deciding on repairs.</p>",
+      "faq": [
+        {
+          "q": "Can I replace the magnetron myself?",
+          "a": "No. Repairing the high-voltage circuit and microwave components requires a qualified technician, and unplugging is not sufficient to remove all risks."
+        },
+        {
+          "q": "Is it dangerous to run the microwave with the door open?",
+          "a": "Yes — stop it immediately if it continues to operate with the door open or if the door or seals are damaged, and contact the manufacturer or an authorized technician."
+        }
+      ],
+      "sources": [
+        {
+          "label": "FDA — Microwave Ovens",
+          "url": "https://www.fda.gov/radiation-emitting-products/resources-you-radiation-emitting-products/microwave-ovens"
+        }
+      ],
+      "imageAlt": "Microwave with a heating and safety diagnostic symbol"
+    },
+    "image": "assets/images/articles/when-to-call-technician.jpg",
+    "imageAlt": "ميكروويف مع رمز فحص التسخين والسلامة"
   },
   {
     "id": "washing-machine-vibration",
@@ -282,7 +512,38 @@
         "label": "نصائح السلامة للأجهزة الكهربائية – ESFI",
         "url": "https://www.esfi.org/appliance-safety-tips/"
       }
-    ]
+    ],
+    "en": {
+      "title": "Why is the washing machine vibrating? Causes and fixes before calling a technician",
+      "excerpt": "Practical solutions for vibration and noise that start with load distribution and leveling the feet and end with checking the shock absorbers and bearings.",
+      "category": "Washing machine faults",
+      "keywords": [
+        "washing machine vibration",
+        "washer moves during spin",
+        "washing machine noise",
+        "washing machine leveling"
+      ],
+      "content": "<p>A light vibration at the start of the spin cycle is normal, but the machine moving or hitting the wall is not. Start with causes that don't require tools, because an unbalanced load or an uneven floor can mimic a mechanical fault.</p><h2>Three quick checks</h2><ol><li>Stop the cycle and redistribute large items. Do not wash a single blanket by itself if the manual recommends balancing it with other items.</li><li>Place a spirit level on the top if available, and adjust the four feet until they sit firmly on the floor, then tighten the lock nuts.</li><li>Make sure the transit bolts are removed on new washers; leaving them in place causes severe vibration and damage.</li></ol><p>Leave a small gap from the wall and do not place the appliance on a flexible surface. If you hear grinding or metallic knocking even with an empty drum, or water leaking from the bottom, do not continue to operate. The problem may be with the shock absorbers, bearings, or balance weight, and it requires a technician.</p><h2>How to prevent recurrence?</h2><p>Respect the rated capacity and don't overpack the drum, and use a spin speed appropriate for the fabric. Watch the washer during the first minutes of the spin after it's been moved or reinstalled, and note when the vibration appears: with a specific load or during every cycle.</p>",
+      "faq": [
+        {
+          "q": "Should I put a rubber pad under the washing machine?",
+          "a": "A suitable surface may help reduce slipping, but it does not fix uneven leveling or failed shock absorbers. Follow the manufacturer's instructions first."
+        },
+        {
+          "q": "Why is the new washing machine vibrating?",
+          "a": "Check that the transit bolts have been removed and the feet adjusted. If the problem persists, use the warranty and do not disassemble the appliance."
+        }
+      ],
+      "sources": [
+        {
+          "label": "Appliance safety tips – ESFI",
+          "url": "https://www.esfi.org/appliance-safety-tips/"
+        }
+      ],
+      "imageAlt": "Washing machine with balance and vibration symbols"
+    },
+    "image": "assets/images/articles/dryer-not-drying.jpg",
+    "imageAlt": "غسالة ملابس مع رمز التوازن والاهتزاز"
   },
   {
     "id": "washing-machine-bad-smell",
@@ -321,7 +582,43 @@
         "label": "ESFI — Appliance Safety Tips",
         "url": "https://www.esfi.org/appliance-safety-tips/"
       }
-    ]
+    ],
+    "en": {
+      "title": "Bad smell from the washing machine? Causes of mold, moisture and detergent residue",
+      "excerpt": "A practical cleaning plan for the door, gasket, detergent drawer and drain filter to reduce odors, with advice to avoid mixing cleaning agents.",
+      "category": "Washing machines",
+      "keywords": [
+        "bad washing machine smell",
+        "moldy smell in washing machine",
+        "cleaning washing machine gasket",
+        "detergent residue",
+        "front-load washer maintenance"
+      ],
+      "content": "<p>A musty smell in the washer often appears when moisture and detergent residue remain in the gasket, the drawer, or the drum. This does not necessarily mean an electrical fault; start by drying and cleaning the parts according to the model manual, then monitor whether the smell returns after subsequent cycles.</p><h2>Places where odors accumulate</h2><p>Check the inner fold of the door gasket, the detergent drawer, the drawer drain openings, and the pump filter if user access is allowed. Remove coins, lint and small objects with a glove, and expect residual water to come out of the filter. Do not disassemble the pump or an internal hose without a manual or a technician.</p><h2>Safe cleaning plan</h2><ol><li>Disconnect power and shut off water if needed, and remove wet clothes immediately when the cycle ends.</li><li>Wipe the gasket with a soft cloth and dry the inner fold, inspecting it for tears or trapped objects.</li><li>Remove the detergent drawer and clean it with warm water, and dry its channels before putting it back.</li><li>Run the tub-clean cycle or an empty cycle recommended by the manufacturer, and do not mix bleach with vinegar or any acid.</li><li>Leave the door and drawer ajar after use if the model instructions and household ventilation allow it.</li></ol><h2>Detergent and load</h2><p>Extra detergent dose does not mean cleaner results; it can leave a soapy film or residue that increases odors. Use a detergent suitable for the machine type and in the quantity stated in the manual, and avoid overfilling the drum because heavy loads prevent proper rinsing and drying.</p><h2>When is the smell a sign of a fault?</h2><p>Call a technician if the smell is accompanied by a leak, warmth at the plug, rubbing noises, standing water, or if the odor returns quickly despite cleaning the gasket, drawer and filter. A chemical smell or burning odor may indicate a different problem that requires stopping the machine immediately.</p><h2>Useful links</h2><p>For broader steps, see <a href='https://imadtbn.github.io/hatg-machine/articles/washing-machine-care.html'>Washing machine care guide</a> and <a href='https://imadtbn.github.io/hatg-machine/articles/washing-machine-drain.html'>Drain problem guide</a>, and record the cleaning dates and any error codes that appear.</p>",
+      "faq": [
+        {
+          "q": "Does leaving the washer door open help prevent odors?",
+          "a": "Leaving the door or drawer ajar helps moisture dry in many models, provided it does not pose a hazard to children or pets and the manufacturer's instructions allow it."
+        },
+        {
+          "q": "Should I mix vinegar and bleach to clean the washer?",
+          "a": "No. Mixing them can produce dangerous gases. Use a single product recommended by the manufacturer and follow dosage, ventilation, and instructions."
+        }
+      ],
+      "sources": [
+        {
+          "label": "Whirlpool — How to Clean a Front Load Washer Gasket",
+          "url": "https://www.whirlpool.com/blog/washers-and-dryers/how-to-clean-gasket-on-front-load-washer.html"
+        },
+        {
+          "label": "ESFI — Appliance Safety Tips",
+          "url": "https://www.esfi.org/appliance-safety-tips/"
+        }
+      ],
+      "imageAlt": "Open washing machine with cleaning and freshness symbols"
+    },
+    "image": "assets/images/articles/washing-machine-bad-smell.jpg",
+    "imageAlt": "غسالة ملابس مفتوحة مع رمز التنظيف والانتعاش"
   },
   {
     "id": "washing-machine-drain",
@@ -355,7 +652,38 @@
         "label": "Appliance Safety Tips – ESFI",
         "url": "https://www.esfi.org/appliance-safety-tips/"
       }
-    ]
+    ],
+    "en": {
+      "title": "Washing Machine Won't Drain: Safe Step-by-Step Diagnosis",
+      "excerpt": "A guide to checking the hose, filter and load before requesting service, with signs that indicate a pump or control board fault.",
+      "category": "Washing Machine Faults",
+      "keywords": [
+        "washing machine won't drain",
+        "clogged washer filter",
+        "washing machine drain problem",
+        "washing machine pump"
+      ],
+      "content": "<p>Failure to drain can result from a simple blockage, a kinked hose, or a nonworking pump. Don’t repeatedly restart the cycle; drain the water safely first, and disconnect power before accessing the filter or underneath the appliance.</p><h2>Initial check</h2><p>Check that the drain or spin program hasn't been canceled, then examine the drain hose at the back of the machine. It should not be kinked or pinched, and it should not be pushed too far into the standpipe. After disconnecting power, slowly open the pump filter with a towel and a low container underneath, because water may come out in a rush.</p><p>Remove lint, coins, and buttons, and gently move the pump impeller from the outside if the manual allows. Do not disassemble the pump or short the wiring. After securely reinstalling the filter, run a short drain test without laundry.</p><h2>When to stop?</h2><p>If you hear a humming with no rotation, water returns, a leak appears, or the error code repeats after cleaning the filter, the fault may be in the pump, the water level sensor, or the control board. Stop the appliance and call a technician, especially if access requires tilting the washer or removing the top cover.</p><p>The principles of <a href='https://www.esfi.org/appliance-safety-tips/' target='_blank' rel='noopener noreferrer'>home electrical safety</a> warn against working on an appliance that is connected to electricity or near water; make safety a precondition before any diagnosis.</p>",
+      "faq": [
+        {
+          "q": "Can I open the door when there is water in the tub?",
+          "a": "Do not force the door. Use the drain program or the manual drain method described in the model's manual after disconnecting power."
+        },
+        {
+          "q": "Is cleaning the filter enough?",
+          "a": "It is sufficient for simple blockages, but persistent humming or continued failure to drain indicates the pump or the electronics need inspection."
+        }
+      ],
+      "sources": [
+        {
+          "label": "Appliance Safety Tips – ESFI",
+          "url": "https://www.esfi.org/appliance-safety-tips/"
+        }
+      ],
+      "imageAlt": "Washing machine with a drain path and pump"
+    },
+    "image": "assets/images/articles/washing-machine-drain.jpg",
+    "imageAlt": "غسالة ملابس مع مسار تصريف ومضخة"
   },
   {
     "id": "dishwasher-filter",
@@ -389,7 +717,38 @@
         "label": "نصائح السلامة للأجهزة الكهربائية – ESFI",
         "url": "https://www.esfi.org/appliance-safety-tips/"
       }
-    ]
+    ],
+    "en": {
+      "title": "Cleaning the Dishwasher Filter: The Right Method and When to Replace It",
+      "excerpt": "Simple steps to clean the filter and spray arms and prevent odors and poor cleaning, with precautions against sharp glass and leaks.",
+      "category": "Dishwashers",
+      "keywords": [
+        "dishwasher filter cleaning",
+        "dishwasher filter",
+        "dishwasher odor",
+        "dishwasher maintenance"
+      ],
+      "content": "<p>The filter is the first line of defense against food debris. When it clogs, water flow decreases and residues return to the dishes; noise may increase or water may remain at the bottom. The removal method varies, so use the model manual and do not force the ring if it does not move.</p><h2>Cleaning method</h2><ol><li>Stop the cycle and unplug or switch off the circuit breaker, then remove the lower rack.</li><li>Remove the filter according to the locking direction, and empty debris into the trash not the sink.</li><li>Rinse it with lukewarm water and a soft brush, without metal wire that could damage the mesh.</li><li>Inspect the pump area very carefully for glass or bone, and do not insert your fingers deeply.</li><li>Reinstall the filter and secure it tightly; running without it may allow debris to reach the pump.</li></ol><p>Clean the spray arms if the openings are blocked, then run an empty cycle with a dedicated cleaner if needed. Do not mix cleaning agents or use a cleaner that causes excessive foaming. If odor or standing water remains after cleaning the filter, check the drain hose or call a technician.</p><h2>When to replace the filter?</h2><p>Replace it if the mesh is broken, it no longer locks in place, or cracks appear that allow debris to pass. Buying an original part or one compatible with the model number is better than a generic part that doesn't match the lock or openings.</p>",
+      "faq": [
+        {
+          "q": "How often should I clean the dishwasher filter?",
+          "a": "Check it weekly or every few cycles with heavy use, and clean it immediately if cleaning performance weakens or odors appear."
+        },
+        {
+          "q": "Can the appliance be run without the filter?",
+          "a": "Not recommended; the filter protects the pump and spray arms from debris."
+        }
+      ],
+      "sources": [
+        {
+          "label": "Electrical Appliance Safety Tips – ESFI",
+          "url": "https://www.esfi.org/appliance-safety-tips/"
+        }
+      ],
+      "imageAlt": "Dishwasher with a filter, spray arm and cleaning brush"
+    },
+    "image": "assets/images/articles/dishwasher-filter.jpg",
+    "imageAlt": "غسالة أطباق مع فلتر وذراع رش وأداة تنظيف"
   },
   {
     "id": "choose-washing-machine",
@@ -427,7 +786,42 @@
         "label": "EnergyGuide – FTC",
         "url": "https://consumer.ftc.gov/articles/how-use-energyguide-label-shop-home-appliances"
       }
-    ]
+    ],
+    "en": {
+      "title": "How to Choose the Right Washing Machine? A Pre-Purchase Guide",
+      "excerpt": "Practical criteria for comparing capacity, programs, noise, efficiency and spare-part availability instead of relying on price or appearance alone.",
+      "category": "Buying Guide",
+      "keywords": [
+        "choosing a washing machine",
+        "washer capacity",
+        "energy-efficient washing machine",
+        "buying a washer"
+      ],
+      "content": "<p>The right washing machine is the one that fits the number of household members, the installation space, and your laundry habits—not the one with the largest number on the label. Start by measuring width, depth and height and the door opening path, and leave room for hoses, ventilation and maintenance.</p><h2>Key criteria</h2><table><thead><tr><th>Criterion</th><th>Practical question</th></tr></thead><tbody><tr><td>Capacity</td><td>Does it suit your average load without running half-empty or overfilling the drum?</td></tr><tr><td>Efficiency</td><td>What is the declared water and electricity consumption compared to appliances of the same size?</td></tr><tr><td>Programs</td><td>Are there programs for delicates, economy, and quick wash without unnecessary extras?</td></tr><tr><td>Service</td><td>Are service centers, spare parts, and a clear warranty available in your country?</td></tr></tbody></table><p><a href='https://www.energystar.gov/products' target='_blank' rel='noopener noreferrer'>ENERGY STAR</a> indicates that the efficiency label is based on specific criteria, while <a href='https://consumer.ftc.gov/articles/how-use-energyguide-label-shop-home-appliances' target='_blank' rel='noopener noreferrer'>the FTC's EnergyGuide</a> explains how to compare expected consumption. Use these data together with operating and maintenance costs, not with the purchase price alone.</p><h2>Questions to Ask the Seller</h2><p>Ask about the warranty on the motor and control board, the cost of consumable parts, availability of technicians, and drain hose installation requirements. Request the full model number, because a single trade name may include different versions depending on the market. Keep the receipt, the user manual, and a photo of the label.</p>",
+      "faq": [
+        {
+          "q": "Is larger capacity better?",
+          "a": "Not necessarily; excess capacity can lead to underfilled cycles and higher consumption of space and water."
+        },
+        {
+          "q": "Should I choose a front-loading or top-loading washer?",
+          "a": "The choice depends on available space, ease of access, and your habits. Compare efficiency and after-sales service for the two specific models."
+        }
+      ],
+      "sources": [
+        {
+          "label": "Energy Efficient Products – ENERGY STAR",
+          "url": "https://www.energystar.gov/products"
+        },
+        {
+          "label": "EnergyGuide – FTC",
+          "url": "https://consumer.ftc.gov/articles/how-use-energyguide-label-shop-home-appliances"
+        }
+      ],
+      "imageAlt": "Modern washing machines for comparison before purchase"
+    },
+    "image": "assets/images/articles/washing-machine-vibration.jpg",
+    "imageAlt": "غسالات ملابس حديثة للمقارنة قبل الشراء"
   },
   {
     "id": "dishwasher-errors",
@@ -461,7 +855,38 @@
         "label": "مركز استدعاءات وتحذيرات سلامة المنتجات – CPSC",
         "url": "https://www.cpsc.gov/Recalls"
       }
-    ]
+    ],
+    "en": {
+      "title": "Most common dishwasher problems: causes and safe solutions",
+      "excerpt": "From poor cleaning to standing water or foaming, initial diagnostic steps that work for most brands with clear limits for home repair.",
+      "category": "Dishwashers",
+      "keywords": [
+        "Dishwasher faults",
+        "Dishwasher doesn't clean",
+        "Water in dishwasher",
+        "Dishwasher error code"
+      ],
+      "content": "<p>Before interpreting an error code, note the symptoms: is water not entering, not draining, or is the motor running without adequate spraying? The same code can mean different things between brands, so match the code with the model's manual on the manufacturer's website or the booklet.</p><h2>Poor cleaning</h2><p>Make sure the spray arms are not blocked by large items or a tall plate, then remove the arm and clean its holes with a thin plastic pick and rinse it. Clean the filter, use a detergent designed for dishwashers, and check that the water reaches the temperature required by the selected program. Do not use hand dishwashing liquid, as it causes excessive foaming.</p><h2>Standing water at the bottom</h2><p>Disconnect power, clean the filter and the pump area according to the manual, and check the drain hose for kinks. If the hose is connected to an air gap or a sink drain, the blockage may be outside the dishwasher. Do not put your hand into the pump area before ensuring there is no broken glass.</p><h2>When does the code matter?</h2><p>If a code related to a leak, overheating, or motor fault repeats after a single restart, stop the appliance and shut off the water. Do not bypass the leak sensor or disconnect wiring; these protections prevent further damage. Check the fault guide on this site with your model number, because the code alone is not a definitive diagnosis.</p>",
+      "faq": [
+        {
+          "q": "Should I add more detergent to improve cleaning?",
+          "a": "No. Excess detergent can leave residue and foam and make rinsing harder. Follow the type and dosage recommended in the appliance manual."
+        },
+        {
+          "q": "Can you run the dishwasher when there is standing water?",
+          "a": "If water remains after one cycle, safely check the filter and the hose; leakage or recurring problems require stopping the appliance and having it inspected."
+        }
+      ],
+      "sources": [
+        {
+          "label": "Product Recalls and Safety Warnings Center – CPSC",
+          "url": "https://www.cpsc.gov/Recalls"
+        }
+      ],
+      "imageAlt": "Dishwasher with a diagnostic panel and error symbol"
+    },
+    "image": "assets/images/articles/dishwasher-errors.jpg",
+    "imageAlt": "غسالة أطباق مع لوحة تشخيص ورمز خطأ"
   },
   {
     "id": "ac-maintenance",
@@ -495,7 +920,38 @@
         "label": "Energy Savings at Home – ENERGY STAR",
         "url": "https://www.energystar.gov/saveathome"
       }
-    ]
+    ],
+    "en": {
+      "title": "Air conditioner maintenance before summer: steps to preserve cooling and reduce energy use",
+      "excerpt": "A safe guide to cleaning the filter, checking airflow and leaks, and clarifying jobs that require a qualified AC technician.",
+      "category": "Air Conditioners",
+      "keywords": [
+        "air conditioner maintenance",
+        "cleaning AC filter",
+        "weak AC cooling",
+        "air conditioning efficiency"
+      ],
+      "content": "<p>Before running the air conditioner for long periods, inspect the parts that are accessible without removing the electrical cover. Reduced airflow or dust buildup on the filter reduces comfort and may increase run time. The refrigeration circuit, compressor, and wiring are not safe household tasks.</p><h2>What you can do safely</h2><p>Turn off the breaker, remove the washable filter, clean it with lukewarm water, and let it dry completely before reinstalling. Wipe the vents and the area around the indoor unit, and make sure no furniture blocks the airflow. For the outdoor unit, remove leaves and dust from around it while keeping proper clearance, and do not spray water on the electrical panel.</p><h2>Signs you need an AC technician</h2><p>Call a technician if you see repeated ice on the pipes, water leaking inside the room, a burning smell, a grinding noise, weak cooling despite a clean filter, or frequent breaker trips. Do not add refrigerant yourself; a low charge may be the result of a leak, and repairing the cause and measuring pressure require tools and qualification.</p><p>Principles from <a href='https://www.energystar.gov/saveathome' target='_blank' rel='noopener noreferrer'>ENERGY STAR for saving energy at home</a> recommend maintaining airflow and performing proper maintenance because efficient operation depends on the integrity of the whole system, not just lowering the thermostat setpoint.</p><h2>More efficient operation</h2><p>Close unused vents, use curtains that reduce solar load, and clean the filter according to local dust levels and the manufacturer's instructions. Do not set the temperature very low with windows open; this increases run time without a proportionate actual improvement.</p>",
+      "faq": [
+        {
+          "q": "Should I wash the indoor unit with water?",
+          "a": "Do not use water on electrical parts. Limit cleaning to the filter and parts permitted in the manual, and leave deep cleaning to a technician."
+        },
+        {
+          "q": "Why does the AC freeze?",
+          "a": "It may be caused by poor airflow, low refrigerant charge, or another fault; therefore it should be turned off and inspected professionally if freezing repeats."
+        }
+      ],
+      "sources": [
+        {
+          "label": "Energy Savings at Home – ENERGY STAR",
+          "url": "https://www.energystar.gov/saveathome"
+        }
+      ],
+      "imageAlt": "Air conditioner with filter and seasonal maintenance tools"
+    },
+    "image": "assets/images/articles/ac-maintenance.jpg",
+    "imageAlt": "مكيف هواء مع فلتر وأدوات صيانة موسمية"
   },
   {
     "id": "washing-machine-care",
@@ -529,7 +985,38 @@
         "label": "نصائح السلامة للأجهزة الكهربائية – ESFI",
         "url": "https://www.esfi.org/appliance-safety-tips/"
       }
-    ]
+    ],
+    "en": {
+      "title": "Washing Machine Care: A Practical Guide to Extending Its Lifespan",
+      "excerpt": "A simple routine for caring for the drum, door seal, detergent drawer, and hose to reduce odors, leaks, and error codes.",
+      "category": "Washing machines",
+      "keywords": [
+        "Washing machine care",
+        "Cleaning the washing machine seal",
+        "Washing machine filter",
+        "Washing machine odors"
+      ],
+      "content": "<p>A washing machine runs efficiently when water can enter and drain freely, loads stay balanced, and moisture-retaining parts dry out. Most odor or vibration problems start from simple operating habits rather than a direct electronic fault.</p><h2>After every cycle</h2><p>Remove clothes promptly, wipe water from the door seal, and leave the door and detergent drawer partly open. Do not use more detergent than recommended; excess suds can leave residues and affect rinsing. Check pockets before washing because coins and pins can clog the pump or scratch the drum.</p><h2>Monthly cleaning</h2><ol><li>Run the tub-cleaning cycle if available, or follow the manufacturer's instructions for a suitable empty-cycle clean.</li><li>Clean the detergent drawer with a soft brush and dry it before replacing it.</li><li>Check the pump filter after disconnecting power and placing a towel and a shallow container if the design allows it.</li><li>Inspect the inlet and drain hoses for bulges, cracks, or kinks.</li></ol><p>Do not mix cleaning chemicals, and do not use vinegar and bleach together. Read the product label and model instructions; some seals and finishes are affected by strong chemicals. If a leak appears from the pump housing or an error code persists after cleaning, stop the machine and contact a technician.</p><h2>Load and balance</h2><p>Distribute large items with medium ones and do not pack the drum to its limit. An unbalanced load increases vibration and can strain shock absorbers and bearings. The washer should be level on a solid floor, with all four feet firmly contacting the ground.</p>",
+      "faq": [
+        {
+          "q": "How do I get rid of washing machine odor?",
+          "a": "Dry the door seal and drawer after use, use less detergent, and run the tub-cleaning cycle according to the model's manual."
+        },
+        {
+          "q": "Should I leave the washer door open?",
+          "a": "Leave it ajar after the cycle ends if the area is safe, to reduce moisture and odor buildup."
+        }
+      ],
+      "sources": [
+        {
+          "label": "Appliance Safety Tips – ESFI",
+          "url": "https://www.esfi.org/appliance-safety-tips/"
+        }
+      ],
+      "imageAlt": "Washing machine with care and cleaning elements"
+    },
+    "image": "assets/images/articles/washing-machine-care.jpg",
+    "imageAlt": "غسالة ملابس مع عناصر العناية والتنظيف"
   },
   {
     "id": "energy-saving",
@@ -567,7 +1054,42 @@
         "label": "كيفية قراءة ملصق EnergyGuide – FTC",
         "url": "https://consumer.ftc.gov/articles/how-use-energyguide-label-shop-home-appliances"
       }
-    ]
+    ],
+    "en": {
+      "title": "How to save energy in household appliances without sacrificing performance?",
+      "excerpt": "Practical guidance to reduce the energy consumption of washing machines, air conditioners, refrigerators and heating appliances, and how to read the efficiency label correctly.",
+      "category": "Energy Saving",
+      "keywords": [
+        "saving electricity",
+        "energy efficiency",
+        "washing machine energy use",
+        "air conditioner energy use"
+      ],
+      "content": "<p>Energy saving starts with choosing the right appliance and then operating it under the conditions it was designed for. A marketing label like \"economical\" is not enough; compare the consumption figures on the energy label or in the manual, because actual usage is affected by temperature, load size and number of cycles.</p><h2>Four habits with a clear impact</h2><ol><li>Run the washing machine and dishwasher with an appropriate load instead of repeating small cycles, while avoiding overloading that prevents water and air circulation.</li><li>Clean filters, gaskets and vents; blockages force the fan, compressor or pump to run longer.</li><li>Set the air conditioner to a comfortable temperature with doors and windows closed, and clean the filter regularly so airflow does not decrease.</li><li>Leave ventilation space behind the refrigerator and do not place it near a direct heat source; a high ambient temperature increases compressor work.</li></ol><h2>How do you read the efficiency label?</h2><p>The <a href='https://consumer.ftc.gov/articles/how-use-energyguide-label-shop-home-appliances' target='_blank' rel='noopener noreferrer'>U.S. Federal Trade Commission</a> explains that the EnergyGuide label shows the expected energy use of the appliance and compares it to similar models. Use the figure to compare appliances of the same class and size, and do not compare a small washer to a large air conditioner and conclude that one is more efficient.</p><p>The <a href='https://www.energystar.gov/products' target='_blank' rel='noopener noreferrer'>ENERGY STAR</a> program also states that labeled products meet strict energy efficiency specifications set by the U.S. Environmental Protection Agency. The label is useful as an initial indicator, but check the model specifications and the consumption label before buying.</p><h2>What not to do?</h2><p>Do not turn the refrigerator or air conditioner on and off repeatedly to try to save energy, and do not always use short programs if they do not achieve the required cleaning. Removing a door gasket or running an air conditioner with a clogged filter can increase consumption and cause more expensive damage. Make saving the result of proper maintenance, not the result of disabling safety features.</p>",
+      "faq": [
+        {
+          "q": "Is the economy program always the best?",
+          "a": "Not always; use it when its duration and temperature match the level of dirt, because repeating the cycle negates part of the savings."
+        },
+        {
+          "q": "Does standby mode consume electricity?",
+          "a": "Some devices may consume power in standby. Unplug chargers and unused devices if the manual indicates it is safe."
+        }
+      ],
+      "sources": [
+        {
+          "label": "Energy-efficient products – ENERGY STAR",
+          "url": "https://www.energystar.gov/products"
+        },
+        {
+          "label": "How to read the EnergyGuide label – FTC",
+          "url": "https://consumer.ftc.gov/articles/how-use-energyguide-label-shop-home-appliances"
+        }
+      ],
+      "imageAlt": "Home appliances with an energy-saving symbol"
+    },
+    "image": "assets/images/articles/energy-saving.jpg",
+    "imageAlt": "أجهزة منزلية مع رمز توفير الطاقة"
   },
   {
     "id": "maintenance-tips",
@@ -601,6 +1123,37 @@
         "label": "إرشادات السلامة للأجهزة الكهربائية – ESFI",
         "url": "https://www.esfi.org/appliance-safety-tips/"
       }
-    ]
+    ],
+    "en": {
+      "title": "Routine Maintenance Checklist for Home Appliances: What to Inspect Each Month?",
+      "excerpt": "A practical plan divided by frequency to clean appliances, check connections and filters, and spot signs of malfunction before they worsen.",
+      "category": "Maintenance",
+      "keywords": [
+        "home appliance maintenance",
+        "preventive maintenance",
+        "washing machine cleaning",
+        "appliance inspection"
+      ],
+      "content": "<p>Preventive maintenance does not mean disassembling the appliance; it means performing simple, regular checks that reduce dirt buildup and detect leaks, overheating, or unusual noise early. Always start by reading the model manual because filter location and cleaning methods may differ between brands.</p><h2>Brief monthly plan</h2><table><thead><tr><th>Interval</th><th>What to inspect?</th><th>Purpose</th></tr></thead><tbody><tr><td>Every use</td><td>Leaks, unusual odors, rubbing/grinding noises, and plug condition</td><td>Detect hazards immediately</td></tr><tr><td>Monthly</td><td>Washer and AC filters, door seals, and vents</td><td>Maintain airflow and water flow</td></tr><tr><td>Every 3–6 months</td><td>Deep cleaning, hose inspection, and dusting behind the appliance</td><td>Reduce heat load and blockages</td></tr></tbody></table><h2>Practical steps for every home</h2><p>Disconnect power before cleaning any part near water. Wipe the washer door gasket after a wash cycle and leave the door ajar until the interior dries. Clean the dishwasher filter and spray arms with lukewarm water, and clean the dryer lint trap after each cycle if present. For the air conditioner, start with the removable filter and do not use high-pressure water on electrical components.</p><p>Watch for signs that require stopping use: a burning smell, melting at the plug, a circuit breaker that trips repeatedly, a leak reaching the outlet, or a metal casing that gives an electric shock. In these cases unplug the appliance and do not restart it before inspection; the <a href='https://www.esfi.org/appliance-safety-tips/' target='_blank' rel='noopener noreferrer'>Electrical Safety Foundation International</a> emphasizes not using a damaged appliance until it is repaired.</p><h2>Maintenance Log</h2><p>Record the date of cleaning and any noises or error codes that appeared. This log helps a technician diagnose faults and reveals repeating patterns, such as recurring clogs after using too much detergent or vibration that appears at maximum load. Regular maintenance preserves performance, but it does not replace the need for a qualified technician for gas work, refrigerant circuits, or high-voltage systems.</p>",
+      "faq": [
+        {
+          "q": "Can I clean an appliance while it is plugged in?",
+          "a": "No. Unplug the appliance or switch off the breaker first, especially when working with water, filters, or internal parts."
+        },
+        {
+          "q": "How often should I clean the washing machine filter?",
+          "a": "Check it monthly, and clean it immediately if there are drainage problems, odors, or water remaining in the drum."
+        }
+      ],
+      "sources": [
+        {
+          "label": "Appliance Safety Guidelines – ESFI",
+          "url": "https://www.esfi.org/appliance-safety-tips/"
+        }
+      ],
+      "imageAlt": "Home appliances with a routine maintenance checklist"
+    },
+    "image": "assets/images/articles/maintenance-tips.jpg",
+    "imageAlt": "مجموعة أجهزة منزلية مع قائمة صيانة دورية"
   }
 ]
