@@ -19,3 +19,7 @@ Console inspection confirmed `I18n.language` is `en` and `getLocalizedError(...)
 The loaded function source was the pre-fix version (`rendererHasLocalized: false`) despite the working-tree fix, and unregistering the local service worker returned `true`. This confirms a local cache artifact rather than a source defect; a clean reload without the old worker should exercise the current renderer.
 
 A clean reload now shows `30 minutes` for Repair time, English FAQ questions and answers, and the complete English diagnostic detail. Console output contains only successful service-worker registration and the expected local AdSense warning.
+
+## Google integrations QA — 2026-08-25
+
+The local troubleshooting page now contains page-level AdSense placements after the hero and before the footer, while the wizard remains usable. The browser console reports successful service-worker registration and only the expected local AdSense load warning; no application error was observed. Google Analytics is injected by the shared `google-services.js` loader on every operational page.

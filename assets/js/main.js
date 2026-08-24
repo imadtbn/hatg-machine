@@ -150,6 +150,7 @@ function updatePwaInstallLanguage() {
 
 function toggleLanguage() {
   I18n.language = isEnglish() ? 'ar' : 'en';
+  window.hatgAnalytics?.('language_switch', {language: I18n.language});
   localStorage.setItem('site-language', I18n.language);
   applyLanguage();
   refreshLocalizedPage();
