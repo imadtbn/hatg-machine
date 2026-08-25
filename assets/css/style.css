@@ -1602,23 +1602,19 @@ main {
   color: var(--text-tertiary);
   font-size: 0.68rem;
   line-height: 1;
-  content: "إعلان";
+  content: "مساحة إعلانية";
   opacity: 0.62;
   pointer-events: none;
 }
 
-.ad-container ins.adsbygoogle {
-  display: block;
-  width: 100%;
-  min-width: 0;
-  min-height: 0;
-}
-
-.ad-container[data-ad-state="waiting"] ins.adsbygoogle {
-  min-height: 58px;
+.ad-container[data-ad-state="waiting"] {
   background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--border-color) 22%, transparent), transparent);
   background-size: 200% 100%;
   animation: ad-placeholder 1.8s ease-in-out infinite;
+}
+
+[dir="ltr"] .ad-container::before {
+  content: "Reserved ad space";
 }
 
 .ad-container[data-ad-state="ready"] {
@@ -1627,7 +1623,8 @@ main {
 }
 
 .ad-container[data-ad-state="ready"]::before,
-.ad-container[data-ad-state="unfilled"]::before {
+.ad-container[data-ad-state="unfilled"]::before,
+.ad-container[data-ad-state="empty"]::before {
   display: none;
 }
 
@@ -1669,7 +1666,7 @@ main {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .ad-container[data-ad-state="waiting"] ins.adsbygoogle {
+  .ad-container[data-ad-state="waiting"] {
     animation: none;
   }
 }

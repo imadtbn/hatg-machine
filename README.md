@@ -39,7 +39,7 @@ appliance-errors/
 │   ├── css/style.css   (الملف الرئيسي)
 │   ├── js/
 │   │   ├── main.js     (الوظائف التفاعلية)
-│   │   └── analytics.js (Google Analytics)
+│   │   └── google-services.js (Google Analytics)
 │   └── images/         (الأيقونات والشعارات)
 ├── manifest.webmanifest (PWA)
 ├── service-worker.js   (PWA offline)
@@ -52,8 +52,8 @@ appliance-errors/
 
 1. ارفع جميع الملفات على أي استضافة ويب (Netlify, Vercel, GitHub Pages)
 2. استبدل `appliance-errors.example.com` بالنطاق الخاص بك في جميع الملفات
-3. أضف كود Google Analytics في `assets/js/analytics.js`
-4. فعّل Google AdSense عند الحصول على الموافقة
+3. اضبط تكامل Google Analytics في `assets/js/google-services.js` عند الحاجة
+4. أضف معرفات الإعلانات لاحقاً داخل حاويات `.ad-container` بعد اعتماد الإعدادات الجديدة
 
 ### التخصيص
 
