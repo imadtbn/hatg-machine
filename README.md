@@ -39,7 +39,7 @@ appliance-errors/
 │   ├── css/style.css   (الملف الرئيسي)
 │   ├── js/
 │   │   ├── main.js     (الوظائف التفاعلية)
-│   │   └── google-services.js (Google Analytics)
+│   │   └── site-tags.js (Analytics, GTM, AdSense, Clarity)
 │   └── images/         (الأيقونات والشعارات)
 ├── manifest.webmanifest (PWA)
 ├── service-worker.js   (PWA offline)
@@ -52,8 +52,8 @@ appliance-errors/
 
 1. ارفع جميع الملفات على أي استضافة ويب (Netlify, Vercel, GitHub Pages)
 2. استبدل `appliance-errors.example.com` بالنطاق الخاص بك في جميع الملفات
-3. اضبط تكامل Google Analytics في `assets/js/google-services.js` عند الحاجة
-4. أضف معرفات الإعلانات لاحقاً داخل حاويات `.ad-container` بعد اعتماد الإعدادات الجديدة
+3. اضبط الخدمات الأربعة في `assets/js/site-tags.js`؛ تبقى قيم GTM وClarity الوهمية غير مفعلة حتى استبدالها
+4. أضف أو عدّل وحدات الإعلانات داخل حاويات `.ad-container` مع اختبار التوزيع قبل النشر
 
 ### التخصيص
 

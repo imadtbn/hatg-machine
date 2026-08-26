@@ -1,4 +1,4 @@
-const CACHE_NAME = 'appliance-errors-v14';
+const CACHE_NAME = 'appliance-errors-v15';
 const STATIC_ASSETS = [
   './',
   './index.html',
@@ -22,7 +22,7 @@ const STATIC_ASSETS = [
   './data/i18n.json',
   './assets/css/style.css',
   './assets/js/main.js',
-  './assets/js/google-services.js',
+  './assets/js/site-tags.js',
   './assets/images/icon-192.png',
   './assets/images/icon-512.png',
   './articles/maintenance-tips.html',

@@ -23,3 +23,11 @@ A clean reload now shows `30 minutes` for Repair time, English FAQ questions and
 ## Google integrations QA — 2026-08-25
 
 The local troubleshooting page now contains page-level AdSense placements after the hero and before the footer, while the wizard remains usable. The browser console reports successful service-worker registration and only the expected local AdSense load warning; no application error was observed. Google Analytics is injected by the shared `google-services.js` loader on every operational page.
+
+## Central tags and ads QA
+
+A local English article page loaded the single `site-tags.js` loader, preserved the article cover and content layout, and showed a reserved ad slot in the sidebar without shifting the main content. The console reported only successful service-worker registration; no application or loader error was observed.
+
+## Central tags and ad placement QA — 2026-08-26
+
+The English article and Arabic home page were tested locally after centralization. Both retained their normal layout and content, with ads limited to selected reserved containers. Console output showed successful service-worker registration and no application errors. Ad serving itself remains subject to the external provider and local network availability.

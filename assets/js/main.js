@@ -1236,30 +1236,7 @@ function slugify(text) {
   return text.toLowerCase().replace(/\s+/g, '-').replace(/[^\w\-]+/g, '');
 }
 
-// ============================================
-// Google Analytics
-// ============================================
-function initAnalytics() {
-  if (window.__analyticsLoaded) return;
-  window.__analyticsLoaded = true;
-  const gaScript = document.createElement('script');
-  gaScript.async = true;
-  gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-XK4CHWYGWZ';
-  document.head.appendChild(gaScript);
 
-  window.dataLayer = window.dataLayer || [];
-  function gtag() { dataLayer.push(arguments); }
-  gtag('js', new Date());
-  gtag('config', 'G-XK4CHWYGWZ');
-}
-
-function scheduleThirdParty() {
-  const load = () => initAnalytics();
-  ['pointerdown', 'keydown', 'touchstart'].forEach(eventName => {
-    window.addEventListener(eventName, load, { once: true, passive: true });
-  });
-  window.setTimeout(load, 3500);
-}
 
 // ============================================
 // Service Worker Registration (PWA)
@@ -1356,9 +1333,8 @@ document.addEventListener('DOMContentLoaded', () => {
       break;
   }
 
-  // Register Service Worker and defer third-party work until after the first paint.
+  // Register Service Worker; all external measurement and ad loading is centralized in site-tags.js.
   registerServiceWorker();
-  scheduleThirdParty();
   };
   if ('requestIdleCallback' in window) requestIdleCallback(hydrate, { timeout: 800 });
   else window.setTimeout(hydrate, 120);
