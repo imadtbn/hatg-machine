@@ -27,13 +27,17 @@ for path in PAGES:
             errors.append(f'{rel}: ad unit is missing slot')
 
 loader = (ROOT / 'assets/js/site-tags.js').read_text(encoding='utf-8')
-for required in ("ga4Id: 'G-XK4CHWYGWZ'", "gtmId: 'xxxxxxxxx'", "clarityId: 'xxxxxxxxx'", "adsenseClient: 'ca-pub-5656416032906373'"):
+for required in ("ga4Id: 'G-XK4CHWYGWZ'", "ga4Mode: 'gtm'", "gtmId: 'GTM-K99RH3XD'", "clarityId: 'xxxxxxxxx'", "adsenseClient: 'ca-pub-5656416032906373'"):
     if required not in loader:
         errors.append(f'site-tags.js: missing expected config {required}')
 if "adsense_js" in loader:
     pass
+if "gtmId: 'GTM-K99RH3XD'" in loader and "CONFIG.ga4Mode !== 'direct'" not in loader:
+    errors.append('site-tags.js: direct GA4 fallback is not guarded by ga4Mode')
+if "gtmId: 'GTM-K99RH3XD'" in loader and "clarity.ms/tag" in loader and "clarityId: 'xxxxxxxxx'" not in loader:
+    errors.append('site-tags.js: Clarity must be configured through GTM when GTM is active')
 
 if errors:
     print('\n'.join(errors))
     raise SystemExit(1)
-print(f'Site-tags validation passed: {len(PAGES)} pages, one central loader per page, max two ad units per page, GA4 enabled, GTM/Clarity placeholders disabled.')
+print(f'Site-tags validation passed: {len(PAGES)} pages, one central loader per page, max two ad units per page, GA4 routed through GTM, AdSense enabled, and direct Clarity disabled until configured in GTM.')

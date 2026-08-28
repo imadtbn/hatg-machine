@@ -7,7 +7,8 @@
 
   const CONFIG = Object.freeze({
     ga4Id: 'G-XK4CHWYGWZ',
-    gtmId: 'xxxxxxxxx',
+    ga4Mode: 'gtm',
+    gtmId: 'GTM-K99RH3XD',
     adsenseClient: 'ca-pub-5656416032906373',
     clarityId: 'xxxxxxxxx'
   });
@@ -29,6 +30,7 @@
     if (window.__hatgGtmLoaded) return true;
     window.__hatgGtmLoaded = true;
     dataLayer.push({ 'gtm.start': Date.now(), event: 'gtm.js' });
+    if (isConfigured(CONFIG.ga4Id, /^G-[A-Z0-9]+$/i)) dataLayer.push({ 'hatg.ga4_id': CONFIG.ga4Id });
     addScriptOnce('script[data-hatg-gtm]', `https://www.googletagmanager.com/gtm.js?id=${encodeURIComponent(CONFIG.gtmId)}`, { 'data-hatg-gtm': 'true' });
     const noscript = document.createElement('noscript');
     const iframe = document.createElement('iframe');
@@ -43,7 +45,7 @@
   }
 
   function loadGa4() {
-    if (!isConfigured(CONFIG.ga4Id, /^G-[A-Z0-9]+$/i) || isConfigured(CONFIG.gtmId, /^GTM-[A-Z0-9]+$/i) || window.__hatgGa4Loaded) return;
+    if (CONFIG.ga4Mode !== 'direct' || !isConfigured(CONFIG.ga4Id, /^G-[A-Z0-9]+$/i) || isConfigured(CONFIG.gtmId, /^GTM-[A-Z0-9]+$/i) || window.__hatgGa4Loaded) return;
     window.__hatgGa4Loaded = true;
     window.gtag = window.gtag || function gtag() { dataLayer.push(arguments); };
     window.gtag('js', new Date());
@@ -55,8 +57,8 @@
     addScriptOnce('script[data-hatg-ga4]', `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(CONFIG.ga4Id)}`, { 'data-hatg-ga4': 'true' });
   }
 
-  function loadClarity() {
-    if (!isConfigured(CONFIG.clarityId, /^[a-z0-9]+$/i) || window.__hatgClarityLoaded) return;
+  function loadClarity(gtmEnabled) {
+    if (gtmEnabled || !isConfigured(CONFIG.clarityId, /^[a-z0-9]+$/i) || window.__hatgClarityLoaded) return;
     window.__hatgClarityLoaded = true;
     window.clarity = window.clarity || function clarity() { (window.clarity.q = window.clarity.q || []).push(arguments); };
     addScriptOnce('script[data-hatg-clarity]', `https://www.clarity.ms/tag/${encodeURIComponent(CONFIG.clarityId)}`, { 'data-hatg-clarity': 'true' });
@@ -124,7 +126,7 @@
   function init() {
     const gtmEnabled = loadGtm();
     if (!gtmEnabled) loadGa4();
-    loadClarity();
+    loadClarity(gtmEnabled);
     loadAdsense();
   }
 

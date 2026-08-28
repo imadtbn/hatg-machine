@@ -31,3 +31,7 @@ A local English article page loaded the single `site-tags.js` loader, preserved 
 ## Central tags and ad placement QA — 2026-08-26
 
 The English article and Arabic home page were tested locally after centralization. Both retained their normal layout and content, with ads limited to selected reserved containers. Console output showed successful service-worker registration and no application errors. Ad serving itself remains subject to the external provider and local network availability.
+
+## GTM container update QA — 2026-08-28
+
+The provided GTM container `GTM-K99RH3XD` was added only to the central `site-tags.js` loader. The local English article page retained its layout and content, and the browser console reported successful service-worker registration with no application errors. GA4 direct mode remains disabled while `ga4Mode` is `gtm`; direct Clarity loading remains disabled when GTM is active.
