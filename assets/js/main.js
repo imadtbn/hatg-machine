@@ -465,23 +465,51 @@ function initHeader() {
 // Mobile Menu
 // ============================================
 function initMobileMenu() {
-  const menuToggle = document.querySelector('.menu-toggle');
-  const nav = document.querySelector('.nav');
+  const header = document.querySelector('.header');
+  const menuToggle = header?.querySelector('.menu-toggle');
+  const nav = header?.querySelector('.nav');
 
   if (!menuToggle || !nav) return;
 
-  menuToggle.addEventListener('click', () => {
-    nav.classList.toggle('active');
+  if (!nav.id) nav.id = 'site-primary-navigation';
+  if (!nav.hasAttribute('aria-label')) {
+    nav.setAttribute('aria-label', isEnglish() ? 'Main navigation' : 'التنقل الرئيسي');
+  }
+  menuToggle.setAttribute('type', 'button');
+  menuToggle.setAttribute('aria-controls', nav.id);
+
+  const setOpen = (open, focusToggle = false) => {
+    nav.classList.toggle('active', open);
+    menuToggle.setAttribute('aria-expanded', String(open));
+    menuToggle.setAttribute('aria-label', isEnglish()
+      ? (open ? 'Close navigation menu' : 'Open navigation menu')
+      : (open ? 'إغلاق قائمة التنقل' : 'فتح قائمة التنقل'));
     const icon = menuToggle.querySelector('i');
-    icon.className = nav.classList.contains('active') ? 'fas fa-times' : 'fas fa-bars';
+    if (icon) icon.className = open ? 'fas fa-times' : 'fas fa-bars';
+    if (focusToggle) menuToggle.focus();
+  };
+
+  setOpen(false);
+  menuToggle.addEventListener('click', () => setOpen(!nav.classList.contains('active')));
+
+  nav.addEventListener('click', event => {
+    if (event.target.closest('a')) setOpen(false);
   });
 
-  // Close menu when clicking outside
-  document.addEventListener('click', (e) => {
-    if (!menuToggle.contains(e.target) && !nav.contains(e.target)) {
-      nav.classList.remove('active');
-      menuToggle.querySelector('i').className = 'fas fa-bars';
+  document.addEventListener('click', event => {
+    if (!menuToggle.contains(event.target) && !nav.contains(event.target)) {
+      if (nav.classList.contains('active')) setOpen(false);
     }
+  });
+
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && nav.classList.contains('active')) {
+      setOpen(false, true);
+    }
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 1240 && nav.classList.contains('active')) setOpen(false);
   });
 }
 
